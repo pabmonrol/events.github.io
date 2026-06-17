@@ -4,29 +4,29 @@ async function cargarAgenda() {
     const container = document.getElementById('agenda-container');
 
     data.forEach(venue => {
+        // Usamos la clase venue-block y venue-header de tu style.css
         let html = `
-            <div class="venue-block p-3 border-bottom">
-                <div class="d-flex align-items-center mb-3">
-                    <span class="me-2">${venue.icon}</span>
-                    <strong class="text-${venue.color}">${venue.venue}</strong>
+            <div class="venue-block">
+                <div class="venue-header">
+                    <span style="margin-right: 10px;">${venue.icon}</span>
+                    <span>${venue.venue}</span>
                 </div>
             `;
         
         venue.events.forEach(ev => {
+            // Usamos las clases event-row, date-badge, event-content, etc. de tu style.css
             html += `
-                <div class="row align-items-center mb-3">
-                    <div class="col-auto text-center bg-light p-2 rounded">
-                        <div class="fw-bold">${ev.day}</div>
-                        <small class="text-uppercase">${ev.month}</small>
+                <div class="event-row">
+                    <div class="date-badge">
+                        <span class="day">${ev.day}</span>
+                        <span class="month">${ev.month}</span>
                     </div>
-                    <div class="col">
-                        <div class="fw-bold">${ev.title}</div>
-                        <small class="text-muted">${ev.desc}</small>
-                        <div class="text-success small fw-bold">${ev.price}</div>
+                    <div class="event-content">
+                        <p class="event-title">${ev.title}</p>
+                        <p class="event-desc">${ev.desc}</p>
+                        <span class="event-price">${ev.price}</span>
                     </div>
-                    <div class="col-auto">
-                        <a href="${ev.calLink}" class="btn btn-sm btn-primary">+ Agenda</a>
-                    </div>
+                    <a href="${ev.calLink || '#'}" class="cal-btn">+ Añadir</a>
                 </div>`;
         });
         
