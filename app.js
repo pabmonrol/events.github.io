@@ -53,10 +53,15 @@ function configurarFiltros() {
     
     botones.forEach(boton => {
         boton.addEventListener('click', (e) => {
+            // 1. Quitamos la clase 'active' (el fondo azul) a todos
             botones.forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
             
-            const filtro = e.target.getAttribute('data-filter');
+            // 2. Usamos currentTarget para asegurar que pilla el botón entero (y no el emoji)
+            const botonPulsado = e.currentTarget;
+            botonPulsado.classList.add('active');
+            
+            // 3. Leemos el filtro y renderizamos
+            const filtro = botonPulsado.getAttribute('data-filter');
             renderizarEventos(filtro);
         });
     });
