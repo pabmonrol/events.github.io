@@ -4,17 +4,16 @@ async function cargarAgenda() {
     const container = document.getElementById('agenda-container');
 
     data.forEach(venue => {
-        // Usamos la clase venue-block y venue-header de tu style.css
+        // Asignamos la clase theme-${venue.color} (ej: theme-blue)
         let html = `
-            <div class="venue-block">
+            <div class="venue-block theme-${venue.color}">
                 <div class="venue-header">
-                    <span style="margin-right: 10px;">${venue.icon}</span>
+                    <div class="icon-box">${venue.icon}</div>
                     <span>${venue.venue}</span>
                 </div>
             `;
         
         venue.events.forEach(ev => {
-            // Usamos las clases event-row, date-badge, event-content, etc. de tu style.css
             html += `
                 <div class="event-row">
                     <div class="date-badge">
