@@ -1,7 +1,11 @@
+/* =========================================
+   ESTILOS BASE Y CONTENEDOR
+   ========================================= */
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
 .nl-wrap { 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
     max-width: 600px; 
-    margin: 20px auto; 
+    margin: 0 auto; 
     background: #ffffff; 
     border-radius: 12px; 
     border: 1px solid #e1e4e8; 
@@ -17,9 +21,42 @@
 .nl-header h1 { color: #E6F1FB; font-size: 24px; margin: 0 0 6px; }
 .nl-header p { color: #B5D4F4; font-size: 13px; margin: 0; }
 
-/* Bloque de contenedor de evento */
+/* =========================================
+   FILTROS (Los botones superiores)
+   ========================================= */
+.filters-container {
+    padding: 20px 24px 0 24px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.filters-container::-webkit-scrollbar { display: none; }
+
+.filter-btn {
+    background-color: #f4f6f8;
+    border: 1px solid #e1e4e8;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #666666;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+.filter-btn:hover { background-color: #e1e4e8; }
+.filter-btn.active {
+    background-color: #185FA5;
+    color: #ffffff;
+    border-color: #185FA5;
+}
+
+/* =========================================
+   DISEÑO DE LOS EVENTOS (Pixel Perfect)
+   ========================================= */
 .venue-block { 
-    margin: 20px; 
+    margin-bottom: 20px; 
     border-radius: 10px; 
     border: 1px solid #e8edf2; 
     overflow: hidden; 
@@ -32,84 +69,70 @@
     display: flex;
     align-items: center;
 }
-
-/* El cuadradito del icono */
 .icon-box {
-    width: 32px;
-    height: 32px;
-    border-radius: 6px;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 6px; margin-right: 12px; font-size: 16px;
+}
+.event-row { 
+    padding: 16px; 
+    border-bottom: 1px solid #e8edf2; 
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    margin-right: 10px;
 }
+.event-row:last-child { border-bottom: none; }
 
-.event-row { padding: 16px; border-bottom: 1px solid #e8edf2; display: flex; align-items: center; }
-
-/* Badge base */
-.date-badge { border-radius: 6px; padding: 6px; text-align: center; width: 45px; margin-right: 16px; }
+.date-badge { 
+    border-radius: 6px; 
+    padding: 8px 0; 
+    text-align: center; 
+    width: 52px;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
 .date-badge .day { font-size: 18px; font-weight: bold; display: block; line-height: 1; }
-.date-badge .month { font-size: 10px; font-weight: bold; text-transform: uppercase; margin-top: 2px; display: block; }
+.date-badge .month { font-size: 10px; font-weight: 600; text-transform: uppercase; display: block; margin-top: 2px; }
 
-.event-content { flex-grow: 1; padding: 0 16px 0 0; }
-.event-title { font-weight: 600; color: #1a1a1a; margin: 0 0 2px; font-size: 13px; }
-.event-desc { color: #666666; font-size: 12px; margin: 0 0 6px; }
-.event-price { font-weight: 600; color: #3B6D11; font-size: 13px; }
+.event-content { flex-grow: 1; padding-right: 16px; }
+.event-title { font-weight: 600; color: #1a1a1a; margin: 0 0 2px; font-size: 14px; }
+.event-desc { color: #666666; font-size: 12px; margin: 0 0 6px; line-height: 1.4; }
+.event-price { font-weight: 600; font-size: 13px; }
 
-.cal-btn { color: #fff; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none; }
+.cal-btn { 
+    font-size: 11px; 
+    font-weight: 600; 
+    padding: 8px 14px; 
+    border-radius: 6px; 
+    text-decoration: none; 
+    flex-shrink: 0;
+}
 
 /* =========================================
-   SISTEMA DE COLORES (Azul y Verde)
+   SISTEMA DE COLORES
    ========================================= */
-/* TEMA AZUL (blue) */
+/* TEMA AZUL */
 .theme-blue .venue-header { color: #185FA5; }
-.theme-blue .icon-box { background: #E6F1FB; color: #185FA5; }
-.theme-blue .date-badge { background: #E6F1FB; }
-.theme-blue .date-badge .day { color: #185FA5; }
-.theme-blue .date-badge .month { color: #378ADD; }
-.theme-blue .cal-btn { background: #185FA5; }
+.theme-blue .icon-box { background-color: #E6F1FB; color: #185FA5; }
+.theme-blue .date-badge { background-color: #E6F1FB; }
+.theme-blue .day { color: #185FA5; }
+.theme-blue .month { color: #378ADD; }
+.theme-blue .event-price { color: #3B6D11; }
+.theme-blue .cal-btn { background-color: #185FA5; color: #ffffff; }
 
-/* TEMA VERDE (green) */
+/* TEMA VERDE */
 .theme-green .venue-header { color: #0F6E56; }
-.theme-green .icon-box { background: #E1F5EE; color: #0F6E56; }
-.theme-green .date-badge { background: #E1F5EE; }
-.theme-green .date-badge .day { color: #0F6E56; }
-.theme-green .date-badge .month { color: #0F6E56; }
-.theme-green .cal-btn { background: #0F6E56; }
+.theme-green .icon-box { background-color: #E1F5EE; color: #0F6E56; }
+.theme-green .date-badge { background-color: #E1F5EE; }
+.theme-green .day { color: #0F6E56; }
+.theme-green .month { color: #0F6E56; }
+.theme-green .event-price { color: #3B6D11; }
+.theme-green .cal-btn { background-color: #0F6E56; color: #ffffff; }
 
 /* =========================================
-   SISTEMA DE FILTROS || SOLUCION 2
+   ADAPTACIÓN PARA MÓVILES
    ========================================= */
-.filters-container {
-    padding: 20px 24px 0 24px;
-    display: flex;
-    gap: 10px;
-    overflow-x: auto; /* Scroll horizontal en móviles si hay muchos botones */
-    scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
-}
-.filters-container::-webkit-scrollbar {
-    display: none; /* Oculta la barra de scroll en Chrome/Safari */
-}
-
-.filter-btn {
-    background-color: #f4f6f8;
-    border: 1px solid #e1e4e8;
-    border-radius: 20px;
-    padding: 8px 16px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #666666;
-    cursor: pointer;
-    white-space: nowrap; /* Evita que el texto del botón se rompa en dos líneas */
-    transition: all 0.2s ease;
-}
-
-.filter-btn:hover { background-color: #e1e4e8; }
-
-/* Estado cuando el botón está seleccionado */
-.filter-btn.active {
-    background-color: #185FA5;
-    color: #ffffff;
-    border-color: #185FA5;
+@media (max-width: 480px) {
+    .event-row { flex-wrap: wrap; }
+    .event-content { width: calc(100% - 68px); padding-right: 0; }
+    .cal-btn { margin-top: 16px; width: 100%; text-align: center; padding: 10px 12px; }
 }
