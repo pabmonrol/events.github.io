@@ -1,23 +1,23 @@
-let allData = []; // Aquí guardaremos todo el JSON para no descargarlo varias veces
+let allData = []; 
 
 async function cargarAgenda() {
     const response = await fetch('data.json');
     allData = await response.json();
     
-    renderizarEventos('all'); // Nada más cargar, mostramos 'Todos'
-    configurarFiltros();      // Activamos los botones
+    renderizarEventos('all'); 
+    configurarFiltros();      
 }
 
 function renderizarEventos(filtroSeleccionado) {
     const container = document.getElementById('agenda-container');
-    container.innerHTML = ''; // Limpiamos la lista actual
+    container.innerHTML = ''; 
 
-    // Filtramos: Si es 'all', mostramos todo. Si no, solo los que coinciden con la categoría
+    // Filtramos los datos
     const datosParaMostrar = filtroSeleccionado === 'all' 
         ? allData 
         : allData.filter(venue => venue.category === filtroSeleccionado);
 
-    // Pintamos los datos filtrados
+    // Pintamos los bloques
     datosParaMostrar.forEach(venue => {
         let html = `
             <div class="venue-block theme-${venue.color}">
@@ -53,18 +53,13 @@ function configurarFiltros() {
     
     botones.forEach(boton => {
         boton.addEventListener('click', (e) => {
-            // 1. Quitamos el color azul (clase active) a todos los botones
             botones.forEach(b => b.classList.remove('active'));
-            
-            // 2. Le ponemos el color azul al botón que acabamos de pulsar
             e.target.classList.add('active');
             
-            // 3. Leemos el "data-filter" de ese botón y renderizamos de nuevo
             const filtro = e.target.getAttribute('data-filter');
             renderizarEventos(filtro);
         });
     });
 }
 
-// Arrancar la aplicación
 cargarAgenda();
