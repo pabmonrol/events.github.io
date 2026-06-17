@@ -3,13 +3,10 @@
     "venue": "Estadio Bernabéu",
     "icon": "⚽",
     "color": "blue",
+    "category": "deportes",
     "events": [
       {
-        "day": "12",
-        "month": "Jul",
-        "title": "Real Madrid vs. Atlético",
-        "desc": "Partido de liga · Sector Fondo Sur",
-        "price": "35 €"
+        "day": "12", "month": "Jul", "title": "Real Madrid vs. Atlético", "desc": "Partido de liga", "price": "35 €"
       }
     ]
   },
@@ -17,13 +14,10 @@
     "venue": "Estadio Bernabéu",
     "icon": "⚽",
     "color": "blue",
+    "category": "deportes",
     "events": [
       {
-        "day": "12",
-        "month": "Jul",
-        "title": "Real Madrid vs. Atlético",
-        "desc": "Partido de liga · Sector Fondo Sur",
-        "price": "35 €"
+        "day": "12", "month": "Jul", "title": "Real Madrid vs. Atlético", "desc": "Partido de liga", "price": "35 €"
       }
     ]
   },
@@ -31,13 +25,10 @@
     "venue": "Estadio Bernabéu",
     "icon": "⚽",
     "color": "blue",
+    "category": "deportes",
     "events": [
       {
-        "day": "12",
-        "month": "Jul",
-        "title": "Real Madrid vs. Atlético",
-        "desc": "Partido de liga · Sector Fondo Sur",
-        "price": "35 €"
+        "day": "12", "month": "Jul", "title": "Real Madrid vs. Atlético", "desc": "Partido de liga", "price": "35 €"
       }
     ]
   },
@@ -45,13 +36,10 @@
     "venue": "Estadio Bernabéu",
     "icon": "⚽",
     "color": "blue",
+    "category": "deportes",
     "events": [
       {
-        "day": "12",
-        "month": "Jul",
-        "title": "Real Madrid vs. Atlético",
-        "desc": "Partido de liga · Sector Fondo Sur",
-        "price": "35 €"
+        "day": "12", "month": "Jul", "title": "Real Madrid vs. Atlético", "desc": "Partido de liga", "price": "35 €"
       }
     ]
   },
@@ -59,70 +47,99 @@
     "venue": "Estadio Bernabéu",
     "icon": "⚽",
     "color": "blue",
+    "category": "deportes",
     "events": [
       {
-        "day": "12",
-        "month": "Jul",
-        "title": "Real Madrid vs. Atlético",
-        "desc": "Partido de liga · Sector Fondo Sur",
-        "price": "35 €"
+        "day": "12", "month": "Jul", "title": "Real Madrid vs. Atlético", "desc": "Partido de liga", "price": "35 €"
       }
     ]
   },
   {
-    "venue": "Estadio Bernabéu",
-    "icon": "⚽",
-    "color": "blue",
+    "venue": "Razzmatazz",
+    "icon": "🎵",
+    "color": "green",
+    "category": "musica",
     "events": [
       {
-        "day": "12",
-        "month": "Jul",
-        "title": "Real Madrid vs. Atlético",
-        "desc": "Partido de liga · Sector Fondo Sur",
-        "price": "35 €"
+        "day": "15", "month": "Ago", "title": "Noche electrónica", "desc": "Sala 1", "price": "25 €"
       }
     ]
   },
   {
-    "venue": "Estadio Bernabéu",
-    "icon": "⚽",
-    "color": "blue",
+    "venue": "Razzmatazz",
+    "icon": "🎵",
+    "color": "green",
+    "category": "musica",
     "events": [
       {
-        "day": "12",
-        "month": "Jul",
-        "title": "Real Madrid vs. Atlético",
-        "desc": "Partido de liga · Sector Fondo Sur",
-        "price": "35 €"
+        "day": "15", "month": "Ago", "title": "Noche electrónica", "desc": "Sala 1", "price": "25 €"
       }
     ]
   },
   {
-    "venue": "Estadio Bernabéu",
-    "icon": "⚽",
-    "color": "blue",
+    "venue": "Razzmatazz",
+    "icon": "🎵",
+    "color": "green",
+    "category": "musica",
     "events": [
       {
-        "day": "12",
-        "month": "Jul",
-        "title": "Real Madrid vs. Atlético",
-        "desc": "Partido de liga · Sector Fondo Sur",
-        "price": "35 €"
+        "day": "15", "month": "Ago", "title": "Noche electrónica", "desc": "Sala 1", "price": "25 €"
       }
     ]
   },
   {
-    "venue": "Estadio Bernabéu",
-    "icon": "⚽",
-    "color": "blue",
+    "venue": "Razzmatazz",
+    "icon": "🎵",
+    "color": "green",
+    "category": "musica",
     "events": [
       {
-        "day": "12",
-        "month": "Jul",
-        "title": "Real Madrid vs. Atlético",
-        "desc": "Partido de liga · Sector Fondo Sur",
-        "price": "35 €"
+        "day": "15", "month": "Ago", "title": "Noche electrónica", "desc": "Sala 1", "price": "25 €"
       }
     ]
-  }
+  },
+  {
+    "venue": "Razzmatazz",
+    "icon": "🎵",
+    "color": "green",
+    "category": "musica",
+    "events": [
+      {
+        "day": "15", "month": "Ago", "title": "Noche electrónica", "desc": "Sala 1", "price": "25 €"
+      }
+    ]
+  },
+  {
+    "venue": "Razzmatazz",
+    "icon": "🎵",
+    "color": "green",
+    "category": "musica",
+    "events": [
+      {
+        "day": "15", "month": "Ago", "title": "Noche electrónica", "desc": "Sala 1", "price": "25 €"
+      }
+    ]
+  },
+  {
+    "venue": "Razzmatazz",
+    "icon": "🎵",
+    "color": "green",
+    "category": "musica",
+    "events": [
+      {
+        "day": "15", "month": "Ago", "title": "Noche electrónica", "desc": "Sala 1", "price": "25 €"
+      }
+    ]
+  },
+  {
+    "venue": "Razzmatazz",
+    "icon": "🎵",
+    "color": "green",
+    "category": "musica",
+    "events": [
+      {
+        "day": "15", "month": "Ago", "title": "Noche electrónica", "desc": "Sala 1", "price": "25 €"
+      }
+    ]
+  },
 ]
