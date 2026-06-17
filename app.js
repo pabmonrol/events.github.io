@@ -1,53 +1,15 @@
 let allData = []; 
 
-// 1. Diccionario para traducir el mes de texto a número
-const meses = {
-    "Ene": 0, "Feb": 1, "Mar": 2, "Abr": 3, "May": 4, "Jun": 5, 
-    "Jul": 6, "Ago": 7, "Sep": 8, "Oct": 9, "Nov": 10, "Dic": 11
-};
-
-// 2. Función que convierte "12" y "Jul" en una fecha matemática ordenable
-function convertirAFecha(dia, mes) {
-    const añoActual = new Date().getFullYear(); // Usa el año actual
-    return new Date(añoActual, meses[mes], parseInt(dia)).getTime();
-}
-
 async function cargarAgenda() {
     try {
         const response = await fetch('data.json');
+        if (!response.ok) throw new Error(`No se encontró el archivo data.json`);
+        allData = await response.json();
         
-        if (!response.ok) {
-            throw new Error(`No se encontró el archivo data.json (Error ${response.status})`);
-        }
-
-        let datosBrutos = await response.json();
-        
-        // ==========================================
-        // 🚀 MAGIA DE ORDENACIÓN CRONOLÓGICA
-        // ==========================================
-        
-        // Paso A: Ordenar los eventos cronológicamente dentro de cada lugar
-        datosBrutos.forEach(venue => {
-            venue.events.sort((a, b) => convertirAFecha(a.day, a.month) - convertirAFecha(b.day, b.month));
-        });
-
-        // Paso B: Ordenar las cajas de los lugares (El lugar con el evento más cercano va primero)
-        datosBrutos.sort((a, b) => {
-            const primerEventoA = convertirAFecha(a.events[0].day, a.events[0].month);
-            const primerEventoB = convertirAFecha(b.events[0].day, b.events[0].month);
-            return primerEventoA - primerEventoB;
-        });
-        
-        // Guardamos los datos ya ordenados para usarlos en los filtros
-        allData = datosBrutos;
-        
-        // ==========================================
-
         renderizarEventos('all'); 
         configurarFiltros();      
-
     } catch (error) {
-        // Caja roja de error por si algo falla
+        // Detector de errores
         const container = document.getElementById('agenda-container');
         container.innerHTML = `
             <div style="background: #ffebe9; border: 2px dashed #ff8182; border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 20px;">
@@ -62,36 +24,80 @@ function renderizarEventos(filtroSeleccionado) {
     const container = document.getElementById('agenda-container');
     container.innerHTML = ''; 
 
-    // Filtramos los datos que ya están ordenados en memoria
-    const datosParaMostrar = filtroSeleccionado === 'all' 
-        ? allData 
-        : allData.filter(venue => venue.category === filtroSeleccionado);
+    // 1. EXTRAER TODOS LOS EVENTOS (y guardarles la info de su lugar y color)
+    let eventosFiltrados = [];
+    allData.forEach(venue => {
+        if (filtroSeleccionado === 'all' || venue.category === filtroSeleccionado) {
+            venue.events.forEach(ev => {
+                eventosFiltrados.push({
+                    ...ev,
+                    venueName: venue.venue,
+                    venueIcon: venue.icon,
+                    venueColor: venue.color // Azul o Verde
+                });
+            });
+        }
+    });
 
-    if (datosParaMostrar.length === 0) {
+    if (eventosFiltrados.length === 0) {
         container.innerHTML = `<p style="text-align:center; padding: 20px; color: #666;">No hay eventos en esta categoría.</p>`;
         return;
     }
 
-    // Dibujamos el HTML
-    datosParaMostrar.forEach(venue => {
+    // 2. ORDENAR CRONOLÓGICAMENTE Y AGRUPAR POR DÍA
+    const meses = { "Ene": 0, "Feb": 1, "Mar": 2, "Abr": 3, "May": 4, "Jun": 5, "Jul": 6, "Ago": 7, "Sep": 8, "Oct": 9, "Nov": 10, "Dic": 11 };
+    const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+    const currentYear = new Date().getFullYear();
+
+    // Función auxiliar para obtener una Fecha real de JavaScript
+    function getFechaDeEvento(ev) {
+        // Limpiamos el mes por si acaso (ej: "jul" -> "Jul")
+        const mesLimpio = ev.month.charAt(0).toUpperCase() + ev.month.slice(1, 3).toLowerCase();
+        const monthIndex = meses[mesLimpio] !== undefined ? meses[mesLimpio] : 0;
+        return new Date(currentYear, monthIndex, parseInt(ev.day));
+    }
+
+    // Ordenamos los eventos por fecha para que salgan en orden en la agenda
+    eventosFiltrados.sort((a, b) => getFechaDeEvento(a) - getFechaDeEvento(b));
+
+    // Agrupamos los eventos bajo su fecha
+    const eventosAgrupados = {};
+    eventosFiltrados.forEach(ev => {
+        const date = getFechaDeEvento(ev);
+        const nombreDia = isNaN(date.getTime()) ? "" : diasSemana[date.getDay()];
+        
+        // Creamos el Título del bloque (Ej: "Viernes, 12 Jul")
+        const grupoKey = nombreDia ? `${nombreDia}, ${ev.day} ${ev.month}` : `${ev.day} ${ev.month}`;
+        
+        if (!eventosAgrupados[grupoKey]) {
+            eventosAgrupados[grupoKey] = [];
+        }
+        eventosAgrupados[grupoKey].push(ev);
+    });
+
+    // 3. PINTAR LOS BLOQUES EN PANTALLA
+    for (const [diaTexto, eventosDelDia] of Object.entries(eventosAgrupados)) {
+        
+        // El bloque principal ahora es un "DÍA" (le ponemos un gris elegante para la cabecera)
         let html = `
-            <div class="venue-block theme-${venue.color}">
-                <div class="venue-header">
-                    <div class="icon-box">${venue.icon}</div>
-                    <span>${venue.venue}</span>
+            <div class="venue-block">
+                <div class="venue-header" style="background-color: #24292f; color: #ffffff; border-bottom: none;">
+                    <div class="icon-box" style="background-color: #3b4046; color: #ffffff;">📅</div>
+                    <span>${diaTexto}</span>
                 </div>
             `;
         
-        venue.events.forEach(ev => {
+        eventosDelDia.forEach(ev => {
+            // A cada evento le aplicamos SU PROPIO TEMA (Azul, Verde...) y le añadimos su estadio/sala en la descripción
             html += `
-                <div class="event-row">
+                <div class="event-row theme-${ev.venueColor}">
                     <div class="date-badge">
                         <span class="day">${ev.day}</span>
                         <span class="month">${ev.month}</span>
                     </div>
                     <div class="event-content">
-                        <p class="event-title">${ev.title}</p>
-                        <p class="event-desc">${ev.desc}</p>
+                        <p class="event-title">${ev.venueIcon} ${ev.title}</p>
+                        <p class="event-desc"><strong>${ev.venueName}</strong> · ${ev.desc}</p>
                         <span class="event-price">${ev.price}</span>
                     </div>
                     <a href="${ev.calLink || '#'}" class="cal-btn">+ Añadir</a>
@@ -100,16 +106,14 @@ function renderizarEventos(filtroSeleccionado) {
         
         html += `</div>`;
         container.innerHTML += html;
-    });
+    }
 }
 
 function configurarFiltros() {
     const botones = document.querySelectorAll('.filter-btn');
-    
     botones.forEach(boton => {
         boton.addEventListener('click', (e) => {
             botones.forEach(b => b.classList.remove('active'));
-            
             const botonPulsado = e.currentTarget;
             botonPulsado.classList.add('active');
             
