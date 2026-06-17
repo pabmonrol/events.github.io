@@ -31,9 +31,6 @@
     font-weight: 600; 
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Separa el título de la flecha */
-    cursor: pointer; /* El ratón cambia a una manita al pasar por encima */
-    user-select: none; /* Evita que el texto se ponga azul al hacer doble clic */
 }
 
 /* El cuadradito del icono */
@@ -82,28 +79,37 @@
 .theme-green .cal-btn { background: #0F6E56; }
 
 /* =========================================
-   SISTEMA DE ACORDEONES (Solución 1)
+   SISTEMA DE FILTROS || SOLUCION 2
    ========================================= */
-
-/* Por defecto, el cuerpo de los eventos está oculto */
-.events-body {
-    display: none;
+.filters-container {
+    padding: 20px 24px 0 24px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto; /* Scroll horizontal en móviles si hay muchos botones */
+    scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+}
+.filters-container::-webkit-scrollbar {
+    display: none; /* Oculta la barra de scroll en Chrome/Safari */
 }
 
-/* La flechita tiene una transición suave */
-.toggle-icon {
-    font-size: 12px;
-    transition: transform 0.3s ease;
+.filter-btn {
+    background-color: #f4f6f8;
+    border: 1px solid #e1e4e8;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #666666;
+    cursor: pointer;
+    white-space: nowrap; /* Evita que el texto del botón se rompa en dos líneas */
+    transition: all 0.2s ease;
 }
 
-/* --- CUANDO EL BLOQUE ESTÁ ABIERTO (clase 'open') --- */
+.filter-btn:hover { background-color: #e1e4e8; }
 
-/* 1. Mostramos los eventos */
-.venue-block.open .events-body {
-    display: block;
-}
-
-/* 2. Giramos la flechita hacia arriba */
-.venue-block.open .toggle-icon {
-    transform: rotate(180deg);
+/* Estado cuando el botón está seleccionado */
+.filter-btn.active {
+    background-color: #185FA5;
+    color: #ffffff;
+    border-color: #185FA5;
 }
