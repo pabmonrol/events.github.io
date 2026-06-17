@@ -3,14 +3,21 @@ async function cargarAgenda() {
     const data = await response.json();
     const container = document.getElementById('agenda-container');
 
-    data.forEach(venue => {
-        // Asignamos la clase theme-${venue.color} (ej: theme-blue)
+    data.forEach((venue, index) => {
+        // Hacemos que el primer bloque (index 0) esté abierto por defecto
+        let isOpenClass = index === 0 ? 'open' : '';
+
         let html = `
-            <div class="venue-block theme-${venue.color}">
-                <div class="venue-header">
-                    <div class="icon-box">${venue.icon}</div>
-                    <span>${venue.venue}</span>
+            <div class="venue-block theme-${venue.color} ${isOpenClass}">
+                <div class="venue-header" onclick="toggleAcordeon(this)">
+                    <div style="display: flex; align-items: center;">
+                        <div class="icon-box">${venue.icon}</div>
+                        <span>${venue.venue}</span>
+                    </div>
+                    <div class="toggle-icon">▼</div>
                 </div>
+                
+                <div class="events-body">
             `;
         
         venue.events.forEach(ev => {
@@ -29,9 +36,17 @@ async function cargarAgenda() {
                 </div>`;
         });
         
-        html += `</div>`;
+        html += `
+                </div> </div> `;
+        
         container.innerHTML += html;
     });
+}
+
+// Función súper sencilla para abrir y cerrar (añade o quita la clase 'open')
+function toggleAcordeon(elemento) {
+    const bloque = elemento.parentElement;
+    bloque.classList.toggle('open');
 }
 
 cargarAgenda();
