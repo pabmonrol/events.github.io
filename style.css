@@ -31,6 +31,9 @@
     font-weight: 600; 
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Separa el título de la flecha */
+    cursor: pointer; /* El ratón cambia a una manita al pasar por encima */
+    user-select: none; /* Evita que el texto se ponga azul al hacer doble clic */
 }
 
 /* El cuadradito del icono */
@@ -77,3 +80,30 @@
 .theme-green .date-badge .day { color: #0F6E56; }
 .theme-green .date-badge .month { color: #0F6E56; }
 .theme-green .cal-btn { background: #0F6E56; }
+
+/* =========================================
+   SISTEMA DE ACORDEONES (Solución 1)
+   ========================================= */
+
+/* Por defecto, el cuerpo de los eventos está oculto */
+.events-body {
+    display: none;
+}
+
+/* La flechita tiene una transición suave */
+.toggle-icon {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* --- CUANDO EL BLOQUE ESTÁ ABIERTO (clase 'open') --- */
+
+/* 1. Mostramos los eventos */
+.venue-block.open .events-body {
+    display: block;
+}
+
+/* 2. Giramos la flechita hacia arriba */
+.venue-block.open .toggle-icon {
+    transform: rotate(180deg);
+}
