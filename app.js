@@ -138,40 +138,62 @@ function renderEvents(selectedFilter) {
     // ==========================================
     // 📅 2. RENDERIZAR EVENTOS NORMALES (ABAJO)
     // ==========================================
-    if (filteredEvents.length > 0) {
-        filteredEvents.sort((a, b) => parseEventDate(a.date, a.time) - parseEventDate(b.date, b.time));
+    // Generar los 7 días del rango (hoy + 6 días más)
+    const today = new Date();
+    const dateRange = [];
+    for (let i = 0; i < 7; i++) {
+        const date = new Date(today);
+        date.setDate(today.getDate() + i);
+        dateRange.push(date);
+    }
 
-        const groupedEvents = {};
-        filteredEvents.forEach(ev => {
-            const parsedDateObj = parseEventDate(ev.date, ev.time);
-            const weekdayName = isNaN(parsedDateObj.getTime()) ? "" : weekdays[parsedDateObj.getDay()];
-            const dayNumber = isNaN(parsedDateObj.getTime()) ? "??" : parsedDateObj.getDate().toString().padStart(2, '0');
-            const monthName = isNaN(parsedDateObj.getTime()) ? "??" : months[parsedDateObj.getMonth()];
-            
-            const groupingKey = weekdayName ? `${weekdayName}, ${monthName} ${dayNumber}` : "Date to be determined";
+    filteredEvents.sort((a, b) => parseEventDate(a.date, a.time) - parseEventDate(b.date, b.time));
 
-            if (!groupedEvents[groupingKey]) groupedEvents[groupingKey] = [];
-            
-            ev.displayTime = ev.time ? `${ev.time}h` : "Time unconfirmed"; // Los normales solo muestran la hora
-            groupedEvents[groupingKey].push(ev);
-        });
+    const groupedEvents = {};
+    // Inicializar todos los días del rango con arrays vacíos
+    dateRange.forEach(date => {
+        const weekdayName = weekdays[date.getDay()];
+        const dayNumber = date.getDate().toString().padStart(2, '0');
+        const monthName = months[date.getMonth()];
+        const groupingKey = `${weekdayName}, ${monthName} ${dayNumber}`;
+        groupedEvents[groupingKey] = [];
+    });
 
-        for (const [dayHeaderLabel, dailyEventsList] of Object.entries(groupedEvents)) {
-            let regularHtml = `
-                <div class="venue-block">
-                    <div class="venue-header" style="background-color: #24292f; color: #ffffff; border-bottom: none;">
-                        <div class="icon-box" style="background-color: #3b4046; color: #ffffff;">📅</div>
-                        <span>${dayHeaderLabel}</span>
-                    </div>
-            `;
-            
+    // Agrupar eventos existentes por día
+    filteredEvents.forEach(ev => {
+        const parsedDateObj = parseEventDate(ev.date, ev.time);
+        const weekdayName = isNaN(parsedDateObj.getTime()) ? "" : weekdays[parsedDateObj.getDay()];
+        const dayNumber = isNaN(parsedDateObj.getTime()) ? "??" : parsedDateObj.getDate().toString().padStart(2, '0');
+        const monthName = isNaN(parsedDateObj.getTime()) ? "??" : months[parsedDateObj.getMonth()];
+        
+        const groupingKey = weekdayName ? `${weekdayName}, ${monthName} ${dayNumber}` : "Date to be determined";
+
+        if (!groupedEvents[groupingKey]) groupedEvents[groupingKey] = [];
+        
+        ev.displayTime = ev.time ? `${ev.time}h` : "Time unconfirmed"; // Los normales solo muestran la hora
+        groupedEvents[groupingKey].push(ev);
+    });
+
+    // Renderizar todos los días, aunque estén vacíos
+    for (const [dayHeaderLabel, dailyEventsList] of Object.entries(groupedEvents)) {
+        let regularHtml = `
+            <div class="venue-block">
+                <div class="venue-header" style="background-color: #24292f; color: #ffffff; border-bottom: none;">
+                    <div class="icon-box" style="background-color: #3b4046; color: #ffffff;">📅</div>
+                    <span>${dayHeaderLabel}</span>
+                </div>
+        `;
+        
+        if (dailyEventsList.length === 0) {
+            regularHtml += `<p style="padding: 16px; color: #666; font-size: 14px; text-align: center; margin: 0;">No events scheduled</p>`;
+        } else {
             dailyEventsList.forEach(ev => {
                 regularHtml += generateEventRowHTML(ev);
             });
-            
-            regularHtml += `</div>`;
-            container.innerHTML += regularHtml;
         }
+        
+        regularHtml += `</div>`;
+        container.innerHTML += regularHtml;
     }
 }
 
