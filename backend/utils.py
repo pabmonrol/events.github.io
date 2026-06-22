@@ -39,7 +39,7 @@ def filter_next_7_days(events_list: List[NamedTuple]) -> List[NamedTuple]:
     from datetime import timedelta
     
     hoy = date.today()
-    fecha_inicio = hoy 
+    fecha_inicio = hoy - timedelta(days=1)
     fecha_fin = hoy + timedelta(days=6)   
     
     eventos_filtrados = [
