@@ -3,18 +3,17 @@ from towns.ruggell import scraper_ruggell
 from towns.mauren import scraper_mauren
 from backend.utils import events_to_json, filter_next_7_days
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
 
 SCRAPERS = [scraper_ruggell, scraper_mauren]
 
-avoid_categories = {"Government", "Religion"}
-translator = GoogleTranslator(source='de', target='en')
-
 def run_all_scrapers():
     eventos_totales = []
-    
-    for scraper in SCRAPERS:
-        eventos_comunidad = filter_next_7_days(scraper(avoid_categories, translator))
-        eventos_totales.extend(eventos_comunidad)
+
+    with ThreadPoolExecutor(max_workers=len(SCRAPERS)) as executor:
+        resultados = executor.map(lambda scraper: filter_next_7_days(scraper()), SCRAPERS)
+        for eventos in resultados:
+            eventos_totales.extend(eventos)
 
     if eventos_totales:
         json_resultado = events_to_json(eventos_totales)
