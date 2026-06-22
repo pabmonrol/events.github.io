@@ -16,11 +16,11 @@ jobs:
     steps:
     # 1. Clone the repository's code onto the virtual machine
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     # 2. Set up Python on the virtual machine
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: '3.11' # Fast and stable version
         cache: 'pip' # Enables caching for faster subsequent runs
@@ -34,9 +34,9 @@ jobs:
         # Download the large English model for SpaCy used by your classifier
         python -m spacy download en_core_web_lg
 
-    # 4. Run your main script (Make sure 'generator.py' matches your actual file name)
+    # 4. Run your main script (Make sure 'main.py' matches your actual file name)
     - name: Run Event Scraper
-      run: python generator.py
+      run: python main.py
 
     # 5. Automatically save and push changes to GitHub if 'data.json' has been modified
     - name: Commit and push changes
