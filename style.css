@@ -103,8 +103,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 }
 
 .event-content { flex-grow: 1; padding-right: 12px; }
-.event-title { font-weight: 600; color: #464646; margin: 0 0 2px; font-size: 14px; }
-.event-desc { color: #a6a4a4; font-size: 12px; margin: 0 0 6px; line-height: 1.4; }
+.event-title { font-weight: 600; color: #1a1a1a; margin: 0 0 2px; font-size: 14px; }
+.event-desc { color: #666666; font-size: 12px; margin: 0 0 6px; line-height: 1.4; }
 .event-price { font-weight: 600; font-size: 13px; }
 
 /* GRUPO DE BOTONES DE ACCIÓN */
@@ -185,6 +185,67 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
    ACENTO LATERAL Y FONDO DE ICONO POR CATEGORÍA
    ========================================= */
 
+/* ========================================= 
+   🌟 ESTILOS ESPECIALES PARA EVENTOS DESTACADOS
+   ========================================= */
+.event-row.special-event {
+    background: linear-gradient(135deg, #fff8f0 0%, #ffffff 100%);
+    border-left: 6px solid #D20000 !important;
+    box-shadow: 0 4px 12px rgba(210, 0, 0, 0.15);
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-row.special-event::before {
+    content: '✨';
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 18px;
+    opacity: 0.6;
+}
+
+.event-row.special-event .event-title {
+    color: #D20000;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.event-row.special-event .event-icon {
+    background-color: #D20000 !important;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.event-row.special-event .event-price {
+    color: #D20000;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.event-row.special-event .cal-btn {
+    background-color: #D20000;
+    color: #ffffff;
+    border-color: #D20000;
+    font-weight: 700;
+}
+.event-row.special-event .cal-btn:hover {
+    background-color: #a30000;
+    border-color: #a30000;
+}
+
+.event-row.special-event .event-detail-inner {
+    background-color: #fff5f0;
+    border-left-color: #ff9999;
+    border-left-width: 4px;
+}
+
+/* =========================================
+   ACENTO LATERAL Y FONDO DE ICONO POR CATEGORÍA
+   ========================================= */
+
+
 /* 🎵 MUSIC (.theme-blue) */
 .theme-blue.event-row { border-left: 4px solid #006097; }
 .theme-blue .event-icon { background-color: #E6F4FC; }
@@ -254,26 +315,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 .theme-grey .event-price { color: #2E7D32; }
 .theme-grey .cal-btn { background-color: #455A64; color: #ffffff; }
 .theme-grey .event-detail-inner { border-left-color: #B0BEC5; background-color: #F7F9FA; }
-
-/* ⭐ EVENTOS ESPECIALES (.theme-special) */
-.theme-special.event-row { 
-    border-left: 4px solid #D4AF37;
-    background-color: #FFFDF3;
-}
-.theme-special .event-icon { 
-    background-color: #FFF9DB; 
-}
-.theme-special .event-title { 
-    color: #8A6D00; 
-}
-.theme-special .cal-btn { 
-    background-color: #D4AF37;
-    color: #ffffff; 
-}
-.theme-special .event-detail-inner { 
-    border-left-color: #FFE066; 
-    background-color: #FFFDF5; 
-}
 
 /* =========================================
    ADAPTACIÓN PARA MÓVILES + ARREGLO TEXTOS LARGOS
