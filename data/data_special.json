@@ -1,13 +1,13 @@
 [
   {
-    "title": "Hilti Grand Annual Dinner",
-    "icon": "🥂",
+    "title": "Lömarave 2025 - Ticket online (info)",
+    "icon": "😎",
     "colour": "red",
-    "date": "2026-11-15",
-    "time": "19:00",
-    "location": "Central Auditorium",
-    "description": "Don't miss our biggest event of the year!",
-    "price": 0,
-    "google_maps": "https://maps.app.goo.gl/..."
+    "date": "2026-07-12",
+    "time": "14:00",
+    "location": "Vaduz",
+    "description": "Get your ticket in www.eventfrog.ch",
+    "price": 30,
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Lömarave+Vaduz"
   }
 ]
