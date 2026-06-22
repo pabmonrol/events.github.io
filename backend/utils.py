@@ -1,6 +1,6 @@
 from urllib import parse
 from typing import NamedTuple, List
-from datetime import datetime, date, time
+from datetime import datetime, date, time, timedelta
 import json
 
 def location_url(location: str) -> str:
@@ -25,21 +25,9 @@ def events_to_json(events_list: List[NamedTuple]) -> str:
     
     return json.dumps(lista_diccionarios, default=json_serial, indent=4, ensure_ascii=False)
 
-
-def filter_next_7_days(events_list: List[NamedTuple]) -> List[NamedTuple]:
-    """
-    Filtra eventos para los próximos 7 días sin contar el día actual.
-    
-    Args:
-        events_list: Lista de eventos (NamedTuple con campo 'date')
-    
-    Returns:
-        Lista de eventos filtrados en rango de fechas válidas
-    """
-    from datetime import timedelta
-    
+def filter_next_7_days(events_list: List[NamedTuple]) -> List[NamedTuple]:    
     hoy = date.today()
-    fecha_inicio = hoy - timedelta(days=1)
+    fecha_inicio = hoy 
     fecha_fin = hoy + timedelta(days=6)   
     
     eventos_filtrados = [
@@ -48,3 +36,15 @@ def filter_next_7_days(events_list: List[NamedTuple]) -> List[NamedTuple]:
     ]
     
     return eventos_filtrados
+
+def verificar_fecha_limite(lista_tuplas: List[NamedTuple]) -> bool:
+    if not lista_tuplas:
+        return False
+    
+    fecha_limite = date.today() + timedelta(days=6)
+    fecha_ultimo_elemento = lista_tuplas[-1].date
+    
+    if fecha_ultimo_elemento >= fecha_limite:
+        return True
+    
+    return False
