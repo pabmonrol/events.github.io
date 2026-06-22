@@ -103,8 +103,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 }
 
 .event-content { flex-grow: 1; padding-right: 12px; }
-.event-title { font-weight: 600; color: #1a1a1a; margin: 0 0 2px; font-size: 14px; }
-.event-desc { color: #666666; font-size: 12px; margin: 0 0 6px; line-height: 1.4; }
+.event-title { font-weight: 600; color: #464646; margin: 0 0 2px; font-size: 14px; }
+.event-desc { color: #a6a4a4; font-size: 12px; margin: 0 0 6px; line-height: 1.4; }
 .event-price { font-weight: 600; font-size: 13px; }
 
 /* GRUPO DE BOTONES DE ACCIÓN */
@@ -255,6 +255,25 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 .theme-grey .cal-btn { background-color: #455A64; color: #ffffff; }
 .theme-grey .event-detail-inner { border-left-color: #B0BEC5; background-color: #F7F9FA; }
 
+/* ⭐ EVENTOS ESPECIALES (.theme-special) */
+.theme-special.event-row { 
+    border-left: 4px solid #D4AF37;
+    background-color: #FFFDF3;
+}
+.theme-special .event-icon { 
+    background-color: #FFF9DB; 
+}
+.theme-special .event-title { 
+    color: #8A6D00; 
+}
+.theme-special .cal-btn { 
+    background-color: #D4AF37;
+    color: #ffffff; 
+}
+.theme-special .event-detail-inner { 
+    border-left-color: #FFE066; 
+    background-color: #FFFDF5; 
+}
 
 /* =========================================
    ADAPTACIÓN PARA MÓVILES + ARREGLO TEXTOS LARGOS
