@@ -7,18 +7,17 @@ from backend.classifier import event_classification
 import dateparser
 from backend.model import Event
 from datetime import datetime, time
-from backend.utils import location_url
+from backend.utils import location_url, verificar_fecha_limite
 
-INFO = {"hour":'Zeit', "location":'Wo'}
 
-city, url = "Mauren", "https://www.mauren.li/agenda"
+city, url = "Mauren", "https://www.mauren.li"
 
-web = requests.get(url).text
+web = requests.get(url + "/agenda").text
 
-sopa = BeautifulSoup(web, 'html.parser')
+soup = BeautifulSoup(web, 'html.parser')
 
-links_events = sopa.find_all(class_='agenda__itemlink')
-events = ["https://www.mauren.li"+link.get('href') for link in links_events]
+links_events = soup.find_all(class_='agenda__itemlink')
+events = [url + link.get('href') for link in links_events]
 avoid_categories = {"Government", "Religion"}
 translator = GoogleTranslator(source='de', target='en')
 
@@ -49,16 +48,21 @@ def _find_value(sopa_, tag: str) -> Optional[str]:
         text = item.find('span', class_="sidelist__text").text
         if text:
             return text
+        
+def _next_content(soup_page) -> Optional[str]:
+    next_links_events = soup_page.find(class_='agenda__itemlink')
+    if next_links_events:
+        ul_element = next_links_events.find('ul', class_='insidenav__list')
+        if ul_element:
+            lis = ul_element.find_all('li')
+            if len(lis) > 1:
+                return lis[1].get('href')
+    return None
 
-def scraper_mauren(avoid_categories: Set[str], translator) -> List[NamedTuple]:
+def _get_list_events(events_cont, hour: time, location: str, google_maps: str, price: float):
     res = []
 
-    hour = None
-    location = city
-    google_maps = None
-    price = None
-
-    for event in events:
+    for event in events_cont:
         description = None
 
         html_evento = requests.get(event).text
@@ -94,5 +98,37 @@ def scraper_mauren(avoid_categories: Set[str], translator) -> List[NamedTuple]:
                                 ))
         else:
             continue
-
     return res
+
+def scraper_mauren() -> List[NamedTuple]:
+    final_list = []
+    hour = None
+    location = city
+    google_maps = None
+    price = None
+    event_cont = events
+
+    final_list.extend(_get_list_events(events_cont=event_cont, hour=hour, location=location, google_maps=google_maps, price=price))
+
+    current_soup = soup 
+
+    while verificar_fecha_limite(final_list):
+        next_event_path = _next_content(current_soup)
+        if not next_event_path:
+            break
+
+        next_event_url = url + next_event_path
+        
+        web_siguiente = requests.get(next_event_url).text
+        current_soup = BeautifulSoup(web_siguiente, 'html.parser')
+        
+        links_nuevos = current_soup.find_all(class_='agenda__itemlink')
+        event_cont_nuevo = [url + link.get('href') for link in links_nuevos]
+        
+        nuevos_eventos = _get_list_events(events_cont=event_cont_nuevo, hour=hour, location=location, google_maps=google_maps, price=price)
+        if not nuevos_eventos:
+            break
+
+        final_list.extend(nuevos_eventos)
+
+    return final_list
