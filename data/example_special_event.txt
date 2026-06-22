@@ -1,0 +1,13 @@
+[
+  {
+    "title": "Hilti Grand Annual Dinner",
+    "icon": "🥂",
+    "colour": "red",
+    "date": "2026-11-15",
+    "time": "19:00",
+    "location": "Central Auditorium",
+    "description": "Don't miss our biggest event of the year!",
+    "price": 0,
+    "google_maps": "https://maps.app.goo.gl/..."
+  }
+]
