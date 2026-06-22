@@ -16,17 +16,31 @@
         
         <div class="filters-container">
             <button class="filter-btn active" data-filter="all">Todos</button>
-            <button class="filter-btn" data-filter="deportes">⚽ Deportes</button>
-            <button class="filter-btn" data-filter="musica">🎵 Música/Fiesta</button>
+            <button class="filter-btn" data-filter="Sport">⚽ Deportes</button>
+            <button class="filter-btn" data-filter="Music">🎵 Música</button>
+            <button class="filter-btn" data-filter="Culture">🧩 Cultura</button>
+            <button class="filter-btn" data-filter="Leisure">🪇 Ocio/Seniors</button>
+            <button class="filter-btn" data-filter="Nature">🌱 Naturaleza</button>
         </div>
         
         <div id="agenda-container" style="padding: 10px 24px 0 24px;">
-        </div>
 
-        <div style="padding: 16px 24px; border-top: 1px solid #e1e4e8; text-align: center; background-color: #fafbfc;">
+            </div><div style="padding: 16px 24px; border-top: 1px solid #e1e4e8; text-align: center; background-color: #fafbfc;">
             <p style="font-size: 12px; color: #666666; margin: 0;">Enviado con cariño al grupo · <a href="#" style="color: #666666; text-decoration: underline;">Darse de baja</a></p>
         </div>
     </div>
+
+    <script>
+        function toggleDetail(btn) {
+            const row = btn.closest('.event-row');
+            const panel = row.querySelector('.event-detail-panel');
+            const isOpen = panel.classList.contains('open');
+
+            panel.classList.toggle('open', !isOpen);
+            btn.classList.toggle('expanded', !isOpen);
+            btn.querySelector('.info-arrow').textContent = isOpen ? '▾' : '▴';
+        }
+    </script>
 
     <script src="app.js"></script>
 </body>

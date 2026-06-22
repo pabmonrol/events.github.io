@@ -74,13 +74,21 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
     display: flex; align-items: center; justify-content: center;
     border-radius: 6px; margin-right: 12px; font-size: 16px;
 }
+
+/* =========================================
+   FILA DE EVENTO — Layout principal
+   ========================================= */
 .event-row { 
     padding: 16px; 
-    border-bottom: 1px solid #e8edf2; 
-    display: flex;
-    align-items: center;
+    border-bottom: 1px solid #e8edf2;
 }
 .event-row:last-child { border-bottom: none; }
+
+/* Fila superior: badge + contenido + acciones */
+.event-row-main {
+    display: flex;
+    align-items: flex-start;
+}
 
 .date-badge { 
     border-radius: 6px; 
@@ -93,18 +101,86 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 .date-badge .day { font-size: 18px; font-weight: bold; display: block; line-height: 1; }
 .date-badge .month { font-size: 10px; font-weight: 600; text-transform: uppercase; display: block; margin-top: 2px; }
 
-.event-content { flex-grow: 1; padding-right: 16px; }
+.event-content { flex-grow: 1; padding-right: 12px; }
 .event-title { font-weight: 600; color: #1a1a1a; margin: 0 0 2px; font-size: 14px; }
 .event-desc { color: #666666; font-size: 12px; margin: 0 0 6px; line-height: 1.4; }
 .event-price { font-weight: 600; font-size: 13px; }
 
-.cal-btn { 
+/* =========================================
+   GRUPO DE BOTONES DE ACCIÓN
+   ========================================= */
+.event-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+    align-items: flex-end;
+}
+
+.cal-btn, .loc-btn, .info-btn {
     font-size: 11px; 
     font-weight: 600; 
-    padding: 8px 14px; 
+    padding: 7px 12px; 
     border-radius: 6px; 
-    text-decoration: none; 
-    flex-shrink: 0;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    line-height: 1;
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+.cal-btn:hover, .loc-btn:hover, .info-btn:hover { opacity: 0.85; }
+
+.loc-btn {
+    background-color: #f0f4f8;
+    color: #444;
+    border: 1px solid #d8dde3;
+}
+.loc-btn:hover { background-color: #e1e8ef; opacity: 1; }
+
+/* Botón info (desplegable) */
+.info-btn {
+    background-color: transparent;
+    color: #888;
+    border: 1px solid #e1e4e8;
+    font-size: 11px;
+    padding: 6px 10px;
+}
+.info-btn:hover { background-color: #f4f6f8; opacity: 1; }
+.info-btn .info-arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+    font-style: normal;
+}
+.info-btn.expanded .info-arrow {
+    transform: rotate(180deg);
+}
+
+/* =========================================
+   PANEL DESPLEGABLE DE DESCRIPCIÓN
+   ========================================= */
+.event-detail-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.25s ease;
+    opacity: 0;
+}
+.event-detail-panel.open {
+    max-height: 300px;
+    opacity: 1;
+}
+.event-detail-inner {
+    margin-top: 12px;
+    padding: 12px 14px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #d0d9e3;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
 }
 
 /* =========================================
@@ -118,6 +194,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 .theme-blue .month { color: #378ADD; }
 .theme-blue .event-price { color: #3B6D11; }
 .theme-blue .cal-btn { background-color: #185FA5; color: #ffffff; }
+.theme-blue .event-detail-inner { border-left-color: #B5D4F4; background-color: #f0f6fc; }
 
 /* TEMA VERDE */
 .theme-green .venue-header { color: #0F6E56; }
@@ -127,12 +204,77 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 .theme-green .month { color: #0F6E56; }
 .theme-green .event-price { color: #3B6D11; }
 .theme-green .cal-btn { background-color: #0F6E56; color: #ffffff; }
+.theme-green .event-detail-inner { border-left-color: #9FE1CB; background-color: #f0faf6; }
+
+/* TEMA ROSA */
+.theme-pink .venue-header { color: #A51D24; }
+.theme-pink .icon-box { background-color: #FCE8E6; color: #A51D24; }
+.theme-pink .date-badge { background-color: #FCE8E6; }
+.theme-pink .day { color: #A51D24; }
+.theme-pink .month { color: #A51D24; }
+.theme-pink .event-price { color: #3B6D11; }
+.theme-pink .cal-btn { background-color: #D9381E; color: #ffffff; }
+.theme-pink .event-detail-inner { border-left-color: #F3B0A4; background-color: #FFF5F4; }
+
+/* TEMA PÚRPURA */
+.theme-purple .venue-header { color: #6200EE; }
+.theme-purple .icon-box { background-color: #F3E8FD; color: #6200EE; }
+.theme-purple .date-badge { background-color: #F3E8FD; }
+.theme-purple .day { color: #6200EE; }
+.theme-purple .month { color: #6200EE; }
+.theme-purple .event-price { color: #3B6D11; }
+.theme-purple .cal-btn { background-color: #6200EE; color: #ffffff; }
+.theme-purple .event-detail-inner { border-left-color: #C397F8; background-color: #F9F5FE; }
+
+/* TEMA ROJO */
+.theme-red .venue-header { color: #C81E1E; }
+.theme-red .icon-box { background-color: #FDE8E8; color: #C81E1E; }
+.theme-red .date-badge { background-color: #FDE8E8; }
+.theme-red .day { color: #C81E1E; }
+.theme-red .month { color: #C81E1E; }
+.theme-red .event-price { color: #3B6D11; }
+.theme-red .cal-btn { background-color: #C81E1E; color: #ffffff; }
+.theme-red .event-detail-inner { border-left-color: #F8B4B4; background-color: #FDF2F2; }
+
+/* TEMA AZUL */
+.theme-blue .venue-header { color: #185FA5; }
+.theme-blue .icon-box { background-color: #E6F1FB; color: #185FA5; }
+.theme-blue .date-badge { background-color: #E6F1FB; }
+.theme-blue .day { color: #185FA5; }
+.theme-blue .month { color: #378ADD; }
+.theme-blue .event-price { color: #3B6D11; }
+.theme-blue .cal-btn { background-color: #185FA5; color: #ffffff; }
+.theme-blue .event-detail-inner { border-left-color: #B5D4F4; background-color: #f0f6fc; }
+
+/* TEMA GRIS */
+.theme-grey .venue-header { color: #4B5563; }
+.theme-grey .icon-box { background-color: #F3F4F6; color: #4B5563; }
+.theme-grey .date-badge { background-color: #F3F4F6; }
+.theme-grey .day { color: #4B5563; }
+.theme-grey .month { color: #6B7280; }
+.theme-grey .event-price { color: #3B6D11; }
+.theme-grey .cal-btn { background-color: #4B5563; color: #ffffff; }
+.theme-grey .event-detail-inner { border-left-color: #D1D5DB; background-color: #F9FAFB; }
 
 /* =========================================
    ADAPTACIÓN PARA MÓVILES
    ========================================= */
 @media (max-width: 480px) {
-    .event-row { flex-wrap: wrap; }
+    .event-row-main { flex-wrap: wrap; }
     .event-content { width: calc(100% - 68px); padding-right: 0; }
-    .cal-btn { margin-top: 16px; width: 100%; text-align: center; padding: 10px 12px; }
+    .event-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 12px;
+        padding-left: 68px; /* alinear con el contenido, no el badge */
+        gap: 6px;
+    }
+    .cal-btn, .loc-btn, .info-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 9px 10px;
+        font-size: 11px;
+    }
 }
