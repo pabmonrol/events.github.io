@@ -57,14 +57,15 @@ function parseEventDate(dateString, timeString) {
 }
 
 // 🧩 FUNCIÓN MOLDE PARA DIBUJAR CADA EVENTO SIN REPETIR CÓDIGO
-function generateEventRowHTML(eventItem) {
+function generateEventRowHTML(eventItem, isSpecial = false) {
     const priceLabel = (eventItem.price === null || eventItem.price === 0) ? "Free admission" : `CHF ${eventItem.price}.-`;
     const colorThemeClass = eventItem.colour || 'blue';
     const cleanDateString = eventItem.date ? eventItem.date.replace(/-/g, '') : '';
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventItem.title)}&dates=${cleanDateString}T000000Z/${cleanDateString}T235959Z&details=${encodeURIComponent(eventItem.description || '')}&location=${encodeURIComponent(eventItem.location || '')}`;
+    const specialClass = isSpecial ? 'special-event' : '';
 
     return `
-        <div class="event-row theme-${colorThemeClass}">
+        <div class="event-row theme-${colorThemeClass} ${specialClass}">
             <div class="event-row-main">
                 <div class="event-content">
                     <p class="event-title"><span class="event-icon">${eventItem.icon || '📍'}</span> ${eventItem.title}</p>
@@ -97,7 +98,8 @@ function renderEvents(selectedFilter) {
 
     // Filtrar ambos arrays
     let filteredEvents = allEventsData.filter(ev => selectedFilter === 'all' || (ev.category && ev.category.toLowerCase() === selectedFilter.toLowerCase()));
-    let filteredSpecial = specialEventsData.filter(ev => selectedFilter === 'all' || (ev.category && ev.category.toLowerCase() === selectedFilter.toLowerCase()));
+    // Los eventos especiales solo aparecen en "All"
+    let filteredSpecial = selectedFilter === 'all' ? specialEventsData : [];
 
     if (filteredEvents.length === 0 && filteredSpecial.length === 0) {
         container.innerHTML = `<p style="text-align:center; padding: 40px; color: #666; font-size: 14px;">No events available in this category.</p>`;
@@ -123,10 +125,10 @@ function renderEvents(selectedFilter) {
         filteredSpecial.forEach(ev => {
             // Como los especiales no tienen cabecera de "día", añadimos el mes y día a su hora (Ej: Oct 25 · 20:00h)
             const d = parseEventDate(ev.date, ev.time);
-            const timeStr = ev.time ? `${ev.time}h` : "All day";
+            const timeStr = ev.time ? `${ev.time}h` : "Time unconfirmed";
             ev.displayTime = isNaN(d.getTime()) ? timeStr : `${months[d.getMonth()]} ${d.getDate()} · ${timeStr}`;
             
-            specialHtml += generateEventRowHTML(ev);
+            specialHtml += generateEventRowHTML(ev, true);
         });
         
         specialHtml += `</div>`;
@@ -150,7 +152,7 @@ function renderEvents(selectedFilter) {
 
             if (!groupedEvents[groupingKey]) groupedEvents[groupingKey] = [];
             
-            ev.displayTime = ev.time ? `${ev.time}h` : "All day"; // Los normales solo muestran la hora
+            ev.displayTime = ev.time ? `${ev.time}h` : "Time unconfirmed"; // Los normales solo muestran la hora
             groupedEvents[groupingKey].push(ev);
         });
 
