@@ -18,18 +18,18 @@ def run_all_scrapers():
 
     if eventos_totales:
         json_resultado = events_to_json(eventos_totales)
-        ruta_data = Path("data.json")
+        ruta_data = Path("data/data.json")
         
         if ruta_data.exists():
-            with open("data.json", "r", encoding="utf-8") as f_actual:
+            with open("data/data.json", "r", encoding="utf-8") as f_actual:
                 contenido_actual = f_actual.read()
                 
-            with open("old_data.json", "w", encoding="utf-8") as f_viejo:
+            with open("data/old_data.json", "w", encoding="utf-8") as f_viejo:
                 f_viejo.write(contenido_actual)
                 
         ruta_data.unlink(missing_ok=True)
         
-        with open("data.json", "w", encoding="utf-8") as f:
+        with open("data/data.json", "w", encoding="utf-8") as f:
             f.write(json_resultado)
 
 

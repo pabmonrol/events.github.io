@@ -4,13 +4,13 @@ let specialEventsData = [];
 async function loadAgenda() {
     try {
         // 1. Cargar la agenda normal
-        const response = await fetch('data.json');
-        if (!response.ok) throw new Error(`Could not retrieve data.json file`);
+        const response = await fetch('data/data.json');
+        if (!response.ok) throw new Error(`Could not retrieve data/data.json file`);
         allEventsData = await response.json();
         
         // 2. Cargar la agenda de eventos especiales (Silencioso si el archivo no existe)
         try {
-            const specialResponse = await fetch('data_special.json');
+            const specialResponse = await fetch('data/data_special.json');
             if (specialResponse.ok) {
                 specialEventsData = await specialResponse.json();
             }
