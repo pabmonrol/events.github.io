@@ -123,14 +123,17 @@ function renderEvents(selectedFilter) {
         `;
         
         filteredSpecial.forEach(ev => {
-            // Como los especiales no tienen cabecera de "día", añadimos el mes y día a su hora (Ej: Oct 25 · 20:00h)
+            // Como los especiales no tienen cabecera de "día", añadimos el mes y día a su hora
             const d = parseEventDate(ev.date, ev.time);
+            
+            // 👇 AQUÍ ENTRA EL NUEVO CÓDIGO PARA LIMPIAR LOS SEGUNDOS
             let cleanTime = null;
             if (ev.time) {
                 cleanTime = ev.time.substring(0, 5); // Transforma "18:00:00" en "18:00"
             }
             const timeStr = cleanTime ? `${cleanTime}h` : "Time unconfirmed";
-            const timeStr = ev.time ? `${ev.time}h` : "Time unconfirmed";
+            // 👆 FIN DEL NUEVO CÓDIGO
+            
             ev.displayTime = isNaN(d.getTime()) ? timeStr : `${months[d.getMonth()]} ${d.getDate()} · ${timeStr}`;
             
             specialHtml += generateEventRowHTML(ev, true);
