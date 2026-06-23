@@ -125,6 +125,11 @@ function renderEvents(selectedFilter) {
         filteredSpecial.forEach(ev => {
             // Como los especiales no tienen cabecera de "día", añadimos el mes y día a su hora (Ej: Oct 25 · 20:00h)
             const d = parseEventDate(ev.date, ev.time);
+            let cleanTime = null;
+            if (ev.time) {
+                cleanTime = ev.time.substring(0, 5); // Transforma "18:00:00" en "18:00"
+            }
+            const timeStr = cleanTime ? `${cleanTime}h` : "Time unconfirmed";
             const timeStr = ev.time ? `${ev.time}h` : "Time unconfirmed";
             ev.displayTime = isNaN(d.getTime()) ? timeStr : `${months[d.getMonth()]} ${d.getDate()} · ${timeStr}`;
             
@@ -169,6 +174,12 @@ function renderEvents(selectedFilter) {
         const groupingKey = weekdayName ? `${weekdayName}, ${monthName} ${dayNumber}` : "Date to be determined";
 
         if (!groupedEvents[groupingKey]) groupedEvents[groupingKey] = [];
+
+        let cleanTime = null;
+        if (ev.time) {
+            cleanTime = ev.time.substring(0, 5); // Transforma "18:00:00" en "18:00"
+        }
+        ev.displayTime = cleanTime ? `${cleanTime}h` : "Time unconfirmed";
         
         ev.displayTime = ev.time ? `${ev.time}h` : "Time unconfirmed"; // Los normales solo muestran la hora
         groupedEvents[groupingKey].push(ev);
