@@ -17,18 +17,21 @@ avoid_categories = {"Government", "Religion"}
 translator = GoogleTranslator(source='de', target='en')
 events = soup.find_all(class_='infos')
 
-def _clean_detail(attributes: Tag, info: str) -> str:
+def _clean_detail(attributes: Tag, info: str) -> str | None:
     for b in attributes.find_all('b'):
-        texto_al_lado = b.find_next_sibling(string=True)
+        texto_al_lado = b.next_sibling
+
         if info in b.text and info == INFO.get("hour"):
             if texto_al_lado:
-                match = re.search(r'\d{2}\.\d{2}', texto_al_lado)
+                match = re.search(r'\d{1,2}\.\d{2}', texto_al_lado)
                 if match:
                     return match.group()
+                    
         elif info in b.text and info == INFO.get("location"):
-            return texto_al_lado
-        else:
-            break
+            return texto_al_lado.strip() if texto_al_lado else None
+            
+    # Si termina el bucle y no entró en ningún 'if', devuelve None
+    return None
 
 def scraper_ruggell() -> List[NamedTuple]:
     res = []
@@ -56,12 +59,12 @@ def scraper_ruggell() -> List[NamedTuple]:
                 location_text = _clean_detail(attributes, INFO.get("location"))
                 if hour_text:
                     hour = datetime.strptime(hour_text, "%H.%M").time()
-                    date_ = datetime.combine(date_, hour)
                 if location_text:
                     location = str(location_text).strip()
                     google_maps = location_url(location_text)
 
-            res.append(Event(title=title,
+            res.append(Event(comunity=city,
+                            title=title,
                             icon=icon,
                             colour=colour,
                             category=category,
