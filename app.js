@@ -174,14 +174,15 @@ function renderEvents(selectedFilter) {
         const groupingKey = weekdayName ? `${weekdayName}, ${monthName} ${dayNumber}` : "Date to be determined";
 
         if (!groupedEvents[groupingKey]) groupedEvents[groupingKey] = [];
-
+        
+        // 👇 AQUÍ ENTRA EL NUEVO CÓDIGO PARA LIMPIAR LOS SEGUNDOS
         let cleanTime = null;
         if (ev.time) {
             cleanTime = ev.time.substring(0, 5); // Transforma "18:00:00" en "18:00"
         }
-        ev.displayTime = cleanTime ? `${cleanTime}h` : "Time unconfirmed";
+        ev.displayTime = cleanTime ? `${cleanTime}h` : "Time unconfirmed"; 
+        // 👆 FIN DEL NUEVO CÓDIGO
         
-        ev.displayTime = ev.time ? `${ev.time}h` : "Time unconfirmed"; // Los normales solo muestran la hora
         groupedEvents[groupingKey].push(ev);
     });
 
