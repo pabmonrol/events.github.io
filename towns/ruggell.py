@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup, Tag
 import re
 from typing import NamedTuple, List, Set
+from deep_translator import GoogleTranslator
 from backend.classifier import event_classification
 import dateparser
 from backend.model import Event
@@ -12,6 +13,8 @@ INFO = {"hour":'Zeit', "location":'Wo'}
 city, url = "Ruggell", "https://www.ruggell.li/agenda"
 web = requests.get(url).text
 soup = BeautifulSoup(web, 'html.parser')
+avoid_categories = {"Government", "Religion"}
+translator = GoogleTranslator(source='de', target='en')
 events = soup.find_all(class_='infos')
 
 def _clean_detail(attributes: Tag, info: str) -> str:
@@ -27,7 +30,7 @@ def _clean_detail(attributes: Tag, info: str) -> str:
         else:
             break
 
-def scraper_ruggell(avoid_categories: Set[str], translator) -> List[NamedTuple]:
+def scraper_ruggell() -> List[NamedTuple]:
     res = []
 
     hour = None
