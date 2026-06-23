@@ -35,6 +35,25 @@ def _get_price(description: str)->float:
         price_str = price_str.replace(',', '.')
         return float(price_str)
     
+
+
+def _find_value(sopa_, tag: str) -> Optional[str]:
+    item = sopa_.find('li', class_="sidelist__item", attrs={"data-name":tag})
+    if item:
+        text = item.find('span', class_="sidelist__text").text
+        if text:
+            return text
+        
+def _next_content(soup_page) -> Optional[str]:
+    next_links_events = soup_page.find(class_='agenda__itemlink')
+    if next_links_events:
+        ul_element = next_links_events.find('ul', class_='insidenav__list')
+        if ul_element:
+            lis = ul_element.find_all('li')
+            if len(lis) > 1:
+                return lis[1].get('href')
+    return None
+
 def _get_hour(hour_text: str) -> time:
     patron = r'(\d{1,2})(?:[:.](\d{2}))?(?:[:.]\d{2})?\s*([ap]\.?m\.?|uhr|h(?:oras?)?)?'
     
@@ -62,26 +81,8 @@ def _get_hour(hour_text: str) -> time:
         
         # Validamos que la hora final sea coherente
         if 0 <= hour <= 23 and 0 <= minute <= 59:
-            print(time(hour, minute))
             return time(hour, minute)
             
-    return None
-
-def _find_value(sopa_, tag: str) -> Optional[str]:
-    item = sopa_.find('li', class_="sidelist__item", attrs={"data-name":tag})
-    if item:
-        text = item.find('span', class_="sidelist__text").text
-        if text:
-            return text
-        
-def _next_content(soup_page) -> Optional[str]:
-    next_links_events = soup_page.find(class_='agenda__itemlink')
-    if next_links_events:
-        ul_element = next_links_events.find('ul', class_='insidenav__list')
-        if ul_element:
-            lis = ul_element.find_all('li')
-            if len(lis) > 1:
-                return lis[1].get('href')
     return None
 
 def _get_list_events(events_cont, hour: time, location: str, google_maps: str, price: float):
@@ -110,7 +111,8 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
                 description = description_text
             price = _get_price(description)
         
-            res.append(Event(title=title,
+            res.append(Event(comunity=city,
+                                title=title,
                                 icon=icon,
                                 colour=colour,
                                 category=category,
