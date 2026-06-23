@@ -69,7 +69,7 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
             <div class="event-row-main">
                 <div class="event-content">
                     <p class="event-title"><span class="event-icon">${eventItem.icon || '📍'}</span> ${eventItem.title}</p>
-                    <p class="event-desc"><strong>${eventItem.displayTime}</strong> · ${eventItem.location || 'Location not specified'}</p>
+                    <p class="event-desc"><strong>${eventItem.displayTime}</strong> · ${eventItem.location ? `${eventItem.location}${eventItem.comunity && !eventItem.location.toLowerCase().includes(eventItem.comunity.toLowerCase()) ? `, ${eventItem.comunity}` : ''}` : (eventItem.comunity || 'Location not specified')}</p>
                     <span class="event-price">${priceLabel}</span>
                 </div>
                 <div class="event-actions">
