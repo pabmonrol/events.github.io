@@ -36,27 +36,33 @@ def _get_price(description: str)->float:
         return float(price_str)
     
 def _get_hour(hour_text: str) -> time:
-    patron = r'(\d{1,2})(?:[:.](\d{2}))?\s*(a\.?m\.?|p\.?m\.?)?'
+    patron = r'(\d{1,2})(?:[:.](\d{2}))?(?:[:.]\d{2})?\s*([ap]\.?m\.?|uhr|h(?:oras?)?)?'
     
     for match in re.finditer(patron, hour_text, re.IGNORECASE):
         hora_str = match.group(1)
         minuto_str = match.group(2)
-        am_pm_str = match.group(3)
+        indicador_str = match.group(3)
 
-        if not minuto_str and not am_pm_str:
+        # Filtro: Ahora también dejamos pasar si encuentra la palabra "Uhr" o "h"
+        if not minuto_str and not indicador_str:
             continue
 
         hour = int(hora_str)
         minute = int(minuto_str) if minuto_str else 0
         
-        if am_pm_str:
-            am_pm = am_pm_str.lower().replace('.', '')
-            if am_pm == 'pm' and hour < 12:
+        if indicador_str:
+            # Limpiamos el indicador
+            indicador = re.sub(r'[\s.]', '', indicador_str.lower())
+            
+            # Solo aplicamos la lógica de 12/24h si el indicador es am o pm
+            if indicador == 'pm' and hour < 12:
                 hour += 12
-            elif am_pm == 'am' and hour == 12:
+            elif indicador == 'am' and hour == 12:
                 hour = 0
         
+        # Validamos que la hora final sea coherente
         if 0 <= hour <= 23 and 0 <= minute <= 59:
+            print(time(hour, minute))
             return time(hour, minute)
             
     return None
