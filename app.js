@@ -190,7 +190,14 @@ function renderEvents(selectedFilter) {
     });
 
     // Renderizar todos los días, aunque estén vacíos
+    // Renderizar los días (Si el filtro no es 'all', omitimos los días vacíos)
     for (const [dayHeaderLabel, dailyEventsList] of Object.entries(groupedEvents)) {
+        
+        // 👇 NUEVA LÓGICA: Si no estamos en "all" y no hay eventos hoy, saltamos este bloque
+        if (selectedFilter.toLowerCase() !== 'all' && dailyEventsList.length === 0) {
+            continue; 
+        }
+
         let regularHtml = `
             <div class="venue-block">
                 <div class="venue-header" style="background-color: #24292f; color: #ffffff; border-bottom: none;">
@@ -200,6 +207,7 @@ function renderEvents(selectedFilter) {
         `;
         
         if (dailyEventsList.length === 0) {
+            // Este mensaje ahora solo aparecerá si el filtro es 'all'
             regularHtml += `<p style="padding: 16px; color: #666; font-size: 14px; text-align: center; margin: 0;">No events scheduled</p>`;
         } else {
             dailyEventsList.forEach(ev => {
