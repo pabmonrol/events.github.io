@@ -7,15 +7,12 @@ from backend.classifier import event_classification
 import dateparser
 from backend.model import Event
 from datetime import datetime
-from backend.utils import location_url
+from backend.utils import location_url, verificar_fecha_limite
 
 INFO = {"hour":'Zeit', "location":'Wo'}
-city, url = "Ruggell", "https://www.ruggell.li/agenda"
-web = requests.get(url).text
-soup = BeautifulSoup(web, 'html.parser')
+city = "Ruggell"
 avoid_categories = {"Government", "Religion"}
 translator = GoogleTranslator(source='de', target='en')
-events = soup.find_all(class_='infos')
 
 def _clean_detail(attributes: Tag, info: str) -> str | None:
     for b in attributes.find_all('b'):
@@ -33,8 +30,12 @@ def _clean_detail(attributes: Tag, info: str) -> str | None:
     # Si termina el bucle y no entró en ningún 'if', devuelve None
     return None
 
-def scraper_ruggell() -> List[NamedTuple]:
+def scraper_ruggell(url: str) -> List[NamedTuple]:
     res = []
+
+    web = requests.get(url).text
+    soup = BeautifulSoup(web, 'html.parser')
+    events = soup.find_all(class_='infos')
 
     hour = None
     location = city
@@ -78,4 +79,9 @@ def scraper_ruggell() -> List[NamedTuple]:
         else:
             continue
 
+    if not verificar_fecha_limite(res):
+        next_month_btn = soup.find('a', class_='arrow-right', id='content_aR').get('href')
+        next_url = f"https://www.ruggell.li{next_month_btn}"
+        res.extend(scraper_ruggell(next_url))
+    print(res)
     return res

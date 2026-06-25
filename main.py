@@ -5,13 +5,21 @@ from backend.utils import events_to_json, filter_next_7_days
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
-SCRAPERS = [scraper_ruggell, scraper_mauren]
+SCRAPERS = {scraper_ruggell: "https://www.ruggell.li/agenda",
+            scraper_mauren: "https://www.mauren.li"}
 
 def run_all_scrapers():
     eventos_totales = []
 
+    scrapers_funciones = list(SCRAPERS.keys())
+    scrapers_urls = list(SCRAPERS.values())
+
     with ThreadPoolExecutor(max_workers=len(SCRAPERS)) as executor:
-        resultados = executor.map(lambda scraper: filter_next_7_days(scraper()), SCRAPERS)
+        resultados = executor.map(
+            lambda fn, url: filter_next_7_days(fn(url)), 
+            scrapers_funciones, 
+            scrapers_urls
+        )
         for eventos in resultados:
             eventos_totales.extend(eventos)
 

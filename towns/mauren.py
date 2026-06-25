@@ -10,14 +10,7 @@ from datetime import datetime, time
 from backend.utils import location_url, verificar_fecha_limite
 
 
-city, url = "Mauren", "https://www.mauren.li"
-
-web = requests.get(url + "/agenda").text
-
-soup = BeautifulSoup(web, 'html.parser')
-
-links_events = soup.find_all(class_='agenda__itemlink')
-events = [url + link.get('href') for link in links_events]
+city = "Mauren"
 avoid_categories = {"Government", "Religion"}
 translator = GoogleTranslator(source='de', target='en')
 
@@ -127,12 +120,18 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
             continue
     return res
 
-def scraper_mauren() -> List[NamedTuple]:
+def scraper_mauren(url: str) -> List[NamedTuple]:
     final_list = []
     hour = None
     location = city
     google_maps = None
     price = None
+
+    web = requests.get(url + "/agenda").text
+    soup = BeautifulSoup(web, 'html.parser')
+    links_events = soup.find_all(class_='agenda__itemlink')
+    events = [url + link.get('href') for link in links_events]
+
     event_cont = events
 
     final_list.extend(_get_list_events(events_cont=event_cont, hour=hour, location=location, google_maps=google_maps, price=price))
