@@ -1,65 +1,58 @@
 [
     {
+        "comunity": "Ruggell",
         "title": "Brain fitness training",
         "icon": "⚽️",
         "colour": "red",
         "category": "Sport",
         "date": "2026-06-25",
-        "time": null,
+        "time": "13:50",
         "location": "Vereinshaus Ruggell, 1. Stock, barrierefreier Zugang",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=%C2%A0Vereinshaus+Ruggell%2C+1.+Stock%2C+barrierefreier+Zugang",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C+1.+Stock%2C+barrierefreier+Zugang",
         "description": "",
         "price": null
     },
     {
+        "comunity": "Ruggell",
         "title": "Music Association Frohsinn Square Concert",
         "icon": "🎵",
         "colour": "blue",
         "category": "Music",
         "date": "2026-06-26",
-        "time": null,
+        "time": "19:00",
         "location": "Begegnungsplatz Küefer-Martis-Huus",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=%C2%A0Begegnungsplatz+K%C3%BCefer-Martis-Huus",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Begegnungsplatz+K%C3%BCefer-Martis-Huus",
         "description": "",
         "price": null
     },
     {
+        "comunity": "Ruggell",
         "title": "Cozy knitting session in the Küefer-Martis-Huus",
         "icon": "🪇",
         "colour": "pink",
         "category": "Leisure",
         "date": "2026-06-26",
-        "time": null,
+        "time": "14:00",
         "location": "Küefer-Martis-Huus, Ruggell",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=%C2%A0K%C3%BCefer-Martis-Huus%2C+Ruggell",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=K%C3%BCefer-Martis-Huus%2C+Ruggell",
         "description": "",
         "price": null
     },
     {
+        "comunity": "Ruggell",
         "title": "Grill & Chill",
         "icon": "🪇",
         "colour": "pink",
         "category": "Leisure",
         "date": "2026-06-27",
-        "time": null,
+        "time": "16:00",
         "location": "Küefer-Martis-Huus",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=%C2%A0K%C3%BCefer-Martis-Huus",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=K%C3%BCefer-Martis-Huus",
         "description": "Only in good weather.",
         "price": null
     },
     {
-        "title": "Club Eleven",
-        "icon": "⚽️",
-        "colour": "red",
-        "category": "Sport",
-        "date": "2026-06-23",
-        "time": "18:00",
-        "location": "Gemeindesäge Schaanwald",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindes%C3%A4ge+Schaanwald",
-        "description": "Riet area of ​​tension – use of a unique landscape",
-        "price": null
-    },
-    {
+        "comunity": "Mauren",
         "title": "Invitation to lunch",
         "icon": "🪇",
         "colour": "pink",
@@ -72,6 +65,7 @@
         "price": 15.0
     },
     {
+        "comunity": "Mauren",
         "title": "Open singing",
         "icon": "🎵",
         "colour": "blue",
@@ -84,6 +78,7 @@
         "price": 10.0
     },
     {
+        "comunity": "Mauren",
         "title": "Square concert Konkordia Mauren music association and youth music",
         "icon": "🎵",
         "colour": "blue",
@@ -96,6 +91,7 @@
         "price": null
     },
     {
+        "comunity": "Mauren",
         "title": "Summer evening in the Weiherring",
         "icon": "🪇",
         "colour": "pink",
@@ -108,6 +104,7 @@
         "price": null
     },
     {
+        "comunity": "Mauren",
         "title": "Deck chair festival",
         "icon": "🎵",
         "colour": "blue",
@@ -120,6 +117,7 @@
         "price": null
     },
     {
+        "comunity": "Mauren",
         "title": "Patronal festival of St. Peter and Paul",
         "icon": "🎵",
         "colour": "blue",
