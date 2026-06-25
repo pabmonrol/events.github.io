@@ -58,7 +58,14 @@ function parseEventDate(dateString, timeString) {
 
 // 🧩 FUNCIÓN MOLDE PARA DIBUJAR CADA EVENTO SIN REPETIR CÓDIGO
 function generateEventRowHTML(eventItem, isSpecial = false) {
-    const priceLabel = (eventItem.price === null || eventItem.price === 0) ? "Free admission" : `CHF ${eventItem.price}.-`;
+    let priceLabel = "";
+    const isRuggell = (eventItem.comunity && eventItem.comunity.toLowerCase().includes('ruggell')) || 
+                    (eventItem.location && eventItem.location.toLowerCase().includes('ruggell'));
+    if (isRuggell) {
+        priceLabel = "Not specified";
+    } else {
+        priceLabel = (eventItem.price === null || eventItem.price === 0) ? "Free admission" : `CHF ${eventItem.price}.-`;
+    }
     const colorThemeClass = eventItem.colour || 'blue';
     const cleanDateString = eventItem.date ? eventItem.date.replace(/-/g, '') : '';
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventItem.title)}&dates=${cleanDateString}T000000Z/${cleanDateString}T235959Z&details=${encodeURIComponent(eventItem.description || '')}&location=${encodeURIComponent(eventItem.location || '')}`;
