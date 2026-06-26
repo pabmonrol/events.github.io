@@ -25,11 +25,12 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
     web = requests.get(url).text
     soup = BeautifulSoup(web, 'html.parser')
     events = soup.find_all(class_="mega-link-overlay")
+    unique_urls = set(event_.get('href') for event_ in events if event_.get('href'))
 
     today = date.today()
     final_date = today + timedelta(days=6)
 
-    for event in events:
+    for event in unique_urls:
         page = requests.get(str(event.get('href'))).text
         soup_page = BeautifulSoup(page, 'html.parser')
         date_text = soup_page.find(class_="sw-date")
