@@ -1,19 +1,6 @@
 [
     {
         "comunity": "Ruggell",
-        "title": "Brain fitness training",
-        "icon": "⚽️",
-        "colour": "red",
-        "category": "Sport",
-        "date": "2026-06-25",
-        "time": "13:50",
-        "location": "Vereinshaus Ruggell, 1. Stock, barrierefreier Zugang",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C+1.+Stock%2C+barrierefreier+Zugang",
-        "description": "",
-        "price": null
-    },
-    {
-        "comunity": "Ruggell",
         "title": "Music Association Frohsinn Square Concert",
         "icon": "🎵",
         "colour": "blue",
@@ -52,16 +39,16 @@
         "price": null
     },
     {
-        "comunity": "Mauren",
-        "title": "Square concert Konkordia Mauren music association and youth music",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-06-25",
-        "time": "19:00",
-        "location": "LAK Haus St. Peter und Paul",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=LAK+Haus+St.+Peter+und+Paul",
-        "description": "Food and drink are provided",
+        "comunity": "Ruggell",
+        "title": "Brain fitness training",
+        "icon": "⚽️",
+        "colour": "red",
+        "category": "Sport",
+        "date": "2026-07-02",
+        "time": "13:50",
+        "location": "Vereinshaus Ruggell, 1. Stock, barrierefreier Zugang",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C+1.+Stock%2C+barrierefreier+Zugang",
+        "description": "",
         "price": null
     },
     {
