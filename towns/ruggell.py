@@ -83,5 +83,4 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
         next_month_btn = soup.find('a', class_='arrow-right', id='content_aR').get('href')
         next_url = f"https://www.ruggell.li{next_month_btn}"
         res.extend(scraper_ruggell(next_url))
-    print(res)
     return res

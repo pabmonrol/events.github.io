@@ -6,28 +6,13 @@ from typing import NamedTuple, List, Set, Optional
 from backend.classifier import event_classification
 import dateparser
 from backend.model import Event
-from datetime import datetime, time
-from backend.utils import location_url, verificar_fecha_limite
+from datetime import time
+from backend.utils import location_url, verificar_fecha_limite, get_price
 
 
 city = "Mauren"
 avoid_categories = {"Government", "Religion"}
 translator = GoogleTranslator(source='de', target='en')
-
-def _get_price(description: str)->float:
-    if not description:
-        return None
-
-    text_lower = description.lower()
-
-    pattern = r'(?:chf\s*(\d+(?:[.,]\d+)?))|(\d+(?:[.,]\d+)?)(?:\.-)?\s*chf'
-    
-    match = re.search(pattern, text_lower)
-    if match:
-        price_str = match.group(1) or match.group(2)
-        price_str = price_str.replace(',', '.')
-        return float(price_str)
-    
 
 
 def _find_value(sopa_, tag: str) -> Optional[str]:
@@ -102,7 +87,7 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
             description_text = translator.translate(sopa_evento.find(class_="eventdetail__textbody mce").text)
             if description_text:
                 description = description_text
-            price = _get_price(description)
+            price = get_price(description)
         
             res.append(Event(comunity=city,
                                 title=title,

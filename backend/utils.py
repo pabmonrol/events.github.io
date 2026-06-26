@@ -1,7 +1,9 @@
 from urllib import parse
-from typing import NamedTuple, List
+from typing import NamedTuple, List, Tuple
 from datetime import datetime, date, time, timedelta
 import json
+import re
+from bs4 import Tag
 
 def location_url(location: str) -> str:
     base_url = "https://www.google.com/maps/search/?"
@@ -48,3 +50,33 @@ def verificar_fecha_limite(lista_tuplas: List[NamedTuple]) -> bool:
         return True
     
     return False
+
+def get_price(description: str)->float:
+    if not description:
+        return None
+
+    text_lower = description.lower()
+
+    pattern = r'(?:chf\s*(\d+(?:[.,]\d+)?))|(\d+(?:[.,]\d+)?)(?:\.-)?\s*chf'
+    
+    match = re.search(pattern, text_lower)
+    if match:
+        price_str = match.group(1) or match.group(2)
+        price_str = price_str.replace(',', '.')
+        return float(price_str)
+
+def get_hour(hour_text: str) -> time:
+    first_hour = hour_text[:4].replace("-", "")
+    return datetime.strptime(first_hour, "%H:%M").time()
+
+def check_location(location_text: Tag, city: str) -> Tuple[str]:
+    location = city
+    if location_text:
+        location = location_text.text
+        location = location.replace("\n", "").strip()
+        print(location)
+        google_maps = location_url(location + ", " + city)
+    else:
+        google_maps = location_url(city)
+        
+    return location, google_maps
