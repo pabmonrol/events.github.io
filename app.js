@@ -48,6 +48,7 @@ async function loadAgenda() {
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
+
 function parseEventDate(dateString, timeString) {
     if (!dateString) return new Date(0);
     const timePart = timeString || "00:00";
@@ -161,6 +162,15 @@ function renderEvents(selectedFilter) {
         date.setDate(today.getDate() + i);
         dateRange.push(date);
     }
+
+    // 🎯 FILTRO MÍNIMO: Elimina duplicados reales combinando título y fecha antes de ordenar
+    const vistos = new Set();
+    filteredEvents = filteredEvents.filter(ev => {
+        const idUnico = `${ev.title}-${ev.date}-${ev.comunity}`;
+        if (vistos.has(idUnico)) return false;
+        vistos.add(idUnico);
+        return true;
+    });
 
     filteredEvents.sort((a, b) => parseEventDate(a.date, a.time) - parseEventDate(b.date, b.time));
 
