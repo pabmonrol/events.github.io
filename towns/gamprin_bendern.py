@@ -31,7 +31,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
     final_date = today + timedelta(days=6)
 
     for event in unique_urls:
-        page = requests.get(str(event.get('href'))).text
+        page = requests.get(event).text
         soup_page = BeautifulSoup(page, 'html.parser')
         date_text = soup_page.find(class_="sw-date")
         title_text = soup_page.find(class_="sw-title")
@@ -47,10 +47,11 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
                 if hour_text:
                     hour = get_hour(hour_text.get_text(strip=True))
                 location, google_maps = check_location(soup_page.find(class_="event-location"), city)
-                description_text = soup.find(class_="sw-detail-item")
+                description_text = soup_page.find(class_="sw-description")
                 
                 if description_text:
                     description = translator.translate(description_text.text)
+                    print(description)
                     price = get_price(description)
 
                 res.append(Event(comunity=city,
