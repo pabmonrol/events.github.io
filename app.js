@@ -113,7 +113,7 @@ function renderEvents(selectedFilter) {
         container.innerHTML = `<p style="text-align:center; padding: 40px; color: #666; font-size: 14px;">No events available in this category.</p>`;
         return;
     }
-
+ 
     // ==========================================
     // ⭐ 1. RENDERIZAR EVENTOS ESPECIALES (TOP)
     // ==========================================
@@ -193,7 +193,7 @@ function renderEvents(selectedFilter) {
         
         const groupingKey = weekdayName ? `${weekdayName}, ${monthName} ${dayNumber}` : "Date to be determined";
 
-        if (!groupedEvents[groupingKey]) groupedEvents[groupingKey] = [];
+        if (!groupedEvents[groupingKey]) return;
         
         // 👇 AQUÍ ENTRA EL NUEVO CÓDIGO PARA LIMPIAR LOS SEGUNDOS
         let cleanTime = null;
