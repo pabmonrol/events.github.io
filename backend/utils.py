@@ -74,7 +74,6 @@ def check_location(location_text: Tag, city: str) -> Tuple[str]:
     if location_text:
         location = location_text.text
         location = location.replace("\n", "").strip()
-        print(location)
         google_maps = location_url(location + ", " + city)
     else:
         google_maps = location_url(city)
