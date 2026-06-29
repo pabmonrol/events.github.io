@@ -43,15 +43,14 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
             title = translator.translate(title_text.text)
             category, icon, colour = event_classification(title)
             if category not in avoid_categories:
-                hour_text = soup_page.find('div', class_="event-time")
-                if hour_text:
-                    hour = get_hour(hour_text.get_text(strip=True))
+                hour_ = soup_page.find('div', class_="event-time")
+                if hour_:
+                    hour = get_hour(hour_.get_text(strip=True))
                 location, google_maps = check_location(soup_page.find(class_="event-location"), city)
                 description_text = soup_page.find(class_="sw-description")
                 
                 if description_text:
                     description = translator.translate(description_text.text)
-                    print(description)
                     price = get_price(description)
 
                 res.append(Event(comunity=city,
