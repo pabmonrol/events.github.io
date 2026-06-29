@@ -61,7 +61,9 @@ function parseEventDate(dateString, timeString) {
 function generateEventRowHTML(eventItem, isSpecial = false) {
     let priceLabel = "";
     const isRuggell = (eventItem.comunity && eventItem.comunity.toLowerCase().includes('ruggell')) || 
-                    (eventItem.location && eventItem.location.toLowerCase().includes('ruggell'));
+                    (eventItem.location && eventItem.location.toLowerCase().includes('ruggell')) ||
+                    (eventItem.comunity && eventItem.comunity.toLowerCase().includes('schellenberg')) ||
+                    (eventItem.location && eventItem.location.toLowerCase().includes('schellenberg'));
     if (isRuggell) {
         priceLabel = "Not specified";
     } else {
