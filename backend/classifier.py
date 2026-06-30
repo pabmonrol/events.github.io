@@ -30,7 +30,8 @@ matcher.add("Religion", [
 ])
 matcher.add("Nature", [
     nlp("neophyte"), nlp("nature"), nlp("plants"), nlp("garden"), 
-    nlp("eco"), nlp("environment"), nlp("forest"), nlp("neophyte control")
+    nlp("eco"), nlp("environment"), nlp("forest"), nlp("neophyte control"),
+    nlp("clearance")
 ])
 matcher.add("Sport", [
     nlp("sport"), nlp("fitness"), nlp("training"), nlp("football"), 
