@@ -49,10 +49,9 @@ def scraper_eschen(url: str) -> List[NamedTuple]:
             category, icon, colour = event_classification(title)
             if category not in avoid_categories:
                 hour = event.find("b", text=re.compile("Uhrzeit:")).find_next("span").get_text(strip=True)
-                print(hour)
                 location_ = event.find("b", text=re.compile("Ort:")).find_next("span")
                 location, google_maps = check_location(location_, city)
-                print(location)
+                
                 res.append(Event(comunity=city,
                                         title=title,
                                         icon=icon,
