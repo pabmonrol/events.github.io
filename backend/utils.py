@@ -72,7 +72,7 @@ def get_hour(hour_text: str) -> time:
 def check_location(location_text: Tag, city: str) -> Tuple[str]:
     location = city
     if location_text:
-        location = location_text.text
+        location = location_text.get_text(strip=True)
         location = location.replace("\n", "").strip()
         google_maps = location_url(location + ", " + city)
     else:
