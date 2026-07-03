@@ -2,6 +2,7 @@ from towns.ruggell import scraper_ruggell
 from towns.mauren import scraper_mauren
 from towns.gamprin_bendern import scraper_gamprin_bendern
 from towns.schellenberg import scraper_schellenberg
+from towns.eschen import scraper_eschen
 from backend.utils import events_to_json, filter_next_7_days
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
@@ -9,7 +10,9 @@ from concurrent.futures import ThreadPoolExecutor
 SCRAPERS = {scraper_ruggell: "https://www.ruggell.li/agenda",
             scraper_mauren: "https://www.mauren.li",
             scraper_gamprin_bendern: "https://www.gamprin.li/leben-gemeinschaft/veranstaltungen",
-            scraper_schellenberg: "https://www.schellenberg.li/gemeinde/gesellschaft/veranstaltungen"}
+            scraper_schellenberg: "https://www.schellenberg.li/gemeinde/gesellschaft/veranstaltungen",
+            #scraper_eschen: "https://www.eschen.li/leben-soziales/agenda/"
+            }
 
 def run_all_scrapers():
     eventos_totales = []
