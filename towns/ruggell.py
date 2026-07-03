@@ -64,7 +64,7 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
                     location = str(location_text).strip()
                     google_maps = location_url(location_text)
 
-            res.append(Event(comunity=city,
+            res.append(Event(community=city,
                             title=title,
                             icon=icon,
                             colour=colour,

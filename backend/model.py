@@ -1,7 +1,7 @@
 from typing import NamedTuple
 from datetime import date, time
 
-Event = NamedTuple('Event', [('comunity', str),
+Event = NamedTuple('Event', [('community', str),
                             ('title', str),
                             ('icon', str),
                             ('colour', str),

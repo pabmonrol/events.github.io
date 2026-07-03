@@ -52,7 +52,7 @@ def scraper_eschen(url: str) -> List[NamedTuple]:
                 location_ = event.find("b", text=re.compile("Ort:")).find_next("span")
                 location, google_maps = check_location(location_, city)
                 
-                res.append(Event(comunity=city,
+                res.append(Event(community=city,
                                         title=title,
                                         icon=icon,
                                         colour=colour,

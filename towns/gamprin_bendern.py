@@ -53,7 +53,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
                     description = translator.translate(description_text.text)
                     price = get_price(description)
 
-                res.append(Event(comunity=city,
+                res.append(Event(community=city,
                                 title=title,
                                 icon=icon,
                                 colour=colour,

@@ -89,7 +89,7 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
                 description = description_text
             price = get_price(description)
         
-            res.append(Event(comunity=city,
+            res.append(Event(community=city,
                                 title=title,
                                 icon=icon,
                                 colour=colour,
