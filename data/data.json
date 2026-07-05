@@ -1,6 +1,6 @@
 [
     {
-        "comunity": "Ruggell",
+        "community": "Ruggell",
         "title": "Summer Camp Ruggell, Open Youth Work (OJA), Widau Amusement Park",
         "icon": "🪇",
         "colour": "pink",
@@ -13,7 +13,7 @@
         "price": null
     },
     {
-        "comunity": "Ruggell",
+        "community": "Ruggell",
         "title": "Lunch for seniors",
         "icon": "🪇",
         "colour": "pink",
@@ -26,7 +26,7 @@
         "price": null
     },
     {
-        "comunity": "Mauren",
+        "community": "Mauren",
         "title": "3 countries - panoramic tour with the MS Sonnenkönigin - FULLY BOOKED!",
         "icon": "🪇",
         "colour": "pink",
@@ -39,20 +39,20 @@
         "price": null
     },
     {
-        "comunity": "Gamprin/Bendern",
-        "title": "Lunch for seniors",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-07",
-        "time": "11:03",
-        "location": "Gemeindesaal",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal%2C+Gamprin%2FBendern",
-        "description": "The monthly lunch for seniors\n\r\nCost:\r\nCHF 15.- per person. Water and soft drinks are included.\n\nSpecifically:\r\nIf you have food intolerances or would like a vegetarian menu, please let us know when registering.\n\nRegister up to one week before the appointment. The cell phone for lunch is open on weekdays from 9 a.m. to 12 p.m. on +423 798 43 21. If a transportation service is required, please let us know when registering.",
-        "price": 15.0
+        "community": "Mauren",
+        "title": "Concert duo Zoran Dukic and Aniello Desiderio - ligita",
+        "icon": "🎵",
+        "colour": "blue",
+        "category": "Music",
+        "date": "2026-07-10",
+        "time": "20:00",
+        "location": "Pfarrkirche Mauren",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Pfarrkirche+Mauren",
+        "description": "From July 4th to 11th, a ligita concert, master classes and a guitar exhibition will take place as part of the 33rd Liechtenstein Guitar Days.\nOn Friday, July 10th, at 8 p.m., the duo Zoran Dukic and Aniello Desiderio will give a concert in the Mauren parish church.\nInformation about the entire program at www.ligita.li\nTickets in advance: post offices in Eschen, Schaan and Vaduz or at starticket.ch\nInformation about the entire program at www.ligita.li",
+        "price": null
     },
     {
-        "comunity": "Gamprin/Bendern",
+        "community": "Gamprin/Bendern",
         "title": "Excursion for seniors",
         "icon": "🪇",
         "colour": "pink",
@@ -65,25 +65,25 @@
         "price": null
     },
     {
-        "comunity": "Gamprin/Bendern",
-        "title": "Night clearing",
-        "icon": "🌱",
-        "colour": "green",
-        "category": "Nature",
-        "date": "2026-07-04",
-        "time": "07:30",
-        "location": "Alpe Rauz",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Alpe+Rauz%2C+Gamprin%2FBendern",
-        "description": "Together we make the Alps fit for summer: we collect stones and rubbish and mow weeds so that the cattle have well-tended pastures. Afterwards, a cozy end with fine food.\nDeparture (coach): 7:30 a.m. from the Gamprin clubhouse (with coffee stop)\r\nReturn journey:                  5:00 p.m. (arrival Gamprin approx. 6:00 p.m.)\r\nWhat to bring:               Good shoes and clothing, gloves\nJoin us and register by Thursday, July 2, 2026:\ninfo(at)gamprin.li or +423 375 91 00\nOnly takes place in dry weather. Information from 6:00 a.m. at:\r\nAlpmeister Georg Oehri (+41 78 604 86 25)\r\nHead Johannes Hasler (+423 375 91 02)",
+        "community": "Gamprin/Bendern",
+        "title": "Camp concert",
+        "icon": "🎵",
+        "colour": "blue",
+        "category": "Music",
+        "date": "2026-07-11",
+        "time": "13:05",
+        "location": "Gemeindehaus",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindehaus%2C+Gamprin%2FBendern",
+        "description": "This is organized by youth music.",
         "price": null
     },
     {
-        "comunity": "Gamprin/Bendern",
+        "community": "Gamprin/Bendern",
         "title": "Fitness/outdoor training",
         "icon": "⚽️",
         "colour": "red",
         "category": "Sport",
-        "date": "2026-07-04",
+        "date": "2026-07-11",
         "time": "09:00",
         "location": "Grossabünt",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
@@ -91,20 +91,7 @@
         "price": null
     },
     {
-        "comunity": "Gamprin/Bendern",
-        "title": "Queer picnic",
-        "icon": "🌱",
-        "colour": "green",
-        "category": "Nature",
-        "date": "2026-07-04",
-        "time": "12:00",
-        "location": "Grossabünt",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "Whether alone, with friends or family - everyone wants to come, celebrate diversity and experience community.\nFeel free to bring something to eat with you or pick up something tasty on site. Come by, bring your picnic blanket and let's spend a colorful summer day together!\nFurther information at www.flay.lgbt",
-        "price": null
-    },
-    {
-        "comunity": "Gamprin/Bendern",
+        "community": "Gamprin/Bendern",
         "title": "Ligita, Liechtenstein Guitar Days",
         "icon": "🎵",
         "colour": "blue",
@@ -117,33 +104,20 @@
         "price": null
     },
     {
-        "comunity": "Schellenberg",
-        "title": "Graduation service",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-07-03",
-        "time": "08:00",
-        "location": "Pfarrkirche",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Pfarrkirche%2C+Schellenberg",
-        "description": "",
-        "price": null
+        "community": "Gamprin/Bendern",
+        "title": "Lunch for seniors",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-07-07",
+        "time": "11:03",
+        "location": "Gemeindesaal",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal%2C+Gamprin%2FBendern",
+        "description": "The monthly lunch for seniors\n\r\nCost:\r\nCHF 15.- per person. Water and soft drinks are included.\n\nSpecifically:\r\nIf you have food intolerances or would like a vegetarian menu, please let us know when registering.\n\nRegister up to one week before the appointment. The cell phone for lunch is open on weekdays from 9 a.m. to 12 p.m. on +423 798 43 21. If a transportation service is required, please let us know when registering.",
+        "price": 15.0
     },
     {
-        "comunity": "Schellenberg",
-        "title": "End of school year celebration",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-07-03",
-        "time": "17:00",
-        "location": "Sport- und Freizeitanlage",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Sport-+und+Freizeitanlage%2C+Schellenberg",
-        "description": "",
-        "price": null
-    },
-    {
-        "comunity": "Schellenberg",
+        "community": "Schellenberg",
         "title": "Precious Blood Sunday followed by an aperitif",
         "icon": "🌱",
         "colour": "green",
@@ -156,7 +130,7 @@
         "price": null
     },
     {
-        "comunity": "Schellenberg",
+        "community": "Schellenberg",
         "title": "Family Sunday in the Biedermannhaus",
         "icon": "🎵",
         "colour": "blue",
@@ -169,7 +143,7 @@
         "price": null
     },
     {
-        "comunity": "Schellenberg",
+        "community": "Schellenberg",
         "title": "Rural living museum",
         "icon": "🧩",
         "colour": "purple",
@@ -182,7 +156,7 @@
         "price": null
     },
     {
-        "comunity": "Schellenberg",
+        "community": "Schellenberg",
         "title": "Alpe Dürrwald trade fair",
         "icon": "🌱",
         "colour": "green",
@@ -195,7 +169,7 @@
         "price": null
     },
     {
-        "comunity": "Schellenberg",
+        "community": "Schellenberg",
         "title": "Lunch for seniors",
         "icon": "🪇",
         "colour": "pink",
