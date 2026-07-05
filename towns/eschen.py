@@ -27,8 +27,6 @@ def scraper_eschen(url: str) -> List[NamedTuple]:
     links = soup.find_all(class_="link--underline clickable-parent")
 
     for link in links:
-        res = []
-
         page = requests.get(link.get('href')).text
         event = BeautifulSoup(page, 'html.parser')
 
@@ -43,7 +41,6 @@ def scraper_eschen(url: str) -> List[NamedTuple]:
         
         date_match = re.findall(r"\d{1,2}\.\d{2}\.\d{4}", date_page.text)
         date_ = dateparser.parse(date_match[0], settings={'DATE_ORDER': 'DMY'}).date()
-        #print(str(today) + "<" + str(date_) + "<" + str(final_date))
         if today <= date_ <= final_date:
             title = translator.translate(title.text)
             category, icon, colour = event_classification(title)
@@ -51,7 +48,6 @@ def scraper_eschen(url: str) -> List[NamedTuple]:
                 hour = event.find("b", text=re.compile("Uhrzeit:")).find_next("span").get_text(strip=True)
                 location_ = event.find("b", text=re.compile("Ort:")).find_next("span")
                 location, google_maps = check_location(location_, city)
-                
                 res.append(Event(community=city,
                                         title=title,
                                         icon=icon,
@@ -66,5 +62,4 @@ def scraper_eschen(url: str) -> List[NamedTuple]:
                                         ))
         else:
             continue
-    print(res)
     return res
