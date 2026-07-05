@@ -26,7 +26,7 @@ matcher.add("Leisure", [
 matcher.add("Religion", [
     nlp("pilgrimage"), nlp("church"), nlp("holiday"), nlp("confirmation"), 
     nlp("corpus christi"), nlp("parish"), nlp("mass"), nlp("religious"),
-    nlp("St."), nlp("saint"), nlp("virgen")
+    nlp("St."), nlp("saint"), nlp("virgen"), nlp("blood")
 ])
 matcher.add("Nature", [
     nlp("neophyte"), nlp("nature"), nlp("plants"), nlp("garden"), 
