@@ -123,7 +123,7 @@ def scraper_mauren(url: str) -> List[NamedTuple]:
 
     current_soup = soup 
 
-    while verificar_fecha_limite(final_list):
+    while not verificar_fecha_limite(final_list):
         next_event_path = _next_content(current_soup)
         if not next_event_path:
             break

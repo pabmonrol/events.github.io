@@ -44,12 +44,8 @@ def verificar_fecha_limite(lista_tuplas: List[NamedTuple]) -> bool:
         return False
     
     fecha_limite = date.today() + timedelta(days=6)
-    fecha_ultimo_elemento = lista_tuplas[-1].date
-    
-    if fecha_ultimo_elemento >= fecha_limite:
-        return True
-    
-    return False
+
+    return any(evento.date >= fecha_limite for evento in lista_tuplas)
 
 def get_price(description: str)->float:
     if not description:
@@ -66,7 +62,7 @@ def get_price(description: str)->float:
         return float(price_str)
 
 def get_hour(hour_text: str) -> time:
-    first_hour = hour_text[:4].replace("-", "")
+    first_hour = hour_text[:4].replace("-", "").replace(".", ":")
     return datetime.strptime(first_hour, "%H:%M").time()
 
 def check_location(location_text: Tag, city: str) -> Tuple[str]:
@@ -79,3 +75,9 @@ def check_location(location_text: Tag, city: str) -> Tuple[str]:
         google_maps = location_url(city)
         
     return location, google_maps
+
+def check_right_date(date_: date) -> bool:
+    today = date.today()
+    final_date = today + timedelta(days=6)
+    
+    return today <= date_ <= final_date
