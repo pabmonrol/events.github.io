@@ -1,31 +1,5 @@
 [
     {
-        "community": "Ruggell",
-        "title": "Lunch for seniors",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-07",
-        "time": "11:30",
-        "location": "Gemeindesaal Gamprin",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal+Gamprin",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Mauren",
-        "title": "3 countries - panoramic tour with the MS Sonnenkönigin - FULLY BOOKED!",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-07",
-        "time": "12:00",
-        "location": "Bregenz Bodensee",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Bregenz+Bodensee",
-        "description": "We look forward to the trip with you and the Queen of Lake Constance!\nThere are free places “as long as they last”.\nYour senior coordination",
-        "price": null
-    },
-    {
         "community": "Mauren",
         "title": "Concert duo Zoran Dukic and Aniello Desiderio - ligita",
         "icon": "🎵",
@@ -36,6 +10,19 @@
         "location": "Pfarrkirche Mauren",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Pfarrkirche+Mauren",
         "description": "From July 4th to 11th, a ligita concert, master classes and a guitar exhibition will take place as part of the 33rd Liechtenstein Guitar Days.\nOn Friday, July 10th, at 8 p.m., the duo Zoran Dukic and Aniello Desiderio will give a concert in the Mauren parish church.\nInformation about the entire program at www.ligita.li\nTickets in advance: post offices in Eschen, Schaan and Vaduz or at starticket.ch\nInformation about the entire program at www.ligita.li",
+        "price": null
+    },
+    {
+        "community": "Gamprin/Bendern",
+        "title": "Camp concert",
+        "icon": "🎵",
+        "colour": "blue",
+        "category": "Music",
+        "date": "2026-07-11",
+        "time": "17:00",
+        "location": "Gemeindehaus, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindehaus%2C+Gamprin%2FBendern",
+        "description": "This is organized by youth music.",
         "price": null
     },
     {
@@ -52,45 +39,6 @@
         "price": null
     },
     {
-        "community": "Gamprin/Bendern",
-        "title": "Camp concert",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-07-11",
-        "time": "09:00",
-        "location": "Gemeindehaus, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindehaus%2C+Gamprin%2FBendern",
-        "description": "This is organized by youth music.",
-        "price": null
-    },
-    {
-        "community": "Gamprin/Bendern",
-        "title": "Lunch for seniors",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-07",
-        "time": "11:03",
-        "location": "Gemeindesaal, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal%2C+Gamprin%2FBendern",
-        "description": "The monthly lunch for seniors\n\r\nCost:\r\nCHF 15.- per person. Water and soft drinks are included.\n\nSpecifically:\r\nIf you have food intolerances or would like a vegetarian menu, please let us know when registering.\n\nRegister up to one week before the appointment. The cell phone for lunch is open on weekdays from 9 a.m. to 12 p.m. on +423 798 43 21. If a transportation service is required, please let us know when registering.",
-        "price": 15.0
-    },
-    {
-        "community": "Schellenberg",
-        "title": "Lunch for seniors",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-07",
-        "time": "11:03",
-        "location": "Gemeindesaal Gamprin, Schellenberg",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal+Gamprin%2C+Schellenberg",
-        "description": "",
-        "price": null
-    },
-    {
         "community": "Eschen",
         "title": "Camp closing concert",
         "icon": "🎵",
@@ -100,19 +48,6 @@
         "time": "18.00",
         "location": "Nendeln, Sebastianstrasse 2, Begegnungszentrum Clunia, Eschen",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Nendeln%2C+Sebastianstrasse+2%2C+Begegnungszentrum+Clunia%2C+Eschen",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Schaan",
-        "title": "Yoga in the Mühleholz swimming pool",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-07",
-        "time": "20:00",
-        "location": "Schwimmbad Mühleholz, Schaan",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Schwimmbad+M%C3%BChleholz%2C+Schaan",
         "description": "",
         "price": null
     },
@@ -140,6 +75,19 @@
         "location": "Lindahof, Schaan",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Lindahof%2C+Schaan",
         "description": "",
+        "price": null
+    },
+    {
+        "community": "Vaduz",
+        "title": "Crawling mice",
+        "icon": "🌱",
+        "colour": "green",
+        "category": "Nature",
+        "date": "2026-07-14",
+        "time": "14:00",
+        "location": "Liechtensteinisches LandesMuseum (Lageplan)\nStädtle 43\n9490 Vaduz\nFürstentum Liechtenstein",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Liechtensteinisches+LandesMuseum+%28Lageplan%29%0ASt%C3%A4dtle+43%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein",
+        "description": "Parents with their small children are welcome in the Liechtenstein Castle Café in the Liechtenstein State Museum!\n\nEvery 2nd Tuesday of the month from 2:00 p.m. to 5:00 p.m. we invite you to the “Krabbel Mouses”! Parents with their small children are welcome in the Liechtenstein Castle Café in the Liechtenstein State Museum! The SchlossCafé is also accessible without museum admission.",
         "price": null
     }
 ]

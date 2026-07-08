@@ -1,19 +1,6 @@
 [
     {
         "community": "Ruggell",
-        "title": "Summer Camp Ruggell, Open Youth Work (OJA), Widau Amusement Park",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-06",
-        "time": "13:50",
-        "location": "Freizeitpark Widau",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Freizeitpark+Widau",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Ruggell",
         "title": "Lunch for seniors",
         "icon": "🪇",
         "colour": "pink",
@@ -53,12 +40,25 @@
     },
     {
         "community": "Gamprin/Bendern",
+        "title": "Fitness/outdoor training",
+        "icon": "⚽️",
+        "colour": "red",
+        "category": "Sport",
+        "date": "2026-07-11",
+        "time": "09:00",
+        "location": "Grossabünt, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
+        "description": "You will need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during your training.",
+        "price": null
+    },
+    {
+        "community": "Gamprin/Bendern",
         "title": "Camp concert",
         "icon": "🎵",
         "colour": "blue",
         "category": "Music",
         "date": "2026-07-11",
-        "time": null,
+        "time": "09:00",
         "location": "Gemeindehaus, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindehaus%2C+Gamprin%2FBendern",
         "description": "This is organized by youth music.",
@@ -76,19 +76,6 @@
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal%2C+Gamprin%2FBendern",
         "description": "The monthly lunch for seniors\n\r\nCost:\r\nCHF 15.- per person. Water and soft drinks are included.\n\nSpecifically:\r\nIf you have food intolerances or would like a vegetarian menu, please let us know when registering.\n\nRegister up to one week before the appointment. The cell phone for lunch is open on weekdays from 9 a.m. to 12 p.m. on +423 798 43 21. If a transportation service is required, please let us know when registering.",
         "price": 15.0
-    },
-    {
-        "community": "Gamprin/Bendern",
-        "title": "Fitness/outdoor training",
-        "icon": "⚽️",
-        "colour": "red",
-        "category": "Sport",
-        "date": "2026-07-11",
-        "time": "09:00",
-        "location": "Grossabünt, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "You will need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during your training.",
-        "price": null
     },
     {
         "community": "Schellenberg",
@@ -118,6 +105,32 @@
     },
     {
         "community": "Schaan",
+        "title": "Yoga in the Mühleholz swimming pool",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-07-07",
+        "time": "20:00",
+        "location": "Schwimmbad Mühleholz, Schaan",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Schwimmbad+M%C3%BChleholz%2C+Schaan",
+        "description": "",
+        "price": null
+    },
+    {
+        "community": "Schaan",
+        "title": "Live music in the Mühleholz swimming pool",
+        "icon": "🎵",
+        "colour": "blue",
+        "category": "Music",
+        "date": "2026-07-09",
+        "time": "17:03",
+        "location": "Schwimmbad Mühleholz, Schaan",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Schwimmbad+M%C3%BChleholz%2C+Schaan",
+        "description": "",
+        "price": null
+    },
+    {
+        "community": "Schaan",
         "title": "Schaan summer in the Lindahof",
         "icon": "🪇",
         "colour": "pink",
@@ -127,19 +140,6 @@
         "location": "Lindahof, Schaan",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Lindahof%2C+Schaan",
         "description": "",
-        "price": null
-    },
-    {
-        "community": "Vaduz",
-        "title": "Storytelling Café: Immerse yourself in memories",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-06",
-        "time": "14:00",
-        "location": "Vadozner Huus (Lageplan)\nStädtle 14\n9490 Vaduz\nFürstentum Liechtenstein",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vadozner+Huus+%28Lageplan%29%0ASt%C3%A4dtle+14%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein",
-        "description": "Tell, listen and pause\n\nIn the storytelling café we meet in a relaxed atmosphere and share personal experiences on a specific topic, which is selected and accompanied by a moderator. This time on the topic \"Ice cubes, lemon water and a summer dress: My most beautiful summer memories.\" We talk, listen and exchange ideas in an appreciative and respectful atmosphere. Nobody evaluates or judges. Everyone is allowed to contribute while the other participants listen.\n\nThe storytelling café takes place every two months on a Monday from 2 p.m. to 4 p.m. with coffee, tea and pastries.\n\nRegistrations at T +423 238 29 55 or eleonora.naegele(at)vaduz.li",
         "price": null
     }
 ]
