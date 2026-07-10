@@ -76,12 +76,10 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
                             price=price
                             )
             res.append(ev)
-        else:
-            continue
 
     if not verificar_fecha_limite(res):
         next_month_btn = soup.find('a', class_='arrow-right', id='content_aR').get('href')
         next_url = f"https://www.ruggell.li{next_month_btn}"
         res.extend(scraper_ruggell(next_url))
-    print(res)
+        
     return res
