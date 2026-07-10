@@ -63,8 +63,7 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
                 if location_text:
                     location = str(location_text).strip()
                     google_maps = location_url(location_text)
-
-            res.append(Event(community=city,
+            ev = Event(community=city,
                             title=title,
                             icon=icon,
                             colour=colour,
@@ -75,7 +74,8 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
                             google_maps=google_maps,
                             description=description,
                             price=price
-                            ))
+                            )
+            res.append(ev)
         else:
             continue
 
@@ -83,4 +83,5 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
         next_month_btn = soup.find('a', class_='arrow-right', id='content_aR').get('href')
         next_url = f"https://www.ruggell.li{next_month_btn}"
         res.extend(scraper_ruggell(next_url))
+    print(res)
     return res
