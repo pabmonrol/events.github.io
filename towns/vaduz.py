@@ -17,7 +17,6 @@ def _clean_vaduz_location(tags_desc: List[Tag]) -> Tuple[str]:
     strings = []
     for tag in tags_desc:
         line = tag.text.strip().replace("\t", "")
-        print(line)
         strings.append(line)
     location_string = "\n".join(strings)
 
