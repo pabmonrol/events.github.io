@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup, Tag
 import re
 import dateparser
-from backend.utils import check_right_date, get_hour, check_location, get_price, location_url
+from backend.utils import check_right_date, get_hour, get_price, location_url
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -18,7 +18,7 @@ def _clean_vaduz_location(tags_desc: List[Tag]) -> Tuple[str]:
     for tag in tags_desc:
         line = tag.text.strip().replace("\t", "")
         strings.append(line)
-    location_string = "\n".join(strings)
+    location_string = "\n".join(strings) + ", " + city
 
     return location_string, location_url(location_string)
         
