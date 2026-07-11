@@ -37,6 +37,22 @@ def load_json_list(path):
         return data if isinstance(data, list) else []
 
 
+def merge_unique_records(existing_records, new_records):
+    merged_records = list(existing_records)
+    seen_records = {
+        json.dumps(record, sort_keys=True, ensure_ascii=False)
+        for record in merged_records
+    }
+
+    for record in new_records:
+        record_signature = json.dumps(record, sort_keys=True, ensure_ascii=False)
+        if record_signature not in seen_records:
+            merged_records.append(record)
+            seen_records.add(record_signature)
+
+    return merged_records
+
+
 def archive_expired_special_events():
     ruta_special = Path("data/data_special.json")
     ruta_old_special = Path("data/old_data_special.json")
@@ -49,39 +65,45 @@ def archive_expired_special_events():
 
     if expired_special_events:
         old_special_events = load_json_list(ruta_old_special)
+        updated_old_special_events = merge_unique_records(old_special_events, expired_special_events)
 
         with open(ruta_old_special, "w", encoding="utf-8") as f_old_special:
-            json.dump(old_special_events + expired_special_events, f_old_special, ensure_ascii=False, indent=2)
+            json.dump(updated_old_special_events, f_old_special, ensure_ascii=False, indent=2)
 
         with open(ruta_special, "w", encoding="utf-8") as f_special:
             json.dump(active_special_events, f_special, ensure_ascii=False, indent=2)
 
+
+def scrape_and_filter(scraper_fn, url):
+    try:
+        return filter_next_7_days(scraper_fn(url))
+    except Exception:
+        return []
+
 def run_all_scrapers():
     eventos_totales = []
 
-    scrapers_funciones = list(SCRAPERS.keys())
-    scrapers_urls = list(SCRAPERS.values())
-
     with ThreadPoolExecutor(max_workers=len(SCRAPERS)) as executor:
-        resultados = executor.map(
-            lambda fn, url: filter_next_7_days(fn(url)), 
-            scrapers_funciones, 
-            scrapers_urls
-        )
-        for eventos in resultados:
-            eventos_totales.extend(eventos)
+        futures = [
+            executor.submit(scrape_and_filter, scraper_fn, url)
+            for scraper_fn, url in SCRAPERS.items()
+        ]
+
+        for future in futures:
+            eventos_totales.extend(future.result())
 
     if eventos_totales:
         json_resultado = events_to_json(eventos_totales)
         ruta_data = Path("data/data.json")
+        ruta_old_data = Path("data/old_data.json")
         
-        if ruta_data.exists():
-            with open("data/data.json", "r", encoding="utf-8") as f_actual:
-                contenido_actual = f_actual.read()
-                
-            with open("data/old_data.json", "w", encoding="utf-8") as f_viejo:
-                f_viejo.write(contenido_actual)
-                
+        current_data = load_json_list(ruta_data) if ruta_data.exists() else []
+        old_data = load_json_list(ruta_old_data)
+        updated_old_data = merge_unique_records(old_data, current_data)
+
+        with open(ruta_old_data, "w", encoding="utf-8") as f_viejo:
+            json.dump(updated_old_data, f_viejo, ensure_ascii=False, indent=2)
+
         ruta_data.unlink(missing_ok=True)
         
         with open("data/data.json", "w", encoding="utf-8") as f:
