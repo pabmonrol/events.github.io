@@ -21,10 +21,10 @@ matcher.add("Government", [
 matcher.add("Leisure", [
     nlp("lunch"), nlp("party"), nlp("grill"), nlp("chill"), 
     nlp("knitting"), nlp("senior"), nlp("seniors"), nlp("café"), 
-    nlp("cozy"), nlp("summer party")
+    nlp("cozy"), nlp("summer party"), nlp("summer"), nlp("holiday")
 ])
 matcher.add("Religion", [
-    nlp("pilgrimage"), nlp("church"), nlp("holiday"), nlp("confirmation"), 
+    nlp("pilgrimage"), nlp("church"), nlp("confirmation"), 
     nlp("corpus christi"), nlp("parish"), nlp("mass"), nlp("religious"),
     nlp("St."), nlp("saint"), nlp("virgen"), nlp("blood")
 ])
