@@ -89,5 +89,44 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
     "description": "",
     "price": null
+  },
+  {
+    "community": "Triesenberg",
+    "title": "Adonia Musical",
+    "icon": "🎵",
+    "colour": "blue",
+    "category": "Music",
+    "date": "2026-07-11",
+    "time": null,
+    "location": "Dorfsaal",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfsaal",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Triesenberg",
+    "title": "Malbun beer hike",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-07-11",
+    "time": "09:00",
+    "location": "Malbi Park",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Malbi+Park",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Triesenberg",
+    "title": "Morning pint with the alphorn group Walserecho and Schwyzerörgeli",
+    "icon": "🎵",
+    "colour": "blue",
+    "category": "Music",
+    "date": "2026-07-12",
+    "time": "11:00",
+    "location": "Berggasthaus Sareis",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Berggasthaus+Sareis",
+    "description": "",
+    "price": null
   }
 ]
