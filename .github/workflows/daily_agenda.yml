@@ -76,7 +76,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
 
           # Add only the modified data file to prevent unexpected conflicts
-          git add data/data.json data/old_data.json data/old_data_special.json
+          git add data/data.json data/data_special.json data/old_data.json data/old_data_special.json
 
           # Check if there are actual changes before committing
           if git diff --quiet && git diff --staged --quiet; then
