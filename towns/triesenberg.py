@@ -14,6 +14,9 @@ avoid_categories = {"Government", "Religion"}
 translator = GoogleTranslator(source='de', target='en')
 
 year = str(date.today().year)
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+}
 
 def _find_location_triesenberg(data_list: List[Tag], city: str) -> str|Tag:
     res = city
@@ -42,7 +45,7 @@ def scraper_triesenberg(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = requests.get(url).text
+    web = requests.get(url, headers=HEADERS).text
     soup = BeautifulSoup(web, 'html.parser')
     links = soup.find_all(class_="grid-item grid-33")
 
@@ -68,7 +71,7 @@ def scraper_triesenberg(url: str) -> List[NamedTuple]:
                 if not event_link:
                     event_link= link.find("a", class_="event-overview-item overview-item has-image")
                     
-                page = requests.get(event_link.get('href')).text
+                page = requests.get(event_link.get('href'), headers=HEADERS).text
                 event = BeautifulSoup(page, 'html.parser')
 
                 category, icon, colour = event_classification(title)
