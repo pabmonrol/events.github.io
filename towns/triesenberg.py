@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup, Tag
 from datetime import date
 import dateparser
 from playwright.sync_api import sync_playwright
-from backend.utils import check_right_date, get_hour, location_url, check_location
+from backend.utils import check_right_date, get_hour, location_url
 from backend.classifier import event_classification
 from backend.model import Event
 
