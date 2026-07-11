@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from deep_translator import GoogleTranslator
 from typing import List, NamedTuple
 from datetime import date, timedelta
+from urllib.parse import urljoin, urlparse
 from backend.classifier import event_classification
 import dateparser
 from backend.utils import get_price, get_hour, check_location
@@ -24,48 +25,66 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
 
     web = requests.get(url).text
     soup = BeautifulSoup(web, 'html.parser')
-    events = soup.find_all(class_="mega-link-overlay")
-    unique_urls = set(event_.get('href') for event_ in events if event_.get('href'))
+    events = soup.find_all("div", class_="events-list-entry ccm-block-page-list-page-entry")
 
     today = date.today()
+    year = str(today.year)
     final_date = today + timedelta(days=6)
 
-    for event in unique_urls:
-        page = requests.get(event).text
-        soup_page = BeautifulSoup(page, 'html.parser')
-        date_text = soup_page.find(class_="sw-date")
-        title_text = soup_page.find(class_="sw-title")
-        if not date_text or not title_text:
-            continue
-        
-        date_ = dateparser.parse(date_text.text).date()
-        if today <= date_ <= final_date:
-            title = translator.translate(title_text.text)
-            category, icon, colour = event_classification(title)
-            if category not in avoid_categories:
-                hour_ = soup_page.find('div', class_="event-time")
-                if hour_:
-                    hour = get_hour(hour_.get_text(strip=True))
-                location, google_maps = check_location(soup_page.find(class_="event-location"), city)
-                description_text = soup_page.find(class_="sw-description")
-                
-                if description_text:
-                    description = translator.translate(description_text.text)
-                    price = get_price(description)
+    for event in events:
+        event_link = event.find(class_="mega-link-overlay").get('href')
+        event_url = urljoin(url, event_link)
+        parsed_event = urlparse(event_url)
 
-                res.append(Event(community=city,
-                                title=title,
-                                icon=icon,
-                                colour=colour,
-                                category=category,
-                                date=date_,
-                                time=hour,
-                                location=location,
-                                google_maps=google_maps,
-                                description=description,
-                                price=price))
-        else:
-            continue
+        if parsed_event.netloc == "www.gamprin.li" and parsed_event.path in ("", "/"):
+            title_text = event.find_next("div", class_="mega-link-overlay").find("a").text
+            title = translator.translate(title_text.text)
+
+            day = event.find_next(class_="day").text
+            month = event.find_next(class_="month").text
+            date_string = day + "-" + month + "-" + year
+            date_ = dateparser.parse(date_string, settings={'DATE_ORDER': 'DMY'}).date()
+
+            hour_text = event.find_next("div", class_="event-list-time")
+            if hour_text:
+                hour = get_hour(hour_text.text)
+
+            category, icon, colour = event_classification(title)
+        else: 
+            page = requests.get(event_url).text
+            soup_page = BeautifulSoup(page, 'html.parser')
+            date_text = soup_page.find(class_="sw-date")
+            title_text = soup_page.find(class_="sw-title")
+            if not date_text or not title_text:
+                continue
+            
+            date_ = dateparser.parse(date_text.text).date()
+            if today <= date_ <= final_date:
+                title = translator.translate(title_text.text)
+                category, icon, colour = event_classification(title)
+                if category not in avoid_categories:
+                    hour_ = soup_page.find('div', class_="event-time")
+                    if hour_:
+                        hour = get_hour(hour_.get_text(strip=True))
+                    location, google_maps = check_location(soup_page.find(class_="event-location"), city)
+                    description_text = soup_page.find(class_="sw-description")
+                    
+                    if description_text:
+                        description = translator.translate(description_text.text)
+                        price = get_price(description)
+
+        res.append(Event(community=city,
+                        title=title,
+                        icon=icon,
+                        colour=colour,
+                        category=category,
+                        date=date_,
+                        time=hour,
+                        location=location,
+                        google_maps=google_maps,
+                        description=description,
+                        price=price))
+    print(res)
     return res
 
 
