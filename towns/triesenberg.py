@@ -43,7 +43,7 @@ def scraper_triesenberg(url: str) -> List[NamedTuple]:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page(user_agent=USER_AGENT, locale="de-DE")
 
-        page.goto(url, wait_until="networkidle", timeout=30000)
+        page.goto(url, wait_until="domcontentloaded")
         soup = BeautifulSoup(page.content(), 'html.parser')
         links = soup.find_all(class_="grid-item grid-33")
 
@@ -78,7 +78,7 @@ def scraper_triesenberg(url: str) -> List[NamedTuple]:
                     if not event_link:
                         continue
 
-                    page.goto(event_link.get('href'), wait_until="networkidle", timeout=30000)
+                    page.goto(event_link.get('href'), wait_until="domcontentloaded")
                     event = BeautifulSoup(page.content(), 'html.parser')
 
                     category, icon, colour = event_classification(title)
