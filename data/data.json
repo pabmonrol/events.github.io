@@ -59,8 +59,8 @@
         "category": "Music",
         "date": "2026-07-11",
         "time": null,
-        "location": "Dorfsaal",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfsaal",
+        "location": "Dorfsaal, Triesenberg",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfsaal%2C+Triesenberg",
         "description": "",
         "price": null
     },
@@ -72,8 +72,8 @@
         "category": "Leisure",
         "date": "2026-07-11",
         "time": "09:00",
-        "location": "Malbi Park",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Malbi+Park",
+        "location": "Malbi Park, Triesenberg",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Malbi+Park%2C+Triesenberg",
         "description": "",
         "price": null
     },
@@ -85,8 +85,8 @@
         "category": "Music",
         "date": "2026-07-12",
         "time": "11:00",
-        "location": "Berggasthaus Sareis",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Berggasthaus+Sareis",
+        "location": "Berggasthaus Sareis, Triesenberg",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Berggasthaus+Sareis%2C+Triesenberg",
         "description": "",
         "price": null
     },
