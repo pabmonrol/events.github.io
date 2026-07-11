@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup, Tag
 from datetime import date
 import dateparser
 from playwright.sync_api import sync_playwright
-from backend.utils import check_right_date, get_hour, location_url
+from backend.utils import check_right_date, get_hour, location_url, check_location
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -19,13 +19,16 @@ USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 
 
 def _find_location_triesenberg(data_list: List[Tag], city: str) -> str|Tag:
-    res = city
+    location = city    
     for data in data_list:
         title_data = data.find("h3")
         paragraph = data.find("p")
         if title_data and title_data.text.strip() == "Veranstaltungsort" and paragraph:
             res = paragraph.text
-    return res
+            if city not in res:
+                location = res.replace("\n", "").strip() + ", " + city
+                
+    return location
 
 
 def _find_description_triesenberg(data_list: List[Tag]) -> str:
