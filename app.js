@@ -70,8 +70,47 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
         priceLabel = (eventItem.price === null || eventItem.price === 0) ? "Free admission" : `CHF ${eventItem.price}.-`;
     }
     const colorThemeClass = eventItem.colour || 'blue';
+    // 1. Limpieza de fecha
     const cleanDateString = eventItem.date ? eventItem.date.replace(/-/g, '') : '';
-    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventItem.title)}&dates=${cleanDateString}T000000Z/${cleanDateString}T235959Z&details=${encodeURIComponent(eventItem.description || '')}&location=${encodeURIComponent(eventItem.location || '')}`;
+    const calendarLocation = eventItem.location ? `${eventItem.location}${eventItem.comunity && !eventItem.location.toLowerCase().includes(eventItem.comunity.toLowerCase()) ? `, ${eventItem.comunity}` : ''}` : (eventItem.comunity || '');
+
+    const isAppleDevice = /Mac|iPod|iPhone|iPad/.test(navigator.platform) || /Macintosh|iPhone|iPad|iPod/.test(navigator.userAgent);
+    
+    let finalCalendarUrl = "";
+    let calendarButtonText = "+ Calendar";
+
+    if (isAppleDevice) {
+        calendarButtonText = "+ Apple Cal";
+        let icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:${eventItem.title}\n`;
+        
+        if (eventItem.time) {
+            const startHours = eventItem.time.replace(/:/g, '').substring(0, 4) + "00"; 
+            const [h, m] = eventItem.time.split(':').map(Number);
+            const endHours = ((h + 1) % 24).toString().padStart(2, '0') + m.toString().padStart(2, '0') + "00";
+            icsContent += `DTSTART:${cleanDateString}T${startHours}\n`;
+            icsContent += `DTEND:${cleanDateString}T${endHours}\n`;
+        } else {
+            icsContent += `DTSTART;VALUE=DATE:${cleanDateString}\n`;
+        }
+        
+        icsContent += `LOCATION:${calendarLocation}\n`;
+        const cleanDesc = (eventItem.description || '').replace(/\n/g, '\\n');
+        icsContent += `DESCRIPTION:${cleanDesc}\n`;
+        icsContent += `END:VEVENT\nEND:VCALENDAR`;
+        
+        icsContent = icsContent.replace(/\n/g, '\r\n');
+        finalCalendarUrl = `data:text/calendar;charset=utf8,${encodeURIComponent(icsContent)}`;
+    } else {
+        calendarButtonText = "+ Google Cal";
+        let timeSuffix = "T000000/T235959"; 
+        if (eventItem.time) {
+            const startHours = eventItem.time.replace(/:/g, '').substring(0, 4) + "00"; 
+            const [h, m] = eventItem.time.split(':').map(Number);
+            const endHours = ((h + 1) % 24).toString().padStart(2, '0') + m.toString().padStart(2, '0') + "00";
+            timeSuffix = `T${startHours}/T${endHours}`;
+        }
+        finalCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventItem.title)}&dates=${cleanDateString}${timeSuffix}&details=${encodeURIComponent(eventItem.description || '')}&location=${encodeURIComponent(calendarLocation)}`;
+    }
     const specialClass = isSpecial ? 'special-event' : '';
 
     return `
@@ -83,7 +122,7 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
                     <span class="event-price">${priceLabel}</span>
                 </div>
                 <div class="event-actions">
-                    <a href="${googleCalendarUrl}" class="cal-btn" target="_blank">+ Calendar</a>
+                    <a href="${finalCalendarUrl}" class="cal-btn" target="_blank">+ Calendar</a>
                     ${eventItem.google_maps ? `<a href="${eventItem.google_maps}" class="loc-btn" target="_blank">📍 Maps</a>` : ''}
                     ${eventItem.description ? `
                         <button class="info-btn" onclick="toggleDetail(this)">
