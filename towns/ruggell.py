@@ -6,13 +6,16 @@ from deep_translator import GoogleTranslator
 from backend.classifier import event_classification
 import dateparser
 from backend.model import Event
-from datetime import datetime
-from backend.utils import location_url, verificar_fecha_limite
+from datetime import datetime, date, timedelta
+from backend.utils import location_url, verificar_fecha_limite, check_is_senior, check_right_date
 
 INFO = {"hour":'Zeit', "location":'Wo'}
 city = "Ruggell"
 avoid_categories = {"Government", "Religion"}
 translator = GoogleTranslator(source='de', target='en')
+
+today = date.today()
+final_date = today + timedelta(days=6)
 
 def _clean_detail(attributes: Tag, info: str) -> str | None:
     for b in attributes.find_all('b'):
@@ -48,11 +51,18 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
         if not event.find(class_='date') or not event.find(class_='title'):
             continue
 
+        date_ = dateparser.parse(event.find(class_='date').text).date()
+        if not check_right_date(date_):
+            continue
+
         title = translator.translate(event.find(class_='title').text)
+
+        if check_is_senior(title):
+            continue
+
         category, icon, colour = event_classification(title)
         if category not in avoid_categories:
             description = translator.translate(event.find(class_='text').text)
-            date_ = dateparser.parse(event.find(class_='date').text).date()
 
             attributes = event.find(class_='attributes')
             if attributes:

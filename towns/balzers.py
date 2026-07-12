@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from datetime import date
 import re
 import dateparser
-from backend.utils import check_right_date, get_hour, check_location, get_price
+from backend.utils import check_right_date, get_hour, check_location, get_price, check_is_senior
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -52,7 +52,12 @@ def scraper_balzers(url: str) -> List[NamedTuple]:
             event = BeautifulSoup(page, 'html.parser')
 
             block_info = event.find("div", class_="mdl-container mdl-art-030 bg-weiss mdl030-detail-text-item")
-            title = translator.translate(block_info.find("h1").text)
+            title_page = block_info.find("h1")
+            if not title_page:
+                continue
+            title = translator.translate(title_page.text)
+            if check_is_senior(title):
+                continue
             category, icon, colour = event_classification(title)
 
             if category not in avoid_categories:

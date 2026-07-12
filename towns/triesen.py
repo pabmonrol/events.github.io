@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup, Tag
 import dateparser
 import re
 from datetime import date, timedelta
-from backend.utils import check_right_date, get_hour, check_location, verificar_fecha_limite
+from backend.utils import check_right_date, get_hour, check_location, check_is_senior
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -57,32 +57,37 @@ def scraper_trissen(url: str) -> List[NamedTuple]:
             if date_ > fecha_limite:
                 limite_superaged = True
 
-            if check_right_date(date_):
-                title = translator.translate(title_body.text)
-                category, icon, colour = event_classification(title)
+            if not check_right_date(date_):
+                continue
+            title = translator.translate(title_body.text)
 
-                if category not in avoid_categories:
-                    attributes = event.find(class_='attributes')
-                    if attributes:
-                        hour_text = _clean_detail(attributes, INFO.get("hour"))
-                        location_text = _clean_detail(attributes, INFO.get("location"))
-                        if hour_text:
-                            hour = get_hour(hour_text)
-                        if location_text:
-                            location, google_maps = check_location(location_text, city)
+            if check_is_senior(title):
+                continue
 
-                    res.append(Event(community=city,
-                                    title=title,
-                                    icon=icon,
-                                    colour=colour,
-                                    category=category,
-                                    date=date_,
-                                    time=hour,
-                                    location=location,
-                                    google_maps=google_maps,
-                                    description=description,
-                                    price=price
-                                    ))
+            category, icon, colour = event_classification(title)
+
+            if category not in avoid_categories:
+                attributes = event.find(class_='attributes')
+                if attributes:
+                    hour_text = _clean_detail(attributes, INFO.get("hour"))
+                    location_text = _clean_detail(attributes, INFO.get("location"))
+                    if hour_text:
+                        hour = get_hour(hour_text)
+                    if location_text:
+                        location, google_maps = check_location(location_text, city)
+
+                res.append(Event(community=city,
+                                title=title,
+                                icon=icon,
+                                colour=colour,
+                                category=category,
+                                date=date_,
+                                time=hour,
+                                location=location,
+                                google_maps=google_maps,
+                                description=description,
+                                price=price
+                                ))
     if not limite_superaged:
         next_month_btn = soup.find('a', class_="arrow-right", id="content_aR")
         if next_month_btn and next_month_btn.get('href'):

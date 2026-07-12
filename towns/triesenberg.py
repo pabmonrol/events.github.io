@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup, Tag
 from datetime import date
 import dateparser
 from playwright.sync_api import sync_playwright
-from backend.utils import check_right_date, get_hour, location_url
+from backend.utils import check_right_date, get_hour, location_url, check_is_senior
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -77,6 +77,10 @@ def scraper_triesenberg(url: str) -> List[NamedTuple]:
                 if not title_body:
                     continue
                 title = translator.translate(title_body.text)
+
+                if check_is_senior(title):
+                    continue
+
                 hour_page = link.find("div", class_="overview-date")
                 if hour_page and hour_page.text != "":
                     hour = get_hour(hour_page.text)

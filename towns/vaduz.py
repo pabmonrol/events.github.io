@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup, Tag
 import re
 import dateparser
-from backend.utils import check_right_date, get_hour, get_price, location_url
+from backend.utils import check_right_date, get_hour, get_price, location_url, check_is_senior
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -42,43 +42,47 @@ def scraper_vaduz(url: str) -> List[NamedTuple]:
         if date_text and title_body:
             date_match = re.findall(r"\d{1,2}\.\d{2}\.\d{4}", date_text.text)
             date_ = dateparser.parse(date_match[0], settings={'DATE_ORDER': 'DMY'}).date()
-            if check_right_date(date_):
-                page = requests.get(title_body.get('href')).text
-                event = BeautifulSoup(page, 'html.parser')
+            if not check_right_date(date_):
+                continue
+            page = requests.get(title_body.get('href')).text
+            event = BeautifulSoup(page, 'html.parser')
 
-                title = translator.translate(title_body.text)
-                category, icon, colour = event_classification(title)
+            title = translator.translate(title_body.text)
 
-                if category not in avoid_categories:
-                    hour_page = event.find("div", class_="schedule-block")
-                    hour_text = re.findall(r"\b(\d{1,2}:\d{2})\b", hour_page.text)
-                    if len(hour_text) != 0:
-                        hour = get_hour(hour_text[0])
+            if check_is_senior(title):
+                continue
 
-                    location_ = event.find("div", class_="row event-location-map-wrapper").find_all("div", class_="description-wrapper")
-                    location, google_maps = _clean_vaduz_location(location_)
+            category, icon, colour = event_classification(title)
 
-                    title_description_page = event.find("div", class_="summary").find_next("strong")
-                    description_page = event.find("div", class_="description").find_next("p")
-                    if title_description_page or description_page:
-                        title_description = translator.translate(title_description_page.text)
-                        description_body = translator.translate(description_page.text)
-                        description = title_description + "\n\n" + description_body
-                        price = get_price(description_page.text)
-        
-                    res.append(Event(community=city,
-                                            title=title,
-                                            icon=icon,
-                                            colour=colour,
-                                            category=category,
-                                            date=date_,
-                                            time=hour,
-                                            location=location,
-                                            google_maps=google_maps,
-                                            description=description,
-                                            price=price
-                                            ))
-        else:
-            continue
+            if category not in avoid_categories:
+                hour_page = event.find("div", class_="schedule-block")
+                hour_text = re.findall(r"\b(\d{1,2}:\d{2})\b", hour_page.text)
+                if len(hour_text) != 0:
+                    hour = get_hour(hour_text[0])
+
+                location_ = event.find("div", class_="row event-location-map-wrapper").find_all("div", class_="description-wrapper")
+                location, google_maps = _clean_vaduz_location(location_)
+
+                title_description_page = event.find("div", class_="summary").find_next("strong")
+                description_page = event.find("div", class_="description").find_next("p")
+                if title_description_page or description_page:
+                    title_description = translator.translate(title_description_page.text)
+                    description_body = translator.translate(description_page.text)
+                    description = title_description + "\n\n" + description_body
+                    price_text = event.find("div", class_="additional-info-wrapper").find_next("p")
+                    price = get_price(price_text.text)
+    
+                res.append(Event(community=city,
+                                        title=title,
+                                        icon=icon,
+                                        colour=colour,
+                                        category=category,
+                                        date=date_,
+                                        time=hour,
+                                        location=location,
+                                        google_maps=google_maps,
+                                        description=description,
+                                        price=price
+                                        ))
     return res
 

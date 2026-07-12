@@ -81,3 +81,6 @@ def check_right_date(date_: date) -> bool:
     final_date = today + timedelta(days=6)
     
     return today <= date_ <= final_date
+
+def check_is_senior(title: str) -> bool:
+    return "senior" in title.lower() or "seniors" in title.lower()

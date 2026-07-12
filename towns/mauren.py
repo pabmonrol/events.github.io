@@ -6,8 +6,8 @@ from typing import NamedTuple, List, Set, Optional
 from backend.classifier import event_classification
 import dateparser
 from backend.model import Event
-from datetime import time
-from backend.utils import location_url, verificar_fecha_limite, get_price
+from datetime import time, date, timedelta
+from backend.utils import location_url, verificar_fecha_limite, get_price, check_is_senior, check_right_date
 
 
 city = "Mauren"
@@ -77,7 +77,14 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
         if not date_text or not title_text:
             continue
 
+        if not check_right_date(date_):
+                continue
+
         title = translator.translate(title_text.text)
+
+        if check_is_senior(title):
+            continue
+
         category, icon, colour = event_classification(title)
         if category not in avoid_categories:
             date_ = dateparser.parse(date_text).date()
@@ -101,8 +108,6 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
                                 description=description,
                                 price=price
                                 ))
-        else:
-            continue
     return res
 
 def scraper_mauren(url: str) -> List[NamedTuple]:
