@@ -167,5 +167,57 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Berggasthaus+Sareis%2C+Triesenberg",
     "description": "",
     "price": null
+  },
+  {
+    "community": "Gamprin/Bendern",
+    "title": "Start of summer holiday program for children (12-18 years)",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-07-13",
+    "time": null,
+    "location": "Freizeitpark Widau Ruggell, Gamprin/Bendern",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Freizeitpark+Widau+Ruggell%2C+Gamprin%2FBendern",
+    "description": "Starting signal for the summer holiday program from July 13th to 17th, 2024 for children aged 12 to 18.",
+    "price": null
+  },
+  {
+    "community": "Gamprin/Bendern",
+    "title": "Wednesday meeting",
+    "icon": "📎",
+    "colour": "brown",
+    "category": "Government",
+    "date": "2026-07-15",
+    "time": null,
+    "location": "Freizeitpark Widau Ruggell, Gamprin/Bendern",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Freizeitpark+Widau+Ruggell%2C+Gamprin%2FBendern",
+    "description": "Starting signal for the summer holiday program from July 13th to 17th, 2024 for children aged 12 to 18.",
+    "price": null
+  },
+  {
+    "community": "Vaduz",
+    "title": "Crawling mice",
+    "icon": "🌱",
+    "colour": "green",
+    "category": "Nature",
+    "date": "2026-07-14",
+    "time": "14:00",
+    "location": "Liechtensteinisches LandesMuseum (Lageplan)\nStädtle 43\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Liechtensteinisches+LandesMuseum+%28Lageplan%29%0ASt%C3%A4dtle+43%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+    "description": "Parents with their small children are welcome in the Liechtenstein Castle Café in the Liechtenstein State Museum!\n\nEvery 2nd Tuesday of the month from 2:00 p.m. to 5:00 p.m. we invite you to the “Krabbel Mouses”! Parents with their small children are welcome in the Liechtenstein Castle Café in the Liechtenstein State Museum! The SchlossCafé is also accessible without museum admission.",
+    "price": null
+  },
+  {
+    "community": "Vaduz",
+    "title": "Playshop | Record, play and perform",
+    "icon": "🎵",
+    "colour": "blue",
+    "category": "Music",
+    "date": "2026-07-15",
+    "time": "14:00",
+    "location": "Kunstmuseum Liechtenstein (Lageplan)\nStädtle 32\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstmuseum+Liechtenstein+%28Lageplan%29%0ASt%C3%A4dtle+32%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+    "description": "for children aged 7 to 9\nwith Simone Fiorillo\n\nTime: 2 p.m. to 3:30 p.m\n\nAs part of the free Wednesday, the offer is free of charge.\n\nWe ask that you register via the website.",
+    "price": null
   }
 ]
