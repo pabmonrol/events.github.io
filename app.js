@@ -63,7 +63,9 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
     const isRuggell = (eventItem.comunity && eventItem.comunity.toLowerCase().includes('ruggell')) || 
                     (eventItem.location && eventItem.location.toLowerCase().includes('ruggell')) ||
                     (eventItem.comunity && eventItem.comunity.toLowerCase().includes('schellenberg')) ||
-                    (eventItem.location && eventItem.location.toLowerCase().includes('schellenberg'));
+                    (eventItem.location && eventItem.location.toLowerCase().includes('schellenberg')) ||
+                    (eventItem.comunity && eventItem.comunity.toLowerCase().includes('triesen')) ||
+                    (eventItem.location && eventItem.location.toLowerCase().includes('triesen'));
     if (isRuggell) {
         priceLabel = "Not specified";
     } else {
