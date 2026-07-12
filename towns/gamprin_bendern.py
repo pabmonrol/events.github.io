@@ -27,9 +27,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
     soup = BeautifulSoup(web, 'html.parser')
     events = soup.find_all("div", class_="events-list-entry ccm-block-page-list-page-entry")
 
-    today = date.today()
-    year = str(today.year)
-    final_date = today + timedelta(days=6)
+    year = str(date.today().year)
 
     for event in events:
         event_link = event.find(class_="mega-link-overlay").get('href')
@@ -44,7 +42,6 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
                 continue
 
             category, icon, colour = event_classification(title)
-
             if category in avoid_categories:
                 continue
 
@@ -68,20 +65,26 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
                 continue
             
             date_ = dateparser.parse(date_text.text).date()
-            if today <= date_ <= final_date:
-                title = translator.translate(title_text.text)
-                category, icon, colour = event_classification(title)
-                if category in avoid_categories:
-                    continue
-                hour_ = soup_page.find('div', class_="event-time")
-                if hour_:
-                    hour = get_hour(hour_.get_text(strip=True))
-                location, google_maps = check_location(soup_page.find(class_="event-location"), city)
-                description_text = soup_page.find(class_="sw-description")
-                
-                if description_text:
-                    description = translator.translate(description_text.text)
-                    price = get_price(description)
+            if not check_right_date(date_):
+                continue
+            
+            title = translator.translate(title_text.text)
+            if check_is_senior(title):
+                continue
+            
+            hour_ = soup_page.find('div', class_="event-time")
+            if hour_:
+                hour = get_hour(hour_.get_text(strip=True))
+            location, google_maps = check_location(soup_page.find(class_="event-location"), city)
+            description_text = soup_page.find(class_="sw-description")
+            
+            if description_text:
+                description = translator.translate(description_text.text)
+                price = get_price(description)
+
+            category, icon, colour = event_classification(" ".join([description, title]))
+            if category in avoid_categories:
+                continue                    
 
         res.append(Event(community=city,
                         title=title,
@@ -94,7 +97,6 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
                         google_maps=google_maps,
                         description=description,
                         price=price))
-    print(res)
     return res
 
 

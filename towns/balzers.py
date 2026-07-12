@@ -58,36 +58,37 @@ def scraper_balzers(url: str) -> List[NamedTuple]:
             title = translator.translate(title_page.text)
             if check_is_senior(title):
                 continue
-            category, icon, colour = event_classification(title)
 
-            if category not in avoid_categories:
-                hour_page = event.select_one("span.mdl030-uhrzeit.text-schlamm")
-                hour_text = hour_page.get_text(" ", strip=True) if hour_page else ""
-                hour_text_list = re.findall(r"(\d{1,2}[:.]\d{2})", hour_text)
-                hour = get_hour(hour_text_list[0]) if hour_text_list else None
+            infos = event.find("div", class_="mdl-container")
+            if infos:
+                description_text = infos.find_next("p")
+                description_joined = "\n".join(description_text)
+                description = translator.translate(description_joined)
+                price = get_price(description_joined)
 
-                location_ = event.find("span", class_="mdl030-ort")
-                location, google_maps = check_location(location_, city)
+            category, icon, colour = event_classification(" ".join([description, title]))
+            if category in avoid_categories:
+                continue
+            hour_page = event.select_one("span.mdl030-uhrzeit.text-schlamm")
+            hour_text = hour_page.get_text(" ", strip=True) if hour_page else ""
+            hour_text_list = re.findall(r"(\d{1,2}[:.]\d{2})", hour_text)
+            hour = get_hour(hour_text_list[0]) if hour_text_list else None
 
-                infos = event.find("div", class_="mdl-container")
-                if description:
-                    description_text = infos.find_next("p")
-                    description_joined = "\n".join(description_text)
-                    description = translator.translate(description_joined)
-                    price = get_price(description_joined)
+            location_ = event.find("span", class_="mdl030-ort")
+            location, google_maps = check_location(location_, city)
 
-                res.append(Event(community=city,
-                                                title=title,
-                                                icon=icon,
-                                                colour=colour,
-                                                category=category,
-                                                date=date_,
-                                                time=hour,
-                                                location=location,
-                                                google_maps=google_maps,
-                                                description=description,
-                                                price=price
-                                                ))
+            res.append(Event(community=city,
+                                            title=title,
+                                            icon=icon,
+                                            colour=colour,
+                                            category=category,
+                                            date=date_,
+                                            time=hour,
+                                            location=location,
+                                            google_maps=google_maps,
+                                            description=description,
+                                            price=price
+                                            ))
     return res
 
 

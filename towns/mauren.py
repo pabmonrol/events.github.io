@@ -84,30 +84,32 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
 
         if check_is_senior(title):
             continue
+        description = sopa_evento.find(class_="eventdetail__textbody mce")
+        if description:
+            description = translator.translate(description.text)
 
-        category, icon, colour = event_classification(title)
-        if category not in avoid_categories:
-            date_ = dateparser.parse(date_text).date()
-            hour = _get_hour(_find_value(sopa_evento, "Zeit"))
-            location = _find_value(sopa_evento, "Ort")
-            google_maps = location_url(location)
-            description_text = translator.translate(sopa_evento.find(class_="eventdetail__textbody mce").text)
-            if description_text:
-                description = description_text
-            price = get_price(description)
-        
-            res.append(Event(community=city,
-                                title=title,
-                                icon=icon,
-                                colour=colour,
-                                category=category,
-                                date=date_,
-                                time=hour,
-                                location=location,
-                                google_maps=google_maps,
-                                description=description,
-                                price=price
-                                ))
+        category, icon, colour = event_classification(" ".join([description, title]))
+        if category in avoid_categories:
+            continue
+
+        date_ = dateparser.parse(date_text).date()
+        hour = _get_hour(_find_value(sopa_evento, "Zeit"))
+        location = _find_value(sopa_evento, "Ort")
+        google_maps = location_url(location)
+        price = get_price(description)
+    
+        res.append(Event(community=city,
+                            title=title,
+                            icon=icon,
+                            colour=colour,
+                            category=category,
+                            date=date_,
+                            time=hour,
+                            location=location,
+                            google_maps=google_maps,
+                            description=description,
+                            price=price
+                            ))
     return res
 
 def scraper_mauren(url: str) -> List[NamedTuple]:

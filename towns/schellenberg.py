@@ -42,26 +42,27 @@ def scraper_schellenberg(url: str) -> List[NamedTuple]:
             continue
 
         category, icon, colour = event_classification(title)
+        if category in avoid_categories:
+            continue
 
-        if category not in avoid_categories:
-            hour_text = event.find("time", class_="text").text
-            hour = get_hour(hour_text)
+        hour_text = event.find("time", class_="text").text
+        hour = get_hour(hour_text)
 
-            location_ = event.find("div", class_="eventrow__location")
-            location, google_maps = check_location(location_, city)
-    
-            res.append(Event(community=city,
-                                    title=title,
-                                    icon=icon,
-                                    colour=colour,
-                                    category=category,
-                                    date=date_,
-                                    time=hour,
-                                    location=location,
-                                    google_maps=google_maps,
-                                    description=description,
-                                    price=price
-                                    ))
+        location_ = event.find("div", class_="eventrow__location")
+        location, google_maps = check_location(location_, city)
+
+        res.append(Event(community=city,
+                                title=title,
+                                icon=icon,
+                                colour=colour,
+                                category=category,
+                                date=date_,
+                                time=hour,
+                                location=location,
+                                google_maps=google_maps,
+                                description=description,
+                                price=price
+                                ))
     return res
 
 

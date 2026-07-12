@@ -45,7 +45,7 @@ def scraper_eschen(url: str) -> List[NamedTuple]:
         if not check_right_date(date_):
             continue
             
-        category, icon, colour = event_classification(title)
+        category, icon, colour = event_classification(" ". join([description, title]))
         if category not in avoid_categories:
             hour = event.find("b", text=re.compile("Uhrzeit:")).find_next("span").get_text(strip=True)
             location_ = event.find("b", text=re.compile("Ort:")).find_next("span")

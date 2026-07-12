@@ -60,32 +60,35 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
         if check_is_senior(title):
             continue
 
-        category, icon, colour = event_classification(title)
-        if category not in avoid_categories:
-            description = translator.translate(event.find(class_='text').text)
+        description = event.find(class_='text').text
+        description = translator.translate(description.text)
 
-            attributes = event.find(class_='attributes')
-            if attributes:
-                hour_text = _clean_detail(attributes, INFO.get("hour"))
-                location_text = _clean_detail(attributes, INFO.get("location"))
-                if hour_text:
-                    hour = datetime.strptime(hour_text, "%H.%M").time()
-                if location_text:
-                    location = str(location_text).strip()
-                    google_maps = location_url(location_text)
-            ev = Event(community=city,
-                            title=title,
-                            icon=icon,
-                            colour=colour,
-                            category=category,
-                            date=date_,
-                            time=hour,
-                            location=location,
-                            google_maps=google_maps,
-                            description=description,
-                            price=price
-                            )
-            res.append(ev)
+        category, icon, colour = event_classification(" ".join([description, title]))
+        if category in avoid_categories:
+            continue
+
+        attributes = event.find(class_='attributes')
+        if attributes:
+            hour_text = _clean_detail(attributes, INFO.get("hour"))
+            location_text = _clean_detail(attributes, INFO.get("location"))
+            if hour_text:
+                hour = datetime.strptime(hour_text, "%H.%M").time()
+            if location_text:
+                location = str(location_text).strip()
+                google_maps = location_url(location_text)
+        ev = Event(community=city,
+                        title=title,
+                        icon=icon,
+                        colour=colour,
+                        category=category,
+                        date=date_,
+                        time=hour,
+                        location=location,
+                        google_maps=google_maps,
+                        description=description,
+                        price=price
+                        )
+        res.append(ev)
 
     if not verificar_fecha_limite(res):
         next_month_btn = soup.find('a', class_='arrow-right', id='content_aR').get('href')

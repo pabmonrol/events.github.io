@@ -45,34 +45,35 @@ def scraper_schaan(url: str) -> List[NamedTuple]:
             if check_is_senior(title):
                 continue
 
-            category, icon, colour = event_classification(title)
+            description_page = event.find("div", class_="vier")
+            if description_page:
+                description_text = event.find(class_="eventdetail__textbody mce").find_next("p")
+                description = translator.translate(description_text)
+                price = get_price(description_text)
 
-            if category not in avoid_categories:
-                hour_page = event.find(class_="sw-date")
-                hour_text = re.findall(r"\d{1,2}:\d{2}", hour_page.text)
-                hour = get_hour(hour_text[0])
+            category, icon, colour = event_classification(" ".join([description, title]))
+            if category in avoid_categories:
+                continue
 
-                location_ = event.find("a", class_="primary-color")
-                location, google_maps = check_location(location_, city)
+            hour_page = event.find(class_="sw-date")
+            hour_text = re.findall(r"\d{1,2}:\d{2}", hour_page.text)
+            hour = get_hour(hour_text[0])
 
-                description_page = event.find("div", class_="vier")
-                if description_page:
-                    description_text = event.find(class_="eventdetail__textbody mce").find_next("p")
-                    description = translator.translate(description_text)
-                    price = get_price(description_text)
-    
-                res.append(Event(community=city,
-                                        title=title,
-                                        icon=icon,
-                                        colour=colour,
-                                        category=category,
-                                        date=date_,
-                                        time=hour,
-                                        location=location,
-                                        google_maps=google_maps,
-                                        description=description,
-                                        price=price
-                                        ))
+            location_ = event.find("a", class_="primary-color")
+            location, google_maps = check_location(location_, city)
+
+            res.append(Event(community=city,
+                                    title=title,
+                                    icon=icon,
+                                    colour=colour,
+                                    category=category,
+                                    date=date_,
+                                    time=hour,
+                                    location=location,
+                                    google_maps=google_maps,
+                                    description=description,
+                                    price=price
+                                    ))
     return res
 
         

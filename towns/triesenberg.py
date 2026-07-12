@@ -96,20 +96,21 @@ def scraper_triesenberg(url: str) -> List[NamedTuple]:
                 page.wait_for_selector("div.event-data-item", timeout=10000)
                 event = BeautifulSoup(page.content(), 'html.parser')
 
-                category, icon, colour = event_classification(title)
+                data = event.find_all("div", class_="event-data-item")
+                description_page = _find_description_triesenberg(data)
+                if description_page:
+                    text_body = event.find(class_="eventdetail__textbody")
+                    if text_body:
+                        p_tag = text_body.find_next("p")
+                        if p_tag:
+                            description = translator.translate(p_tag.text.strip())
+                
+                category, icon, colour = event_classification(" ".join([description,title]))
+                if category in avoid_categories:
+                    continue
 
-                if category not in avoid_categories:
-                    data = event.find_all("div", class_="event-data-item")
-                    location = _find_location_triesenberg(data, city)
-                    google_maps = location_url(location)
-
-                    description_page = _find_description_triesenberg(data)
-                    if description_page:
-                        text_body = event.find(class_="eventdetail__textbody")
-                        if text_body:
-                            p_tag = text_body.find_next("p")
-                            if p_tag:
-                                description = translator.translate(p_tag.text.strip())
+                location = _find_location_triesenberg(data, city)
+                google_maps = location_url(location)
 
                 res.append(Event(community=city,
                                     title=title,
