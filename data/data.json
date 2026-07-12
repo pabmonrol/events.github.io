@@ -15,14 +15,14 @@
     {
         "community": "Gamprin/Bendern",
         "title": "Wednesday meeting",
-        "icon": "📎",
-        "colour": "brown",
-        "category": "Government",
+        "icon": "🎵",
+        "colour": "blue",
+        "category": "Music",
         "date": "2026-07-15",
         "time": null,
-        "location": "Freizeitpark Widau Ruggell, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Freizeitpark+Widau+Ruggell%2C+Gamprin%2FBendern",
-        "description": "Starting signal for the summer holiday program from July 13th to 17th, 2024 for children aged 12 to 18.",
+        "location": "Grossabünt, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
+        "description": "Stormy Silence combines pop, soul and jazz to create a varied and atmospheric concert experience. Emotional voices and groovy arrangements ensure a special evening of music.",
         "price": null
     },
     {
@@ -54,14 +54,14 @@
     {
         "community": "Gamprin/Bendern",
         "title": "Wednesday meeting",
-        "icon": "📎",
-        "colour": "brown",
-        "category": "Government",
+        "icon": "🎵",
+        "colour": "blue",
+        "category": "Music",
         "date": "2026-07-15",
         "time": "09:00",
-        "location": "Freizeitpark Widau Ruggell, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Freizeitpark+Widau+Ruggell%2C+Gamprin%2FBendern",
-        "description": "Starting signal for the summer holiday program from July 13th to 17th, 2024 for children aged 12 to 18.",
+        "location": "Grossabünt, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
+        "description": "Stormy Silence combines pop, soul and jazz to create a varied and atmospheric concert experience. Emotional voices and groovy arrangements ensure a special evening of music.",
         "price": null
     },
     {
@@ -80,9 +80,9 @@
     {
         "community": "Schaan",
         "title": "Yoga in the Mühleholz swimming pool",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
+        "icon": "⚽️",
+        "colour": "red",
+        "category": "Sport",
         "date": "2026-07-14",
         "time": "20:00",
         "location": "Schwimmbad Mühleholz, Schaan",
@@ -106,9 +106,9 @@
     {
         "community": "Vaduz",
         "title": "Crawling mice",
-        "icon": "🌱",
-        "colour": "green",
-        "category": "Nature",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
         "date": "2026-07-14",
         "time": "14:00",
         "location": "Liechtensteinisches LandesMuseum (Lageplan)\nStädtle 43\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
@@ -130,15 +130,15 @@
         "price": null
     },
     {
-        "community": "Balzers",
-        "title": "Seniors Department - Billiards",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-15",
-        "time": "09:30",
-        "location": "Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
+        "community": "Triesenberg",
+        "title": "Coop family hike",
+        "icon": "🌱",
+        "colour": "green",
+        "category": "Nature",
+        "date": "2026-07-18",
+        "time": "08:03",
+        "location": "Triesenberg",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Triesenberg",
         "description": "",
         "price": null
     },
@@ -152,7 +152,7 @@
         "time": "11:03",
         "location": "Balzers",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
-        "description": "",
+        "description": "Balzers village square",
         "price": null
     },
     {
@@ -165,7 +165,7 @@
         "time": "15:03",
         "location": "Balzers",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
-        "description": "",
+        "description": "Meet at Rosele (senior meeting)",
         "price": null
     },
     {
@@ -178,7 +178,7 @@
         "time": "19:03",
         "location": "Balzers",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
-        "description": "",
+        "description": "Gutenberg Castle",
         "price": null
     },
     {
@@ -191,7 +191,7 @@
         "time": "19:03",
         "location": "Balzers",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
-        "description": "",
+        "description": "Gutenberg Castle",
         "price": null
     }
 ]
