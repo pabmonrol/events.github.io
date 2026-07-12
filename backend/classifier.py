@@ -8,7 +8,7 @@ matcher = PhraseMatcher(nlp.vocab, attr="LOWER")
 matcher.add("Culture", [
     nlp("theater"), nlp("exhibition"), nlp("art"), nlp("lecture"), 
     nlp("narrative"), nlp("museum"), nlp("story"), nlp("reading"), 
-    nlp("life stories"), nlp("palm reading")
+    nlp("life stories"), nlp("palm reading"), nlp("brain")
 ])
 matcher.add("Music", [
     nlp("concert"), nlp("music"), nlp("choir"), nlp("band"), 
@@ -35,7 +35,8 @@ matcher.add("Nature", [
 ])
 matcher.add("Sport", [
     nlp("sport"), nlp("fitness"), nlp("training"), nlp("football"), 
-    nlp("soccer"), nlp("match"), nlp("workout"), nlp("brain fitness")
+    nlp("soccer"), nlp("match"), nlp("workout"), nlp("brain fitness"),
+    nlp("yoga")
 ])
 
 
