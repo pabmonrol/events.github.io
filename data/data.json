@@ -1,19 +1,6 @@
 [
     {
         "community": "Gamprin/Bendern",
-        "title": "Start of summer holiday program for children (12-18 years)",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-13",
-        "time": null,
-        "location": "Freizeitpark Widau Ruggell, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Freizeitpark+Widau+Ruggell%2C+Gamprin%2FBendern",
-        "description": "Starting signal for the summer holiday program from July 13th to 17th, 2024 for children aged 12 to 18.",
-        "price": null
-    },
-    {
-        "community": "Gamprin/Bendern",
         "title": "Wednesday meeting",
         "icon": "🎵",
         "colour": "blue",
@@ -36,19 +23,6 @@
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
         "description": "You will need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during your training.",
-        "price": null
-    },
-    {
-        "community": "Gamprin/Bendern",
-        "title": "Start of summer holiday program for children (12-18 years)",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-13",
-        "time": "09:00",
-        "location": "Freizeitpark Widau Ruggell, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Freizeitpark+Widau+Ruggell%2C+Gamprin%2FBendern",
-        "description": "Starting signal for the summer holiday program from July 13th to 17th, 2024 for children aged 12 to 18.",
         "price": null
     },
     {
@@ -150,6 +124,19 @@
         "category": "Music",
         "date": "2026-07-18",
         "time": "11:03",
+        "location": "Balzers",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
+        "description": "Balzers village square",
+        "price": null
+    },
+    {
+        "community": "Balzers",
+        "title": "Balzner World Cup Schtoba - food and games",
+        "icon": "⚽️",
+        "colour": "red",
+        "category": "Sport",
+        "date": "2026-07-19",
+        "time": "17:03",
         "location": "Balzers",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
         "description": "Balzers village square",
