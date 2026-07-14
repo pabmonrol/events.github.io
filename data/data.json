@@ -131,54 +131,15 @@
     },
     {
         "community": "Balzers",
-        "title": "Pétanque - on the village square",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-14",
-        "time": "15:03",
-        "location": "Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
-        "description": "Meet at Rosele (senior meeting)",
-        "price": null
-    },
-    {
-        "community": "Balzers",
         "title": "Viera brass brass music of the highest quality from Tyrol",
         "icon": "🎵",
         "colour": "blue",
         "category": "Music",
         "date": "2026-07-17",
         "time": "19:03",
-        "location": "Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
-        "description": "Gutenberg Castle",
-        "price": null
-    },
-    {
-        "community": "Balzers",
-        "title": "Operetta evening 200 years of Johann Strauss",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-07-18",
-        "time": "19:03",
-        "location": "Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
-        "description": "Gutenberg Castle",
-        "price": null
-    },
-    {
-        "community": "Balzers",
-        "title": "Pétanque - on the village square",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-14",
-        "time": "15:03",
-        "location": "Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
-        "description": "Meet at Rosele (senior meeting)",
+        "location": "Burg GutenbergBurgweg 59496 Balzers, Balzers",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Burg+GutenbergBurgweg+59496+Balzers%2C+Balzers",
+        "description": "Viera Blech - top-class brass music from Tyrol\n\nViera Blech from Tyrol, founded in 2004, consists of seven top musicians with degrees. The formation stands for brass music at the highest level and will be performing live for the first time at Burg Gutenberg in Balzers in 2026.",
         "price": null
     },
     {
@@ -189,9 +150,9 @@
         "category": "Music",
         "date": "2026-07-14",
         "time": "19:03",
-        "location": "Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
-        "description": "Gutenberg Castle",
+        "location": "Burg GutenbergBurgweg 59496 Balzers, Balzers",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Burg+GutenbergBurgweg+59496+Balzers%2C+Balzers",
+        "description": "Viera Blech - top-class brass music from Tyrol\n\nViera Blech from Tyrol, founded in 2004, consists of seven top musicians with degrees. The formation stands for brass music at the highest level and will be performing live for the first time at Burg Gutenberg in Balzers in 2026.",
         "price": null
     },
     {
@@ -202,9 +163,9 @@
         "category": "Music",
         "date": "2026-07-18",
         "time": "11:03",
-        "location": "Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
-        "description": "Balzers village square",
+        "location": "Dorfplatz BalzersFÃ¼rstenstrasse9496 Balzers, Balzers",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfplatz+BalzersF%C3%83%C2%BCrstenstrasse9496+Balzers%2C+Balzers",
+        "description": "Village square concert series \"Cat in a Sack - Moseg and more...\" 2026 - for children\n\nSaturday, July 18, 2026, from 11:30 a.m. to 1:30 p.m\n“A pig in a poke” for children with “magical” entertainment\n\nThe popular format “Cat in a Sack” – Moseg and more is being held especially for children this time. As usual, it is only announced a few days before who will surprise the children, how and who will host the young and old visitors. We can already reveal this much: it will be a “magical” surprise and there will be delicious food from the P… oven.\n\nIf the weather is bad, the event will take place in the foyer of the community hall.",
         "price": null
     },
     {
@@ -215,9 +176,9 @@
         "category": "Sport",
         "date": "2026-07-19",
         "time": "17:03",
-        "location": "Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
-        "description": "Balzers village square",
+        "location": "Dorfplatz BalzersFÃ¼rstenstrasse9496 Balzers, Balzers",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfplatz+BalzersF%C3%83%C2%BCrstenstrasse9496+Balzers%2C+Balzers",
+        "description": "World Cup final with food & games\n\nIf you would like to experience the 2026 Football World Cup final on the big screen with other fans, we invite you with the “Vinören”, first to the village square and then to the “WM-Schtoba” in the community hall.\nThe program:\n5:30 p.m. - 9:00 p.m.:    Warm up with food and games on the village square: food and drink, served\nfrom the “Vinören”; Playing at the Chuttekashta and at the gaming station\n9:00 p.m. - midnight:    World Cup final on the big screen in the chilled out “WM-Schtoba” in the community hall\nwith a wide selection of drinks\n\nIf the weather is bad, the entire program will take place in the community hall from 5:30 p.m. to midnight.",
         "price": null
     }
 ]

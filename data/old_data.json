@@ -414,5 +414,31 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
     "description": "Balzers village square",
     "price": null
+  },
+  {
+    "community": "Schellenberg",
+    "title": "Summer Shared - A Village Serves Up",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-07-19",
+    "time": "10:00",
+    "location": "Stotz 16b, Schellenberg",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Stotz+16b%2C+Schellenberg",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Balzers",
+    "title": "Viera brass brass music of the highest quality from Tyrol",
+    "icon": "🎵",
+    "colour": "blue",
+    "category": "Music",
+    "date": "2026-07-14",
+    "time": "19:03",
+    "location": "Balzers",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
+    "description": "Gutenberg Castle",
+    "price": null
   }
 ]
