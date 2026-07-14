@@ -401,5 +401,18 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
     "description": "Gutenberg Castle",
     "price": null
+  },
+  {
+    "community": "Balzers",
+    "title": "Balzner World Cup Schtoba - food and games",
+    "icon": "⚽️",
+    "colour": "red",
+    "category": "Sport",
+    "date": "2026-07-19",
+    "time": "17:03",
+    "location": "Balzers",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Balzers",
+    "description": "Balzers village square",
+    "price": null
   }
 ]
