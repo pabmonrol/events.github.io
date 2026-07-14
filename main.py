@@ -8,6 +8,7 @@ from towns.vaduz import scraper_vaduz
 from towns.triesen import scraper_trissen
 from towns.triesenberg import scraper_triesenberg
 from towns.balzers import scraper_balzers
+from towns.planken import scraper_planken
 from backend.utils import events_to_json, filter_next_7_days
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
@@ -23,7 +24,8 @@ SCRAPERS = {scraper_ruggell: "https://www.ruggell.li/agenda",
             scraper_vaduz: "https://www.vaduz.li/veranstaltungen",
             scraper_trissen: "https://www.triesen.li/agenda",
             scraper_triesenberg: "https://www.triesenberg.li/dorfleben/aktuelles/veranstaltungen/",
-            scraper_balzers: "https://www.balzers.li/de/balzers-erleben/veranstaltungen/tblid/45"
+            scraper_balzers: "https://www.balzers.li/de/balzers-erleben/veranstaltungen/tblid/45",
+            #scraper_
             }
 
 
