@@ -59,10 +59,12 @@ def scraper_balzers(url: str) -> List[NamedTuple]:
             if check_is_senior(title):
                 continue
 
-            infos = event.find("div", class_="mdl-container")
+            infos = event.find("div", class_="col-24 col-xs-12 col-md-6 col-lg-5 col-lg-offset-1").find("div", 
+                                                                                                        class_="left__panel").find("div",
+                                                                                                                                   class_="mdl-container")
             if infos:
-                description_text = infos.find_next("p")
-                description_joined = "\n".join(description_text)
+                description_text = infos.find_all("p")
+                description_joined = "\n".join([d.text.strip() for d in description_text])
                 description = translator.translate(description_joined)
                 price = get_price(description_joined)
 
@@ -74,7 +76,7 @@ def scraper_balzers(url: str) -> List[NamedTuple]:
             hour_text_list = re.findall(r"(\d{1,2}[:.]\d{2})", hour_text)
             hour = get_hour(hour_text_list[0]) if hour_text_list else None
 
-            location_ = event.find("span", class_="mdl030-ort")
+            location_ = event.find("div", class_="padding-klein text-small bg-weiss text-dunkelblau").find("p")
             location, google_maps = check_location(location_, city)
 
             res.append(Event(community=city,
