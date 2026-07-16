@@ -1,4 +1,15 @@
 [{
+  "title": "Street Parade - Zurich",
+  "icon": "👨‍🎤",
+  "colour": "red",
+  "date": "2026-08-08",
+  "time": "13:00",
+  "location": "Utoquai, Zürich, Suiza",
+  "description": "+INFO: https://www.streetparade.com/\n\nStage Guide\nOpéra Stage - Opernplatz (Bellevue) - 13:00 a 00:00\nCenter Stage - Bürkliplatz - 13:00 a 00:00\nClubbing Stage - Kongresshaus - 13:00 a 00:00\nInnovation Stage - Limmatquai - 13:00 a 22:00\nZürich Sound Stage - Nationalquai - 13:00 a 00:00\nGenerations Stage - Rentenanstalt (Enge) - 13:00 a 22:00\nYoung Talent Stage - Swiss Re Corner - 13:00 a 22:00\nHardtechno-Stage - Hafendamm Enge - 13:00 a 00:00",
+  "price": null,
+  "google_maps": "https://www.google.com/maps/search/?api=1&query=+Utoquai,+Zürich,+Suiza"
+},
+{
   "title": "Argovia Faescht!",
   "icon": "😎",
   "colour": "red",
