@@ -66,19 +66,6 @@
     },
     {
         "community": "Schaan",
-        "title": "Opening Buura Lada",
-        "icon": "⚽️",
-        "colour": "red",
-        "category": "Sport",
-        "date": "2026-07-16",
-        "time": "08:00",
-        "location": "Schaan",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Schaan",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Schaan",
         "title": "Schaan summer in the Lindahof",
         "icon": "🪇",
         "colour": "pink",
