@@ -622,5 +622,44 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfplatz+BalzersF%C3%83%C2%BCrstenstrasse9496+Balzers%2C+Balzers",
     "description": "World Cup final with food & games\n\nIf you would like to experience the 2026 Football World Cup final on the big screen with other fans, we invite you with the “Vinören”, first to the village square and then to the “WM-Schtoba” in the community hall.\nThe program:\n5:30 p.m. - 9:00 p.m.:    Warm up with food and games on the village square: food and drink, served\nfrom the “Vinören”; Playing at the Chuttekashta and at the gaming station\n9:00 p.m. - midnight:    World Cup final on the big screen in the chilled out “WM-Schtoba” in the community hall\nwith a wide selection of drinks\n\nIf the weather is bad, the entire program will take place in the community hall from 5:30 p.m. to midnight.",
     "price": null
+  },
+  {
+    "community": "Gamprin/Bendern",
+    "title": "Fitness/outdoor training",
+    "icon": "⚽️",
+    "colour": "red",
+    "category": "Sport",
+    "date": "2026-07-25",
+    "time": "09:00",
+    "location": "Grossabünt, Gamprin/Bendern",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
+    "description": "You will need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during your training.",
+    "price": null
+  },
+  {
+    "community": "Triesenberg",
+    "title": "Summerchilbi",
+    "icon": "#️⃣",
+    "colour": "grey",
+    "category": "Others",
+    "date": "2026-07-25",
+    "time": "11:00",
+    "location": "Malbun (autofrei), Triesenberg",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Malbun+%28autofrei%29%2C+Triesenberg",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Balzers",
+    "title": "Summer party / pig in a poke",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-07-19",
+    "time": "16:00",
+    "location": "Dorfplatz BalzersFÃ¼rstenstrasse9496 Balzers, Balzers",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfplatz+BalzersF%C3%83%C2%BCrstenstrasse9496+Balzers%2C+Balzers",
+    "description": "Friday, August 14, 2026, from 4:00 p.m. to 9:30 p.m\n\nSummer party of the Society Commission meets “Cat in a Sack” – Moseg and more...\n\nWe're ending the summer holidays with a great combination event. The “Summer Festival of the Society Commission” meets “Cat in a Sack” – Moseg and more...\nThe program:\n4:00 p.m.:                Start of the summer festival. We are spoiled with culinary delights by them\nRestaurants Zentrum and Falknis as well as the wagon building association. Also included are\nthe Granville Café with various coffee delicacies and Martin Telser\nwith its fine ice creams. DJ Jonas provides the right music.\n6:00 p.m. - 7:30 p.m.:    “Cat in a poke” - Moses and more... As usual, it will only be a few days before\nannounced who will surprise us musically. So much can be revealed, it\nis the “spiciest” Balzner band.\n7.30 p.m. - 9.30 p.m.:    Summer party: cozy end with delicacies from the kitchen and refrigerator and\nlots of music.\n\nThe event only takes place in good weather.",
+    "price": null
   }
 ]
