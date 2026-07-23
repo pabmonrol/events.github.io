@@ -1,15 +1,15 @@
 [
     {
         "community": "Gamprin/Bendern",
-        "title": "Wednesday meeting",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-07-22",
-        "time": "19:00",
+        "title": "Fitness/outdoor training",
+        "icon": "⚽️",
+        "colour": "red",
+        "category": "Sport",
+        "date": "2026-07-25",
+        "time": "09:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "The Graumelierte present a stylish mix of swing, bossa nova and blues. Lively rhythms and elegant melodies ensure a relaxed, groovy concert experience.",
+        "description": "You will need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during your training.",
         "price": null
     },
     {
@@ -22,33 +22,7 @@
         "time": "09:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "You need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you enjoy your training.",
-        "price": null
-    },
-    {
-        "community": "Gamprin/Bendern",
-        "title": "Wednesday meeting",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-07-22",
-        "time": "19:00",
-        "location": "Grossabünt, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "The Graumelierte present a stylish mix of swing, bossa nova and blues. Lively rhythms and elegant melodies ensure a relaxed, groovy concert experience.",
-        "price": null
-    },
-    {
-        "community": "Gamprin/Bendern",
-        "title": "Fitness/outdoor training",
-        "icon": "⚽️",
-        "colour": "red",
-        "category": "Sport",
-        "date": "2026-07-25",
-        "time": "09:00",
-        "location": "Grossabünt, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "You need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you enjoy your training.",
+        "description": "You will need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during your training.",
         "price": null
     },
     {
@@ -61,6 +35,19 @@
         "time": "14:00",
         "location": "Biedermannhaus, Schellenberg",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Biedermannhaus%2C+Schellenberg",
+        "description": "",
+        "price": null
+    },
+    {
+        "community": "Eschen",
+        "title": "“Firobetwanderig” to the Sega pond",
+        "icon": "⚽️",
+        "colour": "red",
+        "category": "Sport",
+        "date": "2026-07-29",
+        "time": "18.00",
+        "location": "Nendeln, Obera-Schafflet 1, Forstwerkhof, Eschen",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Nendeln%2C+Obera-Schafflet+1%2C+Forstwerkhof%2C+Eschen",
         "description": "",
         "price": null
     },
@@ -87,6 +74,19 @@
         "time": "11:00",
         "location": "Malbun (autofrei), Triesenberg",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Malbun+%28autofrei%29%2C+Triesenberg",
+        "description": "",
+        "price": null
+    },
+    {
+        "community": "Triesenberg",
+        "title": "Full moon party on Sareis",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-07-29",
+        "time": "18:00",
+        "location": "Berggasthaus Sareis, Triesenberg",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Berggasthaus+Sareis%2C+Triesenberg",
         "description": "",
         "price": null
     }
