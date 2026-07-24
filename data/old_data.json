@@ -687,5 +687,31 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
     "description": "You need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you enjoy your training.",
     "price": null
+  },
+  {
+    "community": "Eschen",
+    "title": "“Firobetwanderig” to the Sega pond",
+    "icon": "⚽️",
+    "colour": "red",
+    "category": "Sport",
+    "date": "2026-07-29",
+    "time": "18.00",
+    "location": "Nendeln, Obera-Schafflet 1, Forstwerkhof, Eschen",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Nendeln%2C+Obera-Schafflet+1%2C+Forstwerkhof%2C+Eschen",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Triesenberg",
+    "title": "Full moon party on Sareis",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-07-29",
+    "time": "18:00",
+    "location": "Berggasthaus Sareis, Triesenberg",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Berggasthaus+Sareis%2C+Triesenberg",
+    "description": "",
+    "price": null
   }
 ]
