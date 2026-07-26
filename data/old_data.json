@@ -713,5 +713,18 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Berggasthaus+Sareis%2C+Triesenberg",
     "description": "",
     "price": null
+  },
+  {
+    "community": "Schaan",
+    "title": "Schaan summer in the Lindahof",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-07-31",
+    "time": "20:00",
+    "location": "Lindahof, Schaan",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Lindahof%2C+Schaan",
+    "description": "",
+    "price": null
   }
 ]
