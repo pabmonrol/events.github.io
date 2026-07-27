@@ -9,7 +9,7 @@
         "time": "09:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "You will need your own mat for the training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during the training.",
+        "description": "You will need your own mat for the training; if you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during the training.",
         "price": null
     },
     {
@@ -22,7 +22,20 @@
         "time": "09:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "You will need your own mat for the training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during the training.",
+        "description": "You will need your own mat for the training; if you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during the training.",
+        "price": null
+    },
+    {
+        "community": "Schellenberg",
+        "title": "Family Sunday in the Biedermannhaus",
+        "icon": "🎵",
+        "colour": "blue",
+        "category": "Music",
+        "date": "2026-08-02",
+        "time": "14:00",
+        "location": "Biedermannhaus, Schellenberg",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Biedermannhaus%2C+Schellenberg",
+        "description": "",
         "price": null
     },
     {
@@ -31,7 +44,7 @@
         "icon": "🧩",
         "colour": "purple",
         "category": "Culture",
-        "date": "2026-07-26",
+        "date": "2026-08-02",
         "time": "14:00",
         "location": "Biedermannhaus, Schellenberg",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Biedermannhaus%2C+Schellenberg",
@@ -48,6 +61,19 @@
         "time": "18.00",
         "location": "Nendeln, Obera-Schafflet 1, Forstwerkhof, Eschen",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Nendeln%2C+Obera-Schafflet+1%2C+Forstwerkhof%2C+Eschen",
+        "description": "",
+        "price": null
+    },
+    {
+        "community": "Eschen",
+        "title": "Destination Museum",
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-08-02",
+        "time": "10.00",
+        "location": "Eschen, St. Martins-Ring 39, Mühle, Eschen",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Eschen%2C+St.+Martins-Ring+39%2C+M%C3%BChle%2C+Eschen",
         "description": "",
         "price": null
     },
