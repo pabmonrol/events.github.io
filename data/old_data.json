@@ -817,5 +817,18 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Eschen%2C+St.+Martins-Ring+39%2C+M%C3%BChle%2C+Eschen",
     "description": "",
     "price": null
+  },
+  {
+    "community": "Eschen",
+    "title": "29th Football Experience Camp",
+    "icon": "⚽️",
+    "colour": "red",
+    "category": "Sport",
+    "date": "2026-08-03",
+    "time": "18.00",
+    "location": "Eschen, Rheinstrasse 30, Sportpark Eschen-Mauren, Eschen",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Eschen%2C+Rheinstrasse+30%2C+Sportpark+Eschen-Mauren%2C+Eschen",
+    "description": "",
+    "price": null
   }
 ]

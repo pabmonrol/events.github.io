@@ -27,19 +27,6 @@
     },
     {
         "community": "Schellenberg",
-        "title": "Family Sunday in the Biedermannhaus",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-08-02",
-        "time": "14:00",
-        "location": "Biedermannhaus, Schellenberg",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Biedermannhaus%2C+Schellenberg",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Schellenberg",
         "title": "Rural living museum",
         "icon": "🧩",
         "colour": "purple",
