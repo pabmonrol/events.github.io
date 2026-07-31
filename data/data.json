@@ -118,19 +118,6 @@
     },
     {
         "community": "Vaduz",
-        "title": "WINE & VIBES",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-07-30",
-        "time": "17:00",
-        "location": "Hofkellerei des Fürsten Liechtenstein (Lageplan)\nFeldstrasse 4\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Hofkellerei+des+F%C3%BCrsten+Liechtenstein+%28Lageplan%29%0AFeldstrasse+4%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
-        "description": "Enjoyable wines. Relaxed beats. Best company.\n\nAt Wine & Vibes, fine wines, creative wine cocktails and summery beats meet a unique atmosphere surrounded by vines. Our “Fiirobed - Plättli” perfectly round off the offer with fine cuisine.\n \nThe focus here is on enjoyment, a good mood and a relaxed summer atmosphere.\n \nDJ Brasil provides the right sound with chilled afterwork beats.\n\nRegistration is not required.",
-        "price": null
-    },
-    {
-        "community": "Vaduz",
         "title": "Children | Holiday studio",
         "icon": "🧩",
         "colour": "purple",
@@ -143,16 +130,16 @@
         "price": null
     },
     {
-        "community": "Triesenberg",
-        "title": "Swiss Night Sarees",
+        "community": "Balzers",
+        "title": "Family center - we are there for you",
         "icon": "🪇",
         "colour": "pink",
         "category": "Leisure",
-        "date": "2026-08-01",
-        "time": null,
-        "location": "Berggasthaus Sareis, Triesenberg",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Berggasthaus+Sareis%2C+Triesenberg",
-        "description": "",
+        "date": "2026-08-03",
+        "time": "09:00",
+        "location": "Familienzentrum, Heiligwies 24, Balzers",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Familienzentrum%2C+Heiligwies+24%2C+Balzers",
+        "description": "During the summer holidays we are there for you - from 9 a.m. to 11 a.m. on the following days:\n\nMonday, August 3rd / 10th, 2026\nWednesday, August 5th / 12th, 2026\n\nWe are looking forward to your visit!\n\nFlyers",
         "price": null
     }
 ]
