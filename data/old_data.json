@@ -882,5 +882,18 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstmuseum+Liechtenstein+%28Lageplan%29%0ASt%C3%A4dtle+32%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
     "description": "for the Hilti Art Foundation exhibition Abstract. In focus: Carmen Herrera, Wassily Kandinsky, Mark Rothko\nfor children aged 7 to 12\n​​​​​​​with Simone Fiorillo and Elena Hohl\n\ntime\n2 p.m. to 5 p.m\n\nWe ask that you register via the website.",
     "price": null
+  },
+  {
+    "community": "Balzers",
+    "title": "Family center - we are there for you",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-08-03",
+    "time": "09:00",
+    "location": "Familienzentrum, Heiligwies 24, Balzers",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Familienzentrum%2C+Heiligwies+24%2C+Balzers",
+    "description": "During the summer holidays we are there for you - from 9 a.m. to 11 a.m. on the following days:\n\nMonday, August 3rd / 10th, 2026\nWednesday, August 5th / 12th, 2026\n\nWe are looking forward to your visit!\n\nFlyers",
+    "price": null
   }
 ]
