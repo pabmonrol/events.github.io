@@ -1,15 +1,41 @@
 [
     {
         "community": "Gamprin/Bendern",
+        "title": "Wednesday meeting",
+        "icon": "🎵",
+        "colour": "blue",
+        "category": "Music",
+        "date": "2026-08-05",
+        "time": null,
+        "location": "Grossabünt, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
+        "description": "The Flat-5 jazz band and songwriter Mommel combine groovy jazz with poetic lyrics to create a special concert experience. Sonorous arrangements and personal songs create an atmospheric atmosphere.",
+        "price": null
+    },
+    {
+        "community": "Gamprin/Bendern",
+        "title": "Exchange on the sofa",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-08-05",
+        "time": "17:00",
+        "location": "Grossabünt, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
+        "description": "We would like to stay in conversation with you. With our new format “Exchange on the Sofa” we are creating an additional offer for open encounters in a cozy atmosphere.\nHere you can raise your concerns early, address your own topics or simply listen. Without a program, without registration – just come along and talk to community leader Johannes Hasler on the “sofa in the Grossabünt”. The Grossabünt offers the perfect environment for this – before the respective Wednesday meetings.",
+        "price": null
+    },
+    {
+        "community": "Gamprin/Bendern",
         "title": "Fitness/outdoor training",
         "icon": "⚽️",
         "colour": "red",
         "category": "Sport",
-        "date": "2026-08-01",
+        "date": "2026-08-08",
         "time": "09:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "You will need your own mat for the training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during the training.",
+        "description": "You will need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during your training.",
         "price": null
     },
     {
@@ -44,37 +70,11 @@
         "icon": "⚽️",
         "colour": "red",
         "category": "Sport",
-        "date": "2026-08-01",
+        "date": "2026-08-08",
         "time": "09:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "You will need your own mat for the training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during the training.",
-        "price": null
-    },
-    {
-        "community": "Gamprin/Bendern",
-        "title": "Wednesday meeting",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-08-05",
-        "time": "09:00",
-        "location": "Grossabünt, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "The Flat-5 jazz band and songwriter Mommel combine groovy jazz with poetic lyrics to create a special concert experience. Sonorous arrangements and personal songs create an atmospheric atmosphere.",
-        "price": null
-    },
-    {
-        "community": "Gamprin/Bendern",
-        "title": "Exchange on the sofa",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-08-05",
-        "time": "17:00",
-        "location": "Grossabünt, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "We would like to stay in conversation with you. With our new format “Exchange on the Sofa” we are creating an additional offer for open encounters in a cozy atmosphere.\nHere you can raise your concerns early, address your own topics or simply listen. Without a program, without registration – just come along and talk to community leader Johannes Hasler on the “sofa in the Grossabünt”. The Grossabünt offers the perfect environment for this – before the respective Wednesday meetings.",
+        "description": "You will need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during your training.",
         "price": null
     },
     {
@@ -104,32 +104,6 @@
         "price": null
     },
     {
-        "community": "Eschen",
-        "title": "Destination Museum",
-        "icon": "🧩",
-        "colour": "purple",
-        "category": "Culture",
-        "date": "2026-08-02",
-        "time": "10.00",
-        "location": "Eschen, St. Martins-Ring 39, Mühle, Eschen",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Eschen%2C+St.+Martins-Ring+39%2C+M%C3%BChle%2C+Eschen",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Eschen",
-        "title": "29th Football Experience Camp",
-        "icon": "⚽️",
-        "colour": "red",
-        "category": "Sport",
-        "date": "2026-08-03",
-        "time": "10.00",
-        "location": "Eschen, Rheinstrasse 30, Sportpark Eschen-Mauren, Eschen",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Eschen%2C+Rheinstrasse+30%2C+Sportpark+Eschen-Mauren%2C+Eschen",
-        "description": "",
-        "price": null
-    },
-    {
         "community": "Vaduz",
         "title": "Children | Holiday studio",
         "icon": "🧩",
@@ -153,32 +127,6 @@
         "location": "Familienzentrum, Heiligwies 24, Balzers",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Familienzentrum%2C+Heiligwies+24%2C+Balzers",
         "description": "During the summer holidays we are there for you - from 9 a.m. to 11 a.m. on the following days:\n\nMonday, August 3rd / 10th, 2026\nWednesday, August 5th / 12th, 2026\n\nWe are looking forward to your visit!\n\nFlyers",
-        "price": null
-    },
-    {
-        "community": "Balzers",
-        "title": "Family center - we are there for you",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-08-03",
-        "time": "09:00",
-        "location": "Familienzentrum, Heiligwies 24, Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Familienzentrum%2C+Heiligwies+24%2C+Balzers",
-        "description": "During the summer holidays we are there for you - from 9 a.m. to 11 a.m. on the following days:\n\nMonday, August 3rd / 10th, 2026\nWednesday, August 5th / 12th, 2026\n\nWe are looking forward to your visit!\n\nFlyers",
-        "price": null
-    },
-    {
-        "community": "Balzers",
-        "title": "Summer party / pig in a poke",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-08-03",
-        "time": "16:00",
-        "location": "Dorfplatz BalzersFÃ¼rstenstrasse9496 Balzers, Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfplatz+BalzersF%C3%83%C2%BCrstenstrasse9496+Balzers%2C+Balzers",
-        "description": "Friday, August 14, 2026, from 4:00 p.m. to 9:30 p.m\n\nSummer party of the Society Commission meets “Cat in a Sack” – Moseg and more...\n\nWe're ending the summer holidays with a great combination event. The “Summer Festival of the Society Commission” meets “Cat in a Sack” – Moseg and more...\nThe program:\n4:00 p.m.:                Start of the summer festival. We are spoiled with culinary delights by them\nRestaurants Zentrum and Falknis as well as the wagon building association. Also included are\nthe Granville Café with various coffee delicacies and Martin Telser\nwith its fine ice creams. DJ Jonas provides the right music.\n6:00 p.m. - 7:30 p.m.:    “Cat in a poke” - Moses and more... As usual, it will only be a few days before\nannounced who will surprise us musically. So much can be revealed, it\nis the “spiciest” Balzner band.\n7.30 p.m. - 9.30 p.m.:    Summer party: cozy end with delicacies from the kitchen and refrigerator and\nlots of music.\n\nThe event only takes place in good weather.",
         "price": null
     }
 ]
