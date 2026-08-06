@@ -1,15 +1,28 @@
 [
     {
         "community": "Gamprin/Bendern",
+        "title": "Fitness/outdoor training",
+        "icon": "⚽️",
+        "colour": "red",
+        "category": "Sport",
+        "date": "2026-08-08",
+        "time": "09:00",
+        "location": "Grossabünt, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
+        "description": "You will need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during your training.",
+        "price": null
+    },
+    {
+        "community": "Gamprin/Bendern",
         "title": "Wednesday meeting",
         "icon": "🎵",
         "colour": "blue",
         "category": "Music",
-        "date": "2026-08-05",
-        "time": null,
+        "date": "2026-08-12",
+        "time": "19:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "The Flat-5 jazz band and songwriter Mommel combine groovy jazz with poetic lyrics to create a special concert experience. Sonorous arrangements and personal songs create an atmospheric atmosphere.",
+        "description": "Friends from Ruggell – Wuarscht n'Brot from Ruggell provide the best entertainment with their music and charm. A cozy and sociable program with friends from the neighboring community.",
         "price": null
     },
     {
@@ -18,7 +31,7 @@
         "icon": "🪇",
         "colour": "pink",
         "category": "Leisure",
-        "date": "2026-08-05",
+        "date": "2026-08-12",
         "time": "17:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
@@ -44,11 +57,11 @@
         "icon": "🎵",
         "colour": "blue",
         "category": "Music",
-        "date": "2026-08-05",
-        "time": "09:00",
+        "date": "2026-08-12",
+        "time": "19:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "The Flat-5 jazz band and songwriter Mommel combine groovy jazz with poetic lyrics to create a special concert experience. Sonorous arrangements and personal songs create an atmospheric atmosphere.",
+        "description": "Friends from Ruggell – Wuarscht n'Brot from Ruggell provide the best entertainment with their music and charm. A cozy and sociable program with friends from the neighboring community.",
         "price": null
     },
     {
@@ -57,24 +70,11 @@
         "icon": "🪇",
         "colour": "pink",
         "category": "Leisure",
-        "date": "2026-08-05",
+        "date": "2026-08-12",
         "time": "17:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
         "description": "We would like to stay in conversation with you. With our new format “Exchange on the Sofa” we are creating an additional offer for open encounters in a cozy atmosphere.\nHere you can raise your concerns early, address your own topics or simply listen. Without a program, without registration – just come along and talk to community leader Johannes Hasler on the “sofa in the Grossabünt”. The Grossabünt offers the perfect environment for this – before the respective Wednesday meetings.",
-        "price": null
-    },
-    {
-        "community": "Gamprin/Bendern",
-        "title": "Fitness/outdoor training",
-        "icon": "⚽️",
-        "colour": "red",
-        "category": "Sport",
-        "date": "2026-08-08",
-        "time": "09:00",
-        "location": "Grossabünt, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "You will need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during your training.",
         "price": null
     },
     {
@@ -88,32 +88,6 @@
         "location": "Dorfplatz, Schellenberg",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfplatz%2C+Schellenberg",
         "description": "",
-        "price": null
-    },
-    {
-        "community": "Vaduz",
-        "title": "Children | Holiday studio",
-        "icon": "🧩",
-        "colour": "purple",
-        "category": "Culture",
-        "date": "2026-08-05",
-        "time": "14:00",
-        "location": "Kunstmuseum Liechtenstein (Lageplan)\nStädtle 32\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstmuseum+Liechtenstein+%28Lageplan%29%0ASt%C3%A4dtle+32%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
-        "description": "for the Hilti Art Foundation exhibition Abstract. In focus: Carmen Herrera, Wassily Kandinsky, Mark Rothko\nfor children aged 7 to 12\n​​​​​​​with Simone Fiorillo and Elena Hohl\n\ntime\n2 p.m. to 5 p.m\n\nWe ask that you register via the website.",
-        "price": null
-    },
-    {
-        "community": "Vaduz",
-        "title": "Stefan Kainbacher. Trialogue: Holobiont Habitat – Chapter 1. Decode",
-        "icon": "🧩",
-        "colour": "purple",
-        "category": "Culture",
-        "date": "2026-08-11",
-        "time": "14:00",
-        "location": "Kunstraum Engländerbau (Lageplan)\nStädtle 37\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstraum+Engl%C3%A4nderbau+%28Lageplan%29%0ASt%C3%A4dtle+37%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
-        "description": "An expansive audiovisual installation about the possibilities and limits of communication between biological and technical actors.\n\nTrialogue: Holobiont Habitat – Chapter 1: Decode is an expansive audiovisual installation about the possibilities and limits of communication between biological and technical actors.\n\nIn the center of the art space are eight black 19-inch server racks, arranged in a circle like a technological Stonehenge. The racks form the habitat of a hybrid organism in which plants, sensors, computers, artificial intelligence and audiovisual systems are connected.\n\nEach rack houses live plants, full-spectrum grow lights, speakers, and various technical components. Network cables, power lines and hoses of an automated irrigation system connect the individual units into a common circuit. The technical infrastructure deliberately remains visible and becomes part of the spatial composition.\n\nThe plants are continuously recorded using various sensors. The focus is on measuring bioelectrical signals using Plant SpikerBox systems, supplemented by environmental and climate data. Four of the experimental stations also have camera systems with which the plants can be visually observed.\n\nThe collected data is processed by a locally operated multi-agent system. The AI ​​agents analyze electrical activity patterns, image data and environmental parameters and try to recognize connections, states and recurring patterns in the behavior of the plants. The installation stages this process not as a solved problem, but as an ongoing attempt at a machine approach to a non-human form of communication.\n\nThe work is seen as an artistic research setting: The AI ​​does not try to control plants, but rather to understand them. The actual topic of the work is less the plant itself and more the question of how technical systems create meaning and what limits exist.\n\nTrialogue: Holobiont Habitat – Chapter 1: Decode marks the first part of an ongoing series of works. While this chapter addresses the question of decoding biological signals, future chapters will examine additional forms of interaction, translation, and coexistence between human and non-human actors.",
         "price": null
     }
 ]
