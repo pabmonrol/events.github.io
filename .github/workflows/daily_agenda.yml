@@ -33,7 +33,7 @@ jobs:
           python -m pip install click
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           # Download the large English model for SpaCy
-          python -m spacy download en_core_web_lg
+          python -m spacy download en_core_web_sm
 
       # =========================================================
       # 🚀 NUEVOS PASOS: CONFIGURACIÓN Y CACHÉ DE PLAYWRIGHT
