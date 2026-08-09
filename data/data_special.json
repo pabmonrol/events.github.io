@@ -1,33 +1,24 @@
-[{
-  "title": "Street Parade - Zurich",
-  "icon": "👨‍🎤",
-  "colour": "red",
-  "date": "2026-08-08",
-  "time": "13:00",
-  "location": "Utoquai, Zürich, Suiza",
-  "description": "+INFO: https://www.streetparade.com/\n\nStage Guide\nOpéra Stage - Opernplatz (Bellevue) - 13:00 a 00:00\nCenter Stage - Bürkliplatz - 13:00 a 00:00\nClubbing Stage - Kongresshaus - 13:00 a 00:00\nInnovation Stage - Limmatquai - 13:00 a 22:00\nZürich Sound Stage - Nationalquai - 13:00 a 00:00\nGenerations Stage - Rentenanstalt (Enge) - 13:00 a 22:00\nYoung Talent Stage - Swiss Re Corner - 13:00 a 22:00\nHardtechno-Stage - Hafendamm Enge - 13:00 a 00:00",
-  "price": null,
-  "google_maps": "https://www.google.com/maps/search/?api=1&query=+Utoquai,+Zürich,+Suiza"
-},
-{
-  "title": "Daydance Schaan",
-  "icon": "😎",
-  "colour": "red",
-  "date": "2026-08-22",
-  "time": "14:00",
-  "location": "Beer garden of the Liechtensteiner Braustube (Im alten Riet 156, 9494 Schaan) ",
-  "description": "ADMISION UNTIL 17:00h. !!!!!\n\nAdmission from 21 years, strict ID check!\n\nOff to the beer garden of the Liechtensteiner Braustube. Summer, sun, sunshine and an unforgettable event. With great music will be on the 22nd August 2026 (Postponement date: Saturday, 29. August 2026) under - hopefully - bright blue sky provided for the best mood. Our four unique DJs bring the music – you the good mood.\nBe there, we are looking forward to you! 🌞🍻\n\n🌧 The «DAYDANCE SCHAAN» will take place on Saturday, 22. August 2026 only in good weather. In bad weather, we reserve the right to hold the event on Saturday, 29. August 2026 to be postponed. In this case, we will inform you about our official Instagram channel – at least two days before the event. Tickets already purchased will remain valid for the new event date and will not need to be exchanged. A refund of the ticket price or other expenses due to the postponement of the event is excluded.\n\n📷 Image & Sound: Photos and videos are taken at the «DAYDANCE SCHAAN» – with your visit you agree that these recordings of the event may be published.\n\n🧥 We assume no liability for lost or damaged items. There will be no wardrobe.\n\n🫶🏻 Awareness: We do not tolerate any form of discrimination, sexism, racism or offeism at our event. Each person shall be treated with respect regardless of origin, gender, sexual orientation, religion, age, disability or other personal characteristics. Cross-border, discriminatory or exclusionary behaviour is not tolerated. We ask all guests to be mindful of each other and to help ensure that every person can feel welcome and safe.",
-  "price": 25,
-  "google_maps": "https://www.google.com/maps/search/?api=1&query=+Beer+garden+of+the+Liechtensteiner+Braustube+(Im+alten+Riet+156,+9494+Schaan)"
-},
-{
-  "title": "Argovia Faescht!",
-  "icon": "😎",
-  "colour": "red",
-  "date": "2026-09-04",
-  "time": "18:00",
-  "location": "Birrfeld, Lupfig, Argovia, Suiza",
-  "description": "Am Freitagabend fällt der Startschuss für das Argovia Fäscht 2026: Das traditionelle Beizlifäscht eröffnet das Festwochenende auf dem Birrfeld.\n\nAb 18:00 Uhr erwarten euch Beizlibetrieb, Chilbi, regionale Food- und Getränkestände sowie Partyzelte mit Musik und Feststimmung. Perfekt, um gemeinsam anzustossen, bekannte Gesichter zu treffen und sich auf das Argovia-Fäscht-Wochenende einzustimmen.\n\nÖffnungszeiten: 18:00–02:00 Uhr\n\n----------------------------------------------------------------------------------------------------------\n\nAm Samstag geht das Argovia Fäscht auf dem Birrfeld in die grosse Runde: Nationale und internationale Live-Acts sorgen auf der Bühne für Festivalmomente, während Partyzelte, Chilbi sowie zahlreiche regionale Food- und Getränkestände für ausgelassene Stimmung auf dem ganzen Gelände sorgen.\n\nGeländeöffnungszeiten: 14:00–04:00 Uhr",
-  "price": 49,
-  "google_maps": "https://www.google.com/maps/search/?api=1&query=+Birrfeld,+Lupfig,+Argovia,+Suiza"
-}]
+[
+  {
+    "title": "Daydance Schaan",
+    "icon": "😎",
+    "colour": "red",
+    "date": "2026-08-22",
+    "time": "14:00",
+    "location": "Beer garden of the Liechtensteiner Braustube (Im alten Riet 156, 9494 Schaan) ",
+    "description": "ADMISION UNTIL 17:00h. !!!!!\n\nAdmission from 21 years, strict ID check!\n\nOff to the beer garden of the Liechtensteiner Braustube. Summer, sun, sunshine and an unforgettable event. With great music will be on the 22nd August 2026 (Postponement date: Saturday, 29. August 2026) under - hopefully - bright blue sky provided for the best mood. Our four unique DJs bring the music – you the good mood.\nBe there, we are looking forward to you! 🌞🍻\n\n🌧 The «DAYDANCE SCHAAN» will take place on Saturday, 22. August 2026 only in good weather. In bad weather, we reserve the right to hold the event on Saturday, 29. August 2026 to be postponed. In this case, we will inform you about our official Instagram channel – at least two days before the event. Tickets already purchased will remain valid for the new event date and will not need to be exchanged. A refund of the ticket price or other expenses due to the postponement of the event is excluded.\n\n📷 Image & Sound: Photos and videos are taken at the «DAYDANCE SCHAAN» – with your visit you agree that these recordings of the event may be published.\n\n🧥 We assume no liability for lost or damaged items. There will be no wardrobe.\n\n🫶🏻 Awareness: We do not tolerate any form of discrimination, sexism, racism or offeism at our event. Each person shall be treated with respect regardless of origin, gender, sexual orientation, religion, age, disability or other personal characteristics. Cross-border, discriminatory or exclusionary behaviour is not tolerated. We ask all guests to be mindful of each other and to help ensure that every person can feel welcome and safe.",
+    "price": 25,
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=+Beer+garden+of+the+Liechtensteiner+Braustube+(Im+alten+Riet+156,+9494+Schaan)"
+  },
+  {
+    "title": "Argovia Faescht!",
+    "icon": "😎",
+    "colour": "red",
+    "date": "2026-09-04",
+    "time": "18:00",
+    "location": "Birrfeld, Lupfig, Argovia, Suiza",
+    "description": "Am Freitagabend fällt der Startschuss für das Argovia Fäscht 2026: Das traditionelle Beizlifäscht eröffnet das Festwochenende auf dem Birrfeld.\n\nAb 18:00 Uhr erwarten euch Beizlibetrieb, Chilbi, regionale Food- und Getränkestände sowie Partyzelte mit Musik und Feststimmung. Perfekt, um gemeinsam anzustossen, bekannte Gesichter zu treffen und sich auf das Argovia-Fäscht-Wochenende einzustimmen.\n\nÖffnungszeiten: 18:00–02:00 Uhr\n\n----------------------------------------------------------------------------------------------------------\n\nAm Samstag geht das Argovia Fäscht auf dem Birrfeld in die grosse Runde: Nationale und internationale Live-Acts sorgen auf der Bühne für Festivalmomente, während Partyzelte, Chilbi sowie zahlreiche regionale Food- und Getränkestände für ausgelassene Stimmung auf dem ganzen Gelände sorgen.\n\nGeländeöffnungszeiten: 14:00–04:00 Uhr",
+    "price": 49,
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=+Birrfeld,+Lupfig,+Argovia,+Suiza"
+  }
+]
