@@ -1051,5 +1051,44 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfplatz+BalzersF%C3%83%C2%BCrstenstrasse9496+Balzers%2C+Balzers",
     "description": "Friday, August 14, 2026, from 4:00 p.m. to 9:30 p.m\n\nSummer party of the Society Commission meets “Cat in a Sack” – Moseg and more...\n\nWe're ending the summer holidays with a great combination event. The “Summer Festival of the Society Commission” meets “Cat in a Sack” – Moseg and more...\nThe program:\n4:00 p.m.:                Start of the summer festival. We are spoiled with culinary delights by them\nRestaurants Zentrum and Falknis as well as the wagon building association. Also included are\nthe Granville Café with various coffee delicacies and Martin Telser\nwith its fine ice creams. DJ Jonas provides the right music.\n6:00 p.m. - 7:30 p.m.:    \"Cat in a poke\" - Moses and more... As usual, it will only be a few days before\nannounced who will surprise us musically. So much can be revealed, it\nis the “spiciest” Balzner band.\n7.30 p.m. - 9.30 p.m.:    Summer party: cozy end with delicacies from the kitchen and refrigerator and\nlots of music.\n\nThe event only takes place in good weather.",
     "price": null
+  },
+  {
+    "community": "Vaduz",
+    "title": "State holiday",
+    "icon": "🎵",
+    "colour": "blue",
+    "category": "Music",
+    "date": "2026-08-15",
+    "time": "11:03",
+    "location": "Schloss Vaduz (Lageplan)\nSchlosswiese\nBergstrasse 2\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Schloss+Vaduz+%28Lageplan%29%0ASchlosswiese%0ABergstrasse+2%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+    "description": "Folk festival with the best entertainment for families and music fans\n\nAugust 15th is a public holiday in Liechtenstein, namely Assumption Day or Women's Day. It has been celebrated since 1940 and is closely linked to the birthday of Prince Franz-Josef II on August 16th.",
+    "price": null
+  },
+  {
+    "community": "Vaduz",
+    "title": "Art Museum Special | State holiday",
+    "icon": "🧩",
+    "colour": "purple",
+    "category": "Culture",
+    "date": "2026-08-15",
+    "time": "10:00",
+    "location": "Kunstmuseum Liechtenstein (Lageplan)\nStädtle 32\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstmuseum+Liechtenstein+%28Lageplan%29%0ASt%C3%A4dtle+32%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+    "description": "The Liechtenstein Art Museum and the Hilti Art Foundation are open from 10 a.m. to 8 p.m.\n\nOn the national holiday, the art museum is one of the main attractions in Vaduz, alongside the fireworks and the unique atmosphere at the folk festival. The exhibition halls and the café offer a stimulating break from the hustle and bustle of the town.\n\nOur program\n10:30 a.m. to 12 p.m. Playshop: Storytelling for the exhibition In collaboration: Mercedes Azpilicueta. CaccHho CucchhA\nfor children aged 2 to 5 years\nwith Elena Hohl\n\n2 p.m. to 7 p.m. Short tours every half hour\n \n\nFree entry.",
+    "price": null
+  },
+  {
+    "community": "Balzers",
+    "title": "Summer party / pig in a poke",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-08-14",
+    "time": "16:00",
+    "location": "Dorfplatz BalzersFÃ¼rstenstrasse9496 Balzers, Balzers",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfplatz+BalzersF%C3%83%C2%BCrstenstrasse9496+Balzers%2C+Balzers",
+    "description": "Friday, August 14, 2026, from 4:00 p.m. to 9:30 p.m\n\nSummer party of the Society Commission meets “Cat in a Sack” – Moseg and more...\n\nWe're ending the summer holidays with a great combination event. The “Summer Festival of the Society Commission” meets “Cat in a Sack” – Moseg and more...\nThe program:\n4:00 p.m.:                Start of the summer festival. We are spoiled with culinary delights by them\nRestaurants Zentrum and Falknis as well as the wagon building association. Also included are\nthe Granville Café with various coffee delicacies and Martin Telser\nwith its fine ice creams. DJ Jonas provides the right music.\n6:00 p.m. - 7:30 p.m.:    “Cat in a poke” - Moses and more... As usual, it will only be a few days before\nannounced who will surprise us musically. So much can be revealed, it\nis the “spiciest” Balzner band.\n7.30 p.m. - 9.30 p.m.:    Summer party: cozy end with delicacies from the kitchen and refrigerator and\nlots of music.\n\nThe event only takes place in good weather.",
+    "price": null
   }
 ]
