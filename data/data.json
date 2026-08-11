@@ -53,6 +53,19 @@
     },
     {
         "community": "Gamprin/Bendern",
+        "title": "Barbecue party",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-08-17",
+        "time": "09:00",
+        "location": "Gemeindesaal, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal%2C+Gamprin%2FBendern",
+        "description": "This is organized by the seniors' meeting.",
+        "price": null
+    },
+    {
+        "community": "Gamprin/Bendern",
         "title": "Wednesday meeting",
         "icon": "🎵",
         "colour": "blue",
@@ -104,16 +117,16 @@
         "price": null
     },
     {
-        "community": "Vaduz",
-        "title": "Stefan Kainbacher. Trialogue: Holobiont Habitat – Chapter 1. Decode",
-        "icon": "🧩",
-        "colour": "purple",
-        "category": "Culture",
-        "date": "2026-08-11",
-        "time": null,
-        "location": "Kunstraum Engländerbau (Lageplan)\nStädtle 37\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstraum+Engl%C3%A4nderbau+%28Lageplan%29%0ASt%C3%A4dtle+37%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
-        "description": "An expansive audiovisual installation about the possibilities and limits of communication between biological and technical actors.\n\nTrialogue: Holobiont Habitat – Chapter 1: Decode is an expansive audiovisual installation about the possibilities and limits of communication between biological and technical actors.\n\nIn the center of the art space are eight black 19-inch server racks, arranged in a circle like a technological Stonehenge. The racks form the habitat of a hybrid organism in which plants, sensors, computers, artificial intelligence and audiovisual systems are connected.\n\nEach rack houses live plants, full-spectrum grow lights, speakers, and various technical components. Network cables, power lines and hoses of an automated irrigation system connect the individual units into a common circuit. The technical infrastructure deliberately remains visible and becomes part of the spatial composition.\n\nThe plants are continuously recorded using various sensors. The focus is on measuring bioelectrical signals using Plant SpikerBox systems, supplemented by environmental and climate data. Four of the experimental stations also have camera systems with which the plants can be visually observed.\n\nThe collected data is processed by a locally operated multi-agent system. The AI ​​agents analyze electrical activity patterns, image data and environmental parameters and try to recognize connections, states and recurring patterns in the behavior of the plants. The installation stages this process not as a solved problem, but as an ongoing attempt at a machine approach to a non-human form of communication.\n\nThe work is seen as an artistic research setting: The AI ​​does not try to control plants, but rather to understand them. The actual topic of the work is less the plant itself and more the question of how technical systems create meaning and what limits exist.\n\nTrialogue: Holobiont Habitat – Chapter 1: Decode marks the first part of an ongoing series of works. While this chapter addresses the question of decoding biological signals, future chapters will examine additional forms of interaction, translation, and coexistence between human and non-human actors.",
+        "community": "Gamprin/Bendern",
+        "title": "Barbecue party",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-08-17",
+        "time": "09:00",
+        "location": "Gemeindesaal, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal%2C+Gamprin%2FBendern",
+        "description": "This is organized by the seniors' meeting.",
         "price": null
     },
     {
