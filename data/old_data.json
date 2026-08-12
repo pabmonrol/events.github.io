@@ -1155,5 +1155,18 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Kappelehof%2C+Balzers",
     "description": "The FBP local group Balzers cordially invites you to attend\nBrunch at Kappelehof, Sunday, August 16, 2026, from 10 a.m\n\nLook forward to a cozy get-together with fine, local products.\n\nThere are pony rides and a craft corner for children.\n\nWe look forward to your coming!\r\nFBP local group Balzers",
     "price": null
+  },
+  {
+    "community": "Gamprin/Bendern",
+    "title": "Barbecue party",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-08-17",
+    "time": "09:00",
+    "location": "Gemeindesaal, Gamprin/Bendern",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal%2C+Gamprin%2FBendern",
+    "description": "This is organized by the seniors' meeting.",
+    "price": null
   }
 ]
