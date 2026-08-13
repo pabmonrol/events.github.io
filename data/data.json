@@ -1,32 +1,6 @@
 [
     {
         "community": "Gamprin/Bendern",
-        "title": "Wednesday meeting",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-08-12",
-        "time": "19:00",
-        "location": "Grossabünt, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "Friends from Ruggell – Wuarscht n'Brot from Ruggell provide the best entertainment with their music and charm. A cozy and sociable program with friends from the neighboring community.",
-        "price": null
-    },
-    {
-        "community": "Gamprin/Bendern",
-        "title": "Exchange on the sofa",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-08-12",
-        "time": "17:00",
-        "location": "Grossabünt, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "We would like to stay in conversation with you. With our new format “Exchange on the Sofa” we are creating an additional offer for open encounters in a cozy atmosphere.\nHere you can raise your concerns early, address your own topics or simply listen. Without a program, without registration – just come along and talk to community leader Johannes Hasler on the “sofa in the Grossabünt”. The Grossabünt offers the perfect environment for this – before the respective Wednesday meetings.",
-        "price": null
-    },
-    {
-        "community": "Gamprin/Bendern",
         "title": "Fitness/outdoor training",
         "icon": "⚽️",
         "colour": "red",
@@ -35,7 +9,7 @@
         "time": "09:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "You will need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during your training.",
+        "description": "You need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you enjoy your training.",
         "price": null
     },
     {
@@ -67,27 +41,14 @@
     {
         "community": "Gamprin/Bendern",
         "title": "Wednesday meeting",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-08-12",
-        "time": "19:00",
-        "location": "Grossabünt, Gamprin/Bendern",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "Friends from Ruggell – Wuarscht n'Brot from Ruggell provide the best entertainment with their music and charm. A cozy and sociable program with friends from the neighboring community.",
-        "price": null
-    },
-    {
-        "community": "Gamprin/Bendern",
-        "title": "Exchange on the sofa",
         "icon": "🪇",
         "colour": "pink",
         "category": "Leisure",
-        "date": "2026-08-12",
-        "time": "17:00",
+        "date": "2026-08-19",
+        "time": "19:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "We would like to stay in conversation with you. With our new format “Exchange on the Sofa” we are creating an additional offer for open encounters in a cozy atmosphere.\nHere you can raise your concerns early, address your own topics or simply listen. Without a program, without registration – just come along and talk to community leader Johannes Hasler on the “sofa in the Grossabünt”. The Grossabünt offers the perfect environment for this – before the respective Wednesday meetings.",
+        "description": "Caffelatte brings the Italian attitude to life to the stage with well-known classics and modern Italo songs. Mediterranean sounds and lots of emotion create a holiday atmosphere in Gamprin.",
         "price": null
     },
     {
@@ -100,7 +61,7 @@
         "time": "09:00",
         "location": "Grossabünt, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
-        "description": "You will need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you have a lot of fun during your training.",
+        "description": "You need your own mat for your training. If you want, you can also bring a drinking bottle with you - we hope you enjoy your training.",
         "price": null
     },
     {
@@ -127,6 +88,19 @@
         "location": "Gemeindesaal, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal%2C+Gamprin%2FBendern",
         "description": "This is organized by the seniors' meeting.",
+        "price": null
+    },
+    {
+        "community": "Gamprin/Bendern",
+        "title": "Wednesday meeting",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-08-19",
+        "time": "19:00",
+        "location": "Grossabünt, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Grossab%C3%BCnt%2C+Gamprin%2FBendern",
+        "description": "Caffelatte brings the Italian attitude to life to the stage with well-known classics and modern Italo songs. Mediterranean sounds and lots of emotion create a holiday atmosphere in Gamprin.",
         "price": null
     },
     {
@@ -139,6 +113,19 @@
         "time": "19.30",
         "location": "Nendeln, Gemeindegarten 2, Alte Schule, Eschen",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Nendeln%2C+Gemeindegarten+2%2C+Alte+Schule%2C+Eschen",
+        "description": "",
+        "price": null
+    },
+    {
+        "community": "Eschen",
+        "title": "Course 08E01: Bodyforming, strengthened through menopause",
+        "icon": "⚽️",
+        "colour": "red",
+        "category": "Sport",
+        "date": "2026-08-19",
+        "time": "08.15",
+        "location": "Nendeln, Sebastianstrasse 54, Turnhalle, Eschen",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Nendeln%2C+Sebastianstrasse+54%2C+Turnhalle%2C+Eschen",
         "description": "",
         "price": null
     },
@@ -183,12 +170,25 @@
     },
     {
         "community": "Vaduz",
+        "title": "Meatbodies & Tsushimamire",
+        "icon": "🎵",
+        "colour": "blue",
+        "category": "Music",
+        "date": "2026-08-16",
+        "time": "20:01",
+        "location": "Jugendcafé Camäleon (Lageplan)\nFabrikweg 3\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Jugendcaf%C3%A9+Cam%C3%A4leon+%28Lageplan%29%0AFabrikweg+3%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+        "description": "Concert with Meatbodies (USA) and Tsushimamire (JP).\n\n",
+        "price": 30.0
+    },
+    {
+        "community": "Vaduz",
         "title": "KulturSoup with the artist Ursula Wolf “What was important today”",
         "icon": "🪇",
         "colour": "pink",
         "category": "Leisure",
         "date": "2026-08-18",
-        "time": "10:00",
+        "time": "20:01",
         "location": "Liechtensteinisches LandesMuseum (Lageplan)\nStädtle 43\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Liechtensteinisches+LandesMuseum+%28Lageplan%29%0ASt%C3%A4dtle+43%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
         "description": "Time out with culture!\n\nMake your lunch break a time out with culture! Experience an inspiring 30-minute tour with the artist Ursula Wolf through our special exhibition “What was important today” and then enjoy a delicious soup.\n\nFor ten years, the Liechtenstein artist Ursula Wolf drew for media coverage every day. What started as a drawing exercise soon became a large collection of small works of art. They document what moved the artist herself, but also Liechtenstein and the world during these ten years. It also talks about the value we attach to events, how fleeting this evaluation can be and how surprisingly long-lasting seemingly trivial things sometimes remain.\n \nUrsula Wolf presents these drawings in the Liechtenstein State Museum in the form of a walk-in collage: a space that invites you to discover, think and often smile.",
@@ -205,6 +205,32 @@
         "location": "Röm.-kath. Kathedrale St. Florin (Lageplan)\nSt. Florinsgasse 15\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=R%C3%B6m.-kath.+Kathedrale+St.+Florin+%28Lageplan%29%0ASt.+Florinsgasse+15%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
         "description": "Concert by the Rheinberger Choir Tokio under the direction of Chiaki Shirai\n\nAs part of the concert tour through the Alps, the Rheinberg Choir TOKIO under the direction of conductor Chiaki Shirai will also be performing in Vaduz Cathedral. The program includes works by the Liechtenstein composer Josef Gabriel Rheinberger as well as the Japanese composers Rentaro Taki and Koscak Yamada",
+        "price": null
+    },
+    {
+        "community": "Vaduz",
+        "title": "Take Away | Eleanor Antin. A retrospective",
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-08-19",
+        "time": "12:03",
+        "location": "Kunstmuseum Liechtenstein (Lageplan)\nStädtle 32\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstmuseum+Liechtenstein+%28Lageplan%29%0ASt%C3%A4dtle+32%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+        "description": "30 minute short tour\nwith Susanne Kudorfer\n\nOut of everyday life and into art: Take Away is a slightly different lunch break in Vaduz. In 30 minutes, visitors get an insight into a current exhibition and find out interesting information about artists and works. Each of these short tours is dedicated to a different topic.\n\nThe offer is free on Wednesday.",
+        "price": null
+    },
+    {
+        "community": "Vaduz",
+        "title": "Playshop | Movement and music",
+        "icon": "🎵",
+        "colour": "blue",
+        "category": "Music",
+        "date": "2026-08-19",
+        "time": "14:00",
+        "location": "Kunstmuseum Liechtenstein (Lageplan)\nStädtle 32\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstmuseum+Liechtenstein+%28Lageplan%29%0ASt%C3%A4dtle+32%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+        "description": "for children aged 5 to 7 years\nwith Gloria Amelia\n\nTime: 2 p.m. to 3:30 p.m\n\nAs part of the free Wednesday, the offer is free of charge.\n\nWe ask that you register via the website.",
         "price": null
     },
     {
@@ -231,6 +257,19 @@
         "location": "Dorfplatz BalzersFÃ¼rstenstrasse9496 Balzers, Balzers",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfplatz+BalzersF%C3%83%C2%BCrstenstrasse9496+Balzers%2C+Balzers",
         "description": "Friday, August 14, 2026, from 4:00 p.m. to 9:30 p.m\n\nSummer party of the Society Commission meets “Cat in a Sack” – Moseg and more...\n\nWe're ending the summer holidays with a great combination event. The “Summer Festival of the Society Commission” meets “Cat in a Sack” – Moseg and more...\nThe program:\n4:00 p.m.:                Start of the summer festival. We are spoiled with culinary delights by them\nRestaurants Zentrum and Falknis as well as the wagon building association. Also included are\nthe Granville Café with various coffee delicacies and Martin Telser\nwith its fine ice creams. DJ Jonas provides the right music.\n6:00 p.m. - 7:30 p.m.:    “Cat in a poke” - Moses and more... As usual, it will only be a few days before\nannounced who will surprise us musically. So much can be revealed, it\nis the “spiciest” Balzner band.\n7.30 p.m. - 9.30 p.m.:    Summer party: cozy end with delicacies from the kitchen and refrigerator and\nlots of music.\n\nThe event only takes place in good weather.",
+        "price": null
+    },
+    {
+        "community": "Balzers",
+        "title": "Lu Jong - Tibetan healing yoga",
+        "icon": "⚽️",
+        "colour": "red",
+        "category": "Sport",
+        "date": "2026-08-19",
+        "time": "19:01",
+        "location": "Haus GutenbergBurgweg 89496 Balzers, Balzers",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Haus+GutenbergBurgweg+89496+Balzers%2C+Balzers",
+        "description": "Lu Jong is an 8,000-year-old movement theory that was once only taught to selected monks in monasteries in Tibet.",
         "price": null
     },
     {

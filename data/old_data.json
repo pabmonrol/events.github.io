@@ -1168,5 +1168,44 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal%2C+Gamprin%2FBendern",
     "description": "This is organized by the seniors' meeting.",
     "price": null
+  },
+  {
+    "community": "Eschen",
+    "title": "Course 08B02: Yoga for men in Nendeln",
+    "icon": "⚽️",
+    "colour": "red",
+    "category": "Sport",
+    "date": "2026-08-17",
+    "time": "19.30",
+    "location": "Nendeln, Gemeindegarten 2, Alte Schule, Eschen",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Nendeln%2C+Gemeindegarten+2%2C+Alte+Schule%2C+Eschen",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Vaduz",
+    "title": "KulturSoup with the artist Ursula Wolf “What was important today”",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-08-18",
+    "time": "10:00",
+    "location": "Liechtensteinisches LandesMuseum (Lageplan)\nStädtle 43\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Liechtensteinisches+LandesMuseum+%28Lageplan%29%0ASt%C3%A4dtle+43%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+    "description": "Time out with culture!\n\nMake your lunch break a time out with culture! Experience an inspiring 30-minute tour with the artist Ursula Wolf through our special exhibition “What was important today” and then enjoy a delicious soup.\n\nFor ten years, the Liechtenstein artist Ursula Wolf drew for media coverage every day. What started as a drawing exercise soon became a large collection of small works of art. They document what moved the artist herself, but also Liechtenstein and the world during these ten years. It also talks about the value we attach to events, how fleeting this evaluation can be and how surprisingly long-lasting seemingly trivial things sometimes remain.\n \nUrsula Wolf presents these drawings in the Liechtenstein State Museum in the form of a walk-in collage: a space that invites you to discover, think and often smile.",
+    "price": 19.0
+  },
+  {
+    "community": "Vaduz",
+    "title": "Concert Rheinberger Choir TOKIO",
+    "icon": "🎵",
+    "colour": "blue",
+    "category": "Music",
+    "date": "2026-08-18",
+    "time": "19:00",
+    "location": "Röm.-kath. Kathedrale St. Florin (Lageplan)\nSt. Florinsgasse 15\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=R%C3%B6m.-kath.+Kathedrale+St.+Florin+%28Lageplan%29%0ASt.+Florinsgasse+15%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+    "description": "Concert by the Rheinberger Choir Tokio under the direction of Chiaki Shirai\n\nAs part of the concert tour through the Alps, the Rheinberg Choir TOKIO under the direction of conductor Chiaki Shirai will also be performing in Vaduz Cathedral. The program includes works by the Liechtenstein composer Josef Gabriel Rheinberger as well as the Japanese composers Rentaro Taki and Koscak Yamada",
+    "price": null
   }
 ]
