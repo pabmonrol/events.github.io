@@ -53,6 +53,19 @@
     },
     {
         "community": "Gamprin/Bendern",
+        "title": "Brain fitness training",
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-08-20",
+        "time": "13:05",
+        "location": "Vereinshaus Ruggell, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C+Gamprin%2FBendern",
+        "description": "Course leader:\r\nElke Nestler-Schreiber, synapse coach, brain fitness trainer\nCost per person:\r\nCHF 19.- per hour for pensioners in the communities of Gamprin, Ruggell and Schellenberg. The course is financially supported by the three communities.\nRegistration and information:\r\nDirectly from the course leader, Tel. +41 79 450 21 92 or info(at)denkduenger.li. Trial lessons or entry is possible at any time. No previous knowledge is necessary. www.denkduenger.li.",
+        "price": 19.0
+    },
+    {
+        "community": "Gamprin/Bendern",
         "title": "Fitness/outdoor training",
         "icon": "⚽️",
         "colour": "red",
@@ -104,6 +117,19 @@
         "price": null
     },
     {
+        "community": "Gamprin/Bendern",
+        "title": "Brain fitness training",
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-08-20",
+        "time": "13:05",
+        "location": "Vereinshaus Ruggell, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C+Gamprin%2FBendern",
+        "description": "Course leader:\r\nElke Nestler-Schreiber, synapse coach, brain fitness trainer\nCost per person:\r\nCHF 19.- per hour for pensioners in the communities of Gamprin, Ruggell and Schellenberg. The course is financially supported by the three communities.\nRegistration and information:\r\nDirectly from the course leader, Tel. +41 79 450 21 92 or info(at)denkduenger.li. Trial lessons or entry is possible at any time. No previous knowledge is necessary. www.denkduenger.li.",
+        "price": 19.0
+    },
+    {
         "community": "Eschen",
         "title": "Course 08B02: Yoga for men in Nendeln",
         "icon": "⚽️",
@@ -126,6 +152,32 @@
         "time": "08.15",
         "location": "Nendeln, Sebastianstrasse 54, Turnhalle, Eschen",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Nendeln%2C+Sebastianstrasse+54%2C+Turnhalle%2C+Eschen",
+        "description": "",
+        "price": null
+    },
+    {
+        "community": "Eschen",
+        "title": "Book mice ash needles",
+        "icon": "⚽️",
+        "colour": "red",
+        "category": "Sport",
+        "date": "2026-08-20",
+        "time": "09.10",
+        "location": "Eschen, Fronagass 16, Schulzentrum Unterland, Bibliothek, Eschen",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Eschen%2C+Fronagass+16%2C+Schulzentrum+Unterland%2C+Bibliothek%2C+Eschen",
+        "description": "",
+        "price": null
+    },
+    {
+        "community": "Schaan",
+        "title": "Outdoor ZUMBA party",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-08-20",
+        "time": "19:03",
+        "location": "Lindahof, Schaan",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Lindahof%2C+Schaan",
         "description": "",
         "price": null
     },
@@ -234,6 +286,19 @@
         "price": null
     },
     {
+        "community": "Vaduz",
+        "title": "Yoga with Picasso | Yoga with Sabrina Feliu",
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-08-20",
+        "time": "18:00",
+        "location": "Kunstmuseum Liechtenstein (Lageplan)\nStädtle 32\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstmuseum+Liechtenstein+%28Lageplan%29%0ASt%C3%A4dtle+32%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+        "description": "An event organized by the Hilti Art Foundation.\n\n«My passion is to create connections – be it through words, encounters or shared practice on the yoga mat. Movement helps me sort myself out and connect with myself. Yoga accompanies me as my 'safe space', which keeps me in balance between all the ups and downs of life and gives me orientation when I don't know where to go. Again and again it is the ground on which I come to a standstill.\nMy yoga classes are powerful and flowing, with plenty of space so you can connect with yourself. In my lessons I not only want to impart knowledge, but also bring a feeling of light and lightness into your life. I look forward to accompanying you on your yoga path. Namaste.” – Sabrina Feliu\n\nYoga with Picasso\nSince 2019, the Hilti Art Foundation has been inviting visitors to museum experiences of a special kind: from yoga to chanting, from Qi-Gong to breathing exercises - an experience for body and mind in the midst of great art. 10 minutes introduction with a work of art.\n\nTo end the day, delicious snacks and healthy refreshments will be served afterwards.\n\ntime\n6 p.m. to 7 p.m. (or 8 p.m.)\n\nCosts\nCHF 25 per person, including meals\n\n\nThe number of participants is limited, we ask that you register.",
+        "price": 25.0
+    },
+    {
         "community": "Balzers",
         "title": "Summer party / pig in a poke",
         "icon": "🪇",
@@ -243,7 +308,7 @@
         "time": "16:00",
         "location": "Dorfplatz BalzersFÃ¼rstenstrasse9496 Balzers, Balzers",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfplatz+BalzersF%C3%83%C2%BCrstenstrasse9496+Balzers%2C+Balzers",
-        "description": "Friday, August 14, 2026, from 4:00 p.m. to 9:30 p.m\n\nSummer party of the Society Commission meets “Cat in a Sack” – Moseg and more...\n\nWe're ending the summer holidays with a great combination event. The “Summer Festival of the Society Commission” meets “Cat in a Sack” – Moseg and more...\nThe program:\n4:00 p.m.:                Start of the summer festival. We are spoiled with culinary delights by them\nRestaurants Zentrum and Falknis as well as the wagon building association. Also included are\nthe Granville Café with various coffee delicacies and Martin Telser\nwith its fine ice creams. DJ Jonas provides the right music.\n6:00 p.m. - 7:30 p.m.:    “Cat in a poke” - Moses and more... As usual, it will only be a few days before\nannounced who will surprise us musically. So much can be revealed, it\nis the “spiciest” Balzner band.\n7.30 p.m. - 9.30 p.m.:    Summer party: cozy end with delicacies from the kitchen and refrigerator and\nlots of music.\n\nThe event only takes place in good weather.",
+        "description": "Friday, August 14, 2026, from 4:00 p.m. to 9:30 p.m\n\nSummer party of the Society Commission meets “Cat in a Sack” – Moseg and more… with Rääs\n\nWe're ending the summer holidays with a great combination event. The “Summer Festival of the Society Commission” meets “Cat in a Sack” – Moseg and more...\nThe program:\n4:00 p.m.:                Start of the summer festival. We are spoiled with culinary delights by them\nRestaurants Zentrum and Falknis as well as the wagon building association. Also included are\nthe Granville Café with various coffee delicacies and Martin Telser\nwith its fine ice creams. DJ Jonas provides the right music.\n6:00 p.m. - 7:30 p.m.:    “Cat in a Sack” - Moseg and more… - with Rääs\n7.30 p.m. - 9.30 p.m.:    Summer party: cozy end with delicacies from the kitchen and refrigerator and\nlots of music.\n\nThe event only takes place in good weather.",
         "price": null
     },
     {
@@ -256,7 +321,7 @@
         "time": "16:00",
         "location": "Dorfplatz BalzersFÃ¼rstenstrasse9496 Balzers, Balzers",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfplatz+BalzersF%C3%83%C2%BCrstenstrasse9496+Balzers%2C+Balzers",
-        "description": "Friday, August 14, 2026, from 4:00 p.m. to 9:30 p.m\n\nSummer party of the Society Commission meets “Cat in a Sack” – Moseg and more...\n\nWe're ending the summer holidays with a great combination event. The “Summer Festival of the Society Commission” meets “Cat in a Sack” – Moseg and more...\nThe program:\n4:00 p.m.:                Start of the summer festival. We are spoiled with culinary delights by them\nRestaurants Zentrum and Falknis as well as the wagon building association. Also included are\nthe Granville Café with various coffee delicacies and Martin Telser\nwith its fine ice creams. DJ Jonas provides the right music.\n6:00 p.m. - 7:30 p.m.:    “Cat in a poke” - Moses and more... As usual, it will only be a few days before\nannounced who will surprise us musically. So much can be revealed, it\nis the “spiciest” Balzner band.\n7.30 p.m. - 9.30 p.m.:    Summer party: cozy end with delicacies from the kitchen and refrigerator and\nlots of music.\n\nThe event only takes place in good weather.",
+        "description": "Friday, August 14, 2026, from 4:00 p.m. to 9:30 p.m\n\nSummer party of the Society Commission meets “Cat in a Sack” – Moseg and more… with Rääs\n\nWe're ending the summer holidays with a great combination event. The “Summer Festival of the Society Commission” meets “Cat in a Sack” – Moseg and more...\nThe program:\n4:00 p.m.:                Start of the summer festival. We are spoiled with culinary delights by them\nRestaurants Zentrum and Falknis as well as the wagon building association. Also included are\nthe Granville Café with various coffee delicacies and Martin Telser\nwith its fine ice creams. DJ Jonas provides the right music.\n6:00 p.m. - 7:30 p.m.:    “Cat in a Sack” - Moseg and more… - with Rääs\n7.30 p.m. - 9.30 p.m.:    Summer party: cozy end with delicacies from the kitchen and refrigerator and\nlots of music.\n\nThe event only takes place in good weather.",
         "price": null
     },
     {
