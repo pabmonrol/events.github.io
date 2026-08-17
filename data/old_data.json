@@ -1597,5 +1597,18 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Burg+GutenbergBurgweg+59496+Balzers%2C+Balzers",
     "description": "Duo Lapsus - «Ego – Me of course!»\n\nThe duo Lapsus shows in “Ego!” a fast-paced comedy game: Peter Winkler and Christian Höhener rebel against their characters Hitzig & Gschwind. Who actually decides who here? Chaos ensues!",
     "price": null
+  },
+  {
+    "community": "Schellenberg",
+    "title": "Community sports day",
+    "icon": "🧩",
+    "colour": "purple",
+    "category": "Culture",
+    "date": "2026-08-23",
+    "time": "10:00",
+    "location": ", Schellenberg",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=%2C+Schellenberg",
+    "description": "",
+    "price": null
   }
 ]
