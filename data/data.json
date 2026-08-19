@@ -22,8 +22,21 @@
         "time": "13:05",
         "location": "Vereinshaus Ruggell, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C+Gamprin%2FBendern",
-        "description": "Course leader:\r\nElke Nestler-Schreiber, synapse coach, brain fitness trainer\nCost per person:\r\nCHF 19.- per hour for pensioners in the communities of Gamprin, Ruggell and Schellenberg. The course is financially supported by the three communities.\nRegistration and information:\r\nDirectly from the course leader, Tel. +41 79 450 21 92 or info(at)denkduenger.li. Trial lessons or entry is possible at any time. No previous knowledge is necessary. www.denkduenger.li.",
+        "description": "Course leader:\r\nElke Nestler-Schreiber, synapse coach, brain fitness trainer\nCost per person:\r\nCHF 19.- per hour for pensioners in the communities of Gamprin, Ruggell and Schellenberg. The course is financially supported by the three communities.\nRegistration and information:\r\nDirectly with the course leader, Tel. +41 79 450 21 92 or info(at)denkduenger.li. Trial lessons or entry is possible at any time. No previous knowledge is necessary. www.denkduenger.li.",
         "price": 19.0
+    },
+    {
+        "community": "Gamprin/Bendern",
+        "title": "Family service - back to school - setting off together",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-08-22",
+        "time": "18:00",
+        "location": "Kirche Bendern, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Kirche+Bendern%2C+Gamprin%2FBendern",
+        "description": "The family service is dedicated to the topic of starting school. The start of school life is an exciting time for children and parents alike. \nOlder school children and teachers are also welcome.",
+        "price": null
     },
     {
         "community": "Gamprin/Bendern",
@@ -74,8 +87,21 @@
         "time": "13:05",
         "location": "Vereinshaus Ruggell, Gamprin/Bendern",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C+Gamprin%2FBendern",
-        "description": "Course leader:\r\nElke Nestler-Schreiber, synapse coach, brain fitness trainer\nCost per person:\r\nCHF 19.- per hour for pensioners in the communities of Gamprin, Ruggell and Schellenberg. The course is financially supported by the three communities.\nRegistration and information:\r\nDirectly from the course leader, Tel. +41 79 450 21 92 or info(at)denkduenger.li. Trial lessons or entry is possible at any time. No previous knowledge is necessary. www.denkduenger.li.",
+        "description": "Course leader:\r\nElke Nestler-Schreiber, synapse coach, brain fitness trainer\nCost per person:\r\nCHF 19.- per hour for pensioners in the communities of Gamprin, Ruggell and Schellenberg. The course is financially supported by the three communities.\nRegistration and information:\r\nDirectly with the course leader, Tel. +41 79 450 21 92 or info(at)denkduenger.li. Trial lessons or entry is possible at any time. No previous knowledge is necessary. www.denkduenger.li.",
         "price": 19.0
+    },
+    {
+        "community": "Gamprin/Bendern",
+        "title": "Family service - back to school - setting off together",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-08-22",
+        "time": "18:00",
+        "location": "Kirche Bendern, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Kirche+Bendern%2C+Gamprin%2FBendern",
+        "description": "The family service is dedicated to the topic of starting school. The start of school life is an exciting time for children and parents alike. \nOlder school children and teachers are also welcome.",
+        "price": null
     },
     {
         "community": "Gamprin/Bendern",
@@ -208,6 +234,19 @@
         "price": null
     },
     {
+        "community": "Eschen",
+        "title": "Course 08B06: Chair yoga, gentle movement according to individual possibilities",
+        "icon": "⚽️",
+        "colour": "red",
+        "category": "Sport",
+        "date": "2026-08-25",
+        "time": "09.45",
+        "location": "Nendeln, Gemeindegarten 2, Alte Schule, Eschen",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Nendeln%2C+Gemeindegarten+2%2C+Alte+Schule%2C+Eschen",
+        "description": "",
+        "price": null
+    },
+    {
         "community": "Schaan",
         "title": "Outdoor ZUMBA party",
         "icon": "🪇",
@@ -217,19 +256,6 @@
         "time": "19:03",
         "location": "Lindahof, Schaan",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Lindahof%2C+Schaan",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Schaan",
-        "title": "Schaan Wine Festival",
-        "icon": "🧩",
-        "colour": "purple",
-        "category": "Culture",
-        "date": "2026-08-22",
-        "time": "17:00",
-        "location": "Schaan",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Schaan",
         "description": "",
         "price": null
     },
@@ -248,6 +274,19 @@
     },
     {
         "community": "Schaan",
+        "title": "Schaan Wine Festival",
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-08-22",
+        "time": "17:00",
+        "location": "Schaan",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Schaan",
+        "description": "",
+        "price": null
+    },
+    {
+        "community": "Schaan",
         "title": "Alpine fair on Gritsch",
         "icon": "🧩",
         "colour": "purple",
@@ -257,32 +296,6 @@
         "location": "Schaan",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Schaan",
         "description": "",
-        "price": null
-    },
-    {
-        "community": "Vaduz",
-        "title": "Culture soup with the artist Ursula Wolf “What was important today”",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-08-18",
-        "time": null,
-        "location": "Liechtensteinisches LandesMuseum (Lageplan)\nStädtle 43\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Liechtensteinisches+LandesMuseum+%28Lageplan%29%0ASt%C3%A4dtle+43%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
-        "description": "Time out with culture!\n\nMake your lunch break a time out with culture! Experience an inspiring 30-minute tour with the artist Ursula Wolf through our special exhibition “What was important today” and then enjoy a delicious soup.\n\nFor ten years, the Liechtenstein artist Ursula Wolf drew for media coverage every day. What started as a drawing exercise soon became a large collection of small works of art. They document what moved the artist herself, but also Liechtenstein and the world during these ten years. It also talks about the value we attach to events, how fleeting this evaluation can be and how surprisingly long-lasting seemingly trivial things sometimes remain.\n \nUrsula Wolf presents these drawings in the Liechtenstein State Museum in the form of a walk-in collage: a space that invites you to discover, think and often smile.",
-        "price": 19.0
-    },
-    {
-        "community": "Vaduz",
-        "title": "Concert Rheinberger Choir TOKIO",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-08-18",
-        "time": "19:00",
-        "location": "Röm.-kath. Kathedrale St. Florin (Lageplan)\nSt. Florinsgasse 15\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=R%C3%B6m.-kath.+Kathedrale+St.+Florin+%28Lageplan%29%0ASt.+Florinsgasse+15%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
-        "description": "Concert by the Rheinberger Choir Tokio under the direction of Chiaki Shirai\n\nAs part of the concert tour through the Alps, the Rheinberg Choir TOKIO under the direction of conductor Chiaki Shirai will also be performing in Vaduz Cathedral. The program includes works by the Liechtenstein composer Josef Gabriel Rheinberger as well as the Japanese composers Rentaro Taki and Koscak Yamada",
         "price": null
     },
     {
@@ -326,15 +339,54 @@
     },
     {
         "community": "Balzers",
+        "title": "Open air cinema",
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-08-22",
+        "time": "18:00",
+        "location": "Primarschulwiese, Balzers",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Primarschulwiese%2C+Balzers",
+        "description": "Open air cinema\n\nAugust 22, 2026 from 6:00 p.m\nPrimary school meadow\n\nKung Fu Panda - approx. 7 p.m\nJohnny English - around 9 p.m\n\nDrinks, food & snacks on offer. \r\nBring a blanket to sit on!\n\nIn case of bad weather: Iramali primary school auditorium\n\nWe look forward to a lovely evening with you!\r\nVU local group Balzers",
+        "price": null
+    },
+    {
+        "community": "Balzers",
+        "title": "“Live at 11” with “Di klinna Zwei”",
+        "icon": "🎵",
+        "colour": "blue",
+        "category": "Music",
+        "date": "2026-08-23",
+        "time": "11:00",
+        "location": "Alter PfarrhofEgerta 119496 Balzers, Balzers",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Alter+PfarrhofEgerta+119496+Balzers%2C+Balzers",
+        "description": "Di klinna Zwei – these are the siblings Christel and Clemens Kaufmann, a duo who enjoy handmade, largely acoustic music.\n\nTheir repertoire spans Europe and combines folk traditions from different regions, klezmer melodies, Balkan rhythms, songs by Swiss songwriters and sounds from Salento. A musical mosaic is created.\n\nAuthentic and close to the audience, the two invite you to a varied, musical journey across borders.\n\nThe concert takes place in the old parish stables.\nDuration: approx. 1 hour\nFree collection\n\nWe look forward to your coming!\nBalzers Cultural Commission",
+        "price": null
+    },
+    {
+        "community": "Balzers",
         "title": "Aqua Fit - trial lessons",
         "icon": "🧩",
         "colour": "purple",
         "category": "Culture",
-        "date": "2026-08-18",
+        "date": "2026-08-19",
         "time": "19:03",
         "location": "HallenbadGnetsch 419496 Balzers, Balzers",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=HallenbadGnetsch+419496+Balzers%2C+Balzers",
         "description": "Aqua Fit trial lessons\nIntensive exercises for the stomach, legs and buttocks\n\nStarts Wednesday, August 19, 2026 7:30 p.m. - 8:30 p.m\n3 Wednesday evenings - Balzers indoor swimming pool\n\nmore information at www.steinegerta.li",
+        "price": null
+    },
+    {
+        "community": "Balzers",
+        "title": "Duo Lapsus - Ego me of course",
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-08-19",
+        "time": "20:00",
+        "location": "Burg GutenbergBurgweg 59496 Balzers, Balzers",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Burg+GutenbergBurgweg+59496+Balzers%2C+Balzers",
+        "description": "Duo Lapsus - «Ego – Me of course!»\n\nThe duo Lapsus shows in “Ego!” a fast-paced comedy game: Peter Winkler and Christian Höhener rebel against their characters Hitzig & Gschwind. Who actually decides who here? Chaos ensues!",
         "price": null
     },
     {
@@ -387,32 +439,6 @@
         "location": "Burg GutenbergBurgweg 59496 Balzers, Balzers",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Burg+GutenbergBurgweg+59496+Balzers%2C+Balzers",
         "description": "100 years of Mikis Theodorakis\n\nFor the 100th birthday of Mikis Theodorakis in 2025, the ensemble will play well-known and rare works full of passion, tragedy and love of life under the title “Tragoudi” – from songs to sirtaki.",
-        "price": null
-    },
-    {
-        "community": "Balzers",
-        "title": "Open air cinema",
-        "icon": "🧩",
-        "colour": "purple",
-        "category": "Culture",
-        "date": "2026-08-22",
-        "time": "18:00",
-        "location": "Primarschulwiese, Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Primarschulwiese%2C+Balzers",
-        "description": "Open air cinema\n\nAugust 22, 2026 from 6:00 p.m\nPrimary school meadow\n\nKung Fu Panda - approx. 7 p.m\nJohnny English - around 9 p.m\n\nDrinks, food & snacks on offer. \r\nBring a blanket to sit on!\n\nIn case of bad weather: Iramali primary school auditorium\n\nWe look forward to a lovely evening with you!\r\nVU local group Balzers",
-        "price": null
-    },
-    {
-        "community": "Balzers",
-        "title": "“Live at 11” with “Di klinna Zwei”",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-08-23",
-        "time": "11:00",
-        "location": "Alter PfarrhofEgerta 119496 Balzers, Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Alter+PfarrhofEgerta+119496+Balzers%2C+Balzers",
-        "description": "Di klinna Zwei – these are the siblings Christel and Clemens Kaufmann, a duo who enjoy handmade, largely acoustic music.\n\nTheir repertoire spans Europe and combines folk traditions from different regions, klezmer melodies, Balkan rhythms, songs by Swiss songwriters and sounds from Salento. A musical mosaic is created.\n\nAuthentic and close to the audience, the two invite you to a varied, musical journey across borders.\n\nThe concert takes place in the old parish stables.\nDuration: approx. 1 hour\nFree collection\n\nWe look forward to your coming!\nBalzers Cultural Commission",
         "price": null
     }
 ]
