@@ -62,7 +62,8 @@ def get_price(description: str)->float:
         return float(price_str)
 
 def get_hour(hour_text: str) -> time:
-    first_hour = hour_text[:4].replace("-", "").replace(".", ":")
+    match = re.search(r"\d{1,2}[:.]\d{2}", hour_text)
+    first_hour = match.group().replace(".", ":")
     return datetime.strptime(first_hour, "%H:%M").time()
 
 def check_location(location_text: Tag, city: str) -> Tuple[str]:
