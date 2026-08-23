@@ -20,7 +20,7 @@ def _find_value(sopa_, tag: str) -> Optional[str]:
     if item:
         text = item.find('span', class_="sidelist__text").text
         if text:
-            return text
+            return f"{text}, {city}"
         
 def _next_content(soup_page) -> Optional[str]:
     next_links_events = soup_page.find(class_='agenda__itemlink')
@@ -48,16 +48,13 @@ def _get_hour(hour_text: str) -> time:
         minute = int(minuto_str) if minuto_str else 0
         
         if indicador_str:
-            # Limpiamos el indicador
             indicador = re.sub(r'[\s.]', '', indicador_str.lower())
             
-            # Solo aplicamos la lógica de 12/24h si el indicador es am o pm
             if indicador == 'pm' and hour < 12:
                 hour += 12
             elif indicador == 'am' and hour == 12:
                 hour = 0
         
-        # Validamos que la hora final sea coherente
         if 0 <= hour <= 23 and 0 <= minute <= 59:
             return time(hour, minute)
             
@@ -67,7 +64,7 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
     res = []
 
     for event in events_cont:
-        description = None
+        description = ""
 
         html_evento = requests.get(event).text
         sopa_evento = BeautifulSoup(html_evento, 'html.parser')
@@ -77,8 +74,9 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
         if not date_text or not title_text:
             continue
 
+        date_ = dateparser.parse(date_text).date()
         if not check_right_date(date_):
-                continue
+            continue
 
         title = translator.translate(title_text.text)
 
@@ -87,14 +85,16 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
         description = sopa_evento.find(class_="eventdetail__textbody mce")
         if description:
             description = translator.translate(description.text)
+        else:
+            description = ""
 
         category, icon, colour = event_classification(" ".join([description, title]))
         if category in avoid_categories:
             continue
 
-        date_ = dateparser.parse(date_text).date()
-        hour = _get_hour(_find_value(sopa_evento, "Zeit"))
-        location = _find_value(sopa_evento, "Ort")
+        hour_text = _find_value(sopa_evento, "Zeit")
+        hour = _get_hour(hour_text) if hour_text else None
+        location = _find_value(sopa_evento, "Ort") or city
         google_maps = location_url(location)
         price = get_price(description)
     
