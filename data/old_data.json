@@ -2702,5 +2702,83 @@
     "google_maps": null,
     "description": "",
     "price": null
+  },
+  {
+    "community": "Schellenberg",
+    "title": "Rural living museum",
+    "icon": "🧩",
+    "colour": "purple",
+    "category": "Culture",
+    "date": "2026-09-06",
+    "time": "08:00",
+    "location": "Biedermannhaus, Schellenberg",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Biedermannhaus%2C+Schellenberg",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Schellenberg",
+    "title": "Family Sunday in the Biedermannhaus",
+    "icon": "🧩",
+    "colour": "purple",
+    "category": "Culture",
+    "date": "2026-09-06",
+    "time": "14:00",
+    "location": "Biedermannhaus, Schellenberg",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Biedermannhaus%2C+Schellenberg",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Schaan",
+    "title": "Allianz Cinema Day 2026",
+    "icon": "🧩",
+    "colour": "purple",
+    "category": "Culture",
+    "date": "2026-09-06",
+    "time": "10:00",
+    "location": "Skino, Schaan",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Skino%2C+Schaan",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Schaan",
+    "title": "Destination Museum - Let it bee!",
+    "icon": "🧩",
+    "colour": "purple",
+    "category": "Culture",
+    "date": "2026-09-06",
+    "time": "10:00",
+    "location": "sLandweibels-Huus, Schaan",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=sLandweibels-Huus%2C+Schaan",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Schaan",
+    "title": "Model flying group Liechtenstein - show flying",
+    "icon": "⚽️",
+    "colour": "red",
+    "category": "Sport",
+    "date": "2026-09-06",
+    "time": "11:00",
+    "location": "Schaan",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Schaan",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Vaduz",
+    "title": "Opening of the special exhibition “The Lynx HEIA”",
+    "icon": "🧩",
+    "colour": "purple",
+    "category": "Culture",
+    "date": "2026-09-02",
+    "time": null,
+    "location": "Liechtensteinisches LandesMuseum (Lageplan)\nStädtle 43\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Liechtensteinisches+LandesMuseum+%28Lageplan%29%0ASt%C3%A4dtle+43%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+    "description": "Opening of the special exhibition of the female lynx HEIA\n\nAndrea Kauer Loens, director of the Liechtenstein State Museum, welcomes us. Anna Weber, interim head of the Forest Office; Nature and agriculture speak the welcoming words. Olivier Nägele introduces the topic.\n\nThe special exhibition tells the story of the female lynx HEIA - about her way to Liechtenstein, about her territory, about her partners and young and finally about the traces and evidence she left behind. Based on this exciting biography, visitors learn a lot of interesting facts about the biology of lynxes, the state of the lynx populations and their threats and how we can help the local wild cats.\n\nThe opening can also be followed via live stream.",
+    "price": null
   }
 ]

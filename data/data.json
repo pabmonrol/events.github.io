@@ -118,19 +118,6 @@
     },
     {
         "community": "Schaan",
-        "title": "Rheinwiese sports facility with LFV campus: open day",
-        "icon": "🧩",
-        "colour": "purple",
-        "category": "Culture",
-        "date": "2026-09-05",
-        "time": "11:00",
-        "location": "Sportanlage Rheinwiese, Schaan",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Sportanlage+Rheinwiese%2C+Schaan",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Schaan",
         "title": "European Heritage Day in the Schaan Cultural Brewery",
         "icon": "🧩",
         "colour": "purple",
@@ -152,6 +139,19 @@
         "time": "11:00",
         "location": "Lindahof, Schaan",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Lindahof%2C+Schaan",
+        "description": "",
+        "price": null
+    },
+    {
+        "community": "Schaan",
+        "title": "Rheinwiese sports facility with LFV campus: open day",
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-09-05",
+        "time": "11:00",
+        "location": "Sportanlage Rheinwiese, Schaan",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Sportanlage+Rheinwiese%2C+Schaan",
         "description": "",
         "price": null
     },
@@ -260,29 +260,16 @@
         "price": null
     },
     {
-        "community": "Triesen",
-        "title": "Pepis Folksfascht",
-        "icon": "⚽️",
-        "colour": "red",
-        "category": "Sport",
-        "date": "2026-09-05",
-        "time": null,
-        "location": "Triesen",
-        "google_maps": null,
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Triesen",
-        "title": "European Heritage Day in Triesen",
-        "icon": "🧩",
-        "colour": "purple",
-        "category": "Culture",
-        "date": "2026-09-05",
-        "time": null,
-        "location": "Triesen",
-        "google_maps": null,
-        "description": "",
+        "community": "Vaduz",
+        "title": "Knitting and crocheting afternoon",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-09-07",
+        "time": "14:00",
+        "location": "Vadozner Huus (Lageplan)\nStädtle 14\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vadozner+Huus+%28Lageplan%29%0ASt%C3%A4dtle+14%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+        "description": "“Handcrafting together is more fun”\n\nAnyone interested in knitting or crocheting in company is warmly invited. The knitting and crocheting afternoons take place from 2 p.m. to 4 p.m. in the Vadozner Huus (Städtle 14). Please bring your own knitting or crochet hooks, wool or yarn. Participation is free. Registration is not required. \n\nDates 2026: September 7th, October 12th, November 16th, December 14th",
         "price": null
     }
 ]
