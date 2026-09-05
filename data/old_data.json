@@ -2936,5 +2936,31 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Haus+GutenbergBurgweg+89496+Balzers%2C+Balzers",
     "description": "At the Level Up youth club we experiment, we grow and we can simply be ourselves.\n\r\nTarget group: young people on the neurodivergence spectrum between 10 and 15 years old. Entry possible at any time\n\r\nEvery Wednesday from 5:00 p.m. to 7:00 p.m. on the following dates:",
     "price": null
+  },
+  {
+    "community": "Balzers",
+    "title": "Informed pregnant in Liechtenstein",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-09-10",
+    "time": "18:30",
+    "location": "LAK-Haus St. MartinDr. A. SchÃ¤dler-Str. 119492 Eschen, Balzers",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=LAK-Haus+St.+MartinDr.+A.+Sch%C3%83%C2%A4dler-Str.+119492+Eschen%2C+Balzers",
+    "description": "At our free Informed Pregnant Evenings you will receive useful information about pregnancy and birth. Our experts provide information about your rights at work, financial questions, how to find a midwife or a birth preparation course and much more. You can just go, alone, with your partner or with someone you trust. No registration is necessary.\n\r\nTopics of the evening in Liechtenstein:\n\r\n• The rights of pregnant women in the workplace\r\nMaternity leave, wage entitlement, protection against dismissal, health protection, parental leave\n\r\n• Financial matters relating to pregnancy and birth\r\nBirth allowance, maternity allowance, child allowances, single parent allowance, rental contributions, economic social assistance, premium reduction, maternity daily allowance\n\r\n• How midwives support women\r\nSupport during pregnancy, birth, postpartum period and breastfeeding, confidant and supporter, entitlement to midwifery services, costs and financing\n\r\n• Advice for mothers and fathers\r\nPersonal advice and support in the care, development and upbringing of your child",
+    "price": null
+  },
+  {
+    "community": "Balzers",
+    "title": "VU regulars' table",
+    "icon": "🧩",
+    "colour": "purple",
+    "category": "Culture",
+    "date": "2026-09-10",
+    "time": "20:00",
+    "location": "Restaurant Engel, Balzers",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Restaurant+Engel%2C+Balzers",
+    "description": "VU - regulars' table\n\nThursday, September 10, 2026, 8:00 p.m. - Gasthaus zum Engel",
+    "price": null
   }
 ]
