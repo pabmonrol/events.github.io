@@ -3066,5 +3066,18 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstmuseum+Liechtenstein+%28Lageplan%29%0ASt%C3%A4dtle+32%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
     "description": "In the context of the collection:\nEvi Kliemand\nWalk on water\n\nwith Annett Höland\nIn cooperation with the Liechtenstein Art Society.",
     "price": null
+  },
+  {
+    "community": "Schellenberg",
+    "title": "Trial day with the Bienle / Wölfle",
+    "icon": "🧩",
+    "colour": "purple",
+    "category": "Culture",
+    "date": "2026-09-12",
+    "time": "08:00",
+    "location": ", Schellenberg",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=%2C+Schellenberg",
+    "description": "",
+    "price": null
   }
 ]
