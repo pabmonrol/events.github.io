@@ -1,20 +1,26 @@
 [
     {
         "community": "Ruggell",
-        "title": "Book presentation of the new novel by Armin Öhri",
+        "title": {
+            "en": "Book presentation of the new novel by Armin Öhri",
+            "de": "Buchpräsentation des neuen Romans von Armin Öhri"
+        },
         "icon": "🪇",
         "colour": "pink",
         "category": "Leisure",
         "date": "2026-10-15",
         "time": "19:00",
-        "location": "Küefer-Martis-Huus",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=K%C3%BCefer-Martis-Huus",
+        "location": "Küefer-Martis-Huus, Ruggell",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=K%C3%BCefer-Martis-Huus%2C+Ruggell",
         "description": "",
         "price": null
     },
     {
         "community": "Mauren",
-        "title": "Visit to the KopsII pumped storage power plant in Montafon",
+        "title": {
+            "en": "Visit to the KopsII pumped storage power plant in Montafon",
+            "de": "Besichtigung Pumpspeicherkraftwerk KopsII im Montafon"
+        },
         "icon": "🪇",
         "colour": "pink",
         "category": "Leisure",
@@ -22,12 +28,18 @@
         "time": "08:30",
         "location": "Gaschurn Montafon, Mauren",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Gaschurn+Montafon%2C+Mauren",
-        "description": "Kopswerk II - The most modern pumped storage power plant in the world. Together we visit this masterpiece of technology on a private tour.\nInfo and registration until Wednesday 07. October with the senior coordinators Andrea Maurer and Josef Thaler tel. 3771035/3771037 or senioren@mauren.li",
+        "description": {
+            "en": "Kopswerk II - The most modern pumped storage power plant in the world. Together we visit this masterpiece of technology on a private tour.\nInfo and registration until Wednesday 07. October with the senior coordinators Andrea Maurer and Josef Thaler tel. 3771035/3771037 or senioren@mauren.li",
+            "de": "Kopswerk II - Das modernste Pumpspeicherkraftwerk der Welt. Gemeinsam besichtigen wir bei einer Privatführung dieses Meisterwerk der Technik.\nInfo und Anmeldung bis Mittwoch 07. Oktober bei den Seniorenkoordinatoren Andrea Maurer und Josef Thaler unter Tel. 3771035/3771037 oder senioren@mauren.li"
+        },
         "price": null
     },
     {
         "community": "Mauren",
-        "title": "Stein Egerta: Map of Life, Astrology as a Map of the Psyche",
+        "title": {
+            "en": "Stein Egerta: Map of Life, Astrology as a Map of the Psyche",
+            "de": "Stein Egerta: Map of Life, Astrologie als Landkarte der Psyche"
+        },
         "icon": "🌱",
         "colour": "green",
         "category": "Nature",
@@ -35,12 +47,18 @@
         "time": "13:00",
         "location": "Zuschg, Raum \"Bahnhof\", Mauren",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Zuschg%2C+Raum+%22Bahnhof%22%2C+Mauren",
-        "description": "What does the date of birth reveal about our personality? Participants get an insight into astrology as a psychological analysis instrument and which clear answers can be obtained from their own birth chart.",
+        "description": {
+            "en": "What does the date of birth reveal about our personality? Participants get an insight into astrology as a psychological analysis instrument and which clear answers can be obtained from their own birth chart.",
+            "de": "KurszielWas verrät das Geburtsdatum über unsere Persönlichkeit? Die Teilnehmenden erhalten einen Einblick in die Astrologie als psychologisches Analyse-Instrument und welche klaren Antworten aus dem eigenen Geburtshoroskop erhalten werden können."
+        },
         "price": null
     },
     {
         "community": "Mauren",
-        "title": "50s Rock'n'Roll Party in Moors!",
+        "title": {
+            "en": "50s Rock'n'Roll Party in Moors!",
+            "de": "50er-Jahre Rock’n’Roll Party in Mauren!"
+        },
         "icon": "🎵",
         "colour": "blue",
         "category": "Music",
@@ -48,12 +66,18 @@
         "time": "19:00",
         "location": "Gemeindesaal Mauren, Mauren",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal+Mauren%2C+Mauren",
-        "description": "When the evening begins and the first guitar riffs sound, there is no stopping: The Bombs from Germany and the Blue Shoes Band from Liechtenstein bring the stage to quake from 8 pm. Let yourself be infected by real rock’n’roll energy, dance, laugh and celebrate passionate live music like in the golden times of the 50s.",
+        "description": {
+            "en": "When the evening begins and the first guitar riffs sound, there is no stopping: The Bombs from Germany and the Blue Shoes Band from Liechtenstein bring the stage to quake from 8 pm. Let yourself be infected by real rock’n’roll energy, dance, laugh and celebrate passionate live music like in the golden times of the 50s.",
+            "de": "Erlebe eine mitreissende 50er-Jahre-Party im Herzen von Mauren!Wenn der Abend beginnt und die ersten Gitarrenriffs erklingen, gibt es kein Halten mehr: The Bombs aus Deutschland und die Blue Shoes Band aus Liechtenstein bringen ab 20 Uhr die Bühne zum Beben. Lass dich von echter Rock’n’Roll-Energie anstecken, tanze, lache und feiere zu leidenschaftlicher Live-Musik wie in den goldenen Zeiten der 50er."
+        },
         "price": null
     },
     {
         "community": "Eschen",
-        "title": "Course 09A13: Burning booze",
+        "title": {
+            "en": "Course 09A13: Burning booze",
+            "de": "Kurs 09A13: Schnaps brennen"
+        },
         "icon": "🌱",
         "colour": "green",
         "category": "Nature",
@@ -66,7 +90,10 @@
     },
     {
         "community": "Schaan",
-        "title": "The AI show for the curious: The world is changing. Please understand.",
+        "title": {
+            "en": "The AI show for the curious: The world is changing. Please understand.",
+            "de": "Die KI-Show für Neugierige: Die Welt verändert sich. Verstehen Sie mit."
+        },
         "icon": "🌱",
         "colour": "green",
         "category": "Nature",
@@ -79,7 +106,10 @@
     },
     {
         "community": "Schaan",
-        "title": "Benefit concert with natural debris and guests",
+        "title": {
+            "en": "Benefit concert with natural debris and guests",
+            "de": "Benefizkonzert mit Naturtrüeb und Gäste"
+        },
         "icon": "🎵",
         "colour": "blue",
         "category": "Music",
@@ -92,7 +122,10 @@
     },
     {
         "community": "Vaduz",
-        "title": "Knitting and crochet afternoon",
+        "title": {
+            "en": "Knitting and crochet afternoon",
+            "de": "Strick- und Häkelnachmittag"
+        },
         "icon": "🪇",
         "colour": "pink",
         "category": "Leisure",
@@ -100,12 +133,18 @@
         "time": "14:00",
         "location": "Vadozner Huus (Lageplan)\nStädtle 14\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Vadozner+Huus+%28Lageplan%29%0ASt%C3%A4dtle+14%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
-        "description": "“Working together is more fun”\n\nAll interested parties who like to knit or crochet in company are cordially invited. The knitting and crochet afternoons take place from 2 pm to 4 pm in the Vadozner Huus (city 14). Please bring your own knitting or crochet needles as well as wool or yarn. Participation is free of charge. Notification is not required.\n\nDates 2026: 7 September, 12 October, 16 November, 14. December",
+        "description": {
+            "en": "“Working together is more fun”\n\nAll interested parties who like to knit or crochet in company are cordially invited. The knitting and crochet afternoons take place from 2 pm to 4 pm in the Vadozner Huus (city 14). Please bring your own knitting or crochet needles as well as wool or yarn. Participation is free of charge. Notification is not required.\n\nDates 2026: 7 September, 12 October, 16 November, 14. December",
+            "de": "«Zusammen Handarbeiten macht mehr Spass»\n\nAlle Interessierten, die gerne in Gesellschaft stricken oder häkeln, sind herzlich eingeladen. Die Strick- und Häkelnachmittage finden jeweils von 14.00 bis 16.00 Uhr im Vadozner Huus (Städtle 14) statt. Bitte bringen Sie Ihre eigenen Strick- oder Häkelnadeln sowie Wolle oder Garn mit. Die Teilnahme ist kostenlos. Eine Anmeldung ist nicht erforderlich. \n\nTermine 2026: 7. September, 12. Oktober, 16. November, 14. Dezember"
+        },
         "price": null
     },
     {
         "community": "Triesenberg",
-        "title": "Junior Camp",
+        "title": {
+            "en": "Junior Camp",
+            "de": "Junioren Camp"
+        },
         "icon": "⚽️",
         "colour": "red",
         "category": "Sport",
@@ -118,7 +157,10 @@
     },
     {
         "community": "Triesenberg",
-        "title": "Autumn Tennis Camp for Juniors",
+        "title": {
+            "en": "Autumn Tennis Camp for Juniors",
+            "de": "Herbst-Tenniscamp für Junioren"
+        },
         "icon": "⚽️",
         "colour": "red",
         "category": "Sport",
