@@ -18,12 +18,10 @@ function markAgendaFreshness() {
 
 async function loadAgenda() {
     try {
-        // 1. Cargar la agenda normal
         const response = await fetch('data/data.json');
         if (!response.ok) throw new Error(`Could not retrieve data/data.json file`);
         allEventsData = await response.json();
         
-        // 2. Cargar la agenda de eventos especiales (Silencioso si el archivo no existe)
         try {
             const specialResponse = await fetch('data/data_special.json');
             if (specialResponse.ok) {
@@ -33,7 +31,6 @@ async function loadAgenda() {
             console.log("No data_special.json found. Skipping featured events.");
         }
 
-        // 🎯 LÓGICA PARA OCULTAR FILTROS VACÍOS (Combina ambos archivos para revisar)
         const allCombined = [...allEventsData, ...specialEventsData];
         const activeCategories = new Set(allCombined.map(ev => ev.category ? ev.category.toLowerCase() : ''));
         
@@ -60,7 +57,6 @@ async function loadAgenda() {
     }
 }
 
-// 📅 LÓGICA DE FECHAS
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -73,7 +69,6 @@ function parseEventDate(dateString, timeString) {
     return new Date(year, month - 1, day, hours, minutes);
 }
 
-// 🧩 FUNCIÓN MOLDE PARA DIBUJAR CADA EVENTO SIN REPETIR CÓDIGO
 function generateEventRowHTML(eventItem, isSpecial = false) {
     let priceLabel = "";
     const isRuggell = (eventItem.comunity && eventItem.comunity.toLowerCase().includes('ruggell')) || 
@@ -88,7 +83,6 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
         priceLabel = (eventItem.price === null || eventItem.price === 0) ? "Free admission" : `CHF ${eventItem.price}.-`;
     }
     const colorThemeClass = eventItem.colour || 'blue';
-    // 1. Limpieza de fecha
     const cleanDateString = eventItem.date ? eventItem.date.replace(/-/g, '') : '';
     const calendarLocation = eventItem.location ? `${eventItem.location}${eventItem.comunity && !eventItem.location.toLowerCase().includes(eventItem.comunity.toLowerCase()) ? `, ${eventItem.comunity}` : ''}` : (eventItem.comunity || '');
 
@@ -172,9 +166,7 @@ function renderEvents(selectedFilter) {
         `;
     } 
 
-    // Filtrar ambos arrays
     let filteredEvents = allEventsData.filter(ev => selectedFilter === 'all' || (ev.category && ev.category.toLowerCase() === selectedFilter.toLowerCase()));
-    // Los eventos especiales solo aparecen en "All"
     let filteredSpecial = selectedFilter === 'all' ? specialEventsData : [];
 
     if (filteredEvents.length === 0 && filteredSpecial.length === 0) {
@@ -182,14 +174,9 @@ function renderEvents(selectedFilter) {
         return;
     }
  
-    // ==========================================
-    // ⭐ 1. RENDERIZAR EVENTOS ESPECIALES (TOP)
-    // ==========================================
     if (filteredSpecial.length > 0) {
-        // Ordenarlos cronológicamente
         filteredSpecial.sort((a, b) => parseEventDate(a.date, a.time) - parseEventDate(b.date, b.time));
         
-        // Cabecera Especial Hilti (Roja con Estrella)
         let specialHtml = `
             <div class="venue-block">
                 <div class="venue-header" style="background-color: #D20000; color: #ffffff; border-bottom: none;">
@@ -199,16 +186,13 @@ function renderEvents(selectedFilter) {
         `;
         
         filteredSpecial.forEach(ev => {
-            // Como los especiales no tienen cabecera de "día", añadimos el mes y día a su hora
             const d = parseEventDate(ev.date, ev.time);
             
-            // 👇 AQUÍ ENTRA EL NUEVO CÓDIGO PARA LIMPIAR LOS SEGUNDOS
             let cleanTime = null;
             if (ev.time) {
-                cleanTime = ev.time.substring(0, 5); // Transforma "18:00:00" en "18:00"
+                cleanTime = ev.time.substring(0, 5);
             }
             const timeStr = cleanTime ? `${cleanTime}h` : "Time unconfirmed";
-            // 👆 FIN DEL NUEVO CÓDIGO
             
             ev.displayTime = isNaN(d.getTime()) ? timeStr : `${months[d.getMonth()]} ${d.getDate()} · ${timeStr}`;
             
@@ -219,10 +203,6 @@ function renderEvents(selectedFilter) {
         container.innerHTML += specialHtml;
     }
 
-    // ==========================================
-    // 📅 2. RENDERIZAR EVENTOS NORMALES (ABAJO)
-    // ==========================================
-    // Generar los 7 días del rango (hoy + 6 días más)
     const today = new Date();
     const dateRange = [];
     for (let i = 0; i < 7; i++) {
@@ -231,7 +211,6 @@ function renderEvents(selectedFilter) {
         dateRange.push(date);
     }
 
-    // 🎯 FILTRO MÍNIMO: Elimina duplicados reales combinando título y fecha antes de ordenar
     const vistos = new Set();
     filteredEvents = filteredEvents.filter(ev => {
         const idUnico = `${ev.title}-${ev.date}-${ev.comunity}`;
@@ -243,7 +222,6 @@ function renderEvents(selectedFilter) {
     filteredEvents.sort((a, b) => parseEventDate(a.date, a.time) - parseEventDate(b.date, b.time));
 
     const groupedEvents = {};
-    // Inicializar todos los días del rango con arrays vacíos
     dateRange.forEach(date => {
         const weekdayName = weekdays[date.getDay()];
         const dayNumber = date.getDate().toString().padStart(2, '0');
@@ -252,7 +230,6 @@ function renderEvents(selectedFilter) {
         groupedEvents[groupingKey] = [];
     });
 
-    // Agrupar eventos existentes por día
     filteredEvents.forEach(ev => {
         const parsedDateObj = parseEventDate(ev.date, ev.time);
         const weekdayName = isNaN(parsedDateObj.getTime()) ? "" : weekdays[parsedDateObj.getDay()];
@@ -263,22 +240,17 @@ function renderEvents(selectedFilter) {
 
         if (!groupedEvents[groupingKey]) return;
         
-        // 👇 AQUÍ ENTRA EL NUEVO CÓDIGO PARA LIMPIAR LOS SEGUNDOS
         let cleanTime = null;
         if (ev.time) {
-            cleanTime = ev.time.substring(0, 5); // Transforma "18:00:00" en "18:00"
+            cleanTime = ev.time.substring(0, 5);
         }
         ev.displayTime = cleanTime ? `${cleanTime}h` : "Time unconfirmed"; 
-        // 👆 FIN DEL NUEVO CÓDIGO
         
         groupedEvents[groupingKey].push(ev);
     });
 
-    // Renderizar todos los días, aunque estén vacíos
-    // Renderizar los días (Si el filtro no es 'all', omitimos los días vacíos)
     for (const [dayHeaderLabel, dailyEventsList] of Object.entries(groupedEvents)) {
         
-        // 👇 NUEVA LÓGICA: Si no estamos en "all" y no hay eventos hoy, saltamos este bloque
         if (selectedFilter.toLowerCase() !== 'all' && dailyEventsList.length === 0) {
             continue; 
         }
@@ -292,7 +264,6 @@ function renderEvents(selectedFilter) {
         `;
         
         if (dailyEventsList.length === 0) {
-            // Este mensaje ahora solo aparecerá si el filtro es 'all'
             regularHtml += `<p style="padding: 16px; color: #666; font-size: 14px; text-align: center; margin: 0;">No events scheduled</p>`;
         } else {
             dailyEventsList.forEach(ev => {
@@ -319,5 +290,4 @@ function setupFilterListeners() {
     });
 }
 
-// Initialize Application
 loadAgenda();
