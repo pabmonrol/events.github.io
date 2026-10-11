@@ -60,6 +60,105 @@ async function loadAgenda() {
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
+const CONTENT_LANGS = [
+    { code: "en", short: "EN" },
+    { code: "es", short: "ES" },
+    { code: "it", short: "IT" },
+    { code: "de", short: "DE" },
+    { code: "sr", short: "SR" },
+    { code: "fr", short: "FR" },
+    { code: "pt", short: "PT" },
+    { code: "pl", short: "PL" },
+    { code: "hi", short: "HI" },
+    { code: "ru", short: "RU" },
+];
+const LANG_STORAGE_KEY = "agenda-content-langs";
+const LANG_SHORT = Object.fromEntries(CONTENT_LANGS.map(lang => [lang.code, lang.short]));
+
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+}
+
+function selectedLangCodes() {
+    const codes = [...document.querySelectorAll(".lang-btn.active")].map(btn => btn.getAttribute("data-lang"));
+    return codes.length ? codes : ["en"];
+}
+
+function fieldText(field, code) {
+    if (field == null || field === "") return "";
+    if (typeof field === "string") return code === "en" ? field : "";
+    if (typeof field === "object") return field[code] || "";
+    return "";
+}
+
+function selectedFieldParts(field) {
+    return selectedLangCodes()
+        .map(code => ({ code, text: fieldText(field, code) }))
+        .filter(part => part.text);
+}
+
+function plainField(field) {
+    const parts = selectedFieldParts(field);
+    return parts.length ? parts[0].text : "";
+}
+
+function englishField(field) {
+    return fieldText(field, "en");
+}
+
+function htmlField(field) {
+    const parts = selectedFieldParts(field);
+    if (parts.length === 0) return "";
+    if (parts.length === 1) {
+        return escapeHtml(parts[0].text).replace(/\n/g, "<br>");
+    }
+    return parts.map(part => {
+        const body = escapeHtml(part.text).replace(/\n/g, "<br>");
+        return `<span class="lang-line"><span class="lang-code">${LANG_SHORT[part.code] || ""}</span> ${body}</span>`;
+    }).join("");
+}
+
+function locationWithTown(eventItem, emptyLabel) {
+    const town = (eventItem.community || "").trim();
+    const place = (eventItem.location || "").trim();
+    if (!place) return town || emptyLabel;
+    if (!town || place.toLowerCase().includes(town.toLowerCase())) return place;
+    return `${place}, ${town}`;
+}
+
+function activeCategory() {
+    const active = document.querySelector(".filter-btn.active[data-filter]");
+    return active ? active.getAttribute("data-filter") : "all";
+}
+
+function setupLangFilters() {
+    let saved = ["en"];
+    try {
+        const parsed = JSON.parse(localStorage.getItem(LANG_STORAGE_KEY));
+        if (Array.isArray(parsed)) {
+            const known = new Set(CONTENT_LANGS.map(lang => lang.code));
+            const picked = parsed.filter(code => known.has(code));
+            if (picked.length) saved = [picked[picked.length - 1]];
+        }
+    } catch (error) {
+        saved = ["en"];
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", saved.includes(btn.getAttribute("data-lang")));
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".lang-btn").forEach(other => other.classList.remove("active"));
+            btn.classList.add("active");
+            localStorage.setItem(LANG_STORAGE_KEY, JSON.stringify(selectedLangCodes()));
+            renderEvents(activeCategory());
+        });
+    });
+}
+
 
 function parseEventDate(dateString, timeString) {
     if (!dateString) return new Date(0);
@@ -84,7 +183,12 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
     }
     const colorThemeClass = eventItem.colour || 'blue';
     const cleanDateString = eventItem.date ? eventItem.date.replace(/-/g, '') : '';
-    const calendarLocation = eventItem.location ? `${eventItem.location}${eventItem.comunity && !eventItem.location.toLowerCase().includes(eventItem.comunity.toLowerCase()) ? `, ${eventItem.comunity}` : ''}` : (eventItem.comunity || '');
+    const calendarLocation = locationWithTown(eventItem, "");
+    const visibleLocation = locationWithTown(eventItem, "Location not specified");
+    const calendarTitle = plainField(eventItem.title);
+    const calendarDescription = plainField(eventItem.description);
+    const titleHtml = htmlField(eventItem.title);
+    const descriptionHtml = htmlField(eventItem.description);
 
     const isAppleDevice = /Mac|iPod|iPhone|iPad/.test(navigator.platform) || /Macintosh|iPhone|iPad|iPod/.test(navigator.userAgent);
     
@@ -93,7 +197,7 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
 
     if (isAppleDevice) {
         calendarButtonText = "+ Apple Cal";
-        let icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:${eventItem.title}\n`;
+        let icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:${calendarTitle}\n`;
         
         if (eventItem.time) {
             const startHours = eventItem.time.replace(/:/g, '').substring(0, 4) + "00"; 
@@ -106,7 +210,7 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
         }
         
         icsContent += `LOCATION:${calendarLocation}\n`;
-        const cleanDesc = (eventItem.description || '').replace(/\n/g, '\\n');
+        const cleanDesc = calendarDescription.replace(/\n/g, '\\n');
         icsContent += `DESCRIPTION:${cleanDesc}\n`;
         icsContent += `END:VEVENT\nEND:VCALENDAR`;
         
@@ -121,7 +225,7 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
             const endHours = ((h + 1) % 24).toString().padStart(2, '0') + m.toString().padStart(2, '0') + "00";
             timeSuffix = `T${startHours}/T${endHours}`;
         }
-        finalCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventItem.title)}&dates=${cleanDateString}${timeSuffix}&details=${encodeURIComponent(eventItem.description || '')}&location=${encodeURIComponent(calendarLocation)}`;
+        finalCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(calendarTitle)}&dates=${cleanDateString}${timeSuffix}&details=${encodeURIComponent(calendarDescription)}&location=${encodeURIComponent(calendarLocation)}`;
     }
     const specialClass = isSpecial ? 'special-event' : '';
 
@@ -129,24 +233,24 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
         <div class="event-row theme-${colorThemeClass} ${specialClass}">
             <div class="event-row-main">
                 <div class="event-content">
-                    <p class="event-title"><span class="event-icon">${eventItem.icon || '📍'}</span> ${eventItem.title}</p>
-                    <p class="event-desc"><strong>${eventItem.displayTime}</strong> · ${eventItem.location ? `${eventItem.location}${eventItem.comunity && !eventItem.location.toLowerCase().includes(eventItem.comunity.toLowerCase()) ? `, ${eventItem.comunity}` : ''}` : (eventItem.comunity || 'Location not specified')}</p>
+                    <p class="event-title"><span class="event-icon">${eventItem.icon || '📍'}</span> ${titleHtml}</p>
+                    <p class="event-desc"><strong>${eventItem.displayTime}</strong> · ${escapeHtml(visibleLocation)}</p>
                     <span class="event-price">${priceLabel}</span>
                 </div>
                 <div class="event-actions">
                     <a href="${finalCalendarUrl}" class="cal-btn" target="_blank">+ Calendar</a>
                     ${eventItem.google_maps ? `<a href="${eventItem.google_maps}" class="loc-btn" target="_blank">📍 Maps</a>` : ''}
-                    ${eventItem.description ? `
+                    ${descriptionHtml ? `
                         <button class="info-btn" onclick="toggleDetail(this)">
                             More info <i class="info-arrow">▾</i>
                         </button>
                     ` : ''}
                 </div>
             </div>
-            ${eventItem.description ? `
+            ${descriptionHtml ? `
                 <div class="event-detail-panel">
                     <div class="event-detail-inner">
-                        ${eventItem.description.replace(/\n/g, '<br>')}
+                        ${descriptionHtml}
                     </div>
                 </div>
             ` : ''}
@@ -213,7 +317,7 @@ function renderEvents(selectedFilter) {
 
     const vistos = new Set();
     filteredEvents = filteredEvents.filter(ev => {
-        const idUnico = `${ev.title}-${ev.date}-${ev.comunity}`;
+        const idUnico = `${englishField(ev.title)}-${ev.date}-${ev.community || ""}`;
         if (vistos.has(idUnico)) return false;
         vistos.add(idUnico);
         return true;
@@ -290,4 +394,5 @@ function setupFilterListeners() {
     });
 }
 
+setupLangFilters();
 loadAgenda();

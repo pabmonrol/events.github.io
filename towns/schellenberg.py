@@ -38,7 +38,7 @@ def scraper_schellenberg(url: str) -> List[NamedTuple]:
         if check_is_senior(title):
             continue
 
-        category, icon, colour = event_classification(title)
+        category, icon, colour = event_classification(" ".join([description, title]))
         if category in avoid_categories:
             continue
 

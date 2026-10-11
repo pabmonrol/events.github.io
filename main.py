@@ -8,7 +8,7 @@ from towns.vaduz import scraper_vaduz
 from towns.triesen import scraper_trissen
 from towns.triesenberg import scraper_triesenberg
 from towns.balzers import scraper_balzers
-from backend.utils import events_to_json, filter_next_7_days
+from backend.utils import events_to_json, filter_next_7_days, ensure_translation_packages
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
@@ -80,6 +80,7 @@ def scrape_and_filter(scraper_fn, url):
     return filter_next_7_days(scraper_fn(url))
 
 def run_all_scrapers():
+    ensure_translation_packages()
     eventos_totales = []
     failures = []
 

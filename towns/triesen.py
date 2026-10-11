@@ -61,7 +61,7 @@ def scraper_trissen(url: str) -> List[NamedTuple]:
             if check_is_senior(title):
                 continue
 
-            category, icon, colour = event_classification(title)
+            category, icon, colour = event_classification(" ".join([description, title]))
 
             if category not in avoid_categories:
                 attributes = event.find(class_='attributes')

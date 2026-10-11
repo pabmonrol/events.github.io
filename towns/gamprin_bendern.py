@@ -32,13 +32,14 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
         parsed_event = urlparse(event_url)
 
         if parsed_event.netloc == "www.gamprin.li" and parsed_event.path in ("", "/"):
+            description = ""
             title_text = event.find_next("div", class_="mega-link-overlay").find("a").text
             title = translate_text(title_text.text)
             
             if check_is_senior(title):
                 continue
 
-            category, icon, colour = event_classification(title)
+            category, icon, colour = event_classification(" ".join([description, title]))
             if category in avoid_categories:
                 continue
 
