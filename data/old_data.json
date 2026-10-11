@@ -3862,5 +3862,18 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Tennisanlage+Leitawis%2C+Triesenberg",
     "description": "",
     "price": null
+  },
+  {
+    "community": "Ruggell",
+    "title": "Book presentation of the new novel by Armin Öhri",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-10-15",
+    "time": "19:00",
+    "location": "Küefer-Martis-Huus, Ruggell",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=K%C3%BCefer-Martis-Huus%2C+Ruggell",
+    "description": "",
+    "price": null
   }
 ]
