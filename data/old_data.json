@@ -3599,5 +3599,57 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Tennisanlage+Leitawis%2C+Triesenberg",
     "description": "",
     "price": null
+  },
+  {
+    "community": "Ruggell",
+    "title": "Book presentation of the new novel by Armin Öhri",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-10-15",
+    "time": "19:00",
+    "location": "Küefer-Martis-Huus",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=K%C3%BCefer-Martis-Huus",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Mauren",
+    "title": "Visit to the KopsII pumped storage power plant in Montafon",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-10-14",
+    "time": "08:30",
+    "location": "Gaschurn Montafon, Mauren",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Gaschurn+Montafon%2C+Mauren",
+    "description": "Kopswerk II - The most modern pumped storage power plant in the world. Together we visit this masterpiece of technology on a private tour.\nInfo and registration until Wednesday 07. October with the senior coordinators Andrea Maurer and Josef Thaler tel. 3771035/3771037 or senioren@mauren.li",
+    "price": null
+  },
+  {
+    "community": "Mauren",
+    "title": "Stein Egerta: Map of Life, Astrology as a Map of the Psyche",
+    "icon": "🌱",
+    "colour": "green",
+    "category": "Nature",
+    "date": "2026-10-17",
+    "time": "13:00",
+    "location": "Zuschg, Raum \"Bahnhof\", Mauren",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Zuschg%2C+Raum+%22Bahnhof%22%2C+Mauren",
+    "description": "What does the date of birth reveal about our personality? Participants get an insight into astrology as a psychological analysis instrument and which clear answers can be obtained from their own birth chart.",
+    "price": null
+  },
+  {
+    "community": "Mauren",
+    "title": "50s Rock’n’Roll Party in Moors!",
+    "icon": "🎵",
+    "colour": "blue",
+    "category": "Music",
+    "date": "2026-10-17",
+    "time": "19:00",
+    "location": "Gemeindesaal Mauren, Mauren",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal+Mauren%2C+Mauren",
+    "description": "When the evening begins and the first guitar riffs sound, there is no stopping: The Bombs from Germany and the Blue Shoes Band from Liechtenstein bring the stage to quake from 8 pm. Let yourself be infected by real rock’n’roll energy, dance, laugh and celebrate passionate live music like in the golden times of the 50s.",
+    "price": null
   }
 ]
