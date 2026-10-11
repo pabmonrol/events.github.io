@@ -3,6 +3,7 @@ from typing import NamedTuple, List, Tuple
 from datetime import datetime, date, time, timedelta
 import json
 import re
+import threading
 from bs4 import Tag
 
 def _as_text(value) -> str:
@@ -14,19 +15,58 @@ def _as_text(value) -> str:
         return value.get_text(strip=True)
     return str(value).strip()
 
-_translator = None
+_install_lock = threading.Lock()
+_translation_ready = False
+
+def _de_en_installed() -> bool:
+    import argostranslate.translate
+
+    installed = argostranslate.translate.get_installed_languages()
+    from_lang = next((lang for lang in installed if lang.code == "de"), None)
+    to_lang = next((lang for lang in installed if lang.code == "en"), None)
+    if from_lang is None or to_lang is None:
+        return False
+    return from_lang.get_translation(to_lang) is not None
+
+def _ensure_de_en() -> None:
+    global _translation_ready
+    if _translation_ready:
+        return
+
+    with _install_lock:
+        if _translation_ready:
+            return
+        if not _de_en_installed():
+            import argostranslate.package
+            import argostranslate.settings
+
+            argostranslate.package.update_package_index()
+            if not argostranslate.settings.local_package_index.exists():
+                raise RuntimeError("Could not download the Argos package index")
+
+            available = argostranslate.package.get_available_packages()
+            package = next(
+                (
+                    pkg for pkg in available
+                    if pkg.from_code == "de" and pkg.to_code == "en"
+                ),
+                None,
+            )
+            if package is None:
+                raise RuntimeError("German to English Argos package is not available")
+            argostranslate.package.install_from_path(package.download())
+        _translation_ready = True
 
 def translate_text(value) -> str:
     original = _as_text(value)
     if not original:
         return ""
 
-    global _translator
     try:
-        if _translator is None:
-            from deep_translator import GoogleTranslator
-            _translator = GoogleTranslator(source="de", target="en")
-        translated = _translator.translate(original)
+        import argostranslate.translate
+
+        _ensure_de_en()
+        translated = argostranslate.translate.translate(original, "de", "en")
         if not translated:
             return original
         return translated

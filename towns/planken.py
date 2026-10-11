@@ -1,4 +1,3 @@
-from deep_translator import GoogleTranslator
 from typing import *
 import requests
 from bs4 import BeautifulSoup
@@ -6,7 +5,6 @@ from bs4 import BeautifulSoup
 
 city = "Planken"
 avoid_categories = {"Government", "Religion"}
-translator = GoogleTranslator(source='de', target='en')
 
 def scraper_planken(url: str) -> List[NamedTuple]:
     res = []
