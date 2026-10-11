@@ -50,8 +50,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 
 .lang-filters {
     padding-top: 12px;
-    overflow: visible;
-    flex-wrap: wrap;
+    overflow-x: auto;
+    flex-wrap: nowrap;
     gap: 6px;
 }
 .lang-btn {

@@ -8,7 +8,7 @@ from towns.vaduz import scraper_vaduz
 from towns.triesen import scraper_trissen
 from towns.triesenberg import scraper_triesenberg
 from towns.balzers import scraper_balzers
-from backend.utils import events_to_json, filter_next_7_days, ensure_translation_packages
+from backend.utils import events_to_json, filter_next_7_days, ensure_translation_packages, english_only_record
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
@@ -111,6 +111,7 @@ def run_all_scrapers():
     ruta_old_data = Path("data/old_data.json")
 
     current_data = load_json_list(ruta_data) if ruta_data.exists() else []
+    current_data = [english_only_record(record) for record in current_data]
     old_data = load_json_list(ruta_old_data)
     updated_old_data = merge_unique_records(old_data, current_data)
 

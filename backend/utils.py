@@ -54,6 +54,12 @@ class TranslatedText(str):
 def _ordered_langs(by_lang: dict) -> dict:
     return {code: by_lang[code] for code in CONTENT_LANG_ORDER if code in by_lang}
 
+def _reload_argos_languages() -> None:
+    import argostranslate.translate
+
+    argostranslate.translate.installed_translates.clear()
+    argostranslate.translate.get_installed_languages.cache_clear()
+
 def _pair_installed(from_code: str, to_code: str) -> bool:
     import argostranslate.translate
 
@@ -125,6 +131,7 @@ def ensure_translation_packages() -> None:
             if not _install_pair("en", code, available):
                 print(f"English to {code} Argos package is not available")
 
+        _reload_argos_languages()
         _en_ready = _pair_installed("de", "en")
         _installed_targets = [code for code in PIVOT_TARGETS if _pair_installed("en", code)]
         _translation_ready = True
@@ -179,6 +186,17 @@ def ensure_town(location, community) -> str:
     if town.lower() in loc.lower():
         return loc
     return f"{loc}, {town}"
+
+def english_only_record(record: dict) -> dict:
+    copied = dict(record)
+    copied["title"] = _english_text(copied.get("title"))
+    copied["description"] = _english_text(copied.get("description"))
+    return copied
+
+def _english_text(value):
+    if isinstance(value, dict):
+        return value.get("en") or ""
+    return value
 
 def _export_text(value):
     if isinstance(value, TranslatedText):
