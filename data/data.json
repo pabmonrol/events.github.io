@@ -3,7 +3,15 @@
         "community": "Ruggell",
         "title": {
             "en": "Book presentation of the new novel by Armin Öhri",
-            "de": "Buchpräsentation des neuen Romans von Armin Öhri"
+            "es": "Presentación del libro de la nueva novela de Armin Öhri",
+            "it": "Presentazione libro del nuovo romanzo di Armin Öhri",
+            "de": "Buchpräsentation des neuen Romans von Armin Öhri",
+            "sr": "Prezentacija novog romana Armina Ohrija",
+            "fr": "Présentation du nouveau roman par Armin Öhri",
+            "pt": "Apresentação do livro do novo romance de Armin Öhri",
+            "pl": "Prezentacja książki nowej powieści Armina Öhri",
+            "hi": "आर्मिन Öhri द्वारा नए उपन्यास की पुस्तक प्रस्तुति",
+            "ru": "Презентация книги нового романа Армина Охри"
         },
         "icon": "🪇",
         "colour": "pink",
@@ -19,7 +27,15 @@
         "community": "Mauren",
         "title": {
             "en": "Visit to the KopsII pumped storage power plant in Montafon",
-            "de": "Besichtigung Pumpspeicherkraftwerk KopsII im Montafon"
+            "es": "Visita a la central de almacenamiento bombeada KopsII en Montafon",
+            "it": "Visita alla centrale pompata KopsII di Montafon",
+            "de": "Besichtigung Pumpspeicherkraftwerk KopsII im Montafon",
+            "sr": "Poseta Kopsil pumpi za skladištenje u Montafonu",
+            "fr": "Visite de la centrale de stockage à pompe KopsII à Montafon",
+            "pt": "Visita à usina de armazenamento bombeada KopsII em Montafon",
+            "pl": "Wizyta w elektrowni pompowej KopsII w Montafon",
+            "hi": "Montafon में KopsII पंप भंडारण बिजली संयंत्र की यात्रा",
+            "ru": "Посещение насосной электростанции KopsII в Монтафоне"
         },
         "icon": "🪇",
         "colour": "pink",
@@ -30,7 +46,15 @@
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Gaschurn+Montafon%2C+Mauren",
         "description": {
             "en": "Kopswerk II - The most modern pumped storage power plant in the world. Together we visit this masterpiece of technology on a private tour.\nInfo and registration until Wednesday 07. October with the senior coordinators Andrea Maurer and Josef Thaler tel. 3771035/3771037 or senioren@mauren.li",
-            "de": "Kopswerk II - Das modernste Pumpspeicherkraftwerk der Welt. Gemeinsam besichtigen wir bei einer Privatführung dieses Meisterwerk der Technik.\nInfo und Anmeldung bis Mittwoch 07. Oktober bei den Seniorenkoordinatoren Andrea Maurer und Josef Thaler unter Tel. 3771035/3771037 oder senioren@mauren.li"
+            "es": "Kopswerk II - La central de almacenamiento más moderna del mundo. Juntos visitamos esta obra maestra de tecnología en un tour privado.\nInformación y registro hasta el miércoles 07. Octubre con los coordinadores senior Andrea Maurer y Josef Thaler tel. 3771035/3771037 o senioren@mauren.li",
+            "it": "Kopswerk II - La più moderna centrale di alimentazione pompata nel mondo. Insieme visitiamo questo capolavoro di tecnologia in un tour privato.\nInfo e registrazione fino a mercoledì 07. Ottobre con i coordinatori senior Andrea Maurer e Josef Thaler tel. 3771035/3771037 o senioren@mauren.li",
+            "de": "Kopswerk II - Das modernste Pumpspeicherkraftwerk der Welt. Gemeinsam besichtigen wir bei einer Privatführung dieses Meisterwerk der Technik.\nInfo und Anmeldung bis Mittwoch 07. Oktober bei den Seniorenkoordinatoren Andrea Maurer und Josef Thaler unter Tel. 3771035/3771037 oder senioren@mauren.li",
+            "sr": "Kofkrik II, najmodernija elektrana na svetu. Zajedno poseæujemo ovo remek delo tehnologije na privatnoj turneji.\nInformacije i registracija do srede 07. Oktobar sa starijim koordinatorima Andreom Maurer i Jozefom Thalerom Telom. 3771035 / 3771037 ili senioren @ mauren.li",
+            "fr": "Kopswerk II - La centrale la plus moderne au monde. Ensemble, nous visitons ce chef-d'œuvre de la technologie lors d'une visite privée.\nInfo et inscription jusqu'au mercredi 07. Octobre avec les coordinateurs principaux Andrea Maurer et Josef Thaler tel. 3771035/3771037 ou senioren@mauren.li",
+            "pt": "Kopswerk II - A mais moderna usina de armazenamento bombeada do mundo. Juntos visitamos esta obra-prima da tecnologia em um passeio privado.\nInformações e inscrições até quarta-feira 07. Outubro com os coordenadores sênior Andrea Maurer e Josef Thaler tel. 3771035/3771037 ou senioren@mauren.li",
+            "pl": "Kopswerk II - najnowocześniejsza elektrownia magazynowa na świecie. Razem zwiedzamy to arcydzieło technologii na prywatnej trasie.\nInformacja i rejestracja do środy 07. Październik z starszymi koordynatorami Andrea Maurer i Josef Thaler tel. 3771035 / 3771037 lub senioren @ mauren.li",
+            "hi": "Kopswerk II - दुनिया में सबसे आधुनिक पंप भंडारण बिजली संयंत्र। साथ में हम एक निजी दौरे पर प्रौद्योगिकी के इस कृति का दौरा करते हैं।\nजानकारी और पंजीकरण बुधवार 07 तक। अक्टूबर के साथ वरिष्ठ समन्वयक एंड्रिया मौररर और जोसेफ थालर टेल। 3771035/3771037 या Senioren@mauren.li",
+            "ru": "Kopswerk II - самая современная насосная электростанция в мире. Вместе мы посетим этот шедевр техники в частном туре.\nИнформация и регистрация до среды 07. Октябрь со старшими координаторами Андреа Маурером и Йозефом Талером Тел. 3771035/3771037 или Senioren@mauren.li"
         },
         "price": null
     },
@@ -38,7 +62,15 @@
         "community": "Mauren",
         "title": {
             "en": "Stein Egerta: Map of Life, Astrology as a Map of the Psyche",
-            "de": "Stein Egerta: Map of Life, Astrologie als Landkarte der Psyche"
+            "es": "Stein Egerta: Mapa de la Vida, Astrología como Mapa de la Psiquiatría",
+            "it": "Stein Egerta: Mappa della Vita, Astrologia come mappa della Psiche",
+            "de": "Stein Egerta: Map of Life, Astrologie als Landkarte der Psyche",
+            "sr": "Stajn Egerta: Mapa života, astrologija kao mapa psihologije",
+            "fr": "Stein Egerta: Carte de la vie, l'astrologie comme carte de la psyché",
+            "pt": "Stein Egerta: Mapa da Vida, Astrologia como Mapa da Psique",
+            "pl": "Stein Egerta: Mapa życia, Astrologia jako Mapa Psyche",
+            "hi": "Stein Egerta: नक्शे के जीवन, ज्योतिष एक नक्शे के रूप में Psyche",
+            "ru": "Стайн Эгерта: Карта жизни, астрология как карта психики"
         },
         "icon": "🌱",
         "colour": "green",
@@ -49,15 +81,31 @@
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Zuschg%2C+Raum+%22Bahnhof%22%2C+Mauren",
         "description": {
             "en": "What does the date of birth reveal about our personality? Participants get an insight into astrology as a psychological analysis instrument and which clear answers can be obtained from their own birth chart.",
-            "de": "KurszielWas verrät das Geburtsdatum über unsere Persönlichkeit? Die Teilnehmenden erhalten einen Einblick in die Astrologie als psychologisches Analyse-Instrument und welche klaren Antworten aus dem eigenen Geburtshoroskop erhalten werden können."
+            "es": "¿Qué revela la fecha de nacimiento sobre nuestra personalidad? Los participantes obtienen una visión de la astrología como un instrumento de análisis psicológico y que pueden obtener respuestas claras de su propia carta natal.",
+            "it": "Che cosa rivela la data di nascita sulla nostra personalità? I partecipanti ottengono una visione dell'astrologia come strumento di analisi psicologica e che le risposte chiare possono essere ottenute dal proprio grafico di nascita.",
+            "de": "KurszielWas verrät das Geburtsdatum über unsere Persönlichkeit? Die Teilnehmenden erhalten einen Einblick in die Astrologie als psychologisches Analyse-Instrument und welche klaren Antworten aus dem eigenen Geburtshoroskop erhalten werden können.",
+            "sr": "Šta datum roðenja otkriva o našoj liènosti? Učesnici dobijaju uvid u astrologiju kao instrument za psihološku analizu i koji jasni odgovori mogu da se dobiju iz svog rodnog lista.",
+            "fr": "Que révèle la date de naissance de notre personnalité? Les participants ont un aperçu de l'astrologie en tant qu'instrument d'analyse psychologique et des réponses claires qu'ils peuvent obtenir à partir de leur propre carte de naissance.",
+            "pt": "O que revela a data de nascimento sobre nossa personalidade? Os participantes obtêm um insight sobre a astrologia como um instrumento de análise psicológica e que respostas claras podem ser obtidas a partir de seu próprio mapa de nascimento.",
+            "pl": "Co data urodzenia ujawnia o naszej osobowości? Uczestnicy uzyskują wgląd w astrologię jako psychologiczny instrument analizy i które jasne odpowiedzi można uzyskać z ich własnej karty urodzenia.",
+            "hi": "जन्म की तारीख हमारे व्यक्तित्व के बारे में क्या बताती है? प्रतिभागियों को मनोवैज्ञानिक विश्लेषण उपकरण के रूप में ज्योतिष में अंतर्दृष्टि मिलती है और जो अपने जन्म चार्ट से स्पष्ट उत्तर प्राप्त किए जा सकते हैं।",
+            "ru": "Что дата рождения говорит о нашей личности? Участники получают представление об астрологии как инструменте психологического анализа и о том, какие четкие ответы можно получить из их собственной карты рождения."
         },
         "price": null
     },
     {
         "community": "Mauren",
         "title": {
-            "en": "50s Rock'n'Roll Party in Moors!",
-            "de": "50er-Jahre Rock’n’Roll Party in Mauren!"
+            "en": "50s Rock’n’Roll Party in Moors!",
+            "es": "50s Rock'n'Roll Party en Moors!",
+            "it": "50s Rock’n’Roll Party a Moors!",
+            "de": "50er-Jahre Rock’n’Roll Party in Mauren!",
+            "sr": "Rokenrol žurka u Mauru!",
+            "fr": "Les années 50.",
+            "pt": "50s Rock’n’Roll Party in Moors!",
+            "pl": "50 Rock 'n' Roll Party in Moors!",
+            "hi": "मोर्स में 50s Rock'n'Roll Party!",
+            "ru": "Рок-н-ролл 50-х в Мурсе!"
         },
         "icon": "🎵",
         "colour": "blue",
@@ -68,19 +116,35 @@
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal+Mauren%2C+Mauren",
         "description": {
             "en": "When the evening begins and the first guitar riffs sound, there is no stopping: The Bombs from Germany and the Blue Shoes Band from Liechtenstein bring the stage to quake from 8 pm. Let yourself be infected by real rock’n’roll energy, dance, laugh and celebrate passionate live music like in the golden times of the 50s.",
-            "de": "Erlebe eine mitreissende 50er-Jahre-Party im Herzen von Mauren!Wenn der Abend beginnt und die ersten Gitarrenriffs erklingen, gibt es kein Halten mehr: The Bombs aus Deutschland und die Blue Shoes Band aus Liechtenstein bringen ab 20 Uhr die Bühne zum Beben. Lass dich von echter Rock’n’Roll-Energie anstecken, tanze, lache und feiere zu leidenschaftlicher Live-Musik wie in den goldenen Zeiten der 50er."
+            "es": "Cuando empieza la noche y suenan los primeros riffs de guitarra, no hay parada: Las bombas de Alemania y la Banda de Zapatos Azules de Liechtenstein llevan el escenario al terremoto de 8 pm. Déjese infectar por la energía rock'n'roll real, baile, ría y celebrar música en vivo apasionada como en los tiempos dorados de los años 50.",
+            "it": "Quando la sera inizia e il primo suono riff chitarra, non c'è fermata: Le Bombe dalla Germania e la Blue Shoes Band dal Liechtenstein portano il palco al terremoto dalle ore 20. Lasciatevi infettare dalla vera energia rock’n’roll, danzare, ridere e celebrare musica dal vivo appassionata come nei tempi d’oro degli anni 50.",
+            "de": "Erlebe eine mitreissende 50er-Jahre-Party im Herzen von Mauren!Wenn der Abend beginnt und die ersten Gitarrenriffs erklingen, gibt es kein Halten mehr: The Bombs aus Deutschland und die Blue Shoes Band aus Liechtenstein bringen ab 20 Uhr die Bühne zum Beben. Lass dich von echter Rock’n’Roll-Energie anstecken, tanze, lache und feiere zu leidenschaftlicher Live-Musik wie in den goldenen Zeiten der 50er.",
+            "sr": "Kada veèe poène i prvi rifovi gitare zaèuju, nema zaustavljanja: Bombe iz Nemaèke i Blue Shoes Band iz Liechtensteina dovedu do zemljotresa od 8 uveèe. Pusti da te inficira prava rokenrol energija, igraj, smej se i slavi strastvenu živu muziku kao u zlatno doba 50-ih.",
+            "fr": "Quand la soirée commence et que les premiers riffs de guitare sonnent, il n'y a pas d'arrêt: Les Bombes d'Allemagne et le Blue Shoes Band du Liechtenstein apportent la scène au séisme à partir de 20h. Laissez-vous infecter par la vraie énergie rock, danser, rire et célébrer la musique vivante passionnée comme dans les temps d'or des années 50.",
+            "pt": "Quando a noite começa e o som dos primeiros riffs da guitarra, não há como parar: As Bombas da Alemanha e a Banda de Sapatos Azul de Liechtenstein trazem o palco para tremer das 20h. Deixe-se infectar pela energia real do rock'n'roll, dance, ria e celebre música ao vivo apaixonada como nos tempos dourados dos anos 50.",
+            "pl": "Kiedy zaczyna się wieczór i pierwszy riffs gitarowy dźwięk, nie ma zatrzymania: Bomby z Niemiec i Blue Shoes Band z Liechtensteinu powodują trzęsienie ziemi od 20: 00. Pozwól się zarazić prawdziwą energią rock 'n' rolla, tańczyć, śmiać się i świętować pasjonującą muzykę na żywo, jak w złotych czasach lat 50.",
+            "hi": "जब शाम शुरू होती है और पहला गिटार riffs ध्वनि, वहाँ कोई रोक नहीं है: जर्मनी से बम और लिकटेंस्टीन से ब्लू शूज़ बैंड ने 8 बजे से गुजरने का मंच दिया। अपने आप को असली रॉक'n'roll ऊर्जा, नृत्य, और 50s के सुनहरा समय में भावुक लाइव संगीत की तरह जश्न मनाते हैं।",
+            "ru": "Когда начинается вечер и звучат первые гитарные риффы, остановки нет: Бомбы из Германии и Blue Shoes Band из Лихтенштейна приведут к землетрясению с 8 вечера. Позвольте себе быть зараженным настоящей энергией рок-н-ролла, танцевать, смеяться и праздновать страстную живую музыку, как в золотые времена 50-х годов."
         },
         "price": null
     },
     {
         "community": "Eschen",
         "title": {
-            "en": "Course 09A13: Burning booze",
-            "de": "Kurs 09A13: Schnaps brennen"
+            "en": "Course 09A13: Burning brandy",
+            "es": "Curso 09A13: Marca ardiente",
+            "it": "Corso 09A13: Burning brandy",
+            "de": "Kurs 09A13: Schnaps brennen",
+            "sr": "Kurs 09A13:",
+            "fr": "Cours 09A13: Brûlure de brandy",
+            "pt": "Curso 09A13: Conhaque queimando",
+            "pl": "Kurs 09A13: Palenie brandy",
+            "hi": "कोर्स 09A13: बर्निंग ब्रांडी",
+            "ru": "Курс 09А13: Сжигание коньяка"
         },
-        "icon": "🌱",
-        "colour": "green",
-        "category": "Nature",
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
         "date": "2026-10-17",
         "time": "14.00",
         "location": "Eschen, Alemannenstrasse 1, Destillerie Steinauer, Eschen",
@@ -92,7 +156,15 @@
         "community": "Schaan",
         "title": {
             "en": "The AI show for the curious: The world is changing. Please understand.",
-            "de": "Die KI-Show für Neugierige: Die Welt verändert sich. Verstehen Sie mit."
+            "es": "El espectáculo AI para los curiosos: El mundo está cambiando. Por favor, entiendan.",
+            "it": "La mostra AI per i curiosi: Il mondo sta cambiando. Ti prego di capire.",
+            "de": "Die KI-Show für Neugierige: Die Welt verändert sich. Verstehen Sie mit.",
+            "sr": "V.I. šou za radoznale: svet se menja. Molim te shvati.",
+            "fr": "Le spectacle d'IA pour les curieux : Le monde change. Veuillez comprendre.",
+            "pt": "O show de IA para os curiosos: O mundo está mudando. Por favor, entenda.",
+            "pl": "Wystawa SI dla ciekawskich: Świat się zmienia. Proszę zrozumieć.",
+            "hi": "एआई शो के लिए उत्सुक: दुनिया बदल रही है। कृपया समझें।",
+            "ru": "Шоу ИИ для любопытных: Мир меняется. Пожалуйста, поймите."
         },
         "icon": "🌱",
         "colour": "green",
@@ -107,8 +179,16 @@
     {
         "community": "Schaan",
         "title": {
-            "en": "Benefit concert with natural debris and guests",
-            "de": "Benefizkonzert mit Naturtrüeb und Gäste"
+            "en": "Benefit Concert with Natural Trouble and Guests",
+            "es": "Concierto de beneficios con problemas naturales y huéspedes",
+            "it": "Concerto con problemi naturali e ospiti",
+            "de": "Benefizkonzert mit Naturtrüeb und Gäste",
+            "sr": "Dobrotvorni koncert sa prirodnim problemima i gostima",
+            "fr": "Bénéfice Concert avec Trouble Naturel et Invités",
+            "pt": "Beneficie de Concerto com Problemas Naturais e Convidados",
+            "pl": "Koncert Benefit z Natural Trouble i Gości",
+            "hi": "प्राकृतिक मुसीबत और मेहमानों के साथ लाभ कॉन्सर्ट",
+            "ru": "Концерт с природными проблемами и гостями"
         },
         "icon": "🎵",
         "colour": "blue",
@@ -124,7 +204,15 @@
         "community": "Vaduz",
         "title": {
             "en": "Knitting and crochet afternoon",
-            "de": "Strick- und Häkelnachmittag"
+            "es": "Knitting y ganchillo tarde",
+            "it": "Maglieria e uncinetto pomeriggio",
+            "de": "Strick- und Häkelnachmittag",
+            "sr": "Pletenje i heklanje popodne",
+            "fr": "Tricot et crochet après-midi",
+            "pt": "Tricô e tarde de crochê",
+            "pl": "Dziewiarstwo i szydełko po południu",
+            "hi": "बुनाई और Crochet दोपहर",
+            "ru": "Вязание и вязание после обеда"
         },
         "icon": "🪇",
         "colour": "pink",
@@ -135,7 +223,15 @@
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Vadozner+Huus+%28Lageplan%29%0ASt%C3%A4dtle+14%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
         "description": {
             "en": "“Working together is more fun”\n\nAll interested parties who like to knit or crochet in company are cordially invited. The knitting and crochet afternoons take place from 2 pm to 4 pm in the Vadozner Huus (city 14). Please bring your own knitting or crochet needles as well as wool or yarn. Participation is free of charge. Notification is not required.\n\nDates 2026: 7 September, 12 October, 16 November, 14. December",
-            "de": "«Zusammen Handarbeiten macht mehr Spass»\n\nAlle Interessierten, die gerne in Gesellschaft stricken oder häkeln, sind herzlich eingeladen. Die Strick- und Häkelnachmittage finden jeweils von 14.00 bis 16.00 Uhr im Vadozner Huus (Städtle 14) statt. Bitte bringen Sie Ihre eigenen Strick- oder Häkelnadeln sowie Wolle oder Garn mit. Die Teilnahme ist kostenlos. Eine Anmeldung ist nicht erforderlich. \n\nTermine 2026: 7. September, 12. Oktober, 16. November, 14. Dezember"
+            "es": "“Trabajar juntos es más divertido”\n\nTodas las partes interesadas que les gusta tejer o ganchillo en compañía son cordialmente invitadas. Las tardes de punto y ganchillo tienen lugar de 2 pm a 4 pm en el Vadozner Huus (ciudad 14). Por favor traiga sus propias agujas de punto o ganchillo, así como lana o hilo. La participación es gratuita. No se requiere notificación.\n\nFechas 2026: 7 de septiembre, 12 de octubre, 16 de noviembre, 14. Diciembre",
+            "it": "“Lavorare insieme è più divertente”\n\nTutti gli interessati che amano lavorare a maglia o all'uncinetto in azienda sono cordialmente invitati. I pomeriggi di maglia e uncinetto si svolgono dalle ore 14 alle ore 16 nel Vadozner Huus (città 14). Si prega di portare la propria maglia o aghi all'uncinetto, così come lana o filato. La partecipazione è gratuita. La notifica non è richiesta.\n\nDate 2026: 7 settembre, 12 ottobre, 16 novembre, 14. Dicembre",
+            "de": "«Zusammen Handarbeiten macht mehr Spass»\n\nAlle Interessierten, die gerne in Gesellschaft stricken oder häkeln, sind herzlich eingeladen. Die Strick- und Häkelnachmittage finden jeweils von 14.00 bis 16.00 Uhr im Vadozner Huus (Städtle 14) statt. Bitte bringen Sie Ihre eigenen Strick- oder Häkelnadeln sowie Wolle oder Garn mit. Die Teilnahme ist kostenlos. Eine Anmeldung ist nicht erforderlich. \n\nTermine 2026: 7. September, 12. Oktober, 16. November, 14. Dezember",
+            "sr": "\"Raditi zajedno je zabavnije\"\n\nSve zainteresovane strane koje vole da pletu ili heklaju u društvu su srdaèno pozvane. Pletenje i heklanje se dešava od 2 do 4 popodne u Vazner Huus (Grad 14). Molim vas ponesite svoje pletenje ili heklanje igle kao i vunu ili predivo. Ucestvovanje je besplatno. Obaveštenje nije potrebno.\n\nDatumi 2026: 7 septembar, 12 oktobar, 16 novembar, 14. Decembar",
+            "fr": "Travailler ensemble est plus amusant\n\nToutes les parties intéressées qui aiment tricoter ou crocheter en compagnie sont cordialement invitées. Le tricot et les après-midi au crochet ont lieu de 14h à 16h dans le Vadozner Huus (ville 14). Veuillez apporter vos propres aiguilles de tricot ou crochet ainsi que de la laine ou du fil. La participation est gratuite. La notification n'est pas requise.\n\nDates 2026: 7 septembre, 12 octobre, 16 novembre, 14. Décembre",
+            "pt": "“Trabalhar juntos é mais divertido”\n\nTodas as partes interessadas que gostam de tricô ou crochê na empresa são cordialmente convidados. As tardes de tricô e crochê acontecem das 14h às 16h no Vadozner Huus (cidade 14). Por favor, traga o seu próprio tricô ou agulhas de crochê, bem como lã ou fio. A participação é gratuita. A notificação não é necessária.\n\nDatas 2026: 7 de setembro, 12 de outubro, 16 de novembro, 14. Dezembro",
+            "pl": "\"Praca razem jest zabawniejsza\"\n\nWszystkie zainteresowane strony, które lubią szydełkować lub szydełkować w firmie są serdecznie zaproszone. Dziewiarskie i szydełkowe popołudnia odbywają się w godzinach 14.00-16.00 w Vadozner Huus (miasto 14). Proszę przynieść własne druty dziewiarskie lub szydełkowe oraz wełnę lub przędzę. Udział jest bezpłatny. Powiadomienie nie jest wymagane.\n\nDaty 2026: 7 września, 12 października, 16 listopada, 14. Grudzień",
+            "hi": "\"एक साथ काम करना अधिक मजेदार है\"\n\nकंपनी में बुनाई या crochet पसंद करने वाले सभी इच्छुक पार्टियों को औपचारिक रूप से आमंत्रित किया जाता है। बुनाई और crochet दोपहर 2 बजे से 4 बजे तक वाडोजर ह्यूस (सिटी 14) में होता है। कृपया अपनी खुद की बुनाई या crochet सुई के साथ-साथ ऊन या यार्न लाओ। भागीदारी नि: शुल्क है। अधिसूचना की आवश्यकता नहीं है।\n\nतारीख 2026: 7 सितंबर, 12 अक्टूबर, 16 नवंबर, 14. दिसम्बर",
+            "ru": "«Работать вместе веселее»\n\nВсе заинтересованные стороны, которые любят вязать или вязать в компании, сердечно приглашены. Вязание и вязание крючком проходят с 2 вечера до 4 вечера в Вадоцнер Хуус (город 14). Пожалуйста, принесите свои собственные иглы для вязания или вязания, а также шерсть или пряжу. Участие бесплатное. Уведомление не требуется.\n\nДаты 2026: 7 сентября, 12 октября, 16 ноября, 14. декабрь"
         },
         "price": null
     },
@@ -143,7 +239,15 @@
         "community": "Triesenberg",
         "title": {
             "en": "Junior Camp",
-            "de": "Junioren Camp"
+            "es": "Campamento Junior",
+            "it": "Junior Camp",
+            "de": "Junioren Camp",
+            "sr": "Junior kamp",
+            "fr": "Camp junior",
+            "pt": "Acampamento Júnior",
+            "pl": "Młodzieżowy obóz",
+            "hi": "जूनियर शिविर",
+            "ru": "Детский лагерь"
         },
         "icon": "⚽️",
         "colour": "red",
@@ -159,7 +263,15 @@
         "community": "Triesenberg",
         "title": {
             "en": "Autumn Tennis Camp for Juniors",
-            "de": "Herbst-Tenniscamp für Junioren"
+            "es": "Campamento de Tenis de Otoño para Juniors",
+            "it": "Campo da tennis autunno per ragazzi",
+            "de": "Herbst-Tenniscamp für Junioren",
+            "sr": "Jesenji teniski kamp za juniore",
+            "fr": "Autumn Tennis Camp pour Juniors",
+            "pt": "Campo de tênis de outono para Juniors",
+            "pl": "Autumn Tennis Camp for Juniors",
+            "hi": "जूनियर के लिए शरद ऋतु टेनिस शिविर",
+            "ru": "Осенний теннисный лагерь для юниоров"
         },
         "icon": "⚽️",
         "colour": "red",
