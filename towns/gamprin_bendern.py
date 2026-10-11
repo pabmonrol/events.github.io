@@ -1,18 +1,16 @@
 import requests
 from bs4 import BeautifulSoup
-from deep_translator import GoogleTranslator
 from typing import List, NamedTuple
 from datetime import date, timedelta
 from urllib.parse import urljoin, urlparse
 from backend.classifier import event_classification
 import dateparser
-from backend.utils import get_price, get_hour, check_location, check_is_senior, check_right_date
+from backend.utils import get_price, get_hour, check_location, check_is_senior, check_right_date, translate_text
 from backend.model import Event
 
 
 city = "Gamprin/Bendern"
 avoid_categories = {"Government", "Religion"}
-translator = GoogleTranslator(source='de', target='en')
 
 def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
     res = []
@@ -36,7 +34,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
 
         if parsed_event.netloc == "www.gamprin.li" and parsed_event.path in ("", "/"):
             title_text = event.find_next("div", class_="mega-link-overlay").find("a").text
-            title = translator.translate(title_text.text)
+            title = translate_text(title_text.text)
             
             if check_is_senior(title):
                 continue
@@ -68,7 +66,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
             if not check_right_date(date_):
                 continue
             
-            title = translator.translate(title_text.text)
+            title = translate_text(title_text.text)
             if check_is_senior(title):
                 continue
             
@@ -79,7 +77,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
             description_text = soup_page.find(class_="sw-description")
             
             if description_text:
-                description = translator.translate(description_text.text)
+                description = translate_text(description_text.text)
                 price = get_price(description)
 
             category, icon, colour = event_classification(" ".join([description, title]))

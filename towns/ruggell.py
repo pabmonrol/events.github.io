@@ -2,17 +2,15 @@ import requests
 from bs4 import BeautifulSoup, Tag
 import re
 from typing import NamedTuple, List, Set
-from deep_translator import GoogleTranslator
 from backend.classifier import event_classification
 import dateparser
 from backend.model import Event
 from datetime import datetime, date, timedelta
-from backend.utils import location_url, verificar_fecha_limite, check_is_senior, check_right_date
+from backend.utils import location_url, verificar_fecha_limite, check_is_senior, check_right_date, translate_text
 
 INFO = {"hour":'Zeit', "location":'Wo'}
 city = "Ruggell"
 avoid_categories = {"Government", "Religion"}
-translator = GoogleTranslator(source='de', target='en')
 
 today = date.today()
 final_date = today + timedelta(days=6)
@@ -55,13 +53,13 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
         if not check_right_date(date_):
             continue
 
-        title = translator.translate(event.find(class_='title').text)
+        title = translate_text(event.find(class_='title').text)
 
         if check_is_senior(title):
             continue
 
         description = event.find(class_='text').text
-        description = translator.translate(description.text)
+        description = translate_text(description)
 
         category, icon, colour = event_classification(" ".join([description, title]))
         if category in avoid_categories:

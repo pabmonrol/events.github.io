@@ -1,18 +1,16 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-from deep_translator import GoogleTranslator
 from typing import NamedTuple, List, Set, Optional
 from backend.classifier import event_classification
 import dateparser
 from backend.model import Event
 from datetime import time, date, timedelta
-from backend.utils import location_url, verificar_fecha_limite, get_price, check_is_senior, check_right_date
+from backend.utils import location_url, verificar_fecha_limite, get_price, check_is_senior, check_right_date, translate_text
 
 
 city = "Mauren"
 avoid_categories = {"Government", "Religion"}
-translator = GoogleTranslator(source='de', target='en')
 
 
 def _find_value(sopa_, tag: str) -> Optional[str]:
@@ -78,13 +76,13 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
         if not check_right_date(date_):
             continue
 
-        title = translator.translate(title_text.text)
+        title = translate_text(title_text.text)
 
         if check_is_senior(title):
             continue
         description = sopa_evento.find(class_="eventdetail__textbody mce")
         if description:
-            description = translator.translate(description.text)
+            description = translate_text(description.text)
         else:
             description = ""
 

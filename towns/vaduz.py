@@ -1,17 +1,15 @@
-from deep_translator import GoogleTranslator
 from typing import *
 import requests
 from bs4 import BeautifulSoup, Tag
 import re
 import dateparser
-from backend.utils import check_right_date, get_hour, get_price, location_url, check_is_senior
+from backend.utils import check_right_date, get_hour, get_price, location_url, check_is_senior, translate_text
 from backend.classifier import event_classification
 from backend.model import Event
 
 
 city = "Vaduz"
 avoid_categories = {"Government", "Religion"}
-translator = GoogleTranslator(source='de', target='en')
 
 def _clean_vaduz_location(tags_desc: List[Tag]) -> Tuple[str]:
     strings = []
@@ -47,7 +45,7 @@ def scraper_vaduz(url: str) -> List[NamedTuple]:
             page = requests.get(title_body.get('href')).text
             event = BeautifulSoup(page, 'html.parser')
 
-            title = translator.translate(title_body.text)
+            title = translate_text(title_body.text)
 
             if check_is_senior(title):
                 continue
@@ -55,8 +53,8 @@ def scraper_vaduz(url: str) -> List[NamedTuple]:
             title_description_page = event.find("div", class_="summary").find_next("strong")
             description_page = event.find("div", class_="description").find_next("p")
             if title_description_page or description_page:
-                title_description = translator.translate(title_description_page.text)
-                description_body = translator.translate(description_page.text)
+                title_description = translate_text(title_description_page.text)
+                description_body = translate_text(description_page.text)
                 description = title_description + "\n\n" + description_body
                 price_text = event.find("div", class_="additional-info-wrapper").find_next("p")
                 price = get_price(price_text.text)

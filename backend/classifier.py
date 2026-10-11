@@ -2,7 +2,7 @@ import spacy
 from spacy.matcher import PhraseMatcher
 from typing import List
 
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_md")
 
 matcher = PhraseMatcher(nlp.vocab, attr="LOWER")
 matcher.add("Culture", [

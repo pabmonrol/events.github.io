@@ -1,17 +1,15 @@
-from deep_translator import GoogleTranslator
 from typing import List, NamedTuple
 import requests
 from bs4 import BeautifulSoup
 from datetime import date, timedelta
 import dateparser
 from backend.classifier import event_classification
-from backend.utils import check_location, check_is_senior, check_right_date
+from backend.utils import check_location, check_is_senior, check_right_date, translate_text
 from backend.model import Event
 import re
 
 city = "Eschen"
 avoid_categories = {"Government", "Religion"}
-translator = GoogleTranslator(source='de', target='en')
 
 def scraper_eschen(url: str) -> List[NamedTuple]:
     res = []
@@ -36,7 +34,7 @@ def scraper_eschen(url: str) -> List[NamedTuple]:
         if not title_page or not date_page:
             continue
         
-        title = translator.translate(title_page.text)
+        title = translate_text(title_page.text)
         if check_is_senior(title):
             continue
         

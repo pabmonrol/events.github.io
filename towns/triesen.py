@@ -1,11 +1,10 @@
-from deep_translator import GoogleTranslator
 from typing import *
 import requests
 from bs4 import BeautifulSoup, Tag
 import dateparser
 import re
 from datetime import date, timedelta
-from backend.utils import check_right_date, get_hour, check_location, check_is_senior
+from backend.utils import check_right_date, get_hour, check_location, check_is_senior, translate_text
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -14,7 +13,6 @@ from backend.model import Event
 INFO = {"hour":'Zeit', "location":'Wo'}
 city = "Triesen"
 avoid_categories = {"Government", "Religion"}
-translator = GoogleTranslator(source='de', target='en')
 
 def _clean_detail(attributes: Tag, info: str) -> str | None:
     for b in attributes.find_all('b'):
@@ -59,7 +57,7 @@ def scraper_trissen(url: str) -> List[NamedTuple]:
 
             if not check_right_date(date_):
                 continue
-            title = translator.translate(title_body.text)
+            title = translate_text(title_body.text)
 
             if check_is_senior(title):
                 continue

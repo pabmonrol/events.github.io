@@ -1,5 +1,20 @@
 let allEventsData = []; 
 let specialEventsData = [];
+let agendaIsStale = false;
+
+function markAgendaFreshness() {
+    const dated = [...allEventsData, ...specialEventsData]
+        .map(ev => parseEventDate(ev.date, "00:00"))
+        .filter(d => !isNaN(d.getTime()) && d.getTime() !== 0);
+    if (dated.length === 0) {
+        agendaIsStale = false;
+        return;
+    }
+    const latest = new Date(Math.max(...dated.map(d => d.getTime())));
+    const startOfToday = new Date();
+    startOfToday.setHours(0, 0, 0, 0);
+    agendaIsStale = latest < startOfToday;
+}
 
 async function loadAgenda() {
     try {
@@ -31,6 +46,7 @@ async function loadAgenda() {
             }
         });
         
+        markAgendaFreshness();
         renderEvents('all'); 
         setupFilterListeners();      
     } catch (error) {
@@ -145,7 +161,16 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
 
 function renderEvents(selectedFilter) {
     const container = document.getElementById('agenda-container');
-    container.innerHTML = ''; 
+    container.innerHTML = '';
+
+    if (agendaIsStale) {
+        container.innerHTML = `
+            <div style="background: #fff8c5; border: 2px dashed #d4a72c; border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 20px;">
+                <h3 style="color: #9a6700; margin-top: 0;">Agenda data is out of date</h3>
+                <p style="color: #24292f; margin-bottom: 0;">The newest saved event is before today, so this week looks empty.</p>
+            </div>
+        `;
+    } 
 
     // Filtrar ambos arrays
     let filteredEvents = allEventsData.filter(ev => selectedFilter === 'all' || (ev.category && ev.category.toLowerCase() === selectedFilter.toLowerCase()));

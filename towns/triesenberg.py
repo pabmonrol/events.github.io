@@ -1,17 +1,15 @@
-from deep_translator import GoogleTranslator
 from typing import *
 from bs4 import BeautifulSoup, Tag
 from datetime import date
 import dateparser
 from playwright.sync_api import sync_playwright
-from backend.utils import check_right_date, get_hour, location_url, check_is_senior
+from backend.utils import check_right_date, get_hour, location_url, check_is_senior, translate_text
 from backend.classifier import event_classification
 from backend.model import Event
 
 
 city = "Triesenberg"
 avoid_categories = {"Government", "Religion"}
-translator = GoogleTranslator(source='de', target='en')
 
 year = str(date.today().year)
 USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -76,7 +74,7 @@ def scraper_triesenberg(url: str) -> List[NamedTuple]:
                 title_body = link.find("div", class_="overview-title")
                 if not title_body:
                     continue
-                title = translator.translate(title_body.text)
+                title = translate_text(title_body.text)
 
                 if check_is_senior(title):
                     continue
@@ -103,7 +101,7 @@ def scraper_triesenberg(url: str) -> List[NamedTuple]:
                     if text_body:
                         p_tag = text_body.find_next("p")
                         if p_tag:
-                            description = translator.translate(p_tag.text.strip())
+                            description = translate_text(p_tag.text.strip())
                 
                 category, icon, colour = event_classification(" ".join([description,title]))
                 if category in avoid_categories:

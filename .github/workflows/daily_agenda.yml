@@ -2,51 +2,49 @@ name: Daily Event Scraper Update
 
 on:
   schedule:
-    # ⏱️ Runs EVERY DAY at 05:00 AM UTC
-    - cron: '0 3 * * *'
-  workflow_dispatch: # ✨ This button allows you to manually trigger the scraper
+    # 03:17 UTC. Minute 17 avoids the top of the hour, when scheduled jobs are most often dropped.
+    - cron: '17 3 * * *'
+  workflow_dispatch: # This button allows you to manually trigger the scraper
 
 permissions:
-  contents: write # 🔑 Crucial permission so the GitHub runner can save and commit data.json
+  contents: write # So the GitHub runner can save and commit data.json
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Clone the repository's code onto the virtual machine
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      # 2. Set up Python on the virtual machine
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
           cache: 'pip'
           cache-dependency-path: '**/requirements.txt'
 
-      # 3. Install required libraries (BeautifulSoup, Requests, spacy, playwright, etc.)
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install click
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          # Download the small English model for SpaCy
-          python -m spacy download en_core_web_sm
+      - name: Cache virtualenv
+        id: venv-cache
+        uses: actions/cache@v5
+        with:
+          path: .venv
+          key: ${{ runner.os }}-py311-venv-${{ hashFiles('requirements.txt') }}
 
-      # =========================================================
-      # 🚀 NUEVOS PASOS: CONFIGURACIÓN Y CACHÉ DE PLAYWRIGHT
-      # =========================================================
-      
-      # A. Obtenemos la versión instalada de Playwright para usarla en la clave de la caché
+      - name: Install dependencies
+        if: steps.venv-cache.outputs.cache-hit != 'true'
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install --upgrade pip
+          .venv/bin/pip install -r requirements.txt
+          .venv/bin/python -m spacy download en_core_web_md
+
       - name: Get Playwright Version
         id: playwright-version
-        run: echo "version=$(python -c 'import playwright; print(playwright.__version__)')" >> $GITHUB_OUTPUT
+        run: echo "version=$(.venv/bin/python -c 'import playwright; print(playwright.__version__)')" >> $GITHUB_OUTPUT
 
-      # B. Buscamos en caché si ya tenemos el navegador guardado de una ejecución anterior
       - name: Cache Playwright Browsers
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -54,31 +52,23 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-playwright-
 
-      # C. Si la caché NO encontró el navegador, lo descargamos
       - name: Install Playwright Browser (Chromium)
         if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: python -m playwright install chromium
+        run: .venv/bin/python -m playwright install chromium
 
-      # D. Aunque tengamos el navegador en caché, Ubuntu requiere instalar librerías del sistema operativo (dependencias C++)
       - name: Install Playwright OS Dependencies
-        run: python -m playwright install-deps chromium
-        
-      # =========================================================
+        run: .venv/bin/python -m playwright install-deps chromium
 
-      # 4. Run your main script
       - name: Run Event Scraper
-        run: python main.py
+        run: .venv/bin/python main.py
 
-      # 5. Automatically save and push changes to GitHub
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-          # Add only the modified data file to prevent unexpected conflicts
           git add data/data.json data/data_special.json data/old_data.json data/old_data_special.json
 
-          # Check if there are actual changes before committing
           if git diff --quiet && git diff --staged --quiet; then
             echo "No new events found today. Everything is up to date."
           else

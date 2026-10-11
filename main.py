@@ -8,12 +8,12 @@ from towns.vaduz import scraper_vaduz
 from towns.triesen import scraper_trissen
 from towns.triesenberg import scraper_triesenberg
 from towns.balzers import scraper_balzers
-from towns.planken import scraper_planken
 from backend.utils import events_to_json, filter_next_7_days
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 import json
+import traceback
 
 SCRAPERS = {scraper_ruggell: "https://www.ruggell.li/agenda",
             scraper_mauren: "https://www.mauren.li",
@@ -77,39 +77,49 @@ def archive_expired_special_events():
 
 
 def scrape_and_filter(scraper_fn, url):
-    try:
-        return filter_next_7_days(scraper_fn(url))
-    except Exception:
-        return []
+    return filter_next_7_days(scraper_fn(url))
 
 def run_all_scrapers():
     eventos_totales = []
+    failures = []
 
     with ThreadPoolExecutor(max_workers=len(SCRAPERS)) as executor:
-        futures = [
-            executor.submit(scrape_and_filter, scraper_fn, url)
+        futures = {
+            executor.submit(scrape_and_filter, scraper_fn, url): scraper_fn.__name__
             for scraper_fn, url in SCRAPERS.items()
-        ]
+        }
 
-        for future in futures:
-            eventos_totales.extend(future.result())
+        for future, name in futures.items():
+            try:
+                events = future.result()
+                eventos_totales.extend(events)
+                print(f"{name}: {len(events)} events")
+            except Exception:
+                failures.append((name, traceback.format_exc()))
+                print(f"Scraper failed: {name}\n{traceback.format_exc()}")
 
-    if eventos_totales:
-        json_resultado = events_to_json(eventos_totales)
-        ruta_data = Path("data/data.json")
-        ruta_old_data = Path("data/old_data.json")
-        
-        current_data = load_json_list(ruta_data) if ruta_data.exists() else []
-        old_data = load_json_list(ruta_old_data)
-        updated_old_data = merge_unique_records(old_data, current_data)
+    if failures:
+        failed_names = ", ".join(name for name, _ in failures)
+        print(f"{len(failures)} scrapers failed: {failed_names}")
 
-        with open(ruta_old_data, "w", encoding="utf-8") as f_viejo:
-            json.dump(updated_old_data, f_viejo, ensure_ascii=False, indent=2)
+    if not eventos_totales:
+        raise SystemExit("No events scraped")
 
-        ruta_data.unlink(missing_ok=True)
-        
-        with open("data/data.json", "w", encoding="utf-8") as f:
-            f.write(json_resultado)
+    json_resultado = events_to_json(eventos_totales)
+    ruta_data = Path("data/data.json")
+    ruta_old_data = Path("data/old_data.json")
+
+    current_data = load_json_list(ruta_data) if ruta_data.exists() else []
+    old_data = load_json_list(ruta_old_data)
+    updated_old_data = merge_unique_records(old_data, current_data)
+
+    with open(ruta_old_data, "w", encoding="utf-8") as f_viejo:
+        json.dump(updated_old_data, f_viejo, ensure_ascii=False, indent=2)
+
+    ruta_data.unlink(missing_ok=True)
+
+    with open("data/data.json", "w", encoding="utf-8") as f:
+        f.write(json_resultado)
 
 
 if __name__ == "__main__":

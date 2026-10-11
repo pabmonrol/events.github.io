@@ -1,18 +1,16 @@
-from deep_translator import GoogleTranslator
 from typing import *
 import requests
 from bs4 import BeautifulSoup
 from datetime import date, timedelta
 import re
 import dateparser
-from backend.utils import check_right_date, get_hour, check_location, get_price, check_is_senior
+from backend.utils import check_right_date, get_hour, check_location, get_price, check_is_senior, translate_text
 from backend.classifier import event_classification
 from backend.model import Event
 
 
 city = "Schaan"
 avoid_categories = {"Government", "Religion"}
-translator = GoogleTranslator(source='de', target='en')
 
 def scraper_schaan(url: str) -> List[NamedTuple]:
     res = []
@@ -40,15 +38,16 @@ def scraper_schaan(url: str) -> List[NamedTuple]:
             page = requests.get(title_link).text
             event = BeautifulSoup(page, 'html.parser')
 
-            title = translator.translate(event.find(class_="sw-title").text)
+            title = translate_text(event.find(class_="sw-title").text)
 
             if check_is_senior(title):
                 continue
 
             description_page = event.find("div", class_="vier")
             if description_page:
-                description_text = event.find(class_="eventdetail__textbody mce").find_next("p")
-                description = translator.translate(description_text)
+                description_node = event.find(class_="eventdetail__textbody mce").find_next("p")
+                description_text = description_node.get_text(strip=True) if description_node else ""
+                description = translate_text(description_text)
                 price = get_price(description_text)
 
             category, icon, colour = event_classification(" ".join([description, title]))

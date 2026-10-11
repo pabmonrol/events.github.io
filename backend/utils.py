@@ -5,6 +5,35 @@ import json
 import re
 from bs4 import Tag
 
+def _as_text(value) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value.strip()
+    if hasattr(value, "get_text"):
+        return value.get_text(strip=True)
+    return str(value).strip()
+
+_translator = None
+
+def translate_text(value) -> str:
+    original = _as_text(value)
+    if not original:
+        return ""
+
+    global _translator
+    try:
+        if _translator is None:
+            from deep_translator import GoogleTranslator
+            _translator = GoogleTranslator(source="de", target="en")
+        translated = _translator.translate(original)
+        if not translated:
+            return original
+        return translated
+    except Exception as exc:
+        print(f"Translation failed, keeping original: {exc}")
+        return original
+
 def location_url(location: str) -> str:
     base_url = "https://www.google.com/maps/search/?"
     parametros = {
