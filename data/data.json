@@ -53,19 +53,6 @@
     },
     {
         "community": "Eschen",
-        "title": "1. MBrick's exhibition Eschen 2026",
-        "icon": "🧩",
-        "colour": "purple",
-        "category": "Culture",
-        "date": "2026-10-11",
-        "time": "11.00",
-        "location": "Eschen, St. Martins-Ring 2, Gemeindesaal, Eschen",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Eschen%2C+St.+Martins-Ring+2%2C+Gemeindesaal%2C+Eschen",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Eschen",
         "title": "Course 09A13: Burning booze",
         "icon": "🌱",
         "colour": "green",
@@ -102,19 +89,6 @@
         "google_maps": "https://www.google.com/maps/search/?api=1&query=SAL+Saal+am+Linda%C2%ADplatz%2C+Schaan",
         "description": "",
         "price": null
-    },
-    {
-        "community": "Vaduz",
-        "title": "Hippie Death Cult and Deathchant",
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-10-11",
-        "time": "19:30",
-        "location": "Jugendcafé Camäleon (Lageplan)\nFabrikweg 3\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Jugendcaf%C3%A9+Cam%C3%A4leon+%28Lageplan%29%0AFabrikweg+3%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
-        "description": "Concert evening with Hippie Death Cult, Deathchant and KVAL\n\nHippie Death Cult come from Portland and do heavy psychedelic rock.\n\nDeathchant are from Los Angeles and play hard rock and heavy metal.\n\nKVAL play Sludge and are from Vorarlberg.",
-        "price": 30.0
     },
     {
         "community": "Vaduz",

@@ -3651,5 +3651,44 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal+Mauren%2C+Mauren",
     "description": "When the evening begins and the first guitar riffs sound, there is no stopping: The Bombs from Germany and the Blue Shoes Band from Liechtenstein bring the stage to quake from 8 pm. Let yourself be infected by real rock’n’roll energy, dance, laugh and celebrate passionate live music like in the golden times of the 50s.",
     "price": null
+  },
+  {
+    "community": "Mauren",
+    "title": "50s Rock'n'Roll Party in Moors!",
+    "icon": "🎵",
+    "colour": "blue",
+    "category": "Music",
+    "date": "2026-10-17",
+    "time": "19:00",
+    "location": "Gemeindesaal Mauren, Mauren",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal+Mauren%2C+Mauren",
+    "description": "When the evening begins and the first guitar riffs sound, there is no stopping: The Bombs from Germany and the Blue Shoes Band from Liechtenstein bring the stage to quake from 8 pm. Let yourself be infected by real rock’n’roll energy, dance, laugh and celebrate passionate live music like in the golden times of the 50s.",
+    "price": null
+  },
+  {
+    "community": "Eschen",
+    "title": "Course 09A13: Burning booze",
+    "icon": "🌱",
+    "colour": "green",
+    "category": "Nature",
+    "date": "2026-10-17",
+    "time": "14.00",
+    "location": "Eschen, Alemannenstrasse 1, Destillerie Steinauer, Eschen",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Eschen%2C+Alemannenstrasse+1%2C+Destillerie+Steinauer%2C+Eschen",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Schaan",
+    "title": "Benefit concert with natural debris and guests",
+    "icon": "🎵",
+    "colour": "blue",
+    "category": "Music",
+    "date": "2026-10-17",
+    "time": "20:00",
+    "location": "SAL Saal am Linda­platz, Schaan",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=SAL+Saal+am+Linda%C2%ADplatz%2C+Schaan",
+    "description": "",
+    "price": null
   }
 ]
