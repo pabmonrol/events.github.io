@@ -2,5 +2,5 @@ requests==2.34.2
 beautifulsoup4==4.15.0
 deep-translator==1.11.4
 dateparser==1.4.1
-spacy==3.8.13
+spacy==3.8.16
 playwright==1.61.0
