@@ -2,7 +2,7 @@ import spacy
 from spacy.matcher import PhraseMatcher
 from typing import List
 
-nlp = spacy.load("en_core_web_md")
+nlp = spacy.load("en_core_web_md", disable=["parser", "ner"])
 
 matcher = PhraseMatcher(nlp.vocab, attr="LOWER")
 matcher.add("Culture", [
@@ -40,26 +40,29 @@ matcher.add("Sport", [
 ])
 
 
+TEMATICAS = {"Culture": ["🧩", "purple"],
+             "Music": ["🎵", "blue"],
+             "Government": ["📎", "brown"],
+             "Leisure": ["🪇", "pink"],
+             "Religion": ["✝️", "yellow"],
+             "Nature": ["🌱", "green"],
+             "Sport": ["⚽️", "red"]}
+
+OTHER = ["Others", "#️⃣", "grey"]
+
+CATEGORY_DOCS = [(name, nlp(name.lower())) for name in TEMATICAS]
+
+
 def event_classification(title: str) -> List[str]:
-    tematicas = {"Culture": ["🧩", "purple"],
-                 "Music": ["🎵", "blue"],
-                 "Government": ["📎", "brown"],
-                 "Leisure": ["🪇", "pink"],
-                 "Religion": ["✝️", "yellow"],
-                 "Nature": ["🌱", "green"],
-                 "Sport": ["⚽️", "red"]}
-    
-    other = ["Others", "#️⃣", "grey"]
-    
     doc_evento = nlp(title.lower())
     matches = matcher(doc_evento)
     if matches:
         match_id, start, end = matches[0]
         categoria_ganadora = nlp.vocab.strings[match_id]
-        return [categoria_ganadora] + tematicas[categoria_ganadora]
+        return [categoria_ganadora] + TEMATICAS[categoria_ganadora]
 
     if len(doc_evento) == 0 or not doc_evento.has_vector:
-        return other
+        return OTHER
     
     palabras_esenciales = [
         token.text for token in doc_evento 
@@ -67,15 +70,14 @@ def event_classification(title: str) -> List[str]:
     ]
     
     if not palabras_esenciales:
-        return other
+        return OTHER
         
     doc_filtrado = nlp(" ".join(palabras_esenciales))
     
     categoria_ganadora = "Others"
     mayor_similitud = 0.1
     
-    for cat_ingles in tematicas.keys():
-        doc_categoria = nlp(cat_ingles.lower())
+    for cat_ingles, doc_categoria in CATEGORY_DOCS:
         similitud = doc_filtrado.similarity(doc_categoria)
         
         if similitud > mayor_similitud:
@@ -83,6 +85,6 @@ def event_classification(title: str) -> List[str]:
             categoria_ganadora = cat_ingles
 
     if categoria_ganadora == "Others":
-        return other
+        return OTHER
     
-    return [categoria_ganadora] + tematicas[categoria_ganadora]
+    return [categoria_ganadora] + TEMATICAS[categoria_ganadora]

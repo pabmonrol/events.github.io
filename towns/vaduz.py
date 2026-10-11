@@ -1,9 +1,8 @@
 from typing import *
-import requests
 from bs4 import BeautifulSoup, Tag
 import re
 import dateparser
-from backend.utils import check_right_date, get_hour, get_price, location_url, check_is_senior, translate_text
+from backend.utils import check_right_date, get_hour, get_price, location_url, check_is_senior, translate_text, http_session
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -30,7 +29,7 @@ def scraper_vaduz(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = requests.get(url).text
+    web = http_session.get(url).text
     soup = BeautifulSoup(web, 'html.parser')
     links = soup.find_all(class_="small-7 medium-8 large-8 columns col_events_list_text")
 
@@ -42,7 +41,7 @@ def scraper_vaduz(url: str) -> List[NamedTuple]:
             date_ = dateparser.parse(date_match[0], settings={'DATE_ORDER': 'DMY'}).date()
             if not check_right_date(date_):
                 continue
-            page = requests.get(title_body.get('href')).text
+            page = http_session.get(title_body.get('href')).text
             event = BeautifulSoup(page, 'html.parser')
 
             title = translate_text(title_body.text)

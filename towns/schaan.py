@@ -1,10 +1,9 @@
 from typing import *
-import requests
 from bs4 import BeautifulSoup
 from datetime import date, timedelta
 import re
 import dateparser
-from backend.utils import check_right_date, get_hour, check_location, get_price, check_is_senior, translate_text
+from backend.utils import check_right_date, get_hour, check_location, get_price, check_is_senior, translate_text, http_session
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -21,7 +20,7 @@ def scraper_schaan(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = requests.get(url).text
+    web = http_session.get(url).text
     soup = BeautifulSoup(web, 'html.parser')
     links = soup.find_all(class_="sw-list-item")
 
@@ -35,7 +34,7 @@ def scraper_schaan(url: str) -> List[NamedTuple]:
             
             if not check_right_date(date_):
                 continue
-            page = requests.get(title_link).text
+            page = http_session.get(title_link).text
             event = BeautifulSoup(page, 'html.parser')
 
             title = translate_text(event.find(class_="sw-title").text)

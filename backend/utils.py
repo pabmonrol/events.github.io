@@ -4,7 +4,10 @@ from datetime import datetime, date, time, timedelta
 import json
 import re
 import threading
+import requests
 from bs4 import Tag
+
+http_session = requests.Session()
 
 def _as_text(value) -> str:
     if value is None:

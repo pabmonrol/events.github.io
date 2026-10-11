@@ -1,10 +1,9 @@
 from typing import *
-import requests
 from bs4 import BeautifulSoup
 from datetime import date
 import re
 import dateparser
-from backend.utils import check_right_date, get_hour, check_location, get_price, check_is_senior, translate_text
+from backend.utils import check_right_date, get_hour, check_location, get_price, check_is_senior, translate_text, http_session
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -33,7 +32,7 @@ def scraper_balzers(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = requests.get(url).text
+    web = http_session.get(url).text
     soup = BeautifulSoup(web, 'html.parser')
     links_left = soup.find_all("div", class_="col-24 col-xs-12 col-md-10 col-lg-5 col-md-offset-1 col-lg-offset-1")
     links_right = soup.find_all("div", class_="col-24 col-xs-12 col-md-10 col-lg-5 col-md-offset-1 col-lg-offset-0")
@@ -46,7 +45,7 @@ def scraper_balzers(url: str) -> List[NamedTuple]:
             if not check_right_date(date_):
                 continue
             event_link = link.find("a").get("href")
-            page = requests.get(event_link).text
+            page = http_session.get(event_link).text
             event = BeautifulSoup(page, 'html.parser')
 
             block_info = event.find("div", class_="mdl-container mdl-art-030 bg-weiss mdl030-detail-text-item")

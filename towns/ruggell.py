@@ -1,4 +1,3 @@
-import requests
 from bs4 import BeautifulSoup, Tag
 import re
 from typing import NamedTuple, List, Set
@@ -6,7 +5,7 @@ from backend.classifier import event_classification
 import dateparser
 from backend.model import Event
 from datetime import datetime, date, timedelta
-from backend.utils import location_url, check_is_senior, check_right_date, translate_text
+from backend.utils import location_url, check_is_senior, check_right_date, translate_text, http_session
 
 INFO = {"hour":'Zeit', "location":'Wo'}
 city = "Ruggell"
@@ -38,7 +37,7 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
     while url and url not in seen:
         seen.add(url)
 
-        web = requests.get(url).text
+        web = http_session.get(url).text
         soup = BeautifulSoup(web, 'html.parser')
         events = soup.find_all(class_='infos')
 

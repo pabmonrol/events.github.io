@@ -1,11 +1,10 @@
-import requests
 from bs4 import BeautifulSoup
 from typing import List, NamedTuple
 from datetime import date, timedelta
 from urllib.parse import urljoin, urlparse
 from backend.classifier import event_classification
 import dateparser
-from backend.utils import get_price, get_hour, check_location, check_is_senior, check_right_date, translate_text
+from backend.utils import get_price, get_hour, check_location, check_is_senior, check_right_date, translate_text, http_session
 from backend.model import Event
 
 
@@ -21,7 +20,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = requests.get(url).text
+    web = http_session.get(url).text
     soup = BeautifulSoup(web, 'html.parser')
     events = soup.find_all("div", class_="events-list-entry ccm-block-page-list-page-entry")
 
@@ -55,7 +54,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
             if hour_text:
                 hour = get_hour(hour_text.text)
         else: 
-            page = requests.get(event_url).text
+            page = http_session.get(event_url).text
             soup_page = BeautifulSoup(page, 'html.parser')
             date_text = soup_page.find(class_="sw-date")
             title_text = soup_page.find(class_="sw-title")

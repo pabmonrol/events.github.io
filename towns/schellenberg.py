@@ -1,11 +1,10 @@
 from typing import List, NamedTuple
-import requests
 from bs4 import BeautifulSoup
 from datetime import date, timedelta
 import dateparser
 from backend.classifier import event_classification
 from backend.model import Event
-from backend.utils import get_hour, check_location, check_is_senior, check_right_date, translate_text
+from backend.utils import get_hour, check_location, check_is_senior, check_right_date, translate_text, http_session
 
 city = "Schellenberg"
 avoid_categories = {"Government", "Religion"}
@@ -19,7 +18,7 @@ def scraper_schellenberg(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = requests.get(url).text
+    web = http_session.get(url).text
     soup = BeautifulSoup(web, 'html.parser')
     events = soup.find_all(class_="eventrow eventslist__row")
 

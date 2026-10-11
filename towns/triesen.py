@@ -1,10 +1,9 @@
 from typing import *
-import requests
 from bs4 import BeautifulSoup, Tag
 import dateparser
 import re
 from datetime import date, timedelta
-from backend.utils import check_right_date, get_hour, check_location, check_is_senior, translate_text
+from backend.utils import check_right_date, get_hour, check_location, check_is_senior, translate_text, http_session
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -39,7 +38,7 @@ def scraper_trissen(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = requests.get(url).text
+    web = http_session.get(url).text
     soup = BeautifulSoup(web, 'html.parser')
     events = soup.find_all(class_="event")
 

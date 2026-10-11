@@ -1,10 +1,9 @@
 from typing import List, NamedTuple
-import requests
 from bs4 import BeautifulSoup
 from datetime import date, timedelta
 import dateparser
 from backend.classifier import event_classification
-from backend.utils import check_location, check_is_senior, check_right_date, translate_text
+from backend.utils import check_location, check_is_senior, check_right_date, translate_text, http_session
 from backend.model import Event
 import re
 
@@ -20,12 +19,12 @@ def scraper_eschen(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = requests.get(url).text
+    web = http_session.get(url).text
     soup = BeautifulSoup(web, 'html.parser')
     links = soup.find_all(class_="link--underline clickable-parent")
 
     for link in links:
-        page = requests.get(link.get('href')).text
+        page = http_session.get(link.get('href')).text
         event = BeautifulSoup(page, 'html.parser')
 
         title_page = event.select_one("main h1.ct-headline span")
