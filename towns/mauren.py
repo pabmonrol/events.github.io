@@ -67,12 +67,17 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
         html_evento = requests.get(event).text
         sopa_evento = BeautifulSoup(html_evento, 'html.parser')
 
-        date_text = _find_value(sopa_evento, "Datum")
+        date_item = sopa_evento.find('li', class_="sidelist__item", attrs={"data-name": "Datum"})
+        date_span = date_item.find('span', class_="sidelist__text") if date_item else None
+        date_text = date_span.get_text(strip=True) if date_span else ""
         title_text = sopa_evento.find(class_="eventdetail__headline page__headline")
         if not date_text or not title_text:
             continue
 
-        date_ = dateparser.parse(date_text).date()
+        parsed = dateparser.parse(date_text, languages=["de"], settings={"DATE_ORDER": "DMY"})
+        if parsed is None:
+            continue
+        date_ = parsed.date()
         if not check_right_date(date_):
             continue
 
