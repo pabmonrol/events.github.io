@@ -144,14 +144,15 @@ def translate_text(value) -> str:
             if _en_ready:
                 english = argostranslate.translate.translate(original, "de", "en") or ""
             by_lang["en"] = english or original
-            for code in _installed_targets:
-                try:
-                    translated = argostranslate.translate.translate(original, "de", code) or ""
-                except Exception as exc:
-                    print(f"Translation to {code} failed: {exc}")
-                    translated = ""
-                if translated:
-                    by_lang[code] = translated
+            if english:
+                for code in _installed_targets:
+                    try:
+                        translated = argostranslate.translate.translate(english, "en", code) or ""
+                    except Exception as exc:
+                        print(f"Translation to {code} failed: {exc}")
+                        translated = ""
+                    if translated:
+                        by_lang[code] = translated
         ordered = _ordered_langs(by_lang)
         return TranslatedText(ordered["en"], ordered)
     except Exception as exc:
