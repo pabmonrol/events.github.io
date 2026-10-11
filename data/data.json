@@ -40,7 +40,7 @@
     },
     {
         "community": "Mauren",
-        "title": "50s Rock’n’Roll Party in Moors!",
+        "title": "50s Rock'n'Roll Party in Moors!",
         "icon": "🎵",
         "colour": "blue",
         "category": "Music",
@@ -66,10 +66,10 @@
     },
     {
         "community": "Eschen",
-        "title": "Course 09A13: Burning brandy",
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
+        "title": "Course 09A13: Burning booze",
+        "icon": "🌱",
+        "colour": "green",
+        "category": "Nature",
         "date": "2026-10-17",
         "time": "14.00",
         "location": "Eschen, Alemannenstrasse 1, Destillerie Steinauer, Eschen",
@@ -92,7 +92,7 @@
     },
     {
         "community": "Schaan",
-        "title": "Benefit Concert with Natural Trouble and Guests",
+        "title": "Benefit concert with natural debris and guests",
         "icon": "🎵",
         "colour": "blue",
         "category": "Music",
