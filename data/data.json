@@ -2,30 +2,6 @@
     {
         "community": "Ruggell",
         "title": {
-            "en": "Book presentation of the new novel by Armin Öhri",
-            "es": "Presentación del libro de la nueva novela de Armin Öhri",
-            "it": "Presentazione libro del nuovo romanzo di Armin Öhri",
-            "de": "Buchpräsentation des neuen Romans von Armin Öhri",
-            "sr": "Prezentacija novog romana Armina Ohrija",
-            "fr": "Présentation du nouveau roman par Armin Öhri",
-            "pt": "Apresentação do livro do novo romance de Armin Öhri",
-            "pl": "Prezentacja książki nowej powieści Armina Öhri",
-            "hi": "आर्मिन Öhri द्वारा नए उपन्यास की पुस्तक प्रस्तुति",
-            "ru": "Презентация книги нового романа Армина Охри"
-        },
-        "icon": "🪇",
-        "colour": "pink",
-        "category": "Leisure",
-        "date": "2026-10-15",
-        "time": "19:00",
-        "location": "Küefer-Martis-Huus, Ruggell",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=K%C3%BCefer-Martis-Huus%2C+Ruggell",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Ruggell",
-        "title": {
             "en": "Tennis end of the season with Grümpelturnier",
             "es": "Fin de la temporada con Grümpelturnier",
             "it": "Tennis fine stagione con Grümpelturnier",
@@ -41,7 +17,7 @@
         "colour": "red",
         "category": "Sport",
         "date": "2026-10-18",
-        "time": "19:00",
+        "time": null,
         "location": "Tennisplatz Ruggell",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Tennisplatz+Ruggell",
         "description": "",
@@ -68,6 +44,30 @@
         "time": "14:30",
         "location": "Schellenberg, Restaurant Krone, Ruggell",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Schellenberg%2C+Restaurant+Krone%2C+Ruggell",
+        "description": "",
+        "price": null
+    },
+    {
+        "community": "Ruggell",
+        "title": {
+            "en": "Brain Fitness Training",
+            "es": "Formación en ejercicios físicos",
+            "it": "Allenamento del fitness del cervello",
+            "de": "Gehirnfitnesstraining",
+            "sr": "Trening za fitnes mozga",
+            "fr": "Formation à la condition physique du cerveau",
+            "pt": "Treinamento de Fitness Cerebral",
+            "pl": "Szkolenie sprawności mózgu",
+            "hi": "मस्तिष्क स्वास्थ्य प्रशिक्षण",
+            "ru": "Фитнес-тренинг для мозга"
+        },
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-10-22",
+        "time": "13:50",
+        "location": "Vereinshaus Ruggell, 1. Stock, barrierefreier Zugang",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C+1.+Stock%2C+barrierefreier+Zugang",
         "description": "",
         "price": null
     },
@@ -317,6 +317,76 @@
         "price": null
     },
     {
+        "community": "Mauren",
+        "title": {
+            "en": "History at the Community Library",
+            "es": "Historia en la Biblioteca Comunitaria",
+            "it": "Storia della Biblioteca della Comunità",
+            "de": "Geschichtenzeit in der Gemeindebibliothek",
+            "sr": "Povijest u knjižnici",
+            "fr": "Histoire à la bibliothèque communautaire",
+            "pt": "História na Biblioteca Comunitária",
+            "pl": "Historia Biblioteki Społecznej",
+            "hi": "सामुदायिक पुस्तकालय में इतिहास",
+            "ru": "История в библиотеке сообщества"
+        },
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-10-22",
+        "time": "15:15",
+        "location": "Gemeindebibliothek Mauren, Mauren",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindebibliothek+Mauren%2C+Mauren",
+        "description": {
+            "en": "On Thursday, October 22 at 15:15 Jasmine tells a story and looks forward to many small and big visitors:\nHow Little Fox Became My Friend\nRabbit Arthur practiced daily in full magic gear tricks. After a failed performance, he wants to give up his passion. But the village is threatened by the fox. What if he conjured the fox away once and for all? And already he hops, swinging the magic wand, into the deep forest.",
+            "es": "El jueves 22 de octubre a las 15:15 Jasmine cuenta una historia y espera con interés para muchos pequeños y grandes visitantes:\nCómo pequeño Fox vino a mi amigo\nEl rabino Arthur practicaba diariamente en trucos de engranajes mágicos completos. Después de una actuación fallida, quiere renunciar a su pasión. Pero el pueblo está amenazado por el zorro. ¿Y si conjuró al zorro de una vez por todas? Y ya se salta, colgando la varita mágica, en el bosque profundo.",
+            "it": "Giovedì 22 ottobre alle 15:15 Jasmine racconta una storia e non vede l'ora di molti piccoli e grandi visitatori:\nCome la piccola volpe è diventata il mio amico\nIl coniglio Arthur praticava ogni giorno in trucchi completi di magia. Dopo una performance fallita, vuole rinunciare alla sua passione. Ma il villaggio è minacciato dalla volpe. E se avesse condannato la volpe una volta per tutte? E gia' saltella, battendo la bacchetta magica, nella foresta profonda.",
+            "de": "Am Donnerstag, den 22. Oktober um 15:15 Uhr erzählt Jasmin eine Geschichte und freut sich auf viele kleine und grosse Besucher:\nWie der kleine Fuchs mein Freund wurde\nHase Arthur übt täglich in voller Zaubermontur Tricks. Nach einer misslungenen Vorstellung will er seine Leidenschaft aufgeben. Doch da wird das Dorf vom Fuchs bedroht. Was, wenn er den Fuchs ein für alle Mal wegzauberte? Und schon hoppelt er, den Zauberstab schwingend, in den tiefen Wald.",
+            "sr": "U èetvrtak, 22. oktobar u 15: 15. Jasmine prièa prièu i raduje se mnogim malim i velikim posetiocima:\nKako je Lisica postala moj prijatelj\nZec Artur je svakodnevno vežbao trikove sa magiènom opremom. Nakon propalog nastupa, želi da se odrekne svoje strasti. Ali selu preti lisica. Šta ako je prizvao lisicu jednom zauvek? I veæ skaèe, ljulja èarobni štapiæ, u duboku šumu.",
+            "fr": "Le jeudi 22 octobre à 15h15 Jasmine raconte une histoire et attend avec impatience de nombreux petits et grands visiteurs:\nComme le petit renard est devenu mon ami\nLe lapin Arthur pratiquait quotidiennement dans des tours de magie. Après une performance ratée, il veut abandonner sa passion. Mais le village est menacé par le renard. Et s'il faisait disparaître le renard une fois pour toutes ? Et déjà il saute, balançant la baguette magique, dans la forêt profonde.",
+            "pt": "Na quinta-feira, 22 de outubro às 15:15 Jasmine conta uma história e aguarda muitos visitantes pequenos e grandes:\nComo a Raposa se tornou minha amiga\nCoelho Arthur praticava diariamente com truques de magia. Depois de uma performance fracassada, ele quer desistir da sua paixão. Mas a aldeia está ameaçada pela raposa. E se ele conjurou a raposa de uma vez por todas? E já pula, balançando a varinha mágica, para a floresta profunda.",
+            "pl": "W czwartek, 22 października o 15: 15 Jasmine opowiada historię i czeka na wielu małych i dużych gości:\nJak mały lis stał się moim przyjacielem\nKrólik Arthur ćwiczył codziennie w magicznych sztuczkach. Po nieudanym występie, chce zrezygnować ze swojej pasji. Ale wioska jest zagrożona przez lisa. Co jeśli wyczarował lisa raz na zawsze? I już wskakuje, kołysząc magiczną różdżką, do głębokiego lasu.",
+            "hi": "गुरुवार को, 22 अक्टूबर 15:15 जैस्मीन एक कहानी बताता है और कई छोटे और बड़े आगंतुकों को आगे देखता है:\nकैसे लिटिल फॉक्स Becam मेरे दोस्त\nखरगोश आर्थर ने पूरे जादू गियर ट्रिक्स में दैनिक अभ्यास किया। असफल प्रदर्शन के बाद, वह अपने जुनून को छोड़ना चाहता है। लेकिन गांव को लोमड़ी से खतरा है। यदि वह एक बार फिर फॉक्स को खारिज कर देता है और सभी के लिए? और पहले से ही वह जादू की छड़ी को गहरे जंगल में स्विंग करते हैं।",
+            "ru": "В четверг 22 октября в 15:15 Жасмин рассказывает историю и с нетерпением ждет многих маленьких и больших посетителей:\nКак маленький Фокс стал моим другом\nКролик Артур ежедневно практиковался в полном магическом снаряжении. После неудачного выступления он хочет отказаться от своей страсти. Но деревне угрожает лиса. Что если он заколдовал лису раз и навсегда? И уже прыгает, раскачивая волшебную палочку, в глубокий лес."
+        },
+        "price": null
+    },
+    {
+        "community": "Mauren",
+        "title": {
+            "en": "Pilates, the way of life, advanced",
+            "es": "Pilatos, el modo de vida, avanzado",
+            "it": "Pilates, la via della vita, avanzato",
+            "de": "Pilates, the way of life, Fortgeschrittene",
+            "sr": "Pilates, naèin života, napredni",
+            "fr": "Pilates, le mode de vie, avancé",
+            "pt": "Pilates, o modo de vida, avançado",
+            "pl": "Pilates, sposób życia, zaawansowane",
+            "hi": "पिलेट्स, जीवन का रास्ता, उन्नत",
+            "ru": "Пилатес, образ жизни, прогресс"
+        },
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-10-22",
+        "time": "18:15",
+        "location": "Jugendhaus Weiherring, Mauren, Mauren",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Jugendhaus+Weiherring%2C+Mauren%2C+Mauren",
+        "description": {
+            "en": "Advanced Pilates offers an even more comprehensive improvement in physical and mental health. It makes the body more mobile, strong, but also supple and trains the conscious posture. Pilate breathing promotes inner balance and a strong center (powerhouse). The pelvic floor and back are strengthened.",
+            "es": "Pilates avanzados ofrece una mejora aún más completa en la salud física y mental. Hace que el cuerpo sea más móvil, fuerte, pero también flexible y entrena la postura consciente. La respiración de Pilate promueve el equilibrio interno y un centro fuerte (potenciario). El suelo pélvico y la espalda se fortalecen.",
+            "it": "Advanced Pilates offre un miglioramento ancora più completo nella salute fisica e mentale. Rende il corpo più mobile, forte, ma anche flessibile e allena la postura cosciente. La respirazione pilates promuove l'equilibrio interno e un centro forte (powerhouse). Il pavimento pelvico e la parte posteriore sono rafforzati.",
+            "de": "KurszielPilates für Fortgeschrittene bietet eine noch umfassendere Verbesserung der physischen und psychischen Gesundheit. Es macht den Körper beweglicher, stark, aber auch geschmeidig und schult die bewusste Körperhaltung. Die Pilatesatmung fördert die innere Ausgeglichenheit und eine starke Mitte (Powerhouse). Beckenboden und Rücken werden gestärkt.",
+            "sr": "Napredni pilates nudi još sveobuhvatniji napredak u fizičkom i mentalnom zdravlju. To èini telo pokretljivijim, jakim, ali takoðe gipkim i trenira svesno držanje. Pilatovo disanje promoviše unutrašnju ravnotežu i jak centar. Karlica i leða su ojaèani.",
+            "fr": "Pilates avancé offre une amélioration encore plus complète de la santé physique et mentale. Il rend le corps plus mobile, plus fort, mais aussi souple et entraîne la posture consciente. La respiration de Pilate favorise l'équilibre intérieur et un centre fort (powerhouse). Le plancher pelvien et le dos sont renforcés.",
+            "pt": "Pilates avançado oferece uma melhoria ainda mais abrangente na saúde física e mental. Torna o corpo mais móvel, forte, mas também flexível e treina a postura consciente. A respiração de Pilatos promove o equilíbrio interno e um forte centro (poderia). O assoalho pélvico e as costas são reforçados.",
+            "pl": "Zaawansowane Pilates oferuje jeszcze bardziej kompleksową poprawę zdrowia fizycznego i psychicznego. To sprawia, że ciało jest bardziej mobilne, silne, ale także elastyczny i trenuje świadomą postawę. Piłat oddycha promuje wewnętrzną równowagę i silne centrum (powerhouse). Podłoga miednicy i plecy są wzmocnione.",
+            "hi": "उन्नत पिलेट्स शारीरिक और मानसिक स्वास्थ्य में भी अधिक व्यापक सुधार प्रदान करता है। यह शरीर को अधिक मोबाइल, मजबूत बनाता है, लेकिन यह भी supple और सचेत आसन को प्रशिक्षित करता है। पिलेट श्वास आंतरिक संतुलन और एक मजबूत केंद्र (पावरहाउस) को बढ़ावा देता है। श्रोणि मंजिल और पीठ को मजबूत किया जाता है।",
+            "ru": "Продвинутый пилатес предлагает еще более полное улучшение физического и психического здоровья. Это делает тело более подвижным, сильным, но также эластичным и тренирует сознательную позу. Пилатное дыхание способствует внутреннему равновесию и сильному центру (электростанции). Тазовый пол и спина укреплены."
+        },
+        "price": null
+    },
+    {
         "community": "Gamprin/Bendern",
         "title": {
             "en": "Narrative Café - for everyone interested",
@@ -459,6 +529,76 @@
     {
         "community": "Gamprin/Bendern",
         "title": {
+            "en": "Year trip Piedmont (also non-members welcome)",
+            "es": "Año de viaje Piamonte (también no miembros bienvenidos)",
+            "it": "Viaggio di anno Piemonte (anche non soci benvenuti)",
+            "de": "Jahresreise Piemont (auch Nichtmitglieder willkommen)",
+            "sr": "Godišnji izlet Piedmont (takođe ne-članovi dobrodošli)",
+            "fr": "Voyage d'année Piémont (aussi non-membres bienvenue)",
+            "pt": "Viagem de ano Piemonte (também boas-vindas não-membros)",
+            "pl": "Wycieczka letnia Piemont (także nie-członkowie mile widziane)",
+            "hi": "वर्ष यात्रा Piedmont (गैर सदस्यों का स्वागत भी)",
+            "ru": "Годовая поездка в Пьемонт (также приветствуется нечленами)"
+        },
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-10-22",
+        "time": "14:00",
+        "location": "Piemont, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Piemont%2C+Gamprin%2FBendern",
+        "description": {
+            "en": "It is organized by the Schwalbenclub.",
+            "es": "Está organizado por el Schwalbenclub.",
+            "it": "È organizzato dal Schwalbenclub.",
+            "de": "Die wird von dem Schwalbenclub organisiert.",
+            "sr": "Organizovao ga je Schwalbenclub.",
+            "fr": "Il est organisé par le Schwalbenclub.",
+            "pt": "É organizado pelo Schwalbenclub.",
+            "pl": "Jest organizowany przez Schwalbenclub.",
+            "hi": "यह Schwalbenclub द्वारा आयोजित किया जाता है।",
+            "ru": "Организатором выступает Schwalbenclub."
+        },
+        "price": null
+    },
+    {
+        "community": "Gamprin/Bendern",
+        "title": {
+            "en": "Brain Fitness Training",
+            "es": "Formación en ejercicios físicos",
+            "it": "Allenamento del fitness del cervello",
+            "de": "Gehirnfitnesstraining",
+            "sr": "Trening za fitnes mozga",
+            "fr": "Formation à la condition physique du cerveau",
+            "pt": "Treinamento de Fitness Cerebral",
+            "pl": "Szkolenie sprawności mózgu",
+            "hi": "मस्तिष्क स्वास्थ्य प्रशिक्षण",
+            "ru": "Фитнес-тренинг для мозга"
+        },
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-10-22",
+        "time": "13:50",
+        "location": "Vereinshaus Ruggell, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C+Gamprin%2FBendern",
+        "description": {
+            "en": "Instructor:\nElke Nestler-Schreiber, synapse coach, brain fitness coach\nCost per person:\nCHF 19.- per hour for pensioners of the municipalities of Gamprin, Ruggell and Schellenberg. The course is financially supported by the three municipalities.\nNotification and information:\nDirectly at the instructor, tel. +41 79 450 21 92 or info(at)denkduenger.li. Trial hours or an entry is possible at any time. No prior knowledge is required. www.denkduenger.li.",
+            "es": "Instructor:\nElke Nestler-Schreiber, entrenador de sincronización, entrenador de fitness en el cerebro\nCosto por persona:\nCHF 19.- por hora para pensionistas de los municipios de Gamprin, Ruggell y Schellenberg. El curso cuenta con el apoyo financiero de los tres municipios.\nNotificación e información:\nDirectamente en el instructor, tel. +41 79 450 21 92 o info(at)denkduenger.li. Horas de juicio o una entrada es posible en cualquier momento. No se requiere ningún conocimiento previo. www.denkduenger.li.",
+            "it": "Istruttore:\nElke Nestler-Schreiber, allenatore di synapse, allenatore di fitness del cervello\nCosto per persona:\nCHF 19.- all'ora per i pensionati dei comuni di Gamprin, Ruggell e Schellenberg. Il corso è supportato finanziariamente dai tre comuni.\nNotifica e informazione:\nDirettamente all'istruttore, tel. +41 79 450 21 92 o info(at)denkduenger.li. ore di prova o una voce è possibile in qualsiasi momento. Non è richiesta alcuna conoscenza preventiva. www.denkduenger.li.",
+            "de": "Kursleiterin:\r\nElke Nestler-Schreiber, Synapsencoach, Gehirnfitnesstrainerin\nKosten pro Person:\r\nCHF 19.- pro Stunde für Pensionisten der Gemeinden Gamprin, Ruggell und Schellenberg. Der Kurs wird von den drei Gemeinden finanziell unterstützt.\nAnmeldung und Information:\r\nDirekt bei der Kursleiterin, Tel. +41 79 450 21 92 oder info(at)denkduenger.li. Schnupperstunden bzw. ein Einstieg ist jederzeit möglich. Es sind keine Vorkenntnisse nötig. www.denkduenger.li.",
+            "sr": "Instruktor:\nElke Nestler-Schreiber, trener sinapse, trener fitnesa u mozgu\nCena po osobi:\nCHF 19.- po satu za penzionere opština Gamprin, Ruggel i Schelenberg. Taj kurs finansijski podržavaju tri opštine.\nObaveštenje i informacije:\nDirektno kod instruktora, tel. + 4479 450 221 92 ili informacija (na) denkduenger.li.le. Probni sati ili ulaz su moguæi u bilo kom trenutku. Preðašnje znanje nije potrebno. ww.denkduenger. Lie.",
+            "fr": "Instructeur:\nElke Nestler-Schreiber, entraîneur de synapse, entraîneur de fitness cérébrale\nCoût par personne:\nCHF 19.- par heure pour les retraités des communes de Gamprin, Ruggell et Schellenberg. Le cours est financé par les trois municipalités.\nNotification et information:\nDirectement à l'instructeur, tél. +41 79 450 21 92 ou info(at)denkduenger.li. Des heures d'essai ou une entrée sont possibles à tout moment. Aucune connaissance préalable n'est requise. On peut consulter le site www.denkduenger.li.",
+            "pt": "Instrutor:\nElke Nestler-Schreiber, treinador de sinapse, treinador de fitness cerebral\nCusto por pessoa:\nCHF 19.- por hora para os pensionistas dos municípios de Gamprin, Ruggell e Schellenberg. O curso é financiado pelos três municípios.\nNotificação e informação:\nDiretamente no instrutor, tel. +41 79 450 21 92 ou info(at)denkduenger.li. As horas de teste ou uma entrada são possíveis a qualquer momento. Nenhum conhecimento prévio é exigido. www.denkduenger.li.",
+            "pl": "Instruktor:\nElke Nestler- Schreiber, trener synapsy, trener fitness mózgu\nKoszt na osobę:\nCHF 19.- za godzinę dla emerytów gmin Gamprin, Ruggell i Schellenberg. Kurs jest finansowo wspierany przez trzy gminy.\nPowiadomienia i informacje:\nBezpośrednio u instruktora, tel. + 41 79 450 21 92 lub info (at) denkduenger.li. Godziny próbne lub wejście jest możliwe w każdej chwili. Nie jest wymagana wcześniejsza wiedza. www.denkduenger.li.",
+            "hi": "प्रशिक्षक:\nElke Nestler-Schreiber, synapse कोच, मस्तिष्क फिटनेस कोच\nप्रति व्यक्ति लागत:\nCHF 19.- Gamprin, Ruggell और Schellenberg के नगरपालिकाओं के पेंशनरों के लिए प्रति घंटे। पाठ्यक्रम वित्तीय रूप से तीन नगरपालिकाओं द्वारा समर्थित है।\nअधिसूचना और सूचना:\nसीधे प्रशिक्षक, टेल पर। +41 79 450 21 92 या info(at)denkduenger.li। किसी भी समय ट्रायल घंटे या प्रवेश संभव है। पूर्व ज्ञान की आवश्यकता नहीं है। www.denkduenger.li.",
+            "ru": "Инструктор:\nЭльке Нестлер-Шрайбер, тренер по синапсам, тренер по фитнесу мозга\nСтоимость на человека:\n19 швейцарских франков в час для пенсионеров муниципалитетов Гамприна, Раггелла и Шелленберга. Программа финансируется тремя муниципалитетами.\nУведомление и информация:\nНепосредственно у инструктора, тел. +41 79 450 21 92 или info(at)denkduenger.li. Пробные часы или запись возможны в любое время. Предварительных знаний не требуется. www.denkduenger.li."
+        },
+        "price": 19.0
+    },
+    {
+        "community": "Gamprin/Bendern",
+        "title": {
             "en": "Narrative Café - for everyone interested",
             "es": "Narrative Café - para todos los interesados",
             "it": "Narrative Café - per tutti gli interessati",
@@ -595,6 +735,76 @@
             "ru": "Регистрация не позднее пятницы 16. октября\nКомиссия старших граждан, Марта Элкух\n+41 79 689 02 47\nmarta.elkuch(at)hotmail.com"
         },
         "price": null
+    },
+    {
+        "community": "Gamprin/Bendern",
+        "title": {
+            "en": "Year trip Piedmont (also non-members welcome)",
+            "es": "Año de viaje Piamonte (también no miembros bienvenidos)",
+            "it": "Viaggio di anno Piemonte (anche non soci benvenuti)",
+            "de": "Jahresreise Piemont (auch Nichtmitglieder willkommen)",
+            "sr": "Godišnji izlet Piedmont (takođe ne-članovi dobrodošli)",
+            "fr": "Voyage d'année Piémont (aussi non-membres bienvenue)",
+            "pt": "Viagem de ano Piemonte (também boas-vindas não-membros)",
+            "pl": "Wycieczka letnia Piemont (także nie-członkowie mile widziane)",
+            "hi": "वर्ष यात्रा Piedmont (गैर सदस्यों का स्वागत भी)",
+            "ru": "Годовая поездка в Пьемонт (также приветствуется нечленами)"
+        },
+        "icon": "🪇",
+        "colour": "pink",
+        "category": "Leisure",
+        "date": "2026-10-22",
+        "time": "14:00",
+        "location": "Piemont, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Piemont%2C+Gamprin%2FBendern",
+        "description": {
+            "en": "It is organized by the Schwalbenclub.",
+            "es": "Está organizado por el Schwalbenclub.",
+            "it": "È organizzato dal Schwalbenclub.",
+            "de": "Die wird von dem Schwalbenclub organisiert.",
+            "sr": "Organizovao ga je Schwalbenclub.",
+            "fr": "Il est organisé par le Schwalbenclub.",
+            "pt": "É organizado pelo Schwalbenclub.",
+            "pl": "Jest organizowany przez Schwalbenclub.",
+            "hi": "यह Schwalbenclub द्वारा आयोजित किया जाता है।",
+            "ru": "Организатором выступает Schwalbenclub."
+        },
+        "price": null
+    },
+    {
+        "community": "Gamprin/Bendern",
+        "title": {
+            "en": "Brain Fitness Training",
+            "es": "Formación en ejercicios físicos",
+            "it": "Allenamento del fitness del cervello",
+            "de": "Gehirnfitnesstraining",
+            "sr": "Trening za fitnes mozga",
+            "fr": "Formation à la condition physique du cerveau",
+            "pt": "Treinamento de Fitness Cerebral",
+            "pl": "Szkolenie sprawności mózgu",
+            "hi": "मस्तिष्क स्वास्थ्य प्रशिक्षण",
+            "ru": "Фитнес-тренинг для мозга"
+        },
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-10-22",
+        "time": "13:50",
+        "location": "Vereinshaus Ruggell, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C+Gamprin%2FBendern",
+        "description": {
+            "en": "Instructor:\nElke Nestler-Schreiber, synapse coach, brain fitness coach\nCost per person:\nCHF 19.- per hour for pensioners of the municipalities of Gamprin, Ruggell and Schellenberg. The course is financially supported by the three municipalities.\nNotification and information:\nDirectly at the instructor, tel. +41 79 450 21 92 or info(at)denkduenger.li. Trial hours or an entry is possible at any time. No prior knowledge is required. www.denkduenger.li.",
+            "es": "Instructor:\nElke Nestler-Schreiber, entrenador de sincronización, entrenador de fitness en el cerebro\nCosto por persona:\nCHF 19.- por hora para pensionistas de los municipios de Gamprin, Ruggell y Schellenberg. El curso cuenta con el apoyo financiero de los tres municipios.\nNotificación e información:\nDirectamente en el instructor, tel. +41 79 450 21 92 o info(at)denkduenger.li. Horas de juicio o una entrada es posible en cualquier momento. No se requiere ningún conocimiento previo. www.denkduenger.li.",
+            "it": "Istruttore:\nElke Nestler-Schreiber, allenatore di synapse, allenatore di fitness del cervello\nCosto per persona:\nCHF 19.- all'ora per i pensionati dei comuni di Gamprin, Ruggell e Schellenberg. Il corso è supportato finanziariamente dai tre comuni.\nNotifica e informazione:\nDirettamente all'istruttore, tel. +41 79 450 21 92 o info(at)denkduenger.li. ore di prova o una voce è possibile in qualsiasi momento. Non è richiesta alcuna conoscenza preventiva. www.denkduenger.li.",
+            "de": "Kursleiterin:\r\nElke Nestler-Schreiber, Synapsencoach, Gehirnfitnesstrainerin\nKosten pro Person:\r\nCHF 19.- pro Stunde für Pensionisten der Gemeinden Gamprin, Ruggell und Schellenberg. Der Kurs wird von den drei Gemeinden finanziell unterstützt.\nAnmeldung und Information:\r\nDirekt bei der Kursleiterin, Tel. +41 79 450 21 92 oder info(at)denkduenger.li. Schnupperstunden bzw. ein Einstieg ist jederzeit möglich. Es sind keine Vorkenntnisse nötig. www.denkduenger.li.",
+            "sr": "Instruktor:\nElke Nestler-Schreiber, trener sinapse, trener fitnesa u mozgu\nCena po osobi:\nCHF 19.- po satu za penzionere opština Gamprin, Ruggel i Schelenberg. Taj kurs finansijski podržavaju tri opštine.\nObaveštenje i informacije:\nDirektno kod instruktora, tel. + 4479 450 221 92 ili informacija (na) denkduenger.li.le. Probni sati ili ulaz su moguæi u bilo kom trenutku. Preðašnje znanje nije potrebno. ww.denkduenger. Lie.",
+            "fr": "Instructeur:\nElke Nestler-Schreiber, entraîneur de synapse, entraîneur de fitness cérébrale\nCoût par personne:\nCHF 19.- par heure pour les retraités des communes de Gamprin, Ruggell et Schellenberg. Le cours est financé par les trois municipalités.\nNotification et information:\nDirectement à l'instructeur, tél. +41 79 450 21 92 ou info(at)denkduenger.li. Des heures d'essai ou une entrée sont possibles à tout moment. Aucune connaissance préalable n'est requise. On peut consulter le site www.denkduenger.li.",
+            "pt": "Instrutor:\nElke Nestler-Schreiber, treinador de sinapse, treinador de fitness cerebral\nCusto por pessoa:\nCHF 19.- por hora para os pensionistas dos municípios de Gamprin, Ruggell e Schellenberg. O curso é financiado pelos três municípios.\nNotificação e informação:\nDiretamente no instrutor, tel. +41 79 450 21 92 ou info(at)denkduenger.li. As horas de teste ou uma entrada são possíveis a qualquer momento. Nenhum conhecimento prévio é exigido. www.denkduenger.li.",
+            "pl": "Instruktor:\nElke Nestler- Schreiber, trener synapsy, trener fitness mózgu\nKoszt na osobę:\nCHF 19.- za godzinę dla emerytów gmin Gamprin, Ruggell i Schellenberg. Kurs jest finansowo wspierany przez trzy gminy.\nPowiadomienia i informacje:\nBezpośrednio u instruktora, tel. + 41 79 450 21 92 lub info (at) denkduenger.li. Godziny próbne lub wejście jest możliwe w każdej chwili. Nie jest wymagana wcześniejsza wiedza. www.denkduenger.li.",
+            "hi": "प्रशिक्षक:\nElke Nestler-Schreiber, synapse कोच, मस्तिष्क फिटनेस कोच\nप्रति व्यक्ति लागत:\nCHF 19.- Gamprin, Ruggell और Schellenberg के नगरपालिकाओं के पेंशनरों के लिए प्रति घंटे। पाठ्यक्रम वित्तीय रूप से तीन नगरपालिकाओं द्वारा समर्थित है।\nअधिसूचना और सूचना:\nसीधे प्रशिक्षक, टेल पर। +41 79 450 21 92 या info(at)denkduenger.li। किसी भी समय ट्रायल घंटे या प्रवेश संभव है। पूर्व ज्ञान की आवश्यकता नहीं है। www.denkduenger.li.",
+            "ru": "Инструктор:\nЭльке Нестлер-Шрайбер, тренер по синапсам, тренер по фитнесу мозга\nСтоимость на человека:\n19 швейцарских франков в час для пенсионеров муниципалитетов Гамприна, Раггелла и Шелленберга. Программа финансируется тремя муниципалитетами.\nУведомление и информация:\nНепосредственно у инструктора, тел. +41 79 450 21 92 или info(at)denkduenger.li. Пробные часы или запись возможны в любое время. Предварительных знаний не требуется. www.denkduenger.li."
+        },
+        "price": 19.0
     },
     {
         "community": "Schellenberg",
@@ -741,6 +951,30 @@
         "price": null
     },
     {
+        "community": "Schellenberg",
+        "title": {
+            "en": "Brain Fitness Training",
+            "es": "Formación en ejercicios físicos",
+            "it": "Allenamento del fitness del cervello",
+            "de": "Gehirnfitnesstraining",
+            "sr": "Trening za fitnes mozga",
+            "fr": "Formation à la condition physique du cerveau",
+            "pt": "Treinamento de Fitness Cerebral",
+            "pl": "Szkolenie sprawności mózgu",
+            "hi": "मस्तिष्क स्वास्थ्य प्रशिक्षण",
+            "ru": "Фитнес-тренинг для мозга"
+        },
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-10-22",
+        "time": "13:50",
+        "location": "Vereinshaus Ruggell,1. Stock, Schellenberg",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C1.+Stock%2C+Schellenberg",
+        "description": "",
+        "price": null
+    },
+    {
         "community": "Eschen",
         "title": {
             "en": "Course 09A13: Burning brandy",
@@ -791,30 +1025,6 @@
     {
         "community": "Eschen",
         "title": {
-            "en": "Course 08B09: Yoga for Men in Nendeln",
-            "es": "Curso 08B09: Yoga para Hombres en Nendeln",
-            "it": "Corso 08B09: Yoga per gli uomini in Nendeln",
-            "de": "Kurs 08B09: Yoga für Männer in Nendeln",
-            "sr": "Kurs 08B09:",
-            "fr": "Cours 08B09: Yoga pour hommes à Nedeln",
-            "pt": "Curso 08B09: Yoga para homens em Nendeln",
-            "pl": "Kurs 08B09: Joga dla mężczyzn w Nendeln",
-            "hi": "कोर्स 08B09: Nendeln में पुरुषों के लिए योग",
-            "ru": "Курс 08B09: Йога для мужчин"
-        },
-        "icon": "⚽️",
-        "colour": "red",
-        "category": "Sport",
-        "date": "2026-10-19",
-        "time": "19.30",
-        "location": "Nendeln, Gemeindegarten 2, Alte Schule, Eschen",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Nendeln%2C+Gemeindegarten+2%2C+Alte+Schule%2C+Eschen",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Eschen",
-        "title": {
             "en": "Course 07A14: Meditation and Relaxation",
             "es": "Curso 07A14: Meditación y Relajación",
             "it": "Corso 07A14: Meditazione e Rilassamento",
@@ -833,6 +1043,30 @@
         "time": "19.30",
         "location": "Eschen, Schönbühl 2, Kindergarten Schönabüel, Bewegungsraum, Eschen",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Eschen%2C+Sch%C3%B6nb%C3%BChl+2%2C+Kindergarten+Sch%C3%B6nab%C3%BCel%2C+Bewegungsraum%2C+Eschen",
+        "description": "",
+        "price": null
+    },
+    {
+        "community": "Eschen",
+        "title": {
+            "en": "Course 08B09: Yoga for Men in Nendeln",
+            "es": "Curso 08B09: Yoga para Hombres en Nendeln",
+            "it": "Corso 08B09: Yoga per gli uomini in Nendeln",
+            "de": "Kurs 08B09: Yoga für Männer in Nendeln",
+            "sr": "Kurs 08B09:",
+            "fr": "Cours 08B09: Yoga pour hommes à Nedeln",
+            "pt": "Curso 08B09: Yoga para homens em Nendeln",
+            "pl": "Kurs 08B09: Joga dla mężczyzn w Nendeln",
+            "hi": "कोर्स 08B09: Nendeln में पुरुषों के लिए योग",
+            "ru": "Курс 08B09: Йога для мужчин"
+        },
+        "icon": "⚽️",
+        "colour": "red",
+        "category": "Sport",
+        "date": "2026-10-19",
+        "time": "19.30",
+        "location": "Nendeln, Gemeindegarten 2, Alte Schule, Eschen",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Nendeln%2C+Gemeindegarten+2%2C+Alte+Schule%2C+Eschen",
         "description": "",
         "price": null
     },
@@ -1029,6 +1263,30 @@
         "price": null
     },
     {
+        "community": "Schaan",
+        "title": {
+            "en": "Vernissage “Forms, Worlds and Identities”",
+            "es": "Vernissaje “Formas, Mundos e Identidades”",
+            "it": "Vernissage “Formità, mondi e identità”",
+            "de": "Vernissage «Formen, Welten und Identitäten»",
+            "sr": "Vernissage \"Forms, Worlds and Indenticts\"",
+            "fr": "Vernissage Formes, mondes et identités",
+            "pt": "Vernissage “Formas, Mundos e Identidades”",
+            "pl": "Vernissage \"Formy, światy i tożsamości\"",
+            "hi": "Vernisage \"फॉर्म्स, वर्ल्ड्स एंड आइडेंटिटीज़\"",
+            "ru": "Вернисаж «Формы, миры и идентичности»"
+        },
+        "icon": "🌱",
+        "colour": "green",
+        "category": "Nature",
+        "date": "2026-10-22",
+        "time": "19:00",
+        "location": "domus, Schaan",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=domus%2C+Schaan",
+        "description": "",
+        "price": null
+    },
+    {
         "community": "Vaduz",
         "title": {
             "en": "Danini - Abnormal",
@@ -1167,6 +1425,41 @@
             "ru": "Наша посредническая команда проводит выставку и предоставляет интересную справочную информацию об экономике Лихтенштейна.\n\nЛихтенштейн в настоящее время является одной из самых промышленно развитых стран в мире. Его финансовый центр имеет международную сеть. Количество рабочих мест значительно превышает количество жителей. Вряд ли сегодня можно представить, что страна до середины 20-го века. Век был преимущественно крестьянским. Экономические изменения со времен Второй мировой войны были быстрыми и глубокими.\n\nСпециальная выставка прослеживает это необычайное развитие. Он освещает процессы экономических потрясений и фокусируется на тех людях, которые испытали и помогли сформировать эти структурные изменения - в области напряженности между изменениями, решениями и ответственностью. Ее документированные воспоминания открывают личный подход к экономической истории и показывают, как экономическое развитие происходит из реалий жизни, общего дизайна и части счастья."
         },
         "price": 10.0
+    },
+    {
+        "community": "Vaduz",
+        "title": {
+            "en": "Leadership and Conversation | Abstract. In Focus: Herrera, Kandinsky, Rothko",
+            "es": "Liderazgo y Conversación   Abstract. En Focus: Herrera, Kandinsky, Rothko",
+            "it": "Leadership e conversazione | Abstract. In Focus: Herrera, Kandinsky, Rothko",
+            "de": "Führung und Gespräch | Abstract. In Focus: Herrera, Kandinsky, Rothko",
+            "sr": "Voðstvo i konverzacija 124; apstrakcija. U fokusu:",
+            "fr": "Leadership et conversation Résumé. En bref: Herrera, Kandinsky, Rothko",
+            "pt": "Liderança e conversação Em Foco: Herrera, Kandinsky, Rothko",
+            "pl": "Przywództwo i rozmowa 124; Abstrakt. W centrum uwagi: Herrera, Kandinsky, Rothko",
+            "hi": "नेतृत्व और वार्तालाप फोकस में: हेरेरा, कांदिन्स्की, रोथ्को",
+            "ru": "Лидерство и разговоры / Abstract. В фокусе: Эррера, Кандинский, Ротко"
+        },
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-10-22",
+        "time": null,
+        "location": "Kunstmuseum Liechtenstein (Lageplan)\nStädtle 32\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstmuseum+Liechtenstein+%28Lageplan%29%0ASt%C3%A4dtle+32%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+        "description": {
+            "en": "Hilti Art Foundation:\nAbstract\nIn Focus: Carmen Herrera, Wassily Kandinsky, Mark Rothko\n\nwith Karin Schick, Director Hilti Art Foundation, and Special Guest\nAn event of the Hilti Art Foundation.",
+            "es": "Hilti Art Foundation:\nResumen\nEn foco: Carmen Herrera, Wassily Kandinsky, Mark Rothko\n\ncon Karin Schick, Director Hilti Art Foundation, y Special Guest\nUn evento de la Fundación Hilti Art.",
+            "it": "Hilti Art Foundation:\nAstratto\nIn Focus: Carmen Herrera, Wassily Kandinsky, Mark Rothko\n\ncon Karin Schick, Direttore Hilti Art Foundation e Special Guest\nUn evento della Fondazione Hilti Art.",
+            "de": "Hilti Art Foundation:\nAbstract\nIn Focus: Carmen Herrera, Wassily Kandinsky, Mark Rothko\n\nmit Karin Schick, Direktorin Hilti Art Foundation, und Special Guest\nEine Veranstaltung der Hilti Art Foundation.",
+            "sr": "Hilti Art Fondacija:\nАбстрактно\nU Fokusu: Karmen Herera, Vasilij Kandinski, Mark Rotko\n\nsa Karin Schick, direktorkom Hilti Art Foundation, i specijalnim gostom\nDogaðaj Hilti umetnièke fondacije.",
+            "fr": "Fondation Hilti Art :\nRésumé\nEn bref: Carmen Herrera, Wassily Kandinsky, Mark Rothko\n\navec Karin Schick, directeur de la Fondation Hilti Art, et invité spécial\nUn événement de la Fondation Hilti Art.",
+            "pt": "Fundação Hilti Art:\nResumo\nEm foco: Carmen Herrera, Wassily Kandinsky, Mark Rothko\n\ncom Karin Schick, Diretor Hilti Art Foundation e Convidado Especial\nUm evento da Fundação Hilti Art.",
+            "pl": "Fundacja Hilti Art:\nAbstrakt\nW centrum uwagi: Carmen Herrera, Wassily Kandinsky, Mark Rothko\n\nz Karin Schick, dyrektor Hilti Art Foundation, i gość specjalny\nWydarzenie Fundacji Hilti Art.",
+            "hi": "हिल्टी आर्ट फाउंडेशन:\nसार\nफोकस में: कारमेन हेरेरा, वसीली कंडिंस्की, मार्क रोथको\n\nकैरिन सिक, निदेशक हिलती आर्ट फाउंडेशन, और विशेष अतिथि के साथ\nहिल्टी आर्ट फाउंडेशन की एक घटना।",
+            "ru": "Hilti Art Foundation:\nАннотация\nВ фокусе: Кармен Эррера, Василий Кандинский, Марк Ротко\n\nКарин Шик, директор Hilti Art Foundation и специальный гость\nМероприятие Фонда искусств Хилти."
+        },
+        "price": null
     },
     {
         "community": "Triesen",
@@ -1436,6 +1729,41 @@
             "pl": "Dowiedz się wszystkiego o możliwościach opieki nad dziećmi w Liechtensteinie, Szwajcarii i Vorarlbergu. Tutaj otrzymasz praktyczne wskazówki, aby pomyślnie pogodzić rodzinę i pracę.\n\nNawet w czasie ciąży ważne jest, aby zająć się kwestią opieki nad dzieckiem. Jeśli pracujesz w Liechtensteinie lub Szwajcarii, potrzebujesz opieki nad dzieckiem jeszcze wcześniej.\n\nPodczas prezentacji otrzymasz przydatne informacje i wskazówki dotyczące następujących tematów. Następnie chętnie odpowiemy na kolejne pytania.\n\n• Jakie opcje opieki są dostępne dla dzieci i dzieci?\n• Gdzie mogę znaleźć odpowiednie punkty kontaktowe do moich pytań?\n• Jak mogę poradzić sobie z presją zorganizowania wszystkiego na czas?\n• Co pomaga mi dostać się do chwili i zbudować kochający związek z moim dzieckiem?\n\nNasza prezentacja online zawiera cenne informacje na temat możliwości opieki nad dziećmi w Liechtensteinie, Szwajcarii i Vorarlbergu. Pokazujemy Państwu sposoby opanowania równowagi między rodziną a pracą - z praktycznymi wskazówkami dla świadomej ciąży i urlopu rodzicielskiego.\n\nPoprzez ten wykład online, nasi konsultanci prowadzą Bettina Eberle- Frommelt, psycholog i psychoterapeuta z doświadczeniem zawodowym w sektorze opieki nad dziećmi i Elke Oswald- Öksüz, psycholog i trener relaksu, który jest nadal malutki mama.\n\nPrezentacja internetowa i kolejna sesja ankietowa trwają około 1 godziny. Jest za darmo i odbywa się przez Zoom. Po rejestracji otrzymasz odpowiedni link. Czekamy na twój udział.\n\nRejestracja odbywa się za pośrednictwem strony schwanger.li lub poprzez link rejestracyjny po prawej stronie.",
             "hi": "Liechtenstein, स्विट्जरलैंड और Vorarlberg में चाइल्डकेयर विकल्पों के बारे में सब जानें। यहां आपको परिवार और काम को सफलतापूर्वक दोहराने के लिए व्यावहारिक सुझाव मिलेंगे।\n\nगर्भावस्था के दौरान भी, बच्चे की देखभाल के सवाल से निपटने के लिए महत्वपूर्ण है। यदि आप लिकटेंस्टीन या स्विट्जरलैंड में काम करते हैं, तो आपको पहले भी बच्चे की देखभाल की आवश्यकता है।\n\nप्रस्तुति के दौरान, आपको निम्नलिखित विषयों पर उपयोगी जानकारी और सुझाव प्राप्त होंगे। बाद में हम आगे के सवालों का जवाब देने के लिए खुश हैं।\n\n• बच्चों और बच्चों के लिए क्या देखभाल विकल्प उपलब्ध हैं?\nमैं अपने प्रश्नों के लिए सही संपर्क बिंदु कहाँ देख सकता हूँ?\nमैं समय पर सब कुछ व्यवस्थित करने के लिए दबाव से कैसे निपट सकता हूं?\nक्या मुझे पल में मदद करता है और मेरे बच्चे के साथ प्यार का संबंध बनाता है?\n\nहमारी ऑनलाइन प्रस्तुति Liechtenstein, स्विट्जरलैंड और Vorarlberg में चाइल्डकेयर विकल्पों के बारे में मूल्यवान जानकारी प्रदान करती है। हम आपको परिवार और काम के बीच संतुलन अधिनियम में महारत हासिल करने के तरीके दिखाते हैं - एक मानसिक गर्भावस्था और माता-पिता की छुट्टी के लिए व्यावहारिक सुझावों के साथ।\n\nइस ऑनलाइन व्याख्यान के माध्यम से, हमारे सलाहकारों ने बेट्टिना एबेरेल-फ्रॉममेल्ट, मनोवैज्ञानिक और मनोचिकित्सा का नेतृत्व किया, जिसमें बच्चे की देखभाल क्षेत्र और एल्के ओस्वाल्ड-ऑक्सुज़, मनोवैज्ञानिक और विश्राम कोच, जो अभी भी एक बच्चा माँ है।\n\nऑनलाइन प्रस्तुति और बाद में प्रश्नावली सत्र लगभग 1 घंटे तक रहता है। यह मुफ्त है और ज़ूम के माध्यम से आयोजित किया जाता है। आप अपने पंजीकरण के बाद संबंधित लिंक प्राप्त करेंगे। हम आपकी भागीदारी के लिए तत्पर हैं।\n\nपंजीकरण schwanger.li वेबसाइट के माध्यम से या दाईं ओर पंजीकरण लिंक के माध्यम से होता है।",
             "ru": "Узнайте все о вариантах ухода за детьми в Лихтенштейне, Швейцарии и Форарльберге. Здесь вы получите практические советы по успешному примирению семьи и работы.\n\nДаже во время беременности важно заниматься вопросом ухода за ребенком. Если вы работаете в Лихтенштейне или Швейцарии, вам нужен уход за ребенком еще раньше.\n\nВо время презентации вы получите полезную информацию и советы по следующим темам. После этого мы с удовольствием ответим на дальнейшие вопросы.\n\n• Какие варианты ухода доступны для младенцев и малышей?\nГде я могу найти правильные точки контакта для моих вопросов?\nКак я могу справиться с давлением, чтобы все организовать вовремя?\nЧто помогает мне войти в момент и построить любящую связь с моим ребенком?\n\nНаша онлайн-презентация предоставляет ценную информацию о возможностях ухода за детьми в Лихтенштейне, Швейцарии и Форарльберге. Мы покажем вам способы освоить баланс между семьей и работой - с практическими советами для внимательной беременности и отпуска по уходу за ребенком.\n\nБлагодаря этой онлайн-лекции наши консультанты возглавляют Беттину Эберле-Фроммельт, психолога и психотерапевта с профессиональным опытом в секторе ухода за детьми и Эльке Освальд-Оксюз, психолога и тренера по релаксации, которая все еще является мамой малыша.\n\nОнлайн-презентация и последующая анкетная сессия длится около 1 часа. Он бесплатный и поддерживается через Zoom. Соответствующую ссылку вы получите после регистрации. Мы с нетерпением ждем вашего участия.\n\nРегистрация происходит через веб-сайт schwanger.li или по ссылке регистрации справа."
+        },
+        "price": null
+    },
+    {
+        "community": "Balzers",
+        "title": {
+            "en": "Animal health",
+            "es": "Salud animal",
+            "it": "Salute animale",
+            "de": "Tiergesundheit",
+            "sr": "Zdravlje životinja.",
+            "fr": "Santé animale",
+            "pt": "Sanidade animal",
+            "pl": "Zdrowie zwierząt",
+            "hi": "पशु स्वास्थ्य",
+            "ru": "Здоровье животных"
+        },
+        "icon": "🌱",
+        "colour": "green",
+        "category": "Nature",
+        "date": "2026-10-22",
+        "time": "19:30",
+        "location": "Hundeplatz MurastrÃ¤ssleMurastrÃ¤ssle 149496 Balzers, Balzers",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Hundeplatz+Murastr%C3%83%C2%A4ssleMurastr%C3%83%C2%A4ssle+149496+Balzers%2C+Balzers",
+        "description": {
+            "en": "Animal health with Dr. med. vet. Sandy Kindle\n\nThursday, 22. October 2026, 19.30-22.00\nHounds, Balzers\n\nRegistration: www.pfoetler.li",
+            "es": "Salud animal con el Dr. Med. vet. Sandy Kindle\n\nJueves 22 de octubre de 2026, 19.30-22.00\nHeridos, Balzers\n\nRegistro: www.pfoetler.li",
+            "it": "Salute animale con Dr. med. vet. Sandy Kindle\n\ngiovedì 22 ottobre 2026, 19.30-22.00\nTubi, Balzers\n\nRegistrazione: www.pfoetler.li",
+            "de": "Tiergesundheit mit Dr. med. vet. Sandy Kindle\n\nDonnerstag, 22. Oktober 2026, 19.30-22.00 Uhr\nHunds-Hötta, Balzers\n\nAnmeldung: www.pfoetler.li",
+            "sr": "Zdravlje životinja sa dr Medom.\n\nÈetvrtak, 22.\nPsi, Balzeri\n\nRegistracija: www.pfeetler.li",
+            "fr": "Santé animale avec Dr. med. vétérinaire Sandy Kindle\n\nJeudi 22 octobre 2026, 19 h 30-22 heures\nLes chiens, les chauves-souris\n\nInscription : www.pfoetler.li",
+            "pt": "Saúde animal com Dr. médico veterinário. Sandy Kindle\n\nQuinta-feira, 22. Outubro 2026, 19.30-22.00\nCães, Balzers\n\nRegisto: www.pfoetler.li",
+            "pl": "Zdrowie zwierząt z Dr. Med. weterynarz. Sandy Kindle\n\nCzwartek, 22. Październik 2026, 19.30- 22.00\nPsy, Balzery\n\nRejestracja: www.pfoetler.li",
+            "hi": "डॉ मेड के साथ पशु स्वास्थ्य वेट सैंडी किंडल\n\nगुरुवार, 22 अक्टूबर 2026, 19.30-22.00\nHounds, Balzers\n\nपंजीकरण: www.pfoetler.li",
+            "ru": "Здоровье животных с доктором медицины Сэнди Киндл\n\nЧетверг, 22 октября 2026, 19.30-22.00\nГончие, Бальцеры\n\nРегистрация: www.pfoetler.li"
         },
         "price": null
     },
