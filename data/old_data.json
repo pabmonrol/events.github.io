@@ -6670,5 +6670,57 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Jugendtreff+ScharmotzRietstrasse+229496+Balzers%2C+Balzers",
     "description": "50 Dance Party - Hits of the 70s/80s\nDJane & Fachstelle Senioren\n\nJugendtreff Scharmotz, Rietstrasse 24 (Alte Post)\nFriday, 30. October 2026, 20.00\n\nCosts: CHF 15.-/person\n\nRegistration obligatory until 23.10.2026 at the specialist office seniors",
     "price": 15.0
+  },
+  {
+    "community": "Schaan",
+    "title": "No matter",
+    "icon": "🧩",
+    "colour": "purple",
+    "category": "Culture",
+    "date": "2026-11-03",
+    "time": "19:30",
+    "location": "SAL Saal am Linda­platz, Schaan",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=SAL+Saal+am+Linda%C2%ADplatz%2C+Schaan",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Balzers",
+    "title": "Ã1⁄450 - Dance Party",
+    "icon": "🪇",
+    "colour": "pink",
+    "category": "Leisure",
+    "date": "2026-10-28",
+    "time": "20:00",
+    "location": "Jugendtreff ScharmotzRietstrasse 229496 Balzers, Balzers",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Jugendtreff+ScharmotzRietstrasse+229496+Balzers%2C+Balzers",
+    "description": "50 Dance Party - Hits of the 70s/80s\nDJane & Fachstelle Senioren\n\nJugendtreff Scharmotz, Rietstrasse 24 (Alte Post)\nFriday, 30. October 2026, 20.00\n\nCosts: CHF 15.-/person\n\nRegistration obligatory until 23.10.2026 at the specialist office seniors",
+    "price": 15.0
+  },
+  {
+    "community": "Balzers",
+    "title": "Understand my baby. What does my baby want to tell me?",
+    "icon": "🌱",
+    "colour": "green",
+    "category": "Nature",
+    "date": "2026-11-03",
+    "time": "10:00",
+    "location": "Haus der FamilienLandstrasse 409494 Schaan, Balzers",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Haus+der+FamilienLandstrasse+409494+Schaan%2C+Balzers",
+    "description": "Mini workshop for parents with babies aged 1 to 4 months\n\nEvery baby communicates with his environment from birth – not with words, but with numerous fine baby signs. Perceiving, correctly interpreting and responding appropriately to these child-like gems is one of the first important tasks of parents of newborns.\n\nWith simple and practical tips, you as a parent can develop a safe handling of your baby. Thus, you create a valuable basis for building a loving and stable parent-child relationship. Together with your baby, we will explore in this mini-workshop how your baby expresses his needs and how you can optimally accompany your child in these moments.\n\nDirected by: Birgit Burger\nLocation: House of Families, Landstrasse 40, Schaan, 2nd floor\nPlease bring: 2 small blankets for the baby\nRegistration: welcome@netzwerk-familie.li until 24 h before the appointment\n\nThe free mini-workshop takes place from 2 adults with one baby each (max. 8 adults).",
+    "price": null
+  },
+  {
+    "community": "Balzers",
+    "title": "94Secondhand market",
+    "icon": "🧩",
+    "colour": "purple",
+    "category": "Culture",
+    "date": "2026-10-28",
+    "time": null,
+    "location": "Alter PfarrhofEgerta 119496 Balzers, Balzers",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Alter+PfarrhofEgerta+119496+Balzers%2C+Balzers",
+    "description": "The club 94secondhand invites you to the next secondhand sale. Come and join us! Buy and sell your autumn and winter fashion!\n\nAcceptance of clothes:\nMonday, 26. October 2026, 18.00-20.00\nTuesday, 27. October 2026, 18.00-20.00\nBring a maximum of 10 items of clothing per person in a closed box/box.\n\nSales\nFriday, 30. October 2026, 17.00-22.00\nSaturday, 31. October 2026, 10.00-17.00\n\nSpecials:\nFor more information: www.94secondhand.li",
+    "price": null
   }
 ]
