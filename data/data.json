@@ -2,30 +2,6 @@
     {
         "community": "Ruggell",
         "title": {
-            "en": "All souls",
-            "es": "Todas las almas",
-            "it": "Tutte le anime",
-            "de": "Allerseelen",
-            "sr": "Sve duše",
-            "fr": "Toutes les âmes",
-            "pt": "Todas as almas",
-            "pl": "Wszystkie dusze",
-            "hi": "आत्मा",
-            "ru": "Все души"
-        },
-        "icon": "🌱",
-        "colour": "green",
-        "category": "Nature",
-        "date": "2026-11-02",
-        "time": null,
-        "location": "Ruggell",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Ruggell",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Ruggell",
-        "title": {
             "en": "Brain Fitness Training",
             "es": "Formación en ejercicios físicos",
             "it": "Allenamento del fitness del cervello",
@@ -212,6 +188,146 @@
         "price": null
     },
     {
+        "community": "Gamprin/Bendern",
+        "title": {
+            "en": "Brain Fitness Training",
+            "es": "Formación en ejercicios físicos",
+            "it": "Allenamento del fitness del cervello",
+            "de": "Gehirnfitnesstraining",
+            "sr": "Trening za fitnes mozga",
+            "fr": "Formation à la condition physique du cerveau",
+            "pt": "Treinamento de Fitness Cerebral",
+            "pl": "Szkolenie sprawności mózgu",
+            "hi": "मस्तिष्क स्वास्थ्य प्रशिक्षण",
+            "ru": "Фитнес-тренинг для мозга"
+        },
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-11-05",
+        "time": "13:50",
+        "location": "Vereinshaus Ruggell, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C+Gamprin%2FBendern",
+        "description": {
+            "en": "Instructor:\nElke Nestler-Schreiber, synapse coach, brain fitness coach\nCost per person:\nCHF 19.- per hour for pensioners of the municipalities of Gamprin, Ruggell and Schellenberg. The course is financially supported by the three municipalities.\nNotification and information:\nDirectly at the instructor, tel. +41 79 450 21 92 or info(at)denkduenger.li. Trial hours or an entry is possible at any time. No prior knowledge is required. www.denkduenger.li.",
+            "es": "Instructor:\nElke Nestler-Schreiber, entrenador de sincronización, entrenador de fitness en el cerebro\nCosto por persona:\nCHF 19.- por hora para pensionistas de los municipios de Gamprin, Ruggell y Schellenberg. El curso cuenta con el apoyo financiero de los tres municipios.\nNotificación e información:\nDirectamente en el instructor, tel. +41 79 450 21 92 o info(at)denkduenger.li. Horas de juicio o una entrada es posible en cualquier momento. No se requiere ningún conocimiento previo. www.denkduenger.li.",
+            "it": "Istruttore:\nElke Nestler-Schreiber, allenatore di synapse, allenatore di fitness del cervello\nCosto per persona:\nCHF 19.- all'ora per i pensionati dei comuni di Gamprin, Ruggell e Schellenberg. Il corso è supportato finanziariamente dai tre comuni.\nNotifica e informazione:\nDirettamente all'istruttore, tel. +41 79 450 21 92 o info(at)denkduenger.li. ore di prova o una voce è possibile in qualsiasi momento. Non è richiesta alcuna conoscenza preventiva. www.denkduenger.li.",
+            "de": "Kursleiterin:\r\nElke Nestler-Schreiber, Synapsencoach, Gehirnfitnesstrainerin\nKosten pro Person:\r\nCHF 19.- pro Stunde für Pensionisten der Gemeinden Gamprin, Ruggell und Schellenberg. Der Kurs wird von den drei Gemeinden finanziell unterstützt.\nAnmeldung und Information:\r\nDirekt bei der Kursleiterin, Tel. +41 79 450 21 92 oder info(at)denkduenger.li. Schnupperstunden bzw. ein Einstieg ist jederzeit möglich. Es sind keine Vorkenntnisse nötig. www.denkduenger.li.",
+            "sr": "Instruktor:\nElke Nestler-Schreiber, trener sinapse, trener fitnesa u mozgu\nCena po osobi:\nCHF 19.- po satu za penzionere opština Gamprin, Ruggel i Schelenberg. Taj kurs finansijski podržavaju tri opštine.\nObaveštenje i informacije:\nDirektno kod instruktora, tel. + 4479 450 221 92 ili informacija (na) denkduenger.li.le. Probni sati ili ulaz su moguæi u bilo kom trenutku. Preðašnje znanje nije potrebno. ww.denkduenger. Lie.",
+            "fr": "Instructeur:\nElke Nestler-Schreiber, entraîneur de synapse, entraîneur de fitness cérébrale\nCoût par personne:\nCHF 19.- par heure pour les retraités des communes de Gamprin, Ruggell et Schellenberg. Le cours est financé par les trois municipalités.\nNotification et information:\nDirectement à l'instructeur, tél. +41 79 450 21 92 ou info(at)denkduenger.li. Des heures d'essai ou une entrée sont possibles à tout moment. Aucune connaissance préalable n'est requise. On peut consulter le site www.denkduenger.li.",
+            "pt": "Instrutor:\nElke Nestler-Schreiber, treinador de sinapse, treinador de fitness cerebral\nCusto por pessoa:\nCHF 19.- por hora para os pensionistas dos municípios de Gamprin, Ruggell e Schellenberg. O curso é financiado pelos três municípios.\nNotificação e informação:\nDiretamente no instrutor, tel. +41 79 450 21 92 ou info(at)denkduenger.li. As horas de teste ou uma entrada são possíveis a qualquer momento. Nenhum conhecimento prévio é exigido. www.denkduenger.li.",
+            "pl": "Instruktor:\nElke Nestler- Schreiber, trener synapsy, trener fitness mózgu\nKoszt na osobę:\nCHF 19.- za godzinę dla emerytów gmin Gamprin, Ruggell i Schellenberg. Kurs jest finansowo wspierany przez trzy gminy.\nPowiadomienia i informacje:\nBezpośrednio u instruktora, tel. + 41 79 450 21 92 lub info (at) denkduenger.li. Godziny próbne lub wejście jest możliwe w każdej chwili. Nie jest wymagana wcześniejsza wiedza. www.denkduenger.li.",
+            "hi": "प्रशिक्षक:\nElke Nestler-Schreiber, synapse कोच, मस्तिष्क फिटनेस कोच\nप्रति व्यक्ति लागत:\nCHF 19.- Gamprin, Ruggell और Schellenberg के नगरपालिकाओं के पेंशनरों के लिए प्रति घंटे। पाठ्यक्रम वित्तीय रूप से तीन नगरपालिकाओं द्वारा समर्थित है।\nअधिसूचना और सूचना:\nसीधे प्रशिक्षक, टेल पर। +41 79 450 21 92 या info(at)denkduenger.li। किसी भी समय ट्रायल घंटे या प्रवेश संभव है। पूर्व ज्ञान की आवश्यकता नहीं है। www.denkduenger.li.",
+            "ru": "Инструктор:\nЭльке Нестлер-Шрайбер, тренер по синапсам, тренер по фитнесу мозга\nСтоимость на человека:\n19 швейцарских франков в час для пенсионеров муниципалитетов Гамприна, Раггелла и Шелленберга. Программа финансируется тремя муниципалитетами.\nУведомление и информация:\nНепосредственно у инструктора, тел. +41 79 450 21 92 или info(at)denkduenger.li. Пробные часы или запись возможны в любое время. Предварительных знаний не требуется. www.denkduenger.li."
+        },
+        "price": 19.0
+    },
+    {
+        "community": "Gamprin/Bendern",
+        "title": {
+            "en": "Healthy breakfast with lectures",
+            "es": "Desayuno saludable con conferencias",
+            "it": "Colazione sana con lezioni",
+            "de": "Gesundes Frühstück mit Vorträgen",
+            "sr": "Zdrav doruèak sa predavanjima.",
+            "fr": "Petit déjeuner sain avec des conférences",
+            "pt": "Pequeno-almoço saudável com palestras",
+            "pl": "Zdrowe śniadanie z wykładami",
+            "hi": "व्याख्यान के साथ स्वस्थ नाश्ता",
+            "ru": "Здоровый завтрак с лекциями"
+        },
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-11-07",
+        "time": "09:00",
+        "location": "Gemeindesaal Schellenberg, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal+Schellenberg%2C+Gamprin%2FBendern",
+        "description": {
+            "en": "Michaela Hogenboom from Feldfreunde shows those interested in health from Schellenberg, Ruggell and Gamprin how the Planetary Health Diet can look on the Liechtenstein plate.\nThe focus is on the new Swiss food pyramid and the question of how regional foods strengthen health and at the same time promote biodiversity.\nCost: CHF 15 per adult person\nRegistration: no later than Monday, 2 November 2026, at the municipality of Schellenberg\nTelephone: +423 399 20 30\nEmail: gemeinde(at)schellenberg.li",
+            "es": "Michaela Hogenboom de Feldfreunde muestra a los interesados en la salud de Schellenberg, Ruggell y Gamprin cómo la Dieta de Salud Planetaria puede ver la placa de Liechtenstein.\nSe centra en la nueva pirámide alimentaria suiza y en la cuestión de cómo los alimentos regionales fortalecen la salud y al mismo tiempo promueven la biodiversidad.\nCosto: 15 CHF por persona adulta\nRegistro: a más tardar el lunes 2 de noviembre de 2026, en el municipio de Schellenberg\nTeléfono: +423 399 20 30\nCorreo electrónico: gemeinde(at)schellenberg.li",
+            "it": "Michaela Hogenboom di Feldfreunde mostra coloro che sono interessati alla salute di Schellenberg, Ruggell e Gamprin come la dieta di salute planetaria può guardare sulla piastra del Liechtenstein.\nIl focus è sulla nuova piramide alimentare svizzera e la questione di come gli alimenti regionali rafforzano la salute e allo stesso tempo promuovono la biodiversità.\nCosto: CHF 15 per persona adulta\nIscrizione: entro lunedì 2 novembre 2026, presso il comune di Schellenberg\nTelefono: +423 399 20 30\nEmail: gemeinde(at)schellenberg.li",
+            "de": "Michaela Hogenboom vom Verein Feldfreunde zeigt Gesundheitsinteressierten aus Schellenberg, Ruggell und Gamprin, wie die Planetary Health Diet auf dem Liechtensteiner Teller aussehen kann.\nIm Mittelpunkt stehen die neue Schweizer Ernährungspyramide und die Frage, wie regionale Lebensmittel die Gesundheit stärken und gleichzeitig die Biodiversität fördern.\nKosten: CHF 15 pro erwachsene Person\nAnmeldung: bis spätestens Montag, 2. November 2026, bei der Gemeinde Schellenberg\r\nTelefon: +423 399 20 30\r\nE-Mail: gemeinde(at)schellenberg.li",
+            "sr": "Mikela Hogenbum iz Feldfrojndea pokazuje onima koji su zainteresovani za zdravlje iz Šelenberga, Ruggela i Gamprina kako Planetarna zdravstvena dijeta može da izgleda na Lihtenštajnovom tanjiru.\nFokus je na novoj švajcarskoj piramidi hrane i pitanje kako regionalna hrana jača zdravlje i istovremeno promoviše bioraznolikost.\nCena:\nRegistracija: ne kasnije od ponedeljka, 2. novembra 2026, u opštini Šelenberg\nTelefon: + 423 399 20 30\nЕ ‑ пошта: Гемеинде (на) сцхелленберг.ли",
+            "fr": "Michaela Hogenboom de Feldfreunde montre à ceux qui s'intéressent à la santé de Schellenberg, Ruggell et Gamprin comment le régime de santé planétaire peut regarder sur la plaque du Liechtenstein.\nL'accent est mis sur la nouvelle pyramide alimentaire suisse et la question de savoir comment les aliments régionaux renforcent la santé tout en favorisant la biodiversité.\nCoût: CHF 15 par adulte\nInscription: au plus tard le lundi 2 novembre 2026, à la commune de Schellenberg\nTéléphone: +423 399 20 30\nCourriel: gemeinde(at)schellenberg.li",
+            "pt": "Michaela Hogenboom de Feldfreunde mostra aos interessados em saúde de Schellenberg, Ruggell e Gamprin como a Dieta de Saúde Planetária pode olhar na placa de Liechtenstein.\nO foco está na nova pirâmide alimentar suíça e na questão de como os alimentos regionais fortalecem a saúde e, ao mesmo tempo, promovem a biodiversidade.\nCusto: ICC 15 por adulto\nInscrição: até segunda-feira, 2 de novembro de 2026, no município de Schellenberg\nTelefone: +423 399 20 30\nE-mail: gemeinde(at)schellenberg.li",
+            "pl": "Michaela Hogenboom z Feldfreunde pokazuje tym, którzy są zainteresowani zdrowiem ze strony Schellenberg, Ruggell i Gamprin, jak Planetarna Dieta Zdrowia może wyglądać na płycie Liechtensteinu.\nKoncentruje się ona na nowej szwajcarskiej piramidzie żywnościowej oraz na tym, jak regionalne środki spożywcze wzmacniają zdrowie, a jednocześnie promują różnorodność biologiczną.\nKoszt: 15 CHF od osoby dorosłej\nRejestracja: nie później niż w poniedziałek, 2 listopada 2026 r., w gminie Schellenberg\nTel.: + 423 399 20 30\ne-mail: gemeinde (at) schellenberg.li",
+            "hi": "Feldfreunde से Michaela Hogenboom Schellenberg, Ruggell और Gamprin से स्वास्थ्य में रुचि रखने वालों को दर्शाता है कि ग्रह स्वास्थ्य आहार Liechtenstein प्लेट पर कैसे देख सकते हैं।\nफोकस नए स्विस खाद्य पिरामिड पर है और यह सवाल है कि क्षेत्रीय खाद्य स्वास्थ्य को कैसे मजबूत करते हैं और साथ ही जैव विविधता को बढ़ावा देते हैं।\nलागत: प्रति वयस्क व्यक्ति CHF 15\nपंजीकरण: बाद में सोमवार से नहीं, 2 नवंबर 2026, शिलेनबर्ग नगर पालिका में\nटेलीफोन: +423 399 20 30\nईमेल: gemeinde(at)schellenberg.li",
+            "ru": "Михаэла Хогенбум из Feldfreunde показывает тем, кто интересуется здоровьем из Шелленберга, Раггелла и Гамприна, как планетарная диета здоровья может выглядеть на тарелке Лихтенштейна.\nОсновное внимание уделяется новой швейцарской продовольственной пирамиде и вопросу о том, как региональные продукты питания укрепляют здоровье и в то же время способствуют биоразнообразию.\nСтоимость: 15 швейцарских франков на взрослого человека\nРегистрация: не позднее понедельника, 2 ноября 2026 года, в муниципалитете Шелленберг\nТелефон: +423 399 20 30\nЭлектронная почта: gemeinde(at)schellenberg.li"
+        },
+        "price": 15.0
+    },
+    {
+        "community": "Gamprin/Bendern",
+        "title": {
+            "en": "Brain Fitness Training",
+            "es": "Formación en ejercicios físicos",
+            "it": "Allenamento del fitness del cervello",
+            "de": "Gehirnfitnesstraining",
+            "sr": "Trening za fitnes mozga",
+            "fr": "Formation à la condition physique du cerveau",
+            "pt": "Treinamento de Fitness Cerebral",
+            "pl": "Szkolenie sprawności mózgu",
+            "hi": "मस्तिष्क स्वास्थ्य प्रशिक्षण",
+            "ru": "Фитнес-тренинг для мозга"
+        },
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-11-05",
+        "time": "13:50",
+        "location": "Vereinshaus Ruggell, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Vereinshaus+Ruggell%2C+Gamprin%2FBendern",
+        "description": {
+            "en": "Instructor:\nElke Nestler-Schreiber, synapse coach, brain fitness coach\nCost per person:\nCHF 19.- per hour for pensioners of the municipalities of Gamprin, Ruggell and Schellenberg. The course is financially supported by the three municipalities.\nNotification and information:\nDirectly at the instructor, tel. +41 79 450 21 92 or info(at)denkduenger.li. Trial hours or an entry is possible at any time. No prior knowledge is required. www.denkduenger.li.",
+            "es": "Instructor:\nElke Nestler-Schreiber, entrenador de sincronización, entrenador de fitness en el cerebro\nCosto por persona:\nCHF 19.- por hora para pensionistas de los municipios de Gamprin, Ruggell y Schellenberg. El curso cuenta con el apoyo financiero de los tres municipios.\nNotificación e información:\nDirectamente en el instructor, tel. +41 79 450 21 92 o info(at)denkduenger.li. Horas de juicio o una entrada es posible en cualquier momento. No se requiere ningún conocimiento previo. www.denkduenger.li.",
+            "it": "Istruttore:\nElke Nestler-Schreiber, allenatore di synapse, allenatore di fitness del cervello\nCosto per persona:\nCHF 19.- all'ora per i pensionati dei comuni di Gamprin, Ruggell e Schellenberg. Il corso è supportato finanziariamente dai tre comuni.\nNotifica e informazione:\nDirettamente all'istruttore, tel. +41 79 450 21 92 o info(at)denkduenger.li. ore di prova o una voce è possibile in qualsiasi momento. Non è richiesta alcuna conoscenza preventiva. www.denkduenger.li.",
+            "de": "Kursleiterin:\r\nElke Nestler-Schreiber, Synapsencoach, Gehirnfitnesstrainerin\nKosten pro Person:\r\nCHF 19.- pro Stunde für Pensionisten der Gemeinden Gamprin, Ruggell und Schellenberg. Der Kurs wird von den drei Gemeinden finanziell unterstützt.\nAnmeldung und Information:\r\nDirekt bei der Kursleiterin, Tel. +41 79 450 21 92 oder info(at)denkduenger.li. Schnupperstunden bzw. ein Einstieg ist jederzeit möglich. Es sind keine Vorkenntnisse nötig. www.denkduenger.li.",
+            "sr": "Instruktor:\nElke Nestler-Schreiber, trener sinapse, trener fitnesa u mozgu\nCena po osobi:\nCHF 19.- po satu za penzionere opština Gamprin, Ruggel i Schelenberg. Taj kurs finansijski podržavaju tri opštine.\nObaveštenje i informacije:\nDirektno kod instruktora, tel. + 4479 450 221 92 ili informacija (na) denkduenger.li.le. Probni sati ili ulaz su moguæi u bilo kom trenutku. Preðašnje znanje nije potrebno. ww.denkduenger. Lie.",
+            "fr": "Instructeur:\nElke Nestler-Schreiber, entraîneur de synapse, entraîneur de fitness cérébrale\nCoût par personne:\nCHF 19.- par heure pour les retraités des communes de Gamprin, Ruggell et Schellenberg. Le cours est financé par les trois municipalités.\nNotification et information:\nDirectement à l'instructeur, tél. +41 79 450 21 92 ou info(at)denkduenger.li. Des heures d'essai ou une entrée sont possibles à tout moment. Aucune connaissance préalable n'est requise. On peut consulter le site www.denkduenger.li.",
+            "pt": "Instrutor:\nElke Nestler-Schreiber, treinador de sinapse, treinador de fitness cerebral\nCusto por pessoa:\nCHF 19.- por hora para os pensionistas dos municípios de Gamprin, Ruggell e Schellenberg. O curso é financiado pelos três municípios.\nNotificação e informação:\nDiretamente no instrutor, tel. +41 79 450 21 92 ou info(at)denkduenger.li. As horas de teste ou uma entrada são possíveis a qualquer momento. Nenhum conhecimento prévio é exigido. www.denkduenger.li.",
+            "pl": "Instruktor:\nElke Nestler- Schreiber, trener synapsy, trener fitness mózgu\nKoszt na osobę:\nCHF 19.- za godzinę dla emerytów gmin Gamprin, Ruggell i Schellenberg. Kurs jest finansowo wspierany przez trzy gminy.\nPowiadomienia i informacje:\nBezpośrednio u instruktora, tel. + 41 79 450 21 92 lub info (at) denkduenger.li. Godziny próbne lub wejście jest możliwe w każdej chwili. Nie jest wymagana wcześniejsza wiedza. www.denkduenger.li.",
+            "hi": "प्रशिक्षक:\nElke Nestler-Schreiber, synapse कोच, मस्तिष्क फिटनेस कोच\nप्रति व्यक्ति लागत:\nCHF 19.- Gamprin, Ruggell और Schellenberg के नगरपालिकाओं के पेंशनरों के लिए प्रति घंटे। पाठ्यक्रम वित्तीय रूप से तीन नगरपालिकाओं द्वारा समर्थित है।\nअधिसूचना और सूचना:\nसीधे प्रशिक्षक, टेल पर। +41 79 450 21 92 या info(at)denkduenger.li। किसी भी समय ट्रायल घंटे या प्रवेश संभव है। पूर्व ज्ञान की आवश्यकता नहीं है। www.denkduenger.li.",
+            "ru": "Инструктор:\nЭльке Нестлер-Шрайбер, тренер по синапсам, тренер по фитнесу мозга\nСтоимость на человека:\n19 швейцарских франков в час для пенсионеров муниципалитетов Гамприна, Раггелла и Шелленберга. Программа финансируется тремя муниципалитетами.\nУведомление и информация:\nНепосредственно у инструктора, тел. +41 79 450 21 92 или info(at)denkduenger.li. Пробные часы или запись возможны в любое время. Предварительных знаний не требуется. www.denkduenger.li."
+        },
+        "price": 19.0
+    },
+    {
+        "community": "Gamprin/Bendern",
+        "title": {
+            "en": "Healthy breakfast with lectures",
+            "es": "Desayuno saludable con conferencias",
+            "it": "Colazione sana con lezioni",
+            "de": "Gesundes Frühstück mit Vorträgen",
+            "sr": "Zdrav doruèak sa predavanjima.",
+            "fr": "Petit déjeuner sain avec des conférences",
+            "pt": "Pequeno-almoço saudável com palestras",
+            "pl": "Zdrowe śniadanie z wykładami",
+            "hi": "व्याख्यान के साथ स्वस्थ नाश्ता",
+            "ru": "Здоровый завтрак с лекциями"
+        },
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-11-07",
+        "time": "09:00",
+        "location": "Gemeindesaal Schellenberg, Gamprin/Bendern",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Gemeindesaal+Schellenberg%2C+Gamprin%2FBendern",
+        "description": {
+            "en": "Michaela Hogenboom from Feldfreunde shows those interested in health from Schellenberg, Ruggell and Gamprin how the Planetary Health Diet can look on the Liechtenstein plate.\nThe focus is on the new Swiss food pyramid and the question of how regional foods strengthen health and at the same time promote biodiversity.\nCost: CHF 15 per adult person\nRegistration: no later than Monday, 2 November 2026, at the municipality of Schellenberg\nTelephone: +423 399 20 30\nEmail: gemeinde(at)schellenberg.li",
+            "es": "Michaela Hogenboom de Feldfreunde muestra a los interesados en la salud de Schellenberg, Ruggell y Gamprin cómo la Dieta de Salud Planetaria puede ver la placa de Liechtenstein.\nSe centra en la nueva pirámide alimentaria suiza y en la cuestión de cómo los alimentos regionales fortalecen la salud y al mismo tiempo promueven la biodiversidad.\nCosto: 15 CHF por persona adulta\nRegistro: a más tardar el lunes 2 de noviembre de 2026, en el municipio de Schellenberg\nTeléfono: +423 399 20 30\nCorreo electrónico: gemeinde(at)schellenberg.li",
+            "it": "Michaela Hogenboom di Feldfreunde mostra coloro che sono interessati alla salute di Schellenberg, Ruggell e Gamprin come la dieta di salute planetaria può guardare sulla piastra del Liechtenstein.\nIl focus è sulla nuova piramide alimentare svizzera e la questione di come gli alimenti regionali rafforzano la salute e allo stesso tempo promuovono la biodiversità.\nCosto: CHF 15 per persona adulta\nIscrizione: entro lunedì 2 novembre 2026, presso il comune di Schellenberg\nTelefono: +423 399 20 30\nEmail: gemeinde(at)schellenberg.li",
+            "de": "Michaela Hogenboom vom Verein Feldfreunde zeigt Gesundheitsinteressierten aus Schellenberg, Ruggell und Gamprin, wie die Planetary Health Diet auf dem Liechtensteiner Teller aussehen kann.\nIm Mittelpunkt stehen die neue Schweizer Ernährungspyramide und die Frage, wie regionale Lebensmittel die Gesundheit stärken und gleichzeitig die Biodiversität fördern.\nKosten: CHF 15 pro erwachsene Person\nAnmeldung: bis spätestens Montag, 2. November 2026, bei der Gemeinde Schellenberg\r\nTelefon: +423 399 20 30\r\nE-Mail: gemeinde(at)schellenberg.li",
+            "sr": "Mikela Hogenbum iz Feldfrojndea pokazuje onima koji su zainteresovani za zdravlje iz Šelenberga, Ruggela i Gamprina kako Planetarna zdravstvena dijeta može da izgleda na Lihtenštajnovom tanjiru.\nFokus je na novoj švajcarskoj piramidi hrane i pitanje kako regionalna hrana jača zdravlje i istovremeno promoviše bioraznolikost.\nCena:\nRegistracija: ne kasnije od ponedeljka, 2. novembra 2026, u opštini Šelenberg\nTelefon: + 423 399 20 30\nЕ ‑ пошта: Гемеинде (на) сцхелленберг.ли",
+            "fr": "Michaela Hogenboom de Feldfreunde montre à ceux qui s'intéressent à la santé de Schellenberg, Ruggell et Gamprin comment le régime de santé planétaire peut regarder sur la plaque du Liechtenstein.\nL'accent est mis sur la nouvelle pyramide alimentaire suisse et la question de savoir comment les aliments régionaux renforcent la santé tout en favorisant la biodiversité.\nCoût: CHF 15 par adulte\nInscription: au plus tard le lundi 2 novembre 2026, à la commune de Schellenberg\nTéléphone: +423 399 20 30\nCourriel: gemeinde(at)schellenberg.li",
+            "pt": "Michaela Hogenboom de Feldfreunde mostra aos interessados em saúde de Schellenberg, Ruggell e Gamprin como a Dieta de Saúde Planetária pode olhar na placa de Liechtenstein.\nO foco está na nova pirâmide alimentar suíça e na questão de como os alimentos regionais fortalecem a saúde e, ao mesmo tempo, promovem a biodiversidade.\nCusto: ICC 15 por adulto\nInscrição: até segunda-feira, 2 de novembro de 2026, no município de Schellenberg\nTelefone: +423 399 20 30\nE-mail: gemeinde(at)schellenberg.li",
+            "pl": "Michaela Hogenboom z Feldfreunde pokazuje tym, którzy są zainteresowani zdrowiem ze strony Schellenberg, Ruggell i Gamprin, jak Planetarna Dieta Zdrowia może wyglądać na płycie Liechtensteinu.\nKoncentruje się ona na nowej szwajcarskiej piramidzie żywnościowej oraz na tym, jak regionalne środki spożywcze wzmacniają zdrowie, a jednocześnie promują różnorodność biologiczną.\nKoszt: 15 CHF od osoby dorosłej\nRejestracja: nie później niż w poniedziałek, 2 listopada 2026 r., w gminie Schellenberg\nTel.: + 423 399 20 30\ne-mail: gemeinde (at) schellenberg.li",
+            "hi": "Feldfreunde से Michaela Hogenboom Schellenberg, Ruggell और Gamprin से स्वास्थ्य में रुचि रखने वालों को दर्शाता है कि ग्रह स्वास्थ्य आहार Liechtenstein प्लेट पर कैसे देख सकते हैं।\nफोकस नए स्विस खाद्य पिरामिड पर है और यह सवाल है कि क्षेत्रीय खाद्य स्वास्थ्य को कैसे मजबूत करते हैं और साथ ही जैव विविधता को बढ़ावा देते हैं।\nलागत: प्रति वयस्क व्यक्ति CHF 15\nपंजीकरण: बाद में सोमवार से नहीं, 2 नवंबर 2026, शिलेनबर्ग नगर पालिका में\nटेलीफोन: +423 399 20 30\nईमेल: gemeinde(at)schellenberg.li",
+            "ru": "Михаэла Хогенбум из Feldfreunde показывает тем, кто интересуется здоровьем из Шелленберга, Раггелла и Гамприна, как планетарная диета здоровья может выглядеть на тарелке Лихтенштейна.\nОсновное внимание уделяется новой швейцарской продовольственной пирамиде и вопросу о том, как региональные продукты питания укрепляют здоровье и в то же время способствуют биоразнообразию.\nСтоимость: 15 швейцарских франков на взрослого человека\nРегистрация: не позднее понедельника, 2 ноября 2026 года, в муниципалитете Шелленберг\nТелефон: +423 399 20 30\nЭлектронная почта: gemeinde(at)schellenberg.li"
+        },
+        "price": 15.0
+    },
+    {
         "community": "Schellenberg",
         "title": {
             "en": "Brain Fitness Training",
@@ -256,30 +372,6 @@
         "time": "09:30",
         "location": "Pfarrkirche, Schellenberg",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Pfarrkirche%2C+Schellenberg",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Schaan",
-        "title": {
-            "en": "6. Early Childhood: Theme \"Childhood in Transition - a Compass for Early Accompaniment of Children\"",
-            "es": "6. La primera infancia: Tema \"La infancia en la transición - una compasión para el acompañamiento temprano de los niños\"",
-            "it": "6. Infanzia anticipata: Tema \"Fidanzata in Transizione - una bussola per l'accompagnamento precoce dei bambini\"",
-            "de": "6. Vernetzungstreffen Frühe Kindheit: Thema \"Kindheit im Wandel – ein Kompass für die frühe Begleitung von Kindern\"",
-            "sr": "\"Detinjstvo u tranziciji - kompas za raniju decu\"",
-            "fr": "6. La petite enfance: Thème \"L'enfance en transition - un passe-pass pour l'accompagnement précoce des enfants\"",
-            "pt": "6. Primeira infância: tema \"A infância em transição - uma bússola para o acompanhamento precoce das crianças\"",
-            "pl": "6. Wczesne dzieciństwo: Temat \"Dzieciństwo w okresie przejściowym - kompas dla wczesnego towarzyszenia dzieciom\"",
-            "hi": "6. प्रारंभिक बचपन: थीम \"ट्रांसिशन में बचपन - बच्चों के प्रारंभिक Accompaniment के लिए एक कम्पास\"",
-            "ru": "6. Раннее детство: Тема \"Детство в переходный период - компас для раннего сопровождения детей\""
-        },
-        "icon": "🌱",
-        "colour": "green",
-        "category": "Nature",
-        "date": "2026-11-02",
-        "time": "18:30",
-        "location": "SAL Saal am Linda­platz, Schaan",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=SAL+Saal+am+Linda%C2%ADplatz%2C+Schaan",
         "description": "",
         "price": null
     },
@@ -428,6 +520,30 @@
         "price": null
     },
     {
+        "community": "Schaan",
+        "title": {
+            "en": "Young Literature House: \"Livia and Silver in the Underworld\" - Maya Hofer",
+            "es": "Young Literature House: \"Livia and Silver in the Underworld\" - Maya Hofer",
+            "it": "Young Literature House: \"Livia e Silver in the Underworld\" - Maya Hofer",
+            "de": "Junges Literaturhaus: \"Livia und Silver in der Unterwelt\" - Maya Hofer",
+            "sr": "\"Livija i Silver u Podzemnom svetu\" - Maja Hofer",
+            "fr": "Jeune maison de littérature: \"Livia et argent dans les enfers\" - Maya Hofer",
+            "pt": "Young Literature House: \"Livia e Prata no Submundo\" - Maya Hofer",
+            "pl": "Young Literature House: \"Livia i srebro w podziemiu\" - Maya Hofer",
+            "hi": "यंग लिटरेचर हाउस: \"लीविया और सिल्वर इन अंडरवर्ल्ड\" - माया होफर",
+            "ru": "Дом молодой литературы: «Ливия и серебро в подземном мире» — Майя Хофер"
+        },
+        "icon": "🌱",
+        "colour": "green",
+        "category": "Nature",
+        "date": "2026-11-08",
+        "time": "15:00",
+        "location": "Literaturhaus, Schaan",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Literaturhaus%2C+Schaan",
+        "description": "",
+        "price": null
+    },
+    {
         "community": "Vaduz",
         "title": {
             "en": "Simon & Jan: Hot air",
@@ -494,6 +610,41 @@
             "pl": "Komisja Starszych Obywateli Vaduz zaprasza Seniorów Vaduz w środę, 4. Listopad 2026, od 14 do 16 na wizytę w Landgasthof Mühle w Vaduz.\n\nPodczas zwiedzania uczestnicy poznają restaurację lepiej i mogą również spojrzeć za kulisy. Dowiesz się interesujących faktów o młynie, restauracji i ludziach, którzy sprawiają, że goście czują się tu komfortowo.\n\nNastępnie, starsi obywatele są zapraszani na kawę i ciasto. W przytulnej rundzie jest czas na rozmowy i towarzyski koniec do popołudnia.\n\nWszystkie zainteresowane seniorzy Vaduzer są serdecznie zaproszeni. Rejestracja do dnia 2 listopada 2026 r. z Eleonorą Nägele, Starszym Oficerem Obywatelskim, T + 423 238 29 55, eleonora.naegele (at) vaduz.li\n\nW ramach \"Vaduz Experience\" Komisja Senior Citizens organizuje wizyty dla starszych obywateli Vaduz trzy razy wiosną i trzy razy jesienią. Wydarzenia są darmowe i odbywają się we wszystkich warunkach pogodowych.",
             "hi": "वादुज़ वरिष्ठ नागरिक आयोग ने बुधवार, 4 नवंबर 2026 को वादुज़ में लैंडगैसथफ मुहेल की यात्रा के लिए 2 बजे से 4 बजे तक वडोज़ वरिष्ठ नागरिकों को आमंत्रित किया।\n\nएक दौरे के दौरान, प्रतिभागियों को रेस्तरां को बेहतर जानने के लिए मिलता है और दृश्यों के पीछे भी नज़र रख सकता है। आप मिल, रेस्तरां और लोगों के बारे में रोचक तथ्य सीखेंगे जो मेहमानों को यहां आरामदायक महसूस करते हैं।\n\nबाद में, वरिष्ठ नागरिकों को कॉफी और केक के लिए आमंत्रित किया जाता है। एक आरामदायक दौर में बातचीत के लिए समय और दोपहर के लिए एक सुखद अंत है।\n\nसभी इच्छुक वादुज़र वरिष्ठों को अनिवार्य रूप से आमंत्रित किया जाता है। 2 नवंबर 2026 तक एलियोनोरा नेगेल, वरिष्ठ नागरिक अधिकारी, टी + 423 238 29 55, eleonora.naegele(at)vaduz.li के साथ पंजीकरण\n\n\"वादुज़ एक्सपीरियंस\" के हिस्से के रूप में, वरिष्ठ नागरिक आयोग ने वसंत में तीन बार व शरद ऋतु में तीन बार वडोज़ के वरिष्ठ नागरिकों के लिए यात्रा का आयोजन किया। घटनाओं को मुक्त कर रहे हैं और सभी मौसम की स्थिति में जगह ले रहे हैं।",
             "ru": "Комиссия по делам пожилых граждан Вадуза приглашает пожилых людей Вадуза в среду, 4 ноября 2026 года, с 2 часов вечера до 4 часов вечера для посещения Landgasthof Mühle в Вадуце.\n\nВо время экскурсии участники лучше узнают ресторан, а также могут заглянуть за кулисы. Вы узнаете интересные факты о мельнице, ресторане и людях, которые заставляют гостей чувствовать себя здесь комфортно.\n\nПосле этого пожилых людей приглашают на кофе и торт. В уютном круге есть время для разговоров и общительный конец дня.\n\nВсех заинтересованных старших Вадуцеров сердечно приглашают. Регистрация до 2 ноября 2026 года с Элеонорой Нягеле, старшим офицером по гражданству, T +423 238 29 55, eleonora.naegele(at)vaduz.li\n\nВ рамках «Вадузского опыта» Комиссия по делам пожилых граждан организует визиты для пожилых граждан Вадуза трижды весной и трижды осенью. Мероприятия проходят бесплатно и в любых погодных условиях."
+        },
+        "price": null
+    },
+    {
+        "community": "Vaduz",
+        "title": {
+            "en": "Directed by Anna Yermolaeva. Radical Hope",
+            "es": "Dirigida por Anna Yermolaeva. Esperanza radical",
+            "it": "Diretto da Anna Yermolaeva. Speranza radicale",
+            "de": "Führung | Anna Jermolaewa. Radical Hope",
+            "sr": "Režija Ana Jermoleva. Radikalna nada",
+            "fr": "Réalisé par Anna Yermolaeva. Espérance radicale",
+            "pt": "Dirigido por Anna Yermolaeva. Esperança radical",
+            "pl": "Reżyseria Anna Yermolaeva. Radykalna nadzieja",
+            "hi": "अन्ना Yermolaeva द्वारा निर्देशित। रेडिकल होप",
+            "ru": "Режиссер: Анна Ермолаева. Радикальная надежда"
+        },
+        "icon": "🧩",
+        "colour": "purple",
+        "category": "Culture",
+        "date": "2026-11-05",
+        "time": "14:00",
+        "location": "Kunstmuseum Liechtenstein (Lageplan)\nStädtle 32\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+        "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstmuseum+Liechtenstein+%28Lageplan%29%0ASt%C3%A4dtle+32%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+        "description": {
+            "en": "with Christiane Meyer-Stoll\nFirst public tour with the curator\n\nWith an empathetic eye and fine humor, Anna Jermolaeva (born 1970 in St. Petersburg, RU) exposes hidden mechanisms of everyday life – and is very close to life with her art. Radical Hope combines earlier works in an updated and extended form with numerous new works. Three essential aspects characterize the exhibition: the passion for collecting, Jermolaeva’s special connection with animals, and exile and migration. Anna Yermolaeva, who had to flee the former Soviet Union in 1989, focuses on personal experiences and historical traces and confronts the political and social realities of our time with radical hope.\n\nCosts: Included in the museum entrance",
+            "es": "con Christiane Meyer-Stoll\nPrimera gira pública con el curador\n\nCon un ojo empático y buen humor, Anna Jermolaeva (nacida en 1970 en San Petersburgo, RU) expone mecanismos ocultos de la vida cotidiana – y está muy cerca de la vida con su arte. Radical Hope combina obras anteriores en forma actualizada y ampliada con numerosas obras nuevas. Tres aspectos esenciales caracterizan la exposición: la pasión por la recolección, la conexión especial de Jermolaeva con los animales, el exilio y la migración. Anna Yermolaeva, que tuvo que huir de la antigua Unión Soviética en 1989, se centra en experiencias personales y trazos históricos y confronta las realidades políticas y sociales de nuestro tiempo con una esperanza radical.\n\nCostos: Incluido en la entrada del museo",
+            "it": "con Christiane Meyer-Stoll\nPrimo tour pubblico con il curatore\n\nCon un occhio empatico e un buon umore, Anna Jermolaeva (nata nel 1970 a San Pietroburgo, RU) espone meccanismi nascosti della vita quotidiana – ed è molto vicina alla vita con la sua arte. Radical Hope combina i lavori precedenti in una forma aggiornata e estesa con numerose nuove opere. Tre aspetti essenziali caratterizzano la mostra: la passione per la raccolta, il legame speciale di Jermolaeva con gli animali, l’esilio e la migrazione. Anna Yermolaeva, che ha dovuto fuggire dall'ex Unione Sovietica nel 1989, si concentra sulle esperienze personali e sulle tracce storiche e confronta le realtà politiche e sociali del nostro tempo con la speranza radicale.\n\nCosti: Incluso nell'ingresso del museo",
+            "de": "mit Christiane Meyer-Stoll\nErste öffentliche Führung mit der Kuratorin\n\nMit empathischem Blick und feinem Humor legt Anna Jermolaewa (geb. 1970 in St. Petersburg, RU) verborgene Mechanismen des Alltäglichen frei – und ist mit ihrer Kunst ganz nah am Leben. Radical Hope vereint frühere Werke in aktualisierter und erweiterter Form mit zahlreichen neuen Arbeiten. Drei wesentliche Aspekte prägen die Ausstellung: die Leidenschaft für das Sammeln, Jermolaewas besondere Verbundenheit mit Tieren sowie Exil und Migration. Anna Jermolaewa, die 1989 aus der damaligen Sowjetunion fliehen musste, richtet den Blick auf persönliche Erfahrungen sowie historische Spuren und begegnet den politischen und gesellschaftlichen Realitäten unserer Zeit mit radikaler Hoffnung.\n\nKosten: Im Museumseintritt inbegriffen",
+            "sr": "Sa Christiane Meyer- Stoll\nPrva javna turneja sa kustosom.\n\nSa empatičnim okom i finim humorom, Ana Jermolajeva (rođena 1970 u Sankt Petersburgu, RU) otkriva skrivene mehanizme svakodnevnog života - i veoma je bliska životu sa njenom umetnošću. Radikalna nada kombinuje ranije radove u ažuriranom i proširenom obliku sa brojnim novim radovima. Tri suštinska aspekta karakterišu izložbu: strast za prikupljanjem, posebnu vezu Jermolaeve sa životinjama, izgnanstvom i migracijom. Ana Jermoleva, koja je 1989. godine morala da pobegne iz bivšeg Sovjetskog Saveza, fokusira se na lična iskustva i istorijske tragove i suočava se sa političkom i socijalnom realnošću našeg vremena sa radikalnom nadom.\n\nКоштаци: укључени у улаз у музеј",
+            "fr": "avec Christiane Meyer-Stoll\nPremière visite publique avec le conservateur\n\nAnna Jermolaeva (née en 1970 à Saint-Pétersbourg, RU) expose avec empathie et humour les mécanismes cachés de la vie quotidienne – et est très proche de la vie avec son art. Radical Hope combine des travaux antérieurs dans une forme actualisée et étendue avec de nombreuses nouvelles œuvres. Trois aspects essentiels caractérisent l'exposition : la passion pour la collecte, Jermolaeva, le lien particulier avec les animaux, l'exil et la migration. Anna Yermolaeva, qui a dû fuir l'ancienne Union soviétique en 1989, se concentre sur les expériences personnelles et les traces historiques et confronte les réalités politiques et sociales de notre époque avec un espoir radical.\n\nCoûts: Inclus dans l'entrée du musée",
+            "pt": "com Christiane Meyer-Stoll\nPrimeira turnê pública com o curador\n\nCom um olhar empático e bom humor, Anna Jermolaeva (nascida em 1970 em São Petersburgo, RU) expõe mecanismos ocultos da vida cotidiana – e está muito próxima da vida com sua arte. Radical Hope combina obras anteriores em uma forma atualizada e estendida com inúmeras novas obras. Três aspectos essenciais caracterizam a exposição: a paixão pela coleta, a conexão especial de Jermolaeva com os animais, o exílio e a migração. Anna Yermolaeva, que teve que fugir da ex-União Soviética em 1989, centra-se em experiências pessoais e vestígios históricos e confronta as realidades políticas e sociais do nosso tempo com esperança radical.\n\nCustos: Incluído na entrada do museu",
+            "pl": "z Christiane Meyer- Stoll\nPierwsza publiczna wycieczka z kuratorem\n\nZ empatycznym okiem i dobrym humorem Anna Jermolaeva (urodzona w 1970 roku w Petersburgu, RU) ujawnia ukryte mechanizmy codziennego życia - i jest bardzo blisko życia ze swoją sztuką. Radykalna nadzieja łączy wcześniejsze prace w zaktualizowanej i rozszerzonej formie z licznymi nowymi pracami. Trzy zasadnicze aspekty charakteryzują wystawę: pasja kolekcjonowania, szczególne połączenie Jemmolajewy ze zwierzętami oraz wygnanie i migracja. Anna Yermolaeva, która musiała uciec z byłego Związku Radzieckiego w 1989 r., skupia się na osobistych doświadczeniach i historycznych śladach i konfrontuje polityczne i społeczne realia naszych czasów z radykalną nadzieją.\n\nKoszty: Zawarte w wejściu do muzeum",
+            "hi": "Christiane Meyer-Stoll\nक्यूरेटर के साथ पहला सार्वजनिक दौरा\n\nएक सहानुभूतिपूर्ण आंख और ठीक हास्य के साथ, अन्ना जर्मोलावा (सेंट पीटर्सबर्ग, आरयू में 1970 का जन्म) रोजमर्रा के जीवन के छिपे तंत्र को उजागर करता है - और उसकी कला के साथ जीवन के बहुत करीब है। रेडिकल होप कई नए कार्यों के साथ अद्यतन और विस्तारित रूप में पहले काम को जोड़ती है। तीन आवश्यक पहलू प्रदर्शनी को दर्शाते हैं: इकट्ठा करने का जुनून, जानवरों के साथ जेर्मोलावा का विशेष संबंध, और निर्वासन और प्रवास। अन्ना Yermolaeva, जो 1989 में पूर्व सोवियत संघ में भाग लेना चाहते थे, व्यक्तिगत अनुभवों और ऐतिहासिक निशानों पर केंद्रित है और मौलिक आशा के साथ हमारे समय की राजनीतिक और सामाजिक वास्तविकताओं का सामना करता है।\n\nलागत: संग्रहालय प्रवेश में शामिल",
+            "ru": "Кристиан Мейер-Столл\nПервый публичный тур с куратором\n\nС чутким взглядом и тонким юмором Анна Ермолаева (р. 1970 в Санкт-Петербурге, РУ) раскрывает скрытые механизмы быта – и очень близка к жизни своим искусством. «Радикальная надежда» объединяет более ранние работы в обновленном и расширенном виде с многочисленными новыми работами. Выставка характеризуется тремя важными аспектами: страстью к коллекционированию, особой связью Ермолаевой с животными, изгнанием и миграцией. Анна Ермолаева, вынужденная бежать из бывшего Советского Союза в 1989 году, сосредотачивается на личном опыте и исторических следах и противостоит политическим и социальным реалиям нашего времени с радикальной надеждой.\n\nСтоимость: Вход в музей"
         },
         "price": null
     },
@@ -708,102 +859,6 @@
         "price": 30.0
     },
     {
-        "community": "Triesen",
-        "title": {
-            "en": "Turner's crown",
-            "es": "Corona de Turner",
-            "it": "La corona di Turner",
-            "de": "Turnerkränzle",
-            "sr": "Tarnerova kruna",
-            "fr": "Couronne de Turner",
-            "pt": "Coroa de Turner",
-            "pl": "Korona Turnera",
-            "hi": "टर्नर का ताज",
-            "ru": "Корона Тернера"
-        },
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-11-06",
-        "time": null,
-        "location": "Triesen",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Triesen",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Triesen",
-        "title": {
-            "en": "Turner's crown",
-            "es": "Corona de Turner",
-            "it": "La corona di Turner",
-            "de": "Turnerkränzle",
-            "sr": "Tarnerova kruna",
-            "fr": "Couronne de Turner",
-            "pt": "Coroa de Turner",
-            "pl": "Korona Turnera",
-            "hi": "टर्नर का ताज",
-            "ru": "Корона Тернера"
-        },
-        "icon": "🎵",
-        "colour": "blue",
-        "category": "Music",
-        "date": "2026-11-07",
-        "time": null,
-        "location": "Triesen",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Triesen",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Triesen",
-        "title": {
-            "en": "24-hour swimming",
-            "es": "Piscina las 24 horas",
-            "it": "nuoto 24 ore su 24",
-            "de": "24-Stunden-Schwimmen",
-            "sr": "24 sata plivanja",
-            "fr": "24 heures sur 24",
-            "pt": "Natação 24 horas",
-            "pl": "24-godzinne pływanie",
-            "hi": "24 घंटे तैराकी",
-            "ru": "24-часовое плавание"
-        },
-        "icon": "⚽️",
-        "colour": "red",
-        "category": "Sport",
-        "date": "2026-11-07",
-        "time": null,
-        "location": "Triesen",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Triesen",
-        "description": "",
-        "price": null
-    },
-    {
-        "community": "Triesen",
-        "title": {
-            "en": "24-hour swimming",
-            "es": "Piscina las 24 horas",
-            "it": "nuoto 24 ore su 24",
-            "de": "24-Stunden-Schwimmen",
-            "sr": "24 sata plivanja",
-            "fr": "24 heures sur 24",
-            "pt": "Natação 24 horas",
-            "pl": "24-godzinne pływanie",
-            "hi": "24 घंटे तैराकी",
-            "ru": "24-часовое плавание"
-        },
-        "icon": "⚽️",
-        "colour": "red",
-        "category": "Sport",
-        "date": "2026-11-08",
-        "time": null,
-        "location": "Triesen",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Triesen",
-        "description": "",
-        "price": null
-    },
-    {
         "community": "Triesenberg",
         "title": {
             "en": "AI – understand, use and benefit",
@@ -849,41 +904,6 @@
         "location": "Triesenberg",
         "google_maps": "https://www.google.com/maps/search/?api=1&query=Triesenberg",
         "description": "",
-        "price": null
-    },
-    {
-        "community": "Balzers",
-        "title": {
-            "en": "Understand my baby. What does my baby want to tell me?",
-            "es": "Entender a mi bebé. ¿Qué quiere decirme mi bebé?",
-            "it": "Capisci il mio bambino. Cosa vuole dirmi il mio bambino?",
-            "de": "Mein Baby verstehen. Was will mir mein Baby sagen?",
-            "sr": "Razumi moju bebu. Šta moja beba želi da mi kaže?",
-            "fr": "Comprenez mon bébé. Qu'est-ce que mon bébé veut me dire ?",
-            "pt": "Entenda o meu bebé. O que é que o meu bebé me quer dizer?",
-            "pl": "Zrozum moje dziecko. Co moje dziecko chce mi powiedzieć?",
-            "hi": "मेरे बच्चे को समझें। मेरा बच्चा मुझे क्या कहना चाहता है?",
-            "ru": "Поймите моего ребенка. Что мой ребенок хочет сказать мне?"
-        },
-        "icon": "🌱",
-        "colour": "green",
-        "category": "Nature",
-        "date": "2026-11-03",
-        "time": "10:00",
-        "location": "Haus der FamilienLandstrasse 409494 Schaan, Balzers",
-        "google_maps": "https://www.google.com/maps/search/?api=1&query=Haus+der+FamilienLandstrasse+409494+Schaan%2C+Balzers",
-        "description": {
-            "en": "Mini-workshop for parents with babies aged 1 to 4 months\n\nEvery baby communicates with his environment from birth – not with words, but with numerous fine baby signs. Perceiving, correctly interpreting and responding appropriately to these child prefixes is one of the first important tasks of parents of newborns.\n\nBased on simple and practical tips, you as a parent can develop a safe handling of your baby. Thus, you create a valuable basis for building a loving and stable parent-child relationship. Together with your baby, we will explore in this mini-workshop how your baby expresses his needs and how you can optimally accompany your child in these moments.\n\nDirected by: Birgit Burger\nLocation: House of Families, Landstrasse 40, Schaan, 2nd floor\nPlease bring: 2 small blankets for the baby\nRegistration: welcome@netzwerk-familie.li until 24 h before the appointment\n\nThe free mini-workshop takes place from 2 adults with one baby each (max. 8 adults).",
-            "es": "Mini-taller para padres con bebés de 1 a 4 meses\n\nCada bebé se comunica con su entorno desde el nacimiento, no con palabras, sino con numerosos signos del bebé. Percibir, interpretar correctamente y responder adecuadamente a estos prefijos infantiles es una de las primeras tareas importantes de los padres de los recién nacidos.\n\nBasado en consejos simples y prácticos, usted como padre puede desarrollar un manejo seguro de su bebé. Así, usted crea una base valiosa para construir una relación padre-hijo amorosa y estable. Junto con su bebé, exploraremos en esta mini-taller cómo su bebé expresa sus necesidades y cómo puede acompañar a su hijo de forma óptima en estos momentos.\n\nDirigida por: Birgit Burger\nUbicación: Casa de Familias, Landstrasse 40, Schaan, 2a planta\nPor favor traiga: 2 mantas pequeñas para el bebé\nRegistro: welcome@netzwerk-familie.li hasta las 24 h antes de la cita\n\nEl mini-taller gratuito tiene lugar de 2 adultos con un bebé cada uno (máximo 8 adultos).",
-            "it": "Mini-officina per genitori con bambini dai 1 ai 4 mesi\n\nOgni bambino comunica con il suo ambiente dalla nascita – non con le parole, ma con numerosi cartelli per bambini. Percepire, interpretare correttamente e rispondere adeguatamente a questi prefissi del bambino è uno dei primi compiti importanti dei genitori dei neonati.\n\nSulla base di consigli semplici e pratici, come un genitore può sviluppare una gestione sicura del vostro bambino. Così, si crea una base preziosa per costruire una relazione madre-figlio amorevole e stabile. Insieme al vostro bambino, esploreremo in questo mini-officina come il vostro bambino esprime le sue esigenze e come si può accompagnare in modo ottimale il vostro bambino in questi momenti.\n\nRegia: Birgit Burger\nUbicazione: Casa delle famiglie, Landstrasse 40, Schaan, 2° piano\nSi prega di portare: 2 piccole coperte per il bambino\nRegistrazione: welcome@netzwerk-familie.li fino a 24 ore prima dell'appuntamento\n\nIl mini-workshop gratuito si svolge da 2 adulti con un bambino ciascuno (max. 8 adulti).",
-            "de": "Mini-Workshop für Eltern mit Babys im Alter von 1 bis 4 Monaten\n\r\nJedes Baby kommuniziert von Geburt an mit seiner Umwelt – nicht mit Worten, sondern mit zahlreichen feinen Babyzeichen. Diese kindlichen Feinzeichen wahrzunehmen, richtig zu deuten und angemessen darauf zu reagieren, zählt zu den ersten wichtigen Aufgaben von Eltern eines Neugeborenen.\n\r\nAnhand einfacher und praktischer Tipps können Sie als Eltern einen sicheren Umgang mit Ihrem Baby entwickeln. Damit schaï¬en Sie eine wertvolle Basis für den Aufbau einer liebevollen und stabilen Eltern-Kind-Beziehung. Gemeinsam mit Ihrem Baby werden wir in diesem Mini-Workshop erkunden, wie Ihr Baby seine Bedürfnisse zum Ausdruck bringt und wie Sie Ihr Kind in diesen Momenten optimal begleiten können.\n\r\nLeitung: Birgit Burger\r\nOrt: Haus der Familien, Landstrasse 40, Schaan, 2. Stock\r\nBitte mitbringen: 2 kleine Decken für das Baby\r\nAnmeldung: welcome@netzwerk-familie.li bis 24 h vor dem Termin\n\r\nDer kostenlose Mini-Workshop findet ab 2 Erwachsenen mit je einem Baby statt (max. 8 Erwachsene).",
-            "sr": "Miniradionica za roditelje sa bebama od 1 do 4 meseca.\n\nSvaka beba komunicira sa svojom okolinom od roðenja, ne sa reèima, veæ sa brojnim finim bebinim znakovima. Posmatranje, pravilno tumačenje i odgovaranje na ove dečije prefikse je jedan od prvih važnih zadataka roditelja novorođenčadi.\n\nNa osnovu jednostavnih i praktiènih saveta, ti kao roditelj možeš da razviješ bezbedno upravljanje svojom bebom. Tako stvarate dragocenu osnovu za izgradnju ljubavne i stabilne roditeljske veze. Zajedno sa vašom bebom, istražiæemo u ovoj minijaturnoj radionici kako vaša beba izražava svoje potrebe i kako možete optimalno pratiti svoje dete u ovim trenucima.\n\nRežija:\nLokacija:\nMolim vas, donesite dva mala æebeta za bebu.\nRegistracija: Dobrodošli @ netzwerk- familijar. li do 24 sata pre imenovanja\n\nBesplatna mini radionica se odvija od 2 odrasle osobe sa jednom bebom (maksimalno. 8 odraslih).",
-            "fr": "Mini-atelier pour les parents avec des bébés âgés de 1 à 4 mois\n\nChaque bébé communique avec son environnement dès sa naissance – pas avec des mots, mais avec de nombreux signes de bébé. Percevoir, interpréter correctement et répondre correctement à ces préfixes pour enfants est l'une des premières tâches importantes des parents de nouveau-nés.\n\nBasé sur des conseils simples et pratiques, vous en tant que parent pouvez développer une manipulation sûre de votre bébé. Ainsi, vous créez une base précieuse pour construire une relation parent-enfant affectueuse et stable. Avec votre bébé, nous explorerons dans ce mini atelier comment votre bébé exprime ses besoins et comment vous pouvez accompagner votre enfant de manière optimale dans ces moments.\n\nRéalisé par : Birgit Burger\nLieu: Maison des familles, Landstrasse 40, Schaan, 2ème étage\nVeuillez apporter: 2 petites couvertures pour le bébé\nInscription: welcome@netzwerk-familie.li jusqu'à 24 h avant le rendez-vous\n\nLe mini-atelier gratuit a lieu à partir de 2 adultes avec un bébé chacun (max. 8 adultes).",
-            "pt": "Mini-oficina para pais com bebês de 1 a 4 meses\n\nTodo bebê se comunica com seu ambiente desde o nascimento – não com palavras, mas com inúmeros sinais de bebê finos. Perceber, interpretar e responder adequadamente a esses prefixos infantis é uma das primeiras tarefas importantes dos pais de recém-nascidos.\n\nCom base em dicas simples e práticas, você, como pai ou mãe, pode desenvolver um manuseio seguro de seu bebê. Assim, você cria uma base valiosa para construir um relacionamento amoroso e estável pai-filho. Juntamente com o seu bebé, vamos explorar nesta mini-workshop como o seu bebé expressa as suas necessidades e como você pode optimamente acompanhar o seu filho nestes momentos.\n\nDirigido por: Birgit Burger\nLocalização: Casa das Famílias, Landstrasse 40, Schaan, 2o andar\nPor favor traga: 2 cobertores pequenos para o bebê\nInscrição: welcome@netzwerk-familie.li até 24 h antes da nomeação\n\nA mini-oficina gratuita tem lugar a partir de 2 adultos com um bebé cada (máximo 8 adultos).",
-            "pl": "Miniwarsztat dla rodziców w wieku od 1 do 4 miesięcy\n\nKażde dziecko komunikuje się ze swoim środowiskiem od urodzenia - nie słowami, ale licznymi drobnymi znakami. Widzenie, prawidłowa interpretacja i odpowiednie reagowanie na te przedrostki jest jednym z pierwszych ważnych zadań rodziców noworodków.\n\nOpierając się na prostych i praktycznych wskazówkach, jako rodzic może rozwijać bezpieczne obchodzenie się z dzieckiem. Tak więc tworzysz cenną podstawę do budowania kochającego i stabilnego związku rodzica-dziecka. Razem z dzieckiem, będziemy badać w tym miniwarsztacie jak dziecko wyraża swoje potrzeby i jak można optymalnie towarzyszyć dziecku w tych momentach.\n\nReżyseria: Birgit Burger\nLokalizacja: Dom Rodzin, Landstrasse 40, Schaan, 2. piętro\nProszę przynieść: 2 małe koce dla dziecka\nRejestracja: welcome @ netzwerk-famile.li do 24 h przed mianowaniem\n\nDarmowy miniwarsztat odbywa się od 2 osób dorosłych z jednym dzieckiem (maks. 8 osób dorosłych).",
-            "hi": "1 से 4 महीने की उम्र के बच्चों के साथ माता-पिता के लिए मिनी वर्कशॉप\n\nहर बच्चा जन्म से अपने पर्यावरण के साथ संवाद करता है - शब्दों के साथ नहीं, बल्कि कई ठीक बच्चे संकेत के साथ। इन बच्चों के उपसर्गों को उचित रूप से समझने, सही ढंग से व्याख्या करने और जवाब देने के लिए नवजात शिशुओं के माता-पिता के पहले महत्वपूर्ण कार्यों में से एक है।\n\nसरल और व्यावहारिक सुझावों के आधार पर, आप एक अभिभावक के रूप में अपने बच्चे की सुरक्षित हैंडलिंग विकसित कर सकते हैं। इस प्रकार, आप एक प्यार और स्थिर माता-पिता के संबंध के निर्माण के लिए एक मूल्यवान आधार बनाते हैं। अपने बच्चे के साथ, हम इस मिनी-वर्कशॉप में खोज करेंगे कि आपका बच्चा अपनी आवश्यकताओं को कैसे व्यक्त करता है और कैसे आप इन क्षणों में अपने बच्चे के साथ बेहतर तरीके से जुड़ सकते हैं।\n\nद्वारा निर्देशित: बिर्गिट बर्गर\nस्थान: House of Families, Landstrasse 40, Schaan, दूसरा मंजिल\nकृपया आओ: बच्चे के लिए 2 छोटे कंबल\nपंजीकरण: welcome@netzwerk-familie.li जब तक नियुक्ति से पहले 24 घंटे तक\n\nनि: शुल्क मिनी वर्कशॉप 2 वयस्कों से एक बच्चे के साथ प्रत्येक (अधिकतम 8 वयस्क) होता है।",
-            "ru": "Мини-мастерская для родителей с детьми в возрасте от 1 до 4 месяцев\n\nКаждый ребенок с рождения общается со своим окружением – не словами, а многочисленными прекрасными детскими знаками. Восприятие, правильная интерпретация и адекватное реагирование на эти детские приставки – одна из первых важных задач родителей новорожденных.\n\nОсновываясь на простых и практических советах, вы как родитель можете разработать безопасное обращение с вашим ребенком. Таким образом, вы создаете ценную основу для построения любящих и стабильных отношений между родителями и детьми. Вместе с вашим ребенком мы рассмотрим в этой мини-мастерской, как ваш ребенок выражает свои потребности и как вы можете оптимально сопровождать своего ребенка в эти моменты.\n\nРежиссёр: Birgit Burger\nРасположение: Дом Семей, Landstrasse 40, Schaan, 2 этаж\nПожалуйста, принесите: 2 маленьких одеял для ребенка\nРегистрация: welcome@netzwerk-familie.li до 24 часов до назначения\n\nБесплатный мини-семинар проводится у 2 взрослых с одним ребенком (максимум 8 взрослых)."
-        },
         "price": null
     },
     {

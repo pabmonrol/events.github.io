@@ -7450,5 +7450,57 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Dorfplatz+BalzersF%C3%83%C2%BCrstenstrasse9496+Balzers%2C+Balzers",
     "description": "I Tarantati - Christmas Market\n5. and 6. December 2026\nVillage square",
     "price": null
+  },
+  {
+    "community": "Schellenberg",
+    "title": "Feast service with subsequent tomb blessing",
+    "icon": "🌱",
+    "colour": "green",
+    "category": "Nature",
+    "date": "2026-11-08",
+    "time": "09:30",
+    "location": "Pfarrkirche, Schellenberg",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pfarrkirche%2C+Schellenberg",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Vaduz",
+    "title": "Pierre-Laurent Aimard, Pierre Bleuse and the Basel Chamber Orchestra",
+    "icon": "🎵",
+    "colour": "blue",
+    "category": "Music",
+    "date": "2026-11-08",
+    "time": "19:00",
+    "location": "Vaduzer Saal (Lageplan)\nGiessenstrasse 7\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Vaduzer+Saal+%28Lageplan%29%0AGiessenstrasse+7%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+    "description": "TAK Vaduzer world classical concerts\n\nPierre-Laurent Aimard, one of the most important pianists of our time, meets Beethoven, Bartók and a new work by Beat Furrer. A concert evening full of sound fantasy, excitement and musical discoveries.\n\nWith Pierre-Laurent Aimard, one of the most prominent pianists of our time is at the center of this program: an artist who combines classical masterpieces, modernity and the present with alert intelligence and unmistakable sound fantasy. Together with the Chamber Orchestra of Basel and Pierre Bleuse, an arc of Beethoven is stretched to the present day. The prelude will be a new work by Beat Furrer, winner of the Ernst von Siemens Music Prize 2018, which the composer conducts himself. Bartók’s suggestive Music for Strings, Percussion and Celesta, commissioned by Paul Sacher for Basel in 1936, leads into a world of night sounds, rhythm and glassy tension. Beethoven’s fifth piano concerto sets the radiant, large-format ending point.\n\nPierre-Laurent Aimard, piano\nPierre Bleuse, conductor\nChamber Orchestra Basel\n\nPROGRAMME\nBeat Furrer\nNew work (conducted by the composer)\n\nBéla Bartók\nMusic for Strings, Percussion and Celesta\n\nLudwig van Beethoven\nPiano Concerto No. 5, E-major, op. 73",
+    "price": 30.0
+  },
+  {
+    "community": "Triesen",
+    "title": "24-hour swimming",
+    "icon": "⚽️",
+    "colour": "red",
+    "category": "Sport",
+    "date": "2026-11-08",
+    "time": null,
+    "location": "Triesen",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Triesen",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Triesenberg",
+    "title": "Baroque ear candy with Ribel",
+    "icon": "⚽️",
+    "colour": "red",
+    "category": "Sport",
+    "date": "2026-11-08",
+    "time": "17:00",
+    "location": "Triesenberg",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Triesenberg",
+    "description": "",
+    "price": null
   }
 ]
