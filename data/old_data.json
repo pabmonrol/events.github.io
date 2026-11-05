@@ -7502,5 +7502,31 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Triesenberg",
     "description": "",
     "price": null
+  },
+  {
+    "community": "Schaan",
+    "title": "Young Literature House: \"Livia and Silver in the Underworld\" - Maya Hofer",
+    "icon": "🌱",
+    "colour": "green",
+    "category": "Nature",
+    "date": "2026-11-08",
+    "time": "15:00",
+    "location": "Literaturhaus, Schaan",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Literaturhaus%2C+Schaan",
+    "description": "",
+    "price": null
+  },
+  {
+    "community": "Vaduz",
+    "title": "Directed by Anna Yermolaeva. Radical Hope",
+    "icon": "🧩",
+    "colour": "purple",
+    "category": "Culture",
+    "date": "2026-11-05",
+    "time": "14:00",
+    "location": "Kunstmuseum Liechtenstein (Lageplan)\nStädtle 32\n9490 Vaduz\nFürstentum Liechtenstein, Vaduz",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Kunstmuseum+Liechtenstein+%28Lageplan%29%0ASt%C3%A4dtle+32%0A9490+Vaduz%0AF%C3%BCrstentum+Liechtenstein%2C+Vaduz",
+    "description": "with Christiane Meyer-Stoll\nFirst public tour with the curator\n\nWith an empathetic eye and fine humor, Anna Jermolaeva (born 1970 in St. Petersburg, RU) exposes hidden mechanisms of everyday life – and is very close to life with her art. Radical Hope combines earlier works in an updated and extended form with numerous new works. Three essential aspects characterize the exhibition: the passion for collecting, Jermolaeva’s special connection with animals, and exile and migration. Anna Yermolaeva, who had to flee the former Soviet Union in 1989, focuses on personal experiences and historical traces and confronts the political and social realities of our time with radical hope.\n\nCosts: Included in the museum entrance",
+    "price": null
   }
 ]
