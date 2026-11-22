@@ -150,6 +150,20 @@ body {
     box-shadow: 0 4px 10px rgba(24, 95, 165, 0.35);
 }
 
+/* Color de cada categoría en sus botones de filtro */
+.filter-btn[data-filter="Sport"] { color: #E64A19; border-color: #FFAB91; background: #FFF3EF; }
+.filter-btn[data-filter="Sport"].active { background: linear-gradient(135deg, #FF5722 0%, #E64A19 100%); color: #ffffff; border-color: #E64A19; box-shadow: 0 4px 10px rgba(230, 74, 25, 0.35); }
+.filter-btn[data-filter="Music"] { color: #1976D2; border-color: #90CAF9; background: #F0F7FE; }
+.filter-btn[data-filter="Music"].active { background: linear-gradient(135deg, #4285F4 0%, #1976D2 100%); color: #ffffff; border-color: #1976D2; box-shadow: 0 4px 10px rgba(25, 118, 210, 0.35); }
+.filter-btn[data-filter="Culture"] { color: #7B1FA2; border-color: #CE93D8; background: #FAF3FC; }
+.filter-btn[data-filter="Culture"].active { background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%); color: #ffffff; border-color: #7B1FA2; box-shadow: 0 4px 10px rgba(123, 31, 162, 0.35); }
+.filter-btn[data-filter="Leisure"] { color: #C2185B; border-color: #F48FB1; background: #FDF2F6; }
+.filter-btn[data-filter="Leisure"].active { background: linear-gradient(135deg, #E91E63 0%, #C2185B 100%); color: #ffffff; border-color: #C2185B; box-shadow: 0 4px 10px rgba(194, 24, 91, 0.35); }
+.filter-btn[data-filter="Nature"] { color: #2E7D32; border-color: #A5D6A7; background: #F1F8F2; }
+.filter-btn[data-filter="Nature"].active { background: linear-gradient(135deg, #00C853 0%, #2E7D32 100%); color: #ffffff; border-color: #2E7D32; box-shadow: 0 4px 10px rgba(46, 125, 50, 0.35); }
+.filter-btn[data-filter="Others"] { color: #455A64; border-color: #B0BEC5; background: #F4F6F7; }
+.filter-btn[data-filter="Others"].active { background: linear-gradient(135deg, #607D8B 0%, #455A64 100%); color: #ffffff; border-color: #455A64; box-shadow: 0 4px 10px rgba(69, 90, 100, 0.35); }
+
 /* =========================================
    CONTENEDOR DE LA AGENDA
    ========================================= */
@@ -710,8 +724,7 @@ body {
 }
 
 @media (min-width: 1200px) {
-    .filters-container { flex-wrap: wrap; overflow-x: visible; }
-    .lang-filters { flex-wrap: wrap; overflow-x: visible; }
+    .filters-sticky { display: none; }
 }
 
 @media (max-width: 640px) {
