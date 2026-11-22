@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview - Nuevo Diseño de Tarjetas</title>
+    <style>
+/* =========================================
+   BASE
+   ========================================= */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #e9eef5 0%, #f4f6f8 320px) fixed, #f4f6f8;
+    color: #1a1a1a;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
+.nl-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e1e4e8;
+    box-shadow: 0 12px 32px rgba(16, 42, 67, 0.12);
+}
+
+.nl-header {
+    background: linear-gradient(135deg, #1e6fd9 0%, #185FA5 55%, #0b3d75 100%);
+    border-radius: 15px 15px 0 0;
+    padding: 36px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.nl-header::after {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+}
+.nl-header::before {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -40px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+}
+.nl-header h1 {
+    color: #ffffff;
+    font-size: clamp(24px, 6vw, 32px);
+    margin: 0 0 6px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 1;
+}
+.nl-header p {
+    color: #B5D4F4;
+    font-size: 13px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+#agenda-container { padding: 16px 20px 24px 20px; }
+
+/* =========================================
+   BLOQUES POR LUGAR / DÍA
+   ========================================= */
+.venue-block {
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #e8edf2;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(16, 42, 67, 0.06);
+}
+
+.venue-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e8edf2;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+    background: linear-gradient(135deg, #24292f 0%, #3b4046 100%);
+    color: #ffffff;
+    border-bottom: none;
+}
+.icon-box {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; margin-right: 12px; font-size: 16px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.12); color: #ffffff;
+}
+
+/* =========================================
+   FILA DE EVENTO - DISEÑO MODERNO
+   ========================================= */
+.event-row {
+    padding: 18px 20px;
+    margin: 8px 0;
+    background-color: #ffffff;
+    border-radius: 14px;
+    border-left: 5px solid transparent;
+    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+.event-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(16, 42, 67, 0.15);
+    background-color: #ffffff;
+}
+.event-row:last-child { margin-bottom: 0; }
+
+.event-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    margin-right: 12px;
+    font-size: 20px;
+    flex-shrink: 0;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+.event-row:hover .event-icon {
+    transform: scale(1.05);
+}
+
+.event-row-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.event-content { 
+    flex-grow: 1; 
+    min-width: 0; 
+    padding-right: 12px;
+}
+.event-title {
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 8px;
+    font-size: 15px;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+    letter-spacing: -0.01em;
+}
+.event-desc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    color: #666666;
+    font-size: 13px;
+    margin: 0 0 8px;
+    line-height: 1.5;
+}
+.event-time {
+    background: linear-gradient(135deg, #f0f4f8 0%, #e8edf2 100%);
+    color: #455A64;
+    border-radius: 24px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    border: 1px solid #d8dde3;
+}
+.event-loc { 
+    overflow-wrap: break-word; 
+    color: #555555;
+}
+.event-price { 
+    font-weight: 700; 
+    font-size: 14px; 
+    color: #2E7D32;
+    display: inline-block;
+    padding: 4px 8px;
+    background: rgba(46, 125, 50, 0.08);
+    border-radius: 6px;
+}
+
+/* GRUPO DE BOTONES DE ACCIÓN - DISEÑO MODERNO */
+.event-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+    align-items: flex-end;
+}
+
+.cal-btn, .loc-btn, .info-btn {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    line-height: 1;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 8px rgba(16, 42, 67, 0.1);
+}
+.cal-btn:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.2);
+}
+.loc-btn:hover, .info-btn:hover { 
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(16, 42, 67, 0.15);
+}
+
+.loc-btn {
+    background: linear-gradient(135deg, #f8f9fa 0%, #f0f4f8 100%);
+    color: #555555;
+    border: 1px solid #e0e4e8;
+    transition: all 0.2s ease;
+}
+.loc-btn:hover { 
+    background: linear-gradient(135deg, #e8edf3 0%, #d8dde3 100%); 
+    color: #455A64;
+    border-color: #c8d0d8;
+}
+
+.info-btn {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: #666666;
+    border: 1px solid #e8edf2;
+    font-size: 12px;
+    padding: 8px 12px;
+    transition: all 0.2s ease;
+}
+.info-btn:hover { 
+    background: linear-gradient(135deg, #f4f6f8 0%, #e8edf2 100%);
+    color: #455A64;
+    border-color: #d8dde3;
+}
+
+/* =========================================
+   ACENTO LATERAL Y FONDO DE ICONO POR CATEGORÍA - COLORES MODERNOS
+   ========================================= */
+.theme-blue.event-row { border-left: 5px solid #4285F4; }
+.theme-blue .event-icon { background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); color: #1976D2; }
+.theme-blue .cal-btn { 
+    background: linear-gradient(135deg, #4285F4 0%, #1976D2 100%); 
+    color: #ffffff; 
+    border: none;
+    box-shadow: 0 4px 12px rgba(24, 95, 165, 0.3);
+}
+.theme-blue .cal-btn:hover { 
+    background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(24, 95, 165, 0.4);
+}
+
+.theme-green.event-row { border-left: 5px solid #00C853; }
+.theme-green .event-icon { background: linear-gradient(135deg, #E8F5E8 0%, #C8E6C9 100%); color: #2E7D32; }
+.theme-green .cal-btn { 
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%); 
+    color: #ffffff; 
+    border: none;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+.theme-green .cal-btn:hover { 
+    background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
+}
+
+.theme-red.event-row { border-left: 5px solid #FF5722; }
+.theme-red .event-icon { background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%); color: #E64A19; }
+.theme-red .cal-btn { 
+    background: linear-gradient(135deg, #FF7043 0%, #E64A19 100%); 
+    color: #ffffff; 
+    border: none;
+    box-shadow: 0 4px 12px rgba(230, 74, 25, 0.3);
+}
+.theme-red .cal-btn:hover { 
+    background: linear-gradient(135deg, #E64A19 0%, #BF360C 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(230, 74, 25, 0.4);
+}
+
+.theme-purple.event-row { border-left: 5px solid #9C27B0; }
+.theme-purple .event-icon { background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%); color: #7B1FA2; }
+.theme-purple .cal-btn { 
+    background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%); 
+    color: #ffffff; 
+    border: none;
+    box-shadow: 0 4px 12px rgba(123, 31, 162, 0.3);
+}
+.theme-purple .cal-btn:hover { 
+    background: linear-gradient(135deg, #7B1FA2 0%, #6A1B9A 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(123, 31, 162, 0.4);
+}
+
+.theme-pink.event-row { border-left: 5px solid #E91E63; }
+.theme-pink .event-icon { background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD9 100%); color: #C2185B; }
+.theme-pink .cal-btn { 
+    background: linear-gradient(135deg, #E91E63 0%, #C2185B 100%); 
+    color: #ffffff; 
+    border: none;
+    box-shadow: 0 4px 12px rgba(194, 24, 91, 0.3);
+}
+.theme-pink .cal-btn:hover { 
+    background: linear-gradient(135deg, #C2185B 0%, #AD1457 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(194, 24, 91, 0.4);
+}
+
+.theme-grey.event-row { border-left: 5px solid #607D8B; }
+.theme-grey .event-icon { background: linear-gradient(135deg, #F5F5F5 0%, #E0E0E0 100%); color: #455A64; }
+.theme-grey .cal-btn { 
+    background: linear-gradient(135deg, #78909C 0%, #455A64 100%); 
+    color: #ffffff; 
+    border: none;
+    box-shadow: 0 4px 12px rgba(69, 90, 100, 0.3);
+}
+.theme-grey .cal-btn:hover { 
+    background: linear-gradient(135deg, #455A64 0%, #37474F 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(69, 90, 100, 0.4);
+}
+
+/* =========================================
+   EVENTOS DESTACADOS - DISEÑO MODERNO
+   ========================================= */
+.event-row.special-event {
+    background: linear-gradient(135deg, #fff8f0 0%, #ffffff 100%);
+    border-left: 6px solid #D20000 !important;
+    box-shadow: 0 6px 20px rgba(210, 0, 0, 0.2);
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-row.special-event::before {
+    content: '\u2728';
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 20px;
+    opacity: 0.6;
+    color: #D20000;
+}
+
+.event-row.special-event .event-title {
+    color: #D20000;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.event-row.special-event .event-icon {
+    background: linear-gradient(135deg, #D20000 0%, #a30000 100%) !important;
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(210, 0, 0, 0.2);
+}
+
+.event-row.special-event .event-price {
+    color: #D20000;
+    font-weight: 700;
+    font-size: 14px;
+    background: rgba(210, 0, 0, 0.08);
+}
+
+.event-row.special-event .cal-btn {
+    background: linear-gradient(135deg, #D20000 0%, #a30000 100%);
+    color: #ffffff;
+    border-color: #D20000;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(210, 0, 0, 0.2);
+}
+.event-row.special-event .cal-btn:hover {
+    background: linear-gradient(135deg, #a30000 0%, #800000 100%);
+    border-color: #a30000;
+    transform: translateY(-1px);
+}
+
+/* =========================================
+   ADAPTACIÓN PARA MÓVILES
+   ========================================= */
+@media (max-width: 640px) {
+    body { padding: 0; background: #f4f6f8; }
+    .nl-wrap {
+        max-width: 100%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        box-shadow: none;
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+    .nl-header { padding: 28px 16px; border-radius: 0; }
+    .filters-sticky .filters-container { padding: 12px 12px 0 12px; }
+    .filters-sticky .lang-filters { padding: 8px 12px 10px 12px; }
+    #agenda-container { padding: 12px 12px 24px 12px; }
+    .venue-header { padding: 10px 12px; font-size: 13px; }
+    .event-row { padding: 14px 12px; margin: 6px 0; }
+}
+    </style>
+</head>
+<body>
+    <div class="nl-wrap">
+        <div class="nl-header">
+            <h1>Lie Agenda! 🎈</h1>
+            <p>Daily event updates</p>
+        </div>
+        
+        <div id="agenda-container">
+            <!-- Evento azul (Sport) -->
+            <div class="venue-block">
+                <div class="venue-header">
+                    <div class="icon-box">⚽</div>
+                    <span>Today, May 15</span>
+                </div>
+                <div class="event-row theme-blue">
+                    <div class="event-row-main">
+                        <div class="event-content">
+                            <p class="event-title"><span class="event-icon">⚽</span> Football Tournament 2024</p>
+                            <p class="event-desc"><span class="event-time">🕐 14:00h</span><span class="event-loc">Sport Center, Vaduz</span></p>
+                            <span class="event-price">CHF 25.-</span>
+                        </div>
+                        <div class="event-actions">
+                            <a href="#" class="cal-btn">+ Google Cal</a>
+                            <a href="#" class="loc-btn">📍 Maps</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Evento verde (Nature) -->
+                <div class="event-row theme-green">
+                    <div class="event-row-main">
+                        <div class="event-content">
+                            <p class="event-title"><span class="event-icon">🌳</span> Guided Mountain Hike</p>
+                            <p class="event-desc"><span class="event-time">🕐 09:00h</span><span class="event-loc">Malbun, Triesenberg</span></p>
+                            <span class="event-price">Free admission</span>
+                        </div>
+                        <div class="event-actions">
+                            <a href="#" class="cal-btn">+ Google Cal</a>
+                            <a href="#" class="loc-btn">📍 Maps</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Evento rojo (Music) -->
+                <div class="event-row theme-red">
+                    <div class="event-row-main">
+                        <div class="event-content">
+                            <p class="event-title"><span class="event-icon">🎵</span> Summer Music Festival</p>
+                            <p class="event-desc"><span class="event-time">🕐 18:00h</span><span class="event-loc">Town Square, Vaduz</span></p>
+                            <span class="event-price">CHF 40.-</span>
+                        </div>
+                        <div class="event-actions">
+                            <a href="#" class="cal-btn">+ Google Cal</a>
+                            <a href="#" class="loc-btn">📍 Maps</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Evento púrpura (Culture) -->
+                <div class="event-row theme-purple">
+                    <div class="event-row-main">
+                        <div class="event-content">
+                            <p class="event-title"><span class="event-icon">🏛️</span> Art Exhibition Opening</p>
+                            <p class="event-desc"><span class="event-time">🕐 16:00h</span><span class="event-loc">National Museum</span></p>
+                            <span class="event-price">CHF 15.-</span>
+                        </div>
+                        <div class="event-actions">
+                            <a href="#" class="cal-btn">+ Google Cal</a>
+                            <a href="#" class="loc-btn">📍 Maps</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Evento rosa (Leisure) -->
+                <div class="event-row theme-pink">
+                    <div class="event-row-main">
+                        <div class="event-content">
+                            <p class="event-title"><span class="event-icon">🎭</span> Comedy Night Show</p>
+                            <p class="event-desc"><span class="event-time">🕐 20:00h</span><span class="event-loc">Theater am Kirchplatz</span></p>
+                            <span class="event-price">CHF 35.-</span>
+                        </div>
+                        <div class="event-actions">
+                            <a href="#" class="cal-btn">+ Google Cal</a>
+                            <a href="#" class="loc-btn">📍 Maps</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Evento gris (Others) -->
+                <div class="event-row theme-grey">
+                    <div class="event-row-main">
+                        <div class="event-content">
+                            <p class="event-title"><span class="event-icon">📚</span> Book Club Meeting</p>
+                            <p class="event-desc"><span class="event-time">🕐 19:00h</span><span class="event-loc">Public Library</span></p>
+                            <span class="event-price">Free admission</span>
+                        </div>
+                        <div class="event-actions">
+                            <a href="#" class="cal-btn">+ Google Cal</a>
+                            <a href="#" class="loc-btn">📍 Maps</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Evento destacado -->
+                <div class="venue-block">
+                    <div class="venue-header" style="background: linear-gradient(135deg, #D20000 0%, #a30000 100%); color: #ffffff;">
+                        <div class="icon-box" style="background: rgba(255, 255, 255, 0.18); color: #ffffff;">✨</div>
+                        <span>Featured Events</span>
+                    </div>
+                    <div class="event-row special-event">
+                        <div class="event-row-main">
+                            <div class="event-content">
+                                <p class="event-title"><span class="event-icon">⭐</span> Liechtenstein National Day Celebration</p>
+                                <p class="event-desc"><span class="event-time">🕐 10:00h</span><span class="event-loc">Vaduz Castle Grounds</span></p>
+                                <span class="event-price">Free admission</span>
+                            </div>
+                            <div class="event-actions">
+                                <a href="#" class="cal-btn">+ Google Cal</a>
+                                <a href="#" class="loc-btn">📍 Maps</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px; padding: 20px; color: #666;">
+        <p><strong>Preview del nuevo diseño de tarjetas</strong></p>
+        <p>Pasa el ratón sobre las tarjetas para ver los efectos hover</p>
+    </div>
+</body>
+</html>
