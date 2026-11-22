@@ -709,6 +709,11 @@ body {
     .rail-search:focus { outline: 2px solid #185FA5; outline-offset: 0; background: #ffffff; }
 }
 
+@media (min-width: 1200px) {
+    .filters-container { flex-wrap: wrap; overflow-x: visible; }
+    .lang-filters { flex-wrap: wrap; overflow-x: visible; }
+}
+
 @media (max-width: 640px) {
     body {
         padding: 0;
