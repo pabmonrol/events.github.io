@@ -1,6 +1,7 @@
 let allEventsData = []; 
 let specialEventsData = [];
 let agendaIsStale = false;
+let latestEventLabel = "";
 
 function markAgendaFreshness() {
     const dated = [...allEventsData, ...specialEventsData]
@@ -11,6 +12,7 @@ function markAgendaFreshness() {
         return;
     }
     const latest = new Date(Math.max(...dated.map(d => d.getTime())));
+    latestEventLabel = `${weekdays[latest.getDay()]}, ${months[latest.getMonth()]} ${latest.getDate()}`;
     const startOfToday = new Date();
     startOfToday.setHours(0, 0, 0, 0);
     agendaIsStale = latest < startOfToday;
@@ -45,7 +47,9 @@ async function loadAgenda() {
         
         markAgendaFreshness();
         renderEvents('all'); 
-        setupFilterListeners();      
+        setupFilterListeners();
+        const upto = document.getElementById('data-upto');
+        if (upto) upto.textContent = latestEventLabel ? `Agenda data up to ${latestEventLabel}` : '';
     } catch (error) {
         const container = document.getElementById('agenda-container');
         container.innerHTML = `
@@ -353,17 +357,27 @@ function renderEvents(selectedFilter) {
         groupedEvents[groupingKey].push(ev);
     });
 
+    const railDays = [];
     let dayIndex = 0;
     for (const [dayHeaderLabel, dailyEventsList] of Object.entries(groupedEvents)) {
         const isToday = dayIndex === 0;
+        const dayId = dayIndex;
         dayIndex++;
+
+        railDays.push({
+            label: dayHeaderLabel,
+            count: dailyEventsList.length,
+            isToday,
+            hasBlock: selectedFilter.toLowerCase() === 'all' || dailyEventsList.length > 0,
+            id: `agenda-day-${dayId}`
+        });
 
         if (selectedFilter.toLowerCase() !== 'all' && dailyEventsList.length === 0) {
             continue; 
         }
 
         let regularHtml = `
-            <div class="venue-block">
+            <div class="venue-block" id="agenda-day-${dayId}">
                 <div class="venue-header venue-header--day">
                     <div class="icon-box icon-box--day">📅</div>
                     <span>${dayHeaderLabel}</span>${isToday ? ' <span class="today-badge">Today</span>' : ''}
@@ -381,6 +395,28 @@ function renderEvents(selectedFilter) {
         regularHtml += `</div>`;
         container.innerHTML += regularHtml;
     }
+
+    buildWeekRail(railDays);
+}
+
+function buildWeekRail(railDays) {
+    const rail = document.getElementById('week-rail');
+    if (!rail) return;
+    rail.innerHTML = railDays.map((d, i) => {
+        const parts = d.label.split(', ');
+        const shortDay = parts[0].slice(0, 3);
+        const datePart = parts[1] || '';
+        const cls = `rail-day${d.isToday ? ' today' : ''}${d.hasBlock ? '' : ' empty'}`;
+        return `<button type="button" class="${cls}" data-day="${i}"${d.hasBlock ? '' : ' disabled'}>
+            <span>${shortDay}</span><span class="rail-date">${datePart}</span><span class="rail-count">${d.count}</span>
+        </button>`;
+    }).join('');
+    rail.querySelectorAll('.rail-day:not(.empty)').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = document.getElementById(railDays[Number(btn.getAttribute('data-day'))].id);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
 }
 
 function setupFilterListeners() {
