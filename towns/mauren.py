@@ -5,7 +5,7 @@ from backend.classifier import event_classification
 import dateparser
 from backend.model import Event
 from datetime import time, date, timedelta
-from backend.utils import location_url, verificar_fecha_limite, get_price, check_is_senior, check_right_date, translate_text, http_session
+from backend.utils import location_url, verificar_fecha_limite, get_price, check_is_senior, check_right_date, translate_text, fetch_text
 
 
 city = "Mauren"
@@ -63,7 +63,7 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
     for event in events_cont:
         description = ""
 
-        html_evento = http_session.get(event).text
+        html_evento = fetch_text(event)
         sopa_evento = BeautifulSoup(html_evento, 'html.parser')
 
         date_item = sopa_evento.find('li', class_="sidelist__item", attrs={"data-name": "Datum"})
@@ -90,7 +90,7 @@ def _get_list_events(events_cont, hour: time, location: str, google_maps: str, p
         else:
             description = ""
 
-        category, icon, colour = event_classification(" ".join([description, title]))
+        category, icon, colour = event_classification(" ".join([title, description]))
         if category in avoid_categories:
             continue
 
@@ -121,7 +121,7 @@ def scraper_mauren(url: str) -> List[NamedTuple]:
     google_maps = None
     price = None
 
-    web = http_session.get(url + "/agenda").text
+    web = fetch_text(url + "/agenda")
     soup = BeautifulSoup(web, 'html.parser')
     links_events = soup.find_all(class_='agenda__itemlink')
     events = [url + link.get('href') for link in links_events]
@@ -139,7 +139,7 @@ def scraper_mauren(url: str) -> List[NamedTuple]:
 
         next_event_url = url + next_event_path
         
-        web_siguiente = http_session.get(next_event_url).text
+        web_siguiente = fetch_text(next_event_url)
         current_soup = BeautifulSoup(web_siguiente, 'html.parser')
         
         links_nuevos = current_soup.find_all(class_='agenda__itemlink')

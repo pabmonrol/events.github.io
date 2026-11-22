@@ -4,7 +4,7 @@ from datetime import date, timedelta
 from urllib.parse import urljoin, urlparse
 from backend.classifier import event_classification
 import dateparser
-from backend.utils import get_price, get_hour, check_location, check_is_senior, check_right_date, translate_text, http_session
+from backend.utils import get_price, get_hour, check_location, check_is_senior, check_right_date, translate_text, fetch_text
 from backend.model import Event
 
 
@@ -20,7 +20,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = http_session.get(url).text
+    web = fetch_text(url)
     soup = BeautifulSoup(web, 'html.parser')
     events = soup.find_all("div", class_="events-list-entry ccm-block-page-list-page-entry")
 
@@ -39,7 +39,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
             if check_is_senior(title):
                 continue
 
-            category, icon, colour = event_classification(" ".join([description, title]))
+            category, icon, colour = event_classification(" ".join([title, description]))
             if category in avoid_categories:
                 continue
 
@@ -55,7 +55,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
             if hour_text:
                 hour = get_hour(hour_text.text)
         else: 
-            page = http_session.get(event_url).text
+            page = fetch_text(event_url)
             soup_page = BeautifulSoup(page, 'html.parser')
             date_text = soup_page.find(class_="sw-date")
             title_text = soup_page.find(class_="sw-title")
@@ -80,7 +80,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
                 description = translate_text(description_text.text)
                 price = get_price(description)
 
-            category, icon, colour = event_classification(" ".join([description, title]))
+            category, icon, colour = event_classification(" ".join([title, description]))
             if category in avoid_categories:
                 continue                    
 

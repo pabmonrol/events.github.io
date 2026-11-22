@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup, Tag
 import dateparser
 import re
 from datetime import date, timedelta
-from backend.utils import check_right_date, get_hour, check_location, check_is_senior, translate_text, http_session
+from backend.utils import check_right_date, get_hour, check_location, check_is_senior, translate_text, fetch_text
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -38,7 +38,7 @@ def scraper_trissen(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = http_session.get(url).text
+    web = fetch_text(url)
     soup = BeautifulSoup(web, 'html.parser')
     events = soup.find_all(class_="event")
 
@@ -61,7 +61,7 @@ def scraper_trissen(url: str) -> List[NamedTuple]:
             if check_is_senior(title):
                 continue
 
-            category, icon, colour = event_classification(" ".join([description, title]))
+            category, icon, colour = event_classification(" ".join([title, description]))
 
             if category not in avoid_categories:
                 attributes = event.find(class_='attributes')

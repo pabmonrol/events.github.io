@@ -103,7 +103,7 @@ def scraper_triesenberg(url: str) -> List[NamedTuple]:
                         if p_tag:
                             description = translate_text(p_tag.text.strip())
                 
-                category, icon, colour = event_classification(" ".join([description,title]))
+                category, icon, colour = event_classification(" ".join([title, description]))
                 if category in avoid_categories:
                     continue
 

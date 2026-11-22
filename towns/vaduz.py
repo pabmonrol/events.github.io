@@ -2,7 +2,7 @@ from typing import *
 from bs4 import BeautifulSoup, Tag
 import re
 import dateparser
-from backend.utils import check_right_date, get_hour, get_price, location_url, check_is_senior, translate_text, http_session
+from backend.utils import check_right_date, get_hour, get_price, location_url, check_is_senior, translate_text, fetch_text
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -29,7 +29,7 @@ def scraper_vaduz(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = http_session.get(url).text
+    web = fetch_text(url)
     soup = BeautifulSoup(web, 'html.parser')
     links = soup.find_all(class_="small-7 medium-8 large-8 columns col_events_list_text")
 
@@ -41,7 +41,7 @@ def scraper_vaduz(url: str) -> List[NamedTuple]:
             date_ = dateparser.parse(date_match[0], settings={'DATE_ORDER': 'DMY'}).date()
             if not check_right_date(date_):
                 continue
-            page = http_session.get(title_body.get('href')).text
+            page = fetch_text(title_body.get('href'))
             event = BeautifulSoup(page, 'html.parser')
 
             title = translate_text(title_body.text)
@@ -58,7 +58,7 @@ def scraper_vaduz(url: str) -> List[NamedTuple]:
                 price_text = event.find("div", class_="additional-info-wrapper").find_next("p")
                 price = get_price(price_text.text)
 
-            category, icon, colour = event_classification(" ".join([description, title]))
+            category, icon, colour = event_classification(" ".join([title, description]))
             if category in avoid_categories:
                 continue
 

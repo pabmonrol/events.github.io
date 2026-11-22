@@ -5,7 +5,7 @@ from backend.classifier import event_classification
 import dateparser
 from backend.model import Event
 from datetime import datetime, date, timedelta
-from backend.utils import location_url, check_is_senior, check_right_date, translate_text, http_session
+from backend.utils import location_url, check_is_senior, check_right_date, translate_text, fetch_text
 
 INFO = {"hour":'Zeit', "location":'Wo'}
 city = "Ruggell"
@@ -37,7 +37,7 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
     while url and url not in seen:
         seen.add(url)
 
-        web = http_session.get(url).text
+        web = fetch_text(url)
         soup = BeautifulSoup(web, 'html.parser')
         events = soup.find_all(class_='infos')
 
@@ -70,7 +70,7 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
             description = event.find(class_='text').text
             description = translate_text(description)
 
-            category, icon, colour = event_classification(" ".join([description, title]))
+            category, icon, colour = event_classification(" ".join([title, description]))
             if category in avoid_categories:
                 continue
 

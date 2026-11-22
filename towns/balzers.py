@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from datetime import date
 import re
 import dateparser
-from backend.utils import check_right_date, get_hour, check_location, get_price, check_is_senior, translate_text, http_session
+from backend.utils import check_right_date, get_hour, check_location, get_price, check_is_senior, translate_text, fetch_text
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -32,7 +32,7 @@ def scraper_balzers(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = http_session.get(url).text
+    web = fetch_text(url)
     soup = BeautifulSoup(web, 'html.parser')
     links_left = soup.find_all("div", class_="col-24 col-xs-12 col-md-10 col-lg-5 col-md-offset-1 col-lg-offset-1")
     links_right = soup.find_all("div", class_="col-24 col-xs-12 col-md-10 col-lg-5 col-md-offset-1 col-lg-offset-0")
@@ -45,7 +45,7 @@ def scraper_balzers(url: str) -> List[NamedTuple]:
             if not check_right_date(date_):
                 continue
             event_link = link.find("a").get("href")
-            page = http_session.get(event_link).text
+            page = fetch_text(event_link)
             event = BeautifulSoup(page, 'html.parser')
 
             block_info = event.find("div", class_="mdl-container mdl-art-030 bg-weiss mdl030-detail-text-item")
@@ -65,7 +65,7 @@ def scraper_balzers(url: str) -> List[NamedTuple]:
                 description = translate_text(description_joined)
                 price = get_price(description_joined)
 
-            category, icon, colour = event_classification(" ".join([description, title]))
+            category, icon, colour = event_classification(" ".join([title, description]))
             if category in avoid_categories:
                 continue
             hour_page = event.select_one("span.mdl030-uhrzeit.text-schlamm")

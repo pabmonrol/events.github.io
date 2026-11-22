@@ -1,5 +1,5 @@
 from typing import *
-import requests
+from backend.utils import fetch_text
 from bs4 import BeautifulSoup
 
 
@@ -15,7 +15,7 @@ def scraper_planken(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = requests.get(url).text
+    web = fetch_text(url)
     soup = BeautifulSoup(web, 'html.parser')
     events = soup.find_all(class_="sw-list-item")
 

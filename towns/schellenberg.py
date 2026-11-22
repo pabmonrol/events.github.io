@@ -4,7 +4,7 @@ from datetime import date, timedelta
 import dateparser
 from backend.classifier import event_classification
 from backend.model import Event
-from backend.utils import get_hour, check_location, check_is_senior, check_right_date, translate_text, http_session
+from backend.utils import get_hour, check_location, check_is_senior, check_right_date, translate_text, fetch_text
 
 city = "Schellenberg"
 avoid_categories = {"Government", "Religion"}
@@ -18,7 +18,7 @@ def scraper_schellenberg(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = http_session.get(url).text
+    web = fetch_text(url)
     soup = BeautifulSoup(web, 'html.parser')
     events = soup.find_all(class_="eventrow eventslist__row")
 
@@ -38,7 +38,7 @@ def scraper_schellenberg(url: str) -> List[NamedTuple]:
         if check_is_senior(title):
             continue
 
-        category, icon, colour = event_classification(" ".join([description, title]))
+        category, icon, colour = event_classification(" ".join([title, description]))
         if category in avoid_categories:
             continue
 

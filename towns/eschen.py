@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from datetime import date, timedelta
 import dateparser
 from backend.classifier import event_classification
-from backend.utils import check_location, check_is_senior, check_right_date, translate_text, http_session
+from backend.utils import check_location, check_is_senior, check_right_date, translate_text, fetch_text
 from backend.model import Event
 import re
 
@@ -19,12 +19,12 @@ def scraper_eschen(url: str) -> List[NamedTuple]:
     price = None
     description = ""
 
-    web = http_session.get(url).text
+    web = fetch_text(url)
     soup = BeautifulSoup(web, 'html.parser')
     links = soup.find_all(class_="link--underline clickable-parent")
 
     for link in links:
-        page = http_session.get(link.get('href')).text
+        page = fetch_text(link.get('href'))
         event = BeautifulSoup(page, 'html.parser')
 
         title_page = event.select_one("main h1.ct-headline span")
@@ -42,7 +42,7 @@ def scraper_eschen(url: str) -> List[NamedTuple]:
         if not check_right_date(date_):
             continue
             
-        category, icon, colour = event_classification(" ". join([description, title]))
+        category, icon, colour = event_classification(" ".join([title, description]))
         if category not in avoid_categories:
             hour = event.find("b", text=re.compile("Uhrzeit:")).find_next("span").get_text(strip=True)
             location_ = event.find("b", text=re.compile("Ort:")).find_next("span")

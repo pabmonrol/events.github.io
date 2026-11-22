@@ -57,8 +57,13 @@ def event_classification(title: str) -> List[str]:
     doc_evento = nlp(title.lower())
     matches = matcher(doc_evento)
     if matches:
-        match_id, start, end = matches[0]
-        categoria_ganadora = nlp.vocab.strings[match_id]
+        conteo = {}
+        primera_posicion = {}
+        for match_id, start, end in matches:
+            categoria = nlp.vocab.strings[match_id]
+            conteo[categoria] = conteo.get(categoria, 0) + 1
+            primera_posicion.setdefault(categoria, start)
+        categoria_ganadora = max(conteo, key=lambda c: (conteo[c], -primera_posicion[c]))
         return [categoria_ganadora] + TEMATICAS[categoria_ganadora]
 
     if len(doc_evento) == 0 or not doc_evento.has_vector:
