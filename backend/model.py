@@ -10,5 +10,5 @@ Event = NamedTuple('Event', [('community', str),
                             ('time', time),
                             ('location', str),
                             ('google_maps', str),
-                            ('description', int),
+                            ('description', str),
                             ('price', float)])

@@ -1,4 +1,4 @@
-let allEventsData = []; 
+let allEventsData = [];
 let specialEventsData = [];
 let agendaIsStale = false;
 
@@ -18,12 +18,12 @@ function markAgendaFreshness() {
 
 async function loadAgenda() {
     try {
-        const response = await fetch('data/data.json');
-        if (!response.ok) throw new Error(`Could not retrieve data/data.json file`);
+        const response = await fetch("data/data.json");
+        if (!response.ok) throw new Error("Could not retrieve data/data.json file");
         allEventsData = await response.json();
-        
+
         try {
-            const specialResponse = await fetch('data/data_special.json');
+            const specialResponse = await fetch("data/data_special.json");
             if (specialResponse.ok) {
                 specialEventsData = await specialResponse.json();
             }
@@ -32,22 +32,22 @@ async function loadAgenda() {
         }
 
         const allCombined = [...allEventsData, ...specialEventsData];
-        const activeCategories = new Set(allCombined.map(ev => ev.category ? ev.category.toLowerCase() : ''));
-        
-        document.querySelectorAll('.filter-btn').forEach(button => {
-            const filterValue = button.getAttribute('data-filter');
-            if (filterValue !== 'all' && !activeCategories.has(filterValue.toLowerCase())) {
-                button.style.display = 'none';
+        const activeCategories = new Set(allCombined.map(ev => ev.category ? ev.category.toLowerCase() : ""));
+
+        document.querySelectorAll(".filter-btn").forEach(button => {
+            const filterValue = button.getAttribute("data-filter");
+            if (filterValue !== "all" && !activeCategories.has(filterValue.toLowerCase())) {
+                button.style.display = "none";
             } else {
-                button.style.display = ''; 
+                button.style.display = "";
             }
         });
-        
+
         markAgendaFreshness();
-        renderEvents('all'); 
-        setupFilterListeners();      
+        renderEvents("all");
+        setupFilterListeners();
     } catch (error) {
-        const container = document.getElementById('agenda-container');
+        const container = document.getElementById("agenda-container");
         container.innerHTML = `
             <div style="background: #ffebe9; border: 2px dashed #ff8182; border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 20px;">
                 <h3 style="color: #cf222e; margin-top: 0;">🚨 Error loading agenda</h3>
@@ -159,92 +159,88 @@ function setupLangFilters() {
     });
 }
 
-
 function parseEventDate(dateString, timeString) {
     if (!dateString) return new Date(0);
     const timePart = timeString || "00:00";
-    const [year, month, day] = dateString.split('-');
-    const [hours, minutes] = timePart.split(':');
+    const [year, month, day] = dateString.split("-");
+    const [hours, minutes] = timePart.split(":");
     return new Date(year, month - 1, day, hours, minutes);
 }
 
+function calendarTimeBounds(timeString) {
+    const start = timeString.replace(/:/g, "").substring(0, 4) + "00";
+    const [h, m] = timeString.split(":").map(Number);
+    const end = ((h + 1) % 24).toString().padStart(2, "0") + m.toString().padStart(2, "0") + "00";
+    return { start, end };
+}
+
+function buildCalendarLink(eventItem, cleanDateString, title, description, location) {
+    const isAppleDevice = /Mac|iPod|iPhone|iPad/.test(navigator.platform) || /Macintosh|iPhone|iPad|iPod/.test(navigator.userAgent);
+
+    if (isAppleDevice) {
+        let icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:${title}\n`;
+        if (eventItem.time) {
+            const bounds = calendarTimeBounds(eventItem.time);
+            icsContent += `DTSTART:${cleanDateString}T${bounds.start}\n`;
+            icsContent += `DTEND:${cleanDateString}T${bounds.end}\n`;
+        } else {
+            icsContent += `DTSTART;VALUE=DATE:${cleanDateString}\n`;
+        }
+        icsContent += `LOCATION:${location}\n`;
+        icsContent += `DESCRIPTION:${description.replace(/\n/g, "\\n")}\n`;
+        icsContent += `END:VEVENT\nEND:VCALENDAR`;
+        const ics = icsContent.replace(/\n/g, "\r\n");
+        return { url: `data:text/calendar;charset=utf8,${encodeURIComponent(ics)}`, label: "+ Apple Cal" };
+    }
+
+    let timeSuffix = "T000000/T235959";
+    if (eventItem.time) {
+        const bounds = calendarTimeBounds(eventItem.time);
+        timeSuffix = `T${bounds.start}/T${bounds.end}`;
+    }
+    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${cleanDateString}${timeSuffix}&details=${encodeURIComponent(description)}&location=${encodeURIComponent(location)}`;
+    return { url, label: "+ Google Cal" };
+}
+
 function generateEventRowHTML(eventItem, isSpecial = false) {
-    let priceLabel = "";
-    const isRuggell = (eventItem.comunity && eventItem.comunity.toLowerCase().includes('ruggell')) || 
-                    (eventItem.location && eventItem.location.toLowerCase().includes('ruggell')) ||
-                    (eventItem.comunity && eventItem.comunity.toLowerCase().includes('schellenberg')) ||
-                    (eventItem.location && eventItem.location.toLowerCase().includes('schellenberg')) ||
-                    (eventItem.comunity && eventItem.comunity.toLowerCase().includes('triesen')) ||
-                    (eventItem.location && eventItem.location.toLowerCase().includes('triesen'));
-    if (isRuggell) {
+    const town = (eventItem.community || "").toLowerCase();
+    const place = (eventItem.location || "").toLowerCase();
+    const priceNotSpecified = ["ruggell", "schellenberg", "triesen"].some(name => town.includes(name) || place.includes(name));
+
+    let priceLabel;
+    if (priceNotSpecified) {
         priceLabel = "Not specified";
     } else {
         priceLabel = (eventItem.price === null || eventItem.price === 0) ? "Free admission" : `CHF ${eventItem.price}.-`;
     }
-    const colorThemeClass = eventItem.colour || 'blue';
-    const cleanDateString = eventItem.date ? eventItem.date.replace(/-/g, '') : '';
+
+    const colorThemeClass = eventItem.colour || "blue";
+    const cleanDateString = eventItem.date ? eventItem.date.replace(/-/g, "") : "";
     const calendarLocation = locationWithTown(eventItem, "");
     const visibleLocation = locationWithTown(eventItem, "Location not specified");
     const calendarTitle = plainField(eventItem.title);
     const calendarDescription = plainField(eventItem.description);
     const titleHtml = htmlField(eventItem.title);
     const descriptionHtml = htmlField(eventItem.description);
-
-    const isAppleDevice = /Mac|iPod|iPhone|iPad/.test(navigator.platform) || /Macintosh|iPhone|iPad|iPod/.test(navigator.userAgent);
-    
-    let finalCalendarUrl = "";
-    let calendarButtonText = "+ Calendar";
-
-    if (isAppleDevice) {
-        calendarButtonText = "+ Apple Cal";
-        let icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:${calendarTitle}\n`;
-        
-        if (eventItem.time) {
-            const startHours = eventItem.time.replace(/:/g, '').substring(0, 4) + "00"; 
-            const [h, m] = eventItem.time.split(':').map(Number);
-            const endHours = ((h + 1) % 24).toString().padStart(2, '0') + m.toString().padStart(2, '0') + "00";
-            icsContent += `DTSTART:${cleanDateString}T${startHours}\n`;
-            icsContent += `DTEND:${cleanDateString}T${endHours}\n`;
-        } else {
-            icsContent += `DTSTART;VALUE=DATE:${cleanDateString}\n`;
-        }
-        
-        icsContent += `LOCATION:${calendarLocation}\n`;
-        const cleanDesc = calendarDescription.replace(/\n/g, '\\n');
-        icsContent += `DESCRIPTION:${cleanDesc}\n`;
-        icsContent += `END:VEVENT\nEND:VCALENDAR`;
-        
-        icsContent = icsContent.replace(/\n/g, '\r\n');
-        finalCalendarUrl = `data:text/calendar;charset=utf8,${encodeURIComponent(icsContent)}`;
-    } else {
-        calendarButtonText = "+ Google Cal";
-        let timeSuffix = "T000000/T235959"; 
-        if (eventItem.time) {
-            const startHours = eventItem.time.replace(/:/g, '').substring(0, 4) + "00"; 
-            const [h, m] = eventItem.time.split(':').map(Number);
-            const endHours = ((h + 1) % 24).toString().padStart(2, '0') + m.toString().padStart(2, '0') + "00";
-            timeSuffix = `T${startHours}/T${endHours}`;
-        }
-        finalCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(calendarTitle)}&dates=${cleanDateString}${timeSuffix}&details=${encodeURIComponent(calendarDescription)}&location=${encodeURIComponent(calendarLocation)}`;
-    }
-    const specialClass = isSpecial ? 'special-event' : '';
+    const calendar = buildCalendarLink(eventItem, cleanDateString, calendarTitle, calendarDescription, calendarLocation);
+    const specialClass = isSpecial ? "special-event" : "";
 
     return `
         <div class="event-row theme-${colorThemeClass} ${specialClass}">
             <div class="event-row-main">
                 <div class="event-content">
-                    <p class="event-title"><span class="event-icon">${eventItem.icon || '📍'}</span> ${titleHtml}</p>
+                    <p class="event-title"><span class="event-icon">${eventItem.icon || "📍"}</span> ${titleHtml}</p>
                     <p class="event-desc"><strong>${eventItem.displayTime}</strong> · ${escapeHtml(visibleLocation)}</p>
                     <span class="event-price">${priceLabel}</span>
                 </div>
                 <div class="event-actions">
-                    <a href="${finalCalendarUrl}" class="cal-btn" target="_blank">+ Calendar</a>
-                    ${eventItem.google_maps ? `<a href="${eventItem.google_maps}" class="loc-btn" target="_blank">📍 Maps</a>` : ''}
+                    <a href="${calendar.url}" class="cal-btn" target="_blank">${calendar.label}</a>
+                    ${eventItem.google_maps ? `<a href="${eventItem.google_maps}" class="loc-btn" target="_blank">📍 Maps</a>` : ""}
                     ${descriptionHtml ? `
                         <button class="info-btn" onclick="toggleDetail(this)">
                             More info <i class="info-arrow">▾</i>
                         </button>
-                    ` : ''}
+                    ` : ""}
                 </div>
             </div>
             ${descriptionHtml ? `
@@ -253,58 +249,55 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
                         ${descriptionHtml}
                     </div>
                 </div>
-            ` : ''}
+            ` : ""}
+        </div>`;
+}
+
+function venueBlockHtml(headerColor, iconColor, icon, label, bodyHtml) {
+    return `
+        <div class="venue-block">
+            <div class="venue-header" style="background-color: ${headerColor}; color: #ffffff; border-bottom: none;">
+                <div class="icon-box" style="background-color: ${iconColor}; color: #ffffff;">${icon}</div>
+                <span>${label}</span>
+            </div>
+            ${bodyHtml}
         </div>`;
 }
 
 function renderEvents(selectedFilter) {
-    const container = document.getElementById('agenda-container');
-    container.innerHTML = '';
+    const container = document.getElementById("agenda-container");
+    const htmlParts = [];
 
     if (agendaIsStale) {
-        container.innerHTML = `
+        htmlParts.push(`
             <div style="background: #fff8c5; border: 2px dashed #d4a72c; border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 20px;">
                 <h3 style="color: #9a6700; margin-top: 0;">Agenda data is out of date</h3>
                 <p style="color: #24292f; margin-bottom: 0;">The newest saved event is before today, so this week looks empty.</p>
             </div>
-        `;
-    } 
+        `);
+    }
 
-    let filteredEvents = allEventsData.filter(ev => selectedFilter === 'all' || (ev.category && ev.category.toLowerCase() === selectedFilter.toLowerCase()));
-    let filteredSpecial = selectedFilter === 'all' ? specialEventsData : [];
+    let filteredEvents = allEventsData.filter(ev => selectedFilter === "all" || (ev.category && ev.category.toLowerCase() === selectedFilter.toLowerCase()));
+    const filteredSpecial = selectedFilter === "all" ? specialEventsData : [];
 
     if (filteredEvents.length === 0 && filteredSpecial.length === 0) {
         container.innerHTML = `<p style="text-align:center; padding: 40px; color: #666; font-size: 14px;">No events available in this category.</p>`;
         return;
     }
- 
+
     if (filteredSpecial.length > 0) {
         filteredSpecial.sort((a, b) => parseEventDate(a.date, a.time) - parseEventDate(b.date, b.time));
-        
-        let specialHtml = `
-            <div class="venue-block">
-                <div class="venue-header" style="background-color: #D20000; color: #ffffff; border-bottom: none;">
-                    <div class="icon-box" style="background-color: #a30000; color: #ffffff;">⭐</div>
-                    <span>Featured Events</span>
-                </div>
-        `;
-        
+
+        let specialBody = "";
         filteredSpecial.forEach(ev => {
             const d = parseEventDate(ev.date, ev.time);
-            
-            let cleanTime = null;
-            if (ev.time) {
-                cleanTime = ev.time.substring(0, 5);
-            }
+            const cleanTime = ev.time ? ev.time.substring(0, 5) : null;
             const timeStr = cleanTime ? `${cleanTime}h` : "Time unconfirmed";
-            
             ev.displayTime = isNaN(d.getTime()) ? timeStr : `${months[d.getMonth()]} ${d.getDate()} · ${timeStr}`;
-            
-            specialHtml += generateEventRowHTML(ev, true);
+            specialBody += generateEventRowHTML(ev, true);
         });
-        
-        specialHtml += `</div>`;
-        container.innerHTML += specialHtml;
+
+        htmlParts.push(venueBlockHtml("#D20000", "#a30000", "⭐", "Featured Events", specialBody));
     }
 
     const today = new Date();
@@ -315,11 +308,11 @@ function renderEvents(selectedFilter) {
         dateRange.push(date);
     }
 
-    const vistos = new Set();
+    const seen = new Set();
     filteredEvents = filteredEvents.filter(ev => {
-        const idUnico = `${englishField(ev.title)}-${ev.date}-${ev.community || ""}`;
-        if (vistos.has(idUnico)) return false;
-        vistos.add(idUnico);
+        const uniqueId = `${englishField(ev.title)}-${ev.date}-${ev.community || ""}`;
+        if (seen.has(uniqueId)) return false;
+        seen.add(uniqueId);
         return true;
     });
 
@@ -327,71 +320,63 @@ function renderEvents(selectedFilter) {
 
     const groupedEvents = {};
     dateRange.forEach(date => {
-        const weekdayName = weekdays[date.getDay()];
-        const dayNumber = date.getDate().toString().padStart(2, '0');
-        const monthName = months[date.getMonth()];
-        const groupingKey = `${weekdayName}, ${monthName} ${dayNumber}`;
+        const groupingKey = `${weekdays[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate().toString().padStart(2, "0")}`;
         groupedEvents[groupingKey] = [];
     });
 
     filteredEvents.forEach(ev => {
-        const parsedDateObj = parseEventDate(ev.date, ev.time);
-        const weekdayName = isNaN(parsedDateObj.getTime()) ? "" : weekdays[parsedDateObj.getDay()];
-        const dayNumber = isNaN(parsedDateObj.getTime()) ? "??" : parsedDateObj.getDate().toString().padStart(2, '0');
-        const monthName = isNaN(parsedDateObj.getTime()) ? "??" : months[parsedDateObj.getMonth()];
-        
+        const parsedDate = parseEventDate(ev.date, ev.time);
+        const validDate = !isNaN(parsedDate.getTime());
+        const weekdayName = validDate ? weekdays[parsedDate.getDay()] : "";
+        const dayNumber = validDate ? parsedDate.getDate().toString().padStart(2, "0") : "??";
+        const monthName = validDate ? months[parsedDate.getMonth()] : "??";
         const groupingKey = weekdayName ? `${weekdayName}, ${monthName} ${dayNumber}` : "Date to be determined";
 
         if (!groupedEvents[groupingKey]) return;
-        
-        let cleanTime = null;
-        if (ev.time) {
-            cleanTime = ev.time.substring(0, 5);
-        }
-        ev.displayTime = cleanTime ? `${cleanTime}h` : "Time unconfirmed"; 
-        
+
+        const cleanTime = ev.time ? ev.time.substring(0, 5) : null;
+        ev.displayTime = cleanTime ? `${cleanTime}h` : "Time unconfirmed";
+
         groupedEvents[groupingKey].push(ev);
     });
 
     for (const [dayHeaderLabel, dailyEventsList] of Object.entries(groupedEvents)) {
-        
-        if (selectedFilter.toLowerCase() !== 'all' && dailyEventsList.length === 0) {
-            continue; 
+        if (selectedFilter.toLowerCase() !== "all" && dailyEventsList.length === 0) {
+            continue;
         }
 
-        let regularHtml = `
-            <div class="venue-block">
-                <div class="venue-header" style="background-color: #24292f; color: #ffffff; border-bottom: none;">
-                    <div class="icon-box" style="background-color: #3b4046; color: #ffffff;">📅</div>
-                    <span>${dayHeaderLabel}</span>
-                </div>
-        `;
-        
+        let dayBody;
         if (dailyEventsList.length === 0) {
-            regularHtml += `<p style="padding: 16px; color: #666; font-size: 14px; text-align: center; margin: 0;">No events scheduled</p>`;
+            dayBody = `<p style="padding: 16px; color: #666; font-size: 14px; text-align: center; margin: 0;">No events scheduled</p>`;
         } else {
-            dailyEventsList.forEach(ev => {
-                regularHtml += generateEventRowHTML(ev);
-            });
+            dayBody = dailyEventsList.map(ev => generateEventRowHTML(ev)).join("");
         }
-        
-        regularHtml += `</div>`;
-        container.innerHTML += regularHtml;
+
+        htmlParts.push(venueBlockHtml("#24292f", "#3b4046", "📅", dayHeaderLabel, dayBody));
     }
+
+    container.innerHTML = htmlParts.join("");
 }
 
 function setupFilterListeners() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(buttonElement => {
-        buttonElement.addEventListener('click', (clickEvent) => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            const clickedTarget = clickEvent.currentTarget;
-            clickedTarget.classList.add('active');
-            
-            const activeFilterQuery = clickedTarget.getAttribute('data-filter');
-            renderEvents(activeFilterQuery);
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    filterButtons.forEach(button => {
+        button.addEventListener("click", (clickEvent) => {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            clickEvent.currentTarget.classList.add("active");
+            renderEvents(clickEvent.currentTarget.getAttribute("data-filter"));
         });
     });
+}
+
+function toggleDetail(btn) {
+    const row = btn.closest(".event-row");
+    const panel = row.querySelector(".event-detail-panel");
+    const isOpen = panel.classList.contains("open");
+
+    panel.classList.toggle("open", !isOpen);
+    btn.classList.toggle("expanded", !isOpen);
+    btn.querySelector(".info-arrow").textContent = isOpen ? "▾" : "▴";
 }
 
 setupLangFilters();
