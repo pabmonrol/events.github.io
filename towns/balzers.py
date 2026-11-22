@@ -1,4 +1,4 @@
-from typing import *
+from typing import List, NamedTuple
 from bs4 import BeautifulSoup
 from datetime import date
 import re
@@ -11,85 +11,82 @@ from backend.model import Event
 city = "Balzers"
 avoid_categories = {"Government", "Religion"}
 
-def _clean_date_balzers(cadena: str) -> date:
-    match = re.search(r"(\d{1,2}\.\s*–\s*\d{1,2}\.\s*[a-zA-ZÁ-ÿ]+\s*\d{4})", cadena)
+
+def _clean_date(text: str) -> date:
+    match = re.search(r"(\d{1,2}\.\s*–\s*\d{1,2}\.\s*[a-zA-ZÁ-ÿ]+\s*\d{4})", text)
     if match:
-        fecha_limpia = re.sub(r"\.\s*–.*", ".", match.group(1))
+        clean_date = re.sub(r"\.\s*–.*", ".", match.group(1))
     else:
-        match = re.search(r"(\d{1,2}\.\s*[a-zA-ZÁ-ÿ]+\s*\d{4})", cadena)
-        fecha_limpia = match.group(1)
-    date_ = dateparser.parse(fecha_limpia, languages=["de"]).date()
-    
-    return date_
+        match = re.search(r"(\d{1,2}\.\s*[a-zA-ZÁ-ÿ]+\s*\d{4})", text)
+        clean_date = match.group(1)
+    return dateparser.parse(clean_date, languages=["de"]).date()
 
 
 def scraper_balzers(url: str) -> List[NamedTuple]:
     res = []
 
-    hour = None
-    location = city
-    google_maps = None
-    price = None
-    description = ""
-
     web = http_session.get(url).text
-    soup = BeautifulSoup(web, 'html.parser')
-    links_left = soup.find_all("div", class_="col-24 col-xs-12 col-md-10 col-lg-5 col-md-offset-1 col-lg-offset-1")
-    links_right = soup.find_all("div", class_="col-24 col-xs-12 col-md-10 col-lg-5 col-md-offset-1 col-lg-offset-0")
-    links = links_left, links_right
+    soup = BeautifulSoup(web, "html.parser")
+    columns = (
+        soup.find_all("div", class_="col-24 col-xs-12 col-md-10 col-lg-5 col-md-offset-1 col-lg-offset-1"),
+        soup.find_all("div", class_="col-24 col-xs-12 col-md-10 col-lg-5 col-md-offset-1 col-lg-offset-0"),
+    )
 
-    for link_item in links:
-        for link in link_item:
+    for column in columns:
+        for link in column:
+            hour = None
+            location = city
+            google_maps = None
+            price = None
+            description = ""
+
             date_text = link.find_next("div", class_="mdl030-list-item cell-1 mdl030-datum").text
-            date_ = _clean_date_balzers(date_text)
+            date_ = _clean_date(date_text)
             if not check_right_date(date_):
                 continue
+
             event_link = link.find("a").get("href")
             page = http_session.get(event_link).text
-            event = BeautifulSoup(page, 'html.parser')
+            event = BeautifulSoup(page, "html.parser")
 
             block_info = event.find("div", class_="mdl-container mdl-art-030 bg-weiss mdl030-detail-text-item")
             title_page = block_info.find("h1")
             if not title_page:
                 continue
+
             title = translate_text(title_page.text)
             if check_is_senior(title):
                 continue
 
-            infos = event.find("div", class_="col-24 col-xs-12 col-md-6 col-lg-5 col-lg-offset-1").find("div", 
-                                                                                                        class_="left__panel").find("div",
-                                                                                                                                   class_="mdl-container")
+            infos = event.find("div", class_="col-24 col-xs-12 col-md-6 col-lg-5 col-lg-offset-1").find("div", class_="left__panel").find("div", class_="mdl-container")
             if infos:
-                description_text = infos.find_all("p")
-                description_joined = "\n".join([d.text.strip() for d in description_text])
+                description_texts = infos.find_all("p")
+                description_joined = "\n".join(d.text.strip() for d in description_texts)
                 description = translate_text(description_joined)
                 price = get_price(description_joined)
 
             category, icon, colour = event_classification(" ".join([description, title]))
             if category in avoid_categories:
                 continue
+
             hour_page = event.select_one("span.mdl030-uhrzeit.text-schlamm")
             hour_text = hour_page.get_text(" ", strip=True) if hour_page else ""
-            hour_text_list = re.findall(r"(\d{1,2}[:.]\d{2})", hour_text)
-            hour = get_hour(hour_text_list[0]) if hour_text_list else None
+            hour_list = re.findall(r"(\d{1,2}[:.]\d{2})", hour_text)
+            if hour_list:
+                hour = get_hour(hour_list[0])
 
-            location_ = event.find("div", class_="padding-klein text-small bg-weiss text-dunkelblau").find("p")
-            location, google_maps = check_location(location_, city)
+            location_tag = event.find("div", class_="padding-klein text-small bg-weiss text-dunkelblau").find("p")
+            location, google_maps = check_location(location_tag, city)
 
             res.append(Event(community=city,
-                                            title=title,
-                                            icon=icon,
-                                            colour=colour,
-                                            category=category,
-                                            date=date_,
-                                            time=hour,
-                                            location=location,
-                                            google_maps=google_maps,
-                                            description=description,
-                                            price=price
-                                            ))
+                             title=title,
+                             icon=icon,
+                             colour=colour,
+                             category=category,
+                             date=date_,
+                             time=hour,
+                             location=location,
+                             google_maps=google_maps,
+                             description=description,
+                             price=price))
     return res
-
-
-
-        

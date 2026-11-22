@@ -1,59 +1,42 @@
-from bs4 import BeautifulSoup, Tag
-import re
-from typing import NamedTuple, List, Set
-from backend.classifier import event_classification
-import dateparser
-from backend.model import Event
+from bs4 import BeautifulSoup
+from typing import NamedTuple, List
 from datetime import datetime, date, timedelta
-from backend.utils import location_url, check_is_senior, check_right_date, translate_text, http_session
+import dateparser
+from backend.classifier import event_classification
+from backend.model import Event
+from backend.utils import location_url, check_is_senior, check_right_date, translate_text, http_session, clean_detail, DETAIL_LABELS
 
-INFO = {"hour":'Zeit', "location":'Wo'}
+
 city = "Ruggell"
 avoid_categories = {"Government", "Religion"}
 
-today = date.today()
-final_date = today + timedelta(days=6)
-
-def _clean_detail(attributes: Tag, info: str) -> str | None:
-    for b in attributes.find_all('b'):
-        texto_al_lado = b.next_sibling
-
-        if info in b.text and info == INFO.get("hour"):
-            if texto_al_lado:
-                match = re.search(r'\d{1,2}\.\d{2}', texto_al_lado)
-                if match:
-                    return match.group()
-                    
-        elif info in b.text and info == INFO.get("location"):
-            return texto_al_lado.strip() if texto_al_lado else None
-            
-    # Si termina el bucle y no entró en ningún 'if', devuelve None
-    return None
 
 def scraper_ruggell(url: str) -> List[NamedTuple]:
     res = []
     seen = set()
 
+    final_date = date.today() + timedelta(days=6)
+
     while url and url not in seen:
         seen.add(url)
 
         web = http_session.get(url).text
-        soup = BeautifulSoup(web, 'html.parser')
-        events = soup.find_all(class_='infos')
+        soup = BeautifulSoup(web, "html.parser")
+        events = soup.find_all(class_="infos")
 
-        hour = None
-        location = city
-        google_maps = None
-        price = None
         reached_limit = False
 
         for event in events:
+            hour = None
+            location = city
+            google_maps = None
+            price = None
             description = None
 
-            if not event.find(class_='date') or not event.find(class_='title'):
+            if not event.find(class_="date") or not event.find(class_="title"):
                 continue
 
-            parsed = dateparser.parse(event.find(class_='date').text)
+            parsed = dateparser.parse(event.find(class_="date").text)
             if parsed is None:
                 continue
             date_ = parsed.date()
@@ -62,46 +45,43 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
             if not check_right_date(date_):
                 continue
 
-            title = translate_text(event.find(class_='title').text)
-
+            title = translate_text(event.find(class_="title").text)
             if check_is_senior(title):
                 continue
 
-            description = event.find(class_='text').text
-            description = translate_text(description)
+            description = translate_text(event.find(class_="text").text)
 
             category, icon, colour = event_classification(" ".join([description, title]))
             if category in avoid_categories:
                 continue
 
-            attributes = event.find(class_='attributes')
+            attributes = event.find(class_="attributes")
             if attributes:
-                hour_text = _clean_detail(attributes, INFO.get("hour"))
-                location_text = _clean_detail(attributes, INFO.get("location"))
+                hour_text = clean_detail(attributes, DETAIL_LABELS["hour"])
+                location_text = clean_detail(attributes, DETAIL_LABELS["location"])
                 if hour_text:
                     hour = datetime.strptime(hour_text, "%H.%M").time()
                 if location_text:
                     location = str(location_text).strip()
                     google_maps = location_url(location_text)
-            ev = Event(community=city,
-                            title=title,
-                            icon=icon,
-                            colour=colour,
-                            category=category,
-                            date=date_,
-                            time=hour,
-                            location=location,
-                            google_maps=google_maps,
-                            description=description,
-                            price=price
-                            )
-            res.append(ev)
+
+            res.append(Event(community=city,
+                             title=title,
+                             icon=icon,
+                             colour=colour,
+                             category=category,
+                             date=date_,
+                             time=hour,
+                             location=location,
+                             google_maps=google_maps,
+                             description=description,
+                             price=price))
 
         if reached_limit:
             break
 
-        next_month_btn = soup.find('a', class_='arrow-right', id='content_aR')
-        if next_month_btn is None or not next_month_btn.get('href'):
+        next_month_btn = soup.find("a", class_="arrow-right", id="content_aR")
+        if next_month_btn is None or not next_month_btn.get("href"):
             break
         url = f"https://www.ruggell.li{next_month_btn.get('href')}"
 

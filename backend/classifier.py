@@ -40,7 +40,7 @@ matcher.add("Sport", [
 ])
 
 
-TEMATICAS = {"Culture": ["🧩", "purple"],
+CATEGORY_STYLES = {"Culture": ["🧩", "purple"],
              "Music": ["🎵", "blue"],
              "Government": ["📎", "brown"],
              "Leisure": ["🪇", "pink"],
@@ -48,43 +48,42 @@ TEMATICAS = {"Culture": ["🧩", "purple"],
              "Nature": ["🌱", "green"],
              "Sport": ["⚽️", "red"]}
 
-OTHER = ["Others", "#️⃣", "grey"]
+OTHER_STYLE = ["Others", "#️⃣", "grey"]
 
-CATEGORY_DOCS = [(name, nlp(name.lower())) for name in TEMATICAS]
+CATEGORY_DOCS = [(name, nlp(name.lower())) for name in CATEGORY_STYLES]
 
 
 def event_classification(title: str) -> List[str]:
-    doc_evento = nlp(title.lower())
-    matches = matcher(doc_evento)
+    event_doc = nlp(title.lower())
+    matches = matcher(event_doc)
     if matches:
         match_id, start, end = matches[0]
-        categoria_ganadora = nlp.vocab.strings[match_id]
-        return [categoria_ganadora] + TEMATICAS[categoria_ganadora]
+        winner = nlp.vocab.strings[match_id]
+        return [winner] + CATEGORY_STYLES[winner]
 
-    if len(doc_evento) == 0 or not doc_evento.has_vector:
-        return OTHER
-    
-    palabras_esenciales = [
-        token.text for token in doc_evento 
-        if token.pos_ in ('NOUN', 'PROPN', 'VERB', 'ADJ') and not token.is_stop
+    if len(event_doc) == 0 or not event_doc.has_vector:
+        return OTHER_STYLE
+
+    keywords = [
+        token.text for token in event_doc
+        if token.pos_ in ("NOUN", "PROPN", "VERB", "ADJ") and not token.is_stop
     ]
-    
-    if not palabras_esenciales:
-        return OTHER
-        
-    doc_filtrado = nlp(" ".join(palabras_esenciales))
-    
-    categoria_ganadora = "Others"
-    mayor_similitud = 0.1
-    
-    for cat_ingles, doc_categoria in CATEGORY_DOCS:
-        similitud = doc_filtrado.similarity(doc_categoria)
-        
-        if similitud > mayor_similitud:
-            mayor_similitud = similitud
-            categoria_ganadora = cat_ingles
 
-    if categoria_ganadora == "Others":
-        return OTHER
-    
-    return [categoria_ganadora] + TEMATICAS[categoria_ganadora]
+    if not keywords:
+        return OTHER_STYLE
+
+    filtered_doc = nlp(" ".join(keywords))
+
+    winner = "Others"
+    best_similarity = 0.1
+
+    for category_name, category_doc in CATEGORY_DOCS:
+        similarity = filtered_doc.similarity(category_doc)
+        if similarity > best_similarity:
+            best_similarity = similarity
+            winner = category_name
+
+    if winner == "Others":
+        return OTHER_STYLE
+
+    return [winner] + CATEGORY_STYLES[winner]

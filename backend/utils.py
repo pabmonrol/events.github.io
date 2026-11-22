@@ -167,14 +167,8 @@ def translate_text(value) -> str:
         return TranslatedText(original, {"de": original, "en": original})
 
 def location_url(location: str) -> str:
-    base_url = "https://www.google.com/maps/search/?"
-    parametros = {
-        "api": "1",
-        "query": location
-    }
-    query_string = parse.urlencode(parametros)
-
-    return base_url + query_string
+    params = {"api": "1", "query": location}
+    return "https://www.google.com/maps/search/?" + parse.urlencode(params)
 
 def ensure_town(location, community) -> str:
     loc = _as_text(location)
@@ -209,39 +203,35 @@ def events_to_json(events_list: List[NamedTuple]) -> str:
             return obj.isoformat()
         if isinstance(obj, time):
             return obj.strftime("%H:%M")
-        raise TypeError(f"Tipo {type(obj)} no es serializable en JSON")
+        raise TypeError(f"Type {type(obj)} is not JSON serializable")
 
-    lista_diccionarios = []
-    for evento in events_list:
-        record = evento._asdict()
+    records = []
+    for event in events_list:
+        record = event._asdict()
         record["title"] = _export_text(record.get("title"))
         record["description"] = _export_text(record.get("description"))
         if record.get("community"):
             record["location"] = ensure_town(record.get("location"), record.get("community"))
             record["google_maps"] = location_url(record["location"])
-        lista_diccionarios.append(record)
+        records.append(record)
 
-    return json.dumps(lista_diccionarios, default=json_serial, indent=4, ensure_ascii=False)
+    return json.dumps(records, default=json_serial, indent=4, ensure_ascii=False)
 
-def filter_next_7_days(events_list: List[NamedTuple]) -> List[NamedTuple]:    
-    hoy = date.today()
-    fecha_inicio = hoy 
-    fecha_fin = hoy + timedelta(days=6)   
-    
-    eventos_filtrados = [
-        evento for evento in events_list
-        if fecha_inicio <= evento.date <= fecha_fin
-    ]
-    
-    return eventos_filtrados
+def filter_next_7_days(events_list: List[NamedTuple]) -> List[NamedTuple]:
+    today = date.today()
+    start_date = today
+    end_date = today + timedelta(days=6)
 
-def verificar_fecha_limite(lista_tuplas: List[NamedTuple]) -> bool:
-    if not lista_tuplas:
+    return [event for event in events_list if start_date <= event.date <= end_date]
+
+
+def reached_date_limit(events_list: List[NamedTuple]) -> bool:
+    if not events_list:
         return False
-    
-    fecha_limite = date.today() + timedelta(days=6)
 
-    return any(evento.date >= fecha_limite for evento in lista_tuplas)
+    date_limit = date.today() + timedelta(days=6)
+
+    return any(event.date >= date_limit for event in events_list)
 
 def get_price(description: str)->float:
     if not description:
@@ -259,25 +249,41 @@ def get_price(description: str)->float:
 
 def get_hour(hour_text: str) -> time:
     match = re.search(r"\d{1,2}[:.]\d{2}", hour_text)
+    if not match:
+        return None
     first_hour = match.group().replace(".", ":")
     return datetime.strptime(first_hour, "%H:%M").time()
 
-def check_location(location_text: Tag, city: str) -> Tuple[str]:
-    location = city
-    if location_text:
-        location = location_text.get_text(strip=True)
-        google_maps = location_url(location + ", " + city)
-        location = location.replace("\n", "").strip() + ", " + city
-    else:
-        google_maps = location_url(city)
-        
-    return location, google_maps
 
-def check_right_date(date_: date) -> bool:
+DETAIL_LABELS = {"hour": "Zeit", "location": "Wo"}
+
+
+def clean_detail(attributes: Tag, label: str) -> str | None:
+    for bold in attributes.find_all("b"):
+        if label not in bold.text:
+            continue
+        sibling = bold.next_sibling
+        if label == DETAIL_LABELS["hour"]:
+            if sibling:
+                match = re.search(r"\d{1,2}\.\d{2}", sibling)
+                if match:
+                    return match.group()
+        else:
+            return sibling.strip() if sibling else None
+    return None
+
+
+def check_location(location_text, city: str) -> Tuple[str, str]:
+    raw = _as_text(location_text)
+    if not raw:
+        return city, location_url(city)
+    location = raw.replace("\n", "").strip() + ", " + city
+    return location, location_url(raw + ", " + city)
+
+
+def check_right_date(event_date: date) -> bool:
     today = date.today()
-    final_date = today + timedelta(days=6)
-    
-    return today <= date_ <= final_date
+    return today <= event_date <= today + timedelta(days=6)
 
 def check_is_senior(title: str) -> bool:
     return "senior" in title.lower() or "seniors" in title.lower()
