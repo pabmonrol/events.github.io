@@ -50,6 +50,8 @@ TEMATICAS = {"Culture": ["🧩", "purple"],
 
 OTHER = ["Others", "#️⃣", "grey"]
 
+AVOID_CATEGORIES = {"Government", "Religion"}
+
 CATEGORY_DOCS = [(name, nlp(name.lower())) for name in TEMATICAS]
 
 

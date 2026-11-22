@@ -4,12 +4,11 @@ from datetime import date
 import re
 import dateparser
 from backend.utils import check_right_date, get_hour, check_location, get_price, check_is_senior, translate_text, fetch_text
-from backend.classifier import event_classification
+from backend.classifier import event_classification, AVOID_CATEGORIES
 from backend.model import Event
 
 
 city = "Balzers"
-avoid_categories = {"Government", "Religion"}
 
 def _clean_date_balzers(cadena: str) -> date:
     match = re.search(r"(\d{1,2}\.\s*–\s*\d{1,2}\.\s*[a-zA-ZÁ-ÿ]+\s*\d{4})", cadena)
@@ -66,7 +65,7 @@ def scraper_balzers(url: str) -> List[NamedTuple]:
                 price = get_price(description_joined)
 
             category, icon, colour = event_classification(" ".join([title, description]))
-            if category in avoid_categories:
+            if category in AVOID_CATEGORIES:
                 continue
             hour_page = event.select_one("span.mdl030-uhrzeit.text-schlamm")
             hour_text = hour_page.get_text(" ", strip=True) if hour_page else ""
