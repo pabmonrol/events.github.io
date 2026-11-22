@@ -1,8 +1,7 @@
 from typing import List, NamedTuple
 from bs4 import BeautifulSoup
 from datetime import date, timedelta
-import dateparser
-from backend.utils import check_right_date, get_hour, check_location, check_is_senior, translate_text, http_session, clean_detail, DETAIL_LABELS
+from backend.utils import check_right_date, get_hour, check_location, check_is_senior, translate_text, fetch_text
 from backend.classifier import event_classification
 from backend.model import Event
 
@@ -14,8 +13,14 @@ avoid_categories = {"Government", "Religion"}
 def scraper_triesen(url: str) -> List[NamedTuple]:
     res = []
 
-    web = http_session.get(url).text
-    soup = BeautifulSoup(web, "html.parser")
+    hour = None
+    location = city
+    google_maps = None
+    price = None
+    description = ""
+
+    web = fetch_text(url)
+    soup = BeautifulSoup(web, 'html.parser')
     events = soup.find_all(class_="event")
 
     reached_limit = False
@@ -43,9 +48,7 @@ def scraper_triesen(url: str) -> List[NamedTuple]:
         if check_is_senior(title):
             continue
 
-        category, icon, colour = event_classification(" ".join([description, title]))
-        if category in avoid_categories:
-            continue
+            category, icon, colour = event_classification(" ".join([title, description]))
 
         attributes = event.find(class_="attributes")
         if attributes:

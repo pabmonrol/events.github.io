@@ -3,8 +3,7 @@ from bs4 import BeautifulSoup
 from datetime import date
 from urllib.parse import urljoin, urlparse
 import dateparser
-from backend.classifier import event_classification
-from backend.utils import get_price, get_hour, check_location, check_is_senior, check_right_date, translate_text, http_session
+from backend.utils import get_price, get_hour, check_location, check_is_senior, check_right_date, translate_text, fetch_text
 from backend.model import Event
 
 
@@ -15,8 +14,14 @@ avoid_categories = {"Government", "Religion"}
 def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
     res = []
 
-    web = http_session.get(url).text
-    soup = BeautifulSoup(web, "html.parser")
+    hour = None
+    location = city
+    google_maps = None
+    price = None
+    description = ""
+
+    web = fetch_text(url)
+    soup = BeautifulSoup(web, 'html.parser')
     events = soup.find_all("div", class_="events-list-entry ccm-block-page-list-page-entry")
 
     year = str(date.today().year)
@@ -38,7 +43,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
             if check_is_senior(title):
                 continue
 
-            category, icon, colour = event_classification(" ".join([description, title]))
+            category, icon, colour = event_classification(" ".join([title, description]))
             if category in avoid_categories:
                 continue
 
@@ -51,12 +56,11 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
             hour_text = event.find_next("div", class_="event-list-time")
             if hour_text:
                 hour = get_hour(hour_text.text)
-        else:
-            page = http_session.get(event_url).text
-            event_page = BeautifulSoup(page, "html.parser")
-
-            date_text = event_page.find(class_="sw-date")
-            title_text = event_page.find(class_="sw-title")
+        else: 
+            page = fetch_text(event_url)
+            soup_page = BeautifulSoup(page, 'html.parser')
+            date_text = soup_page.find(class_="sw-date")
+            title_text = soup_page.find(class_="sw-title")
             if not date_text or not title_text:
                 continue
 
@@ -79,7 +83,7 @@ def scraper_gamprin_bendern(url: str) -> List[NamedTuple]:
                 description = translate_text(description_tag.text)
                 price = get_price(description)
 
-            category, icon, colour = event_classification(" ".join([description, title]))
+            category, icon, colour = event_classification(" ".join([title, description]))
             if category in avoid_categories:
                 continue
 

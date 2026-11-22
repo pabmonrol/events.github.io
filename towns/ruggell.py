@@ -1,11 +1,7 @@
 from bs4 import BeautifulSoup
 from typing import NamedTuple, List
 from datetime import datetime, date, timedelta
-import dateparser
-from backend.classifier import event_classification
-from backend.model import Event
-from backend.utils import location_url, check_is_senior, check_right_date, translate_text, http_session, clean_detail, DETAIL_LABELS
-
+from backend.utils import location_url, check_is_senior, check_right_date, translate_text, fetch_text
 
 city = "Ruggell"
 avoid_categories = {"Government", "Religion"}
@@ -20,9 +16,9 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
     while url and url not in seen:
         seen.add(url)
 
-        web = http_session.get(url).text
-        soup = BeautifulSoup(web, "html.parser")
-        events = soup.find_all(class_="infos")
+        web = fetch_text(url)
+        soup = BeautifulSoup(web, 'html.parser')
+        events = soup.find_all(class_='infos')
 
         reached_limit = False
 
@@ -51,7 +47,7 @@ def scraper_ruggell(url: str) -> List[NamedTuple]:
 
             description = translate_text(event.find(class_="text").text)
 
-            category, icon, colour = event_classification(" ".join([description, title]))
+            category, icon, colour = event_classification(" ".join([title, description]))
             if category in avoid_categories:
                 continue
 

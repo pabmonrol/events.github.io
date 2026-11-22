@@ -15,6 +15,12 @@ from towns.triesen import scraper_triesen
 from towns.triesenberg import scraper_triesenberg
 from towns.balzers import scraper_balzers
 from backend.utils import events_to_json, filter_next_7_days, ensure_translation_packages, english_only_record
+from backend.classifier import AVOID_CATEGORIES
+from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
+from datetime import date
+import json
+import traceback
 
 SCRAPERS = {
     scraper_ruggell: "https://www.ruggell.li/agenda",
@@ -76,7 +82,8 @@ def archive_expired_special_events():
 
 
 def scrape_and_filter(scraper_fn, url):
-    return filter_next_7_days(scraper_fn(url))
+    events = filter_next_7_days(scraper_fn(url))
+    return [event for event in events if event.category not in AVOID_CATEGORIES]
 
 
 def run_all_scrapers():

@@ -3,13 +3,12 @@ from bs4 import BeautifulSoup
 from datetime import date
 import re
 import dateparser
-from backend.utils import check_right_date, get_hour, check_location, get_price, check_is_senior, translate_text, http_session
-from backend.classifier import event_classification
+from backend.utils import check_right_date, get_hour, check_location, get_price, check_is_senior, translate_text, fetch_text
+from backend.classifier import event_classification, AVOID_CATEGORIES
 from backend.model import Event
 
 
 city = "Balzers"
-avoid_categories = {"Government", "Religion"}
 
 
 def _clean_date(text: str) -> date:
@@ -25,20 +24,17 @@ def _clean_date(text: str) -> date:
 def scraper_balzers(url: str) -> List[NamedTuple]:
     res = []
 
-    web = http_session.get(url).text
-    soup = BeautifulSoup(web, "html.parser")
-    columns = (
-        soup.find_all("div", class_="col-24 col-xs-12 col-md-10 col-lg-5 col-md-offset-1 col-lg-offset-1"),
-        soup.find_all("div", class_="col-24 col-xs-12 col-md-10 col-lg-5 col-md-offset-1 col-lg-offset-0"),
-    )
+    hour = None
+    location = city
+    google_maps = None
+    price = None
+    description = ""
 
-    for column in columns:
-        for link in column:
-            hour = None
-            location = city
-            google_maps = None
-            price = None
-            description = ""
+    web = fetch_text(url)
+    soup = BeautifulSoup(web, 'html.parser')
+    links_left = soup.find_all("div", class_="col-24 col-xs-12 col-md-10 col-lg-5 col-md-offset-1 col-lg-offset-1")
+    links_right = soup.find_all("div", class_="col-24 col-xs-12 col-md-10 col-lg-5 col-md-offset-1 col-lg-offset-0")
+    links = links_left, links_right
 
             date_text = link.find_next("div", class_="mdl030-list-item cell-1 mdl030-datum").text
             date_ = _clean_date(date_text)
@@ -46,8 +42,8 @@ def scraper_balzers(url: str) -> List[NamedTuple]:
                 continue
 
             event_link = link.find("a").get("href")
-            page = http_session.get(event_link).text
-            event = BeautifulSoup(page, "html.parser")
+            page = fetch_text(event_link)
+            event = BeautifulSoup(page, 'html.parser')
 
             block_info = event.find("div", class_="mdl-container mdl-art-030 bg-weiss mdl030-detail-text-item")
             title_page = block_info.find("h1")
@@ -65,8 +61,8 @@ def scraper_balzers(url: str) -> List[NamedTuple]:
                 description = translate_text(description_joined)
                 price = get_price(description_joined)
 
-            category, icon, colour = event_classification(" ".join([description, title]))
-            if category in avoid_categories:
+            category, icon, colour = event_classification(" ".join([title, description]))
+            if category in AVOID_CATEGORIES:
                 continue
 
             hour_page = event.select_one("span.mdl030-uhrzeit.text-schlamm")

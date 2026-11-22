@@ -5,7 +5,8 @@ import re
 import dateparser
 from backend.classifier import event_classification
 from backend.model import Event
-from backend.utils import location_url, reached_date_limit, get_price, check_is_senior, check_right_date, translate_text, http_session
+from datetime import time, date, timedelta
+from backend.utils import location_url, verificar_fecha_limite, get_price, check_is_senior, check_right_date, translate_text, fetch_text
 
 
 city = "Mauren"
@@ -65,8 +66,8 @@ def _scrape_event_pages(event_urls: List[str]) -> List[NamedTuple]:
     for event_url in event_urls:
         description = ""
 
-        page = http_session.get(event_url).text
-        event_soup = BeautifulSoup(page, "html.parser")
+        html_evento = fetch_text(event)
+        sopa_evento = BeautifulSoup(html_evento, 'html.parser')
 
         date_item = event_soup.find("li", class_="sidelist__item", attrs={"data-name": "Datum"})
         date_span = date_item.find("span", class_="sidelist__text") if date_item else None
@@ -89,7 +90,7 @@ def _scrape_event_pages(event_urls: List[str]) -> List[NamedTuple]:
         description_tag = event_soup.find(class_="eventdetail__textbody mce")
         description = translate_text(description_tag.text) if description_tag else ""
 
-        category, icon, colour = event_classification(" ".join([description, title]))
+        category, icon, colour = event_classification(" ".join([title, description]))
         if category in avoid_categories:
             continue
 
@@ -116,9 +117,10 @@ def _scrape_event_pages(event_urls: List[str]) -> List[NamedTuple]:
 def scraper_mauren(url: str) -> List[NamedTuple]:
     final_list = []
 
-    web = http_session.get(url + "/agenda").text
-    soup = BeautifulSoup(web, "html.parser")
-    event_urls = [url + link.get("href") for link in soup.find_all(class_="agenda__itemlink")]
+    web = fetch_text(url + "/agenda")
+    soup = BeautifulSoup(web, 'html.parser')
+    links_events = soup.find_all(class_='agenda__itemlink')
+    events = [url + link.get('href') for link in links_events]
 
     final_list.extend(_scrape_event_pages(event_urls))
 
@@ -128,12 +130,16 @@ def scraper_mauren(url: str) -> List[NamedTuple]:
         if not next_path:
             break
 
-        web = http_session.get(url + next_path).text
-        current_soup = BeautifulSoup(web, "html.parser")
-
-        new_urls = [url + link.get("href") for link in current_soup.find_all(class_="agenda__itemlink")]
-        new_events = _scrape_event_pages(new_urls)
-        if not new_events:
+        next_event_url = url + next_event_path
+        
+        web_siguiente = fetch_text(next_event_url)
+        current_soup = BeautifulSoup(web_siguiente, 'html.parser')
+        
+        links_nuevos = current_soup.find_all(class_='agenda__itemlink')
+        event_cont_nuevo = [url + link.get('href') for link in links_nuevos]
+        
+        nuevos_eventos = _get_list_events(events_cont=event_cont_nuevo, hour=hour, location=location, google_maps=google_maps, price=price)
+        if not nuevos_eventos:
             break
 
         final_list.extend(new_events)

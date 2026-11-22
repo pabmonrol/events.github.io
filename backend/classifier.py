@@ -50,16 +50,23 @@ CATEGORY_STYLES = {"Culture": ["🧩", "purple"],
 
 OTHER_STYLE = ["Others", "#️⃣", "grey"]
 
-CATEGORY_DOCS = [(name, nlp(name.lower())) for name in CATEGORY_STYLES]
+AVOID_CATEGORIES = {"Government", "Religion"}
+
+CATEGORY_DOCS = [(name, nlp(name.lower())) for name in TEMATICAS]
 
 
 def event_classification(title: str) -> List[str]:
     event_doc = nlp(title.lower())
     matches = matcher(event_doc)
     if matches:
-        match_id, start, end = matches[0]
-        winner = nlp.vocab.strings[match_id]
-        return [winner] + CATEGORY_STYLES[winner]
+        conteo = {}
+        primera_posicion = {}
+        for match_id, start, end in matches:
+            categoria = nlp.vocab.strings[match_id]
+            conteo[categoria] = conteo.get(categoria, 0) + 1
+            primera_posicion.setdefault(categoria, start)
+        categoria_ganadora = max(conteo, key=lambda c: (conteo[c], -primera_posicion[c]))
+        return [categoria_ganadora] + TEMATICAS[categoria_ganadora]
 
     if len(event_doc) == 0 or not event_doc.has_vector:
         return OTHER_STYLE

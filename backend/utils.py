@@ -11,6 +11,12 @@ from bs4 import Tag
 
 http_session = requests.Session()
 
+def fetch_text(url: str) -> str:
+    response = http_session.get(url)
+    if not response.encoding or response.encoding.lower() in ("iso-8859-1", "latin-1"):
+        response.encoding = response.apparent_encoding or "utf-8"
+    return response.text
+
 def _as_text(value) -> str:
     if value is None:
         return ""
@@ -254,6 +260,16 @@ def get_hour(hour_text: str) -> time:
     first_hour = match.group().replace(".", ":")
     return datetime.strptime(first_hour, "%H:%M").time()
 
+def check_location(location_text: Tag, city: str) -> Tuple[str]:
+    location = city
+    if location_text:
+        location = location_text.get_text(" ", strip=True)
+        google_maps = location_url(location + ", " + city)
+        location = location.replace("\n", "").strip() + ", " + city
+    else:
+        google_maps = location_url(city)
+        
+    return location, google_maps
 
 DETAIL_LABELS = {"hour": "Zeit", "location": "Wo"}
 
