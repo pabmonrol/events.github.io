@@ -103,9 +103,16 @@ function fieldText(field, code) {
 }
 
 function selectedFieldParts(field) {
+    const seenTexts = new Set();
     return selectedLangCodes()
         .map(code => ({ code, text: fieldText(field, code) }))
-        .filter(part => part.text);
+        .filter(part => part.text)
+        .filter(part => {
+            const key = part.text.trim().toLowerCase();
+            if (seenTexts.has(key)) return false;
+            seenTexts.add(key);
+            return true;
+        });
 }
 
 function plainField(field) {
@@ -115,6 +122,13 @@ function plainField(field) {
 
 function englishField(field) {
     return fieldText(field, "en");
+}
+
+function eventUniqueKey(ev) {
+    const titles = (ev.title && typeof ev.title === "object")
+        ? Object.values(ev.title).map(v => String(v).trim().toLowerCase()).join("|")
+        : String(ev.title || "").trim().toLowerCase();
+    return `${titles}-${ev.date || ""}-${ev.time || ""}-${(ev.community || "").trim().toLowerCase()}`;
 }
 
 function htmlField(field) {
@@ -303,7 +317,10 @@ function renderEvents(selectedFilter) {
         (selectedFilter === "all" || (ev.category && ev.category.toLowerCase() === selectedFilter.toLowerCase())) &&
         passesExtraFilters(ev)
     );
-    const filteredSpecial = selectedFilter === "all" ? specialEventsData.filter(passesExtraFilters) : [];
+    const normalKeys = new Set(allEventsData.map(eventUniqueKey));
+    const filteredSpecial = selectedFilter === "all"
+        ? specialEventsData.filter(ev => passesExtraFilters(ev) && !normalKeys.has(eventUniqueKey(ev)))
+        : [];
 
     const today = new Date();
     const dateRange = [];
@@ -321,21 +338,13 @@ function renderEvents(selectedFilter) {
 
     if (filteredEvents.length === 0 && filteredSpecial.length === 0) {
         container.innerHTML = `<p style="text-align:center; padding: 40px; color: #666; font-size: 14px;">No events available in this category.</p>`;
-        buildWeekRail(buildEmptyRailDays(dateRange));
         return;
     }
 
     if (filteredSpecial.length > 0) {
         filteredSpecial.sort((a, b) => parseEventDate(a.date, a.time) - parseEventDate(b.date, b.time));
         
-        let specialHtml = `
-            <div class="venue-block">
-                <div class="venue-header venue-header--featured">
-                    <div class="icon-box icon-box--featured">⭐</div>
-                    <span>Featured Events</span>
-                </div>
-        `;
-        
+        let specialBody = "";
         filteredSpecial.forEach(ev => {
             const d = parseEventDate(ev.date, ev.time);
             const cleanTime = ev.time ? ev.time.substring(0, 5) : null;
@@ -349,7 +358,7 @@ function renderEvents(selectedFilter) {
 
     const seen = new Set();
     filteredEvents = filteredEvents.filter(ev => {
-        const uniqueId = `${englishField(ev.title)}-${ev.date}-${ev.community || ""}`;
+        const uniqueId = eventUniqueKey(ev);
         if (seen.has(uniqueId)) return false;
         seen.add(uniqueId);
         return true;
@@ -379,20 +388,11 @@ function renderEvents(selectedFilter) {
         groupedEvents[groupingKey].push(ev);
     });
 
-    const railDays = [];
     let dayIndex = 0;
     for (const [dayHeaderLabel, dailyEventsList] of Object.entries(groupedEvents)) {
         const isToday = dayIndex === 0;
         const dayId = dayIndex;
         dayIndex++;
-
-        railDays.push({
-            label: dayHeaderLabel,
-            count: dailyEventsList.length,
-            isToday,
-            hasBlock: selectedFilter.toLowerCase() === "all" || dailyEventsList.length > 0,
-            id: `agenda-day-${dayId}`
-        });
 
         if (selectedFilter.toLowerCase() !== 'all' && dailyEventsList.length === 0) {
             continue; 
@@ -406,6 +406,7 @@ function renderEvents(selectedFilter) {
                 </div>
         `;
         
+        let dayBody;
         if (dailyEventsList.length === 0) {
             dayBody = `<p style="padding: 16px; color: #666; font-size: 14px; text-align: center; margin: 0;">No events scheduled</p>`;
         } else {
@@ -416,7 +417,6 @@ function renderEvents(selectedFilter) {
     }
 
     container.innerHTML = htmlParts.join("");
-    buildWeekRail(railDays);
 }
 
 function setupFilterListeners() {
@@ -428,36 +428,6 @@ function setupFilterListeners() {
             renderEvents(activeFilterQuery);
         });
     });
-}
-
-function buildWeekRail(railDays) {
-    const rail = document.getElementById("week-rail");
-    if (!rail) return;
-    rail.innerHTML = railDays.map((d, i) => {
-        const parts = d.label.split(", ");
-        const shortDay = parts[0].slice(0, 3);
-        const datePart = parts[1] || "";
-        const cls = `rail-day${d.isToday ? " today" : ""}${d.hasBlock ? "" : " empty"}`;
-        return `<button type="button" class="${cls}" data-day="${i}"${d.hasBlock ? "" : " disabled"}>
-            <span>${shortDay}</span><span class="rail-date">${datePart}</span><span class="rail-count">${d.count}</span>
-        </button>`;
-    }).join("");
-    rail.querySelectorAll(".rail-day:not(.empty)").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const target = document.getElementById(railDays[Number(btn.getAttribute("data-day"))].id);
-            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-    });
-}
-
-function buildEmptyRailDays(dateRange) {
-    return dateRange.map((d, i) => ({
-        label: `${weekdays[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate().toString().padStart(2, "0")}`,
-        count: 0,
-        isToday: i === 0,
-        hasBlock: false,
-        id: `agenda-day-${i}`
-    }));
 }
 
 function updateExtraRail(baseForCounts, totalShown) {
