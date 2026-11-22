@@ -234,7 +234,7 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
             <div class="event-row-main">
                 <div class="event-content">
                     <p class="event-title"><span class="event-icon">${eventItem.icon || '📍'}</span> ${titleHtml}</p>
-                    <p class="event-desc"><strong>${eventItem.displayTime}</strong> · ${escapeHtml(visibleLocation)}</p>
+                    <p class="event-desc"><span class="event-time">🕒 ${eventItem.displayTime}</span><span class="event-loc">${escapeHtml(visibleLocation)}</span></p>
                     <span class="event-price">${priceLabel}</span>
                 </div>
                 <div class="event-actions">
@@ -283,8 +283,8 @@ function renderEvents(selectedFilter) {
         
         let specialHtml = `
             <div class="venue-block">
-                <div class="venue-header" style="background-color: #D20000; color: #ffffff; border-bottom: none;">
-                    <div class="icon-box" style="background-color: #a30000; color: #ffffff;">⭐</div>
+                <div class="venue-header venue-header--featured">
+                    <div class="icon-box icon-box--featured">⭐</div>
                     <span>Featured Events</span>
                 </div>
         `;
@@ -353,17 +353,20 @@ function renderEvents(selectedFilter) {
         groupedEvents[groupingKey].push(ev);
     });
 
+    let dayIndex = 0;
     for (const [dayHeaderLabel, dailyEventsList] of Object.entries(groupedEvents)) {
-        
+        const isToday = dayIndex === 0;
+        dayIndex++;
+
         if (selectedFilter.toLowerCase() !== 'all' && dailyEventsList.length === 0) {
             continue; 
         }
 
         let regularHtml = `
             <div class="venue-block">
-                <div class="venue-header" style="background-color: #24292f; color: #ffffff; border-bottom: none;">
-                    <div class="icon-box" style="background-color: #3b4046; color: #ffffff;">📅</div>
-                    <span>${dayHeaderLabel}</span>
+                <div class="venue-header venue-header--day">
+                    <div class="icon-box icon-box--day">📅</div>
+                    <span>${dayHeaderLabel}</span>${isToday ? ' <span class="today-badge">Today</span>' : ''}
                 </div>
         `;
         
