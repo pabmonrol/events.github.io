@@ -46,6 +46,49 @@
             </div>
     </div>
 
+    <aside class="side-rail" id="side-rail" aria-label="Filters and search">
+        <div class="rail-card">
+            <h2>Search</h2>
+            <input type="search" id="rail-search" class="rail-search" placeholder="Search events..." autocomplete="off">
+            <p class="rail-note" id="rail-search-count"></p>
+        </div>
+        <div class="rail-card">
+            <h2>Categories</h2>
+            <div class="rail-filters" id="rail-categories">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Sport">⚽ Sport</button>
+                <button class="filter-btn" data-filter="Music">🎵 Music</button>
+                <button class="filter-btn" data-filter="Culture">🧩 Culture</button>
+                <button class="filter-btn" data-filter="Leisure">🪇 Leisure</button>
+                <button class="filter-btn" data-filter="Nature">🌱 Nature</button>
+                <button class="filter-btn" data-filter="Others">#️⃣ Others</button>
+            </div>
+        </div>
+        <div class="rail-card">
+            <h2>Language</h2>
+            <div class="rail-filters" id="rail-langs">
+                <button type="button" class="lang-btn active" data-lang="en">🇬🇧 UK</button>
+                <button type="button" class="lang-btn" data-lang="es">🇪🇸 ES</button>
+                <button type="button" class="lang-btn" data-lang="it">🇮🇹 IT</button>
+                <button type="button" class="lang-btn" data-lang="de">🇩🇪 DE</button>
+                <button type="button" class="lang-btn" data-lang="sr">🇷🇸 SR</button>
+                <button type="button" class="lang-btn" data-lang="fr">🇫🇷 FR</button>
+                <button type="button" class="lang-btn" data-lang="pt">🇵🇹 PT</button>
+                <button type="button" class="lang-btn" data-lang="pl">🇵🇱 PL</button>
+                <button type="button" class="lang-btn" data-lang="hi">🇮🇳 HI</button>
+                <button type="button" class="lang-btn" data-lang="ru">🇷🇺 RU</button>
+            </div>
+        </div>
+        <div class="rail-card">
+            <h2>Price</h2>
+            <button type="button" class="rail-day" id="rail-free"><span>Free admission</span><span class="rail-count" id="rail-free-count">0</span></button>
+        </div>
+        <div class="rail-card">
+            <h2>Town</h2>
+            <div id="rail-towns"></div>
+        </div>
+    </aside>
+
     <script src="app.js"></script>
     <script data-goatcounter="https://lievent.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>

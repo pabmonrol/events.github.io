@@ -1,6 +1,10 @@
 let allEventsData = [];
 let specialEventsData = [];
 let agendaIsStale = false;
+let latestEventLabel = "";
+let freeOnly = false;
+let activeTown = null;
+let searchQuery = "";
 
 function markAgendaFreshness() {
     const dated = [...allEventsData, ...specialEventsData]
@@ -11,6 +15,7 @@ function markAgendaFreshness() {
         return;
     }
     const latest = new Date(Math.max(...dated.map(d => d.getTime())));
+    latestEventLabel = `${weekdays[latest.getDay()]}, ${months[latest.getMonth()]} ${latest.getDate()}`;
     const startOfToday = new Date();
     startOfToday.setHours(0, 0, 0, 0);
     agendaIsStale = latest < startOfToday;
@@ -46,6 +51,8 @@ async function loadAgenda() {
         markAgendaFreshness();
         renderEvents("all");
         setupFilterListeners();
+        const upto = document.getElementById("data-upto");
+        if (upto) upto.textContent = latestEventLabel ? `Agenda data up to ${latestEventLabel}` : "";
     } catch (error) {
         const container = document.getElementById("agenda-container");
         container.innerHTML = `
@@ -85,7 +92,7 @@ function escapeHtml(value) {
 
 function selectedLangCodes() {
     const codes = [...document.querySelectorAll(".lang-btn.active")].map(btn => btn.getAttribute("data-lang"));
-    return codes.length ? codes : ["en"];
+    return codes.length ? [...new Set(codes)] : ["en"];
 }
 
 function fieldText(field, code) {
@@ -135,6 +142,21 @@ function activeCategory() {
     return active ? active.getAttribute("data-filter") : "all";
 }
 
+function matchesSearch(ev) {
+    if (!searchQuery) return true;
+    const q = searchQuery.toLowerCase();
+    const hay = selectedLangCodes()
+        .map(code => `${fieldText(ev.title, code)} ${fieldText(ev.description, code)}`)
+        .join(" ") + ` ${ev.location || ""} ${ev.community || ""}`;
+    return hay.toLowerCase().includes(q);
+}
+
+function passesExtraFilters(ev) {
+    if (freeOnly && !(ev.price === null || ev.price === 0)) return false;
+    if (activeTown && (ev.community || "").trim().toLowerCase() !== activeTown.toLowerCase()) return false;
+    return matchesSearch(ev);
+}
+
 function setupLangFilters() {
     let saved = ["en"];
     try {
@@ -151,8 +173,8 @@ function setupLangFilters() {
     document.querySelectorAll(".lang-btn").forEach(btn => {
         btn.classList.toggle("active", saved.includes(btn.getAttribute("data-lang")));
         btn.addEventListener("click", () => {
-            document.querySelectorAll(".lang-btn").forEach(other => other.classList.remove("active"));
-            btn.classList.add("active");
+            const lang = btn.getAttribute("data-lang");
+            document.querySelectorAll(".lang-btn").forEach(other => other.classList.toggle("active", other.getAttribute("data-lang") === lang));
             localStorage.setItem(LANG_STORAGE_KEY, JSON.stringify(selectedLangCodes()));
             renderEvents(activeCategory());
         });
@@ -253,12 +275,12 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
         </div>`;
 }
 
-function venueBlockHtml(headerColor, iconColor, icon, label, bodyHtml) {
+function venueBlockHtml(headerColor, iconColor, icon, label, bodyHtml, extraAttrs = "", badge = "") {
     return `
-        <div class="venue-block">
+        <div class="venue-block"${extraAttrs}>
             <div class="venue-header" style="background-color: ${headerColor}; color: #ffffff; border-bottom: none;">
                 <div class="icon-box" style="background-color: ${iconColor}; color: #ffffff;">${icon}</div>
-                <span>${label}</span>
+                <span>${label}</span>${badge}
             </div>
             ${bodyHtml}
         </div>`;
@@ -277,11 +299,29 @@ function renderEvents(selectedFilter) {
         `);
     }
 
-    let filteredEvents = allEventsData.filter(ev => selectedFilter === "all" || (ev.category && ev.category.toLowerCase() === selectedFilter.toLowerCase()));
-    const filteredSpecial = selectedFilter === "all" ? specialEventsData : [];
+    let filteredEvents = allEventsData.filter(ev =>
+        (selectedFilter === "all" || (ev.category && ev.category.toLowerCase() === selectedFilter.toLowerCase())) &&
+        passesExtraFilters(ev)
+    );
+    const filteredSpecial = selectedFilter === "all" ? specialEventsData.filter(passesExtraFilters) : [];
+
+    const today = new Date();
+    const dateRange = [];
+    for (let i = 0; i < 7; i++) {
+        const date = new Date(today);
+        date.setDate(today.getDate() + i);
+        dateRange.push(date);
+    }
+    const rangeKeys = new Set(dateRange.map(d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`));
+    const baseForCounts = allEventsData.filter(ev =>
+        (selectedFilter === "all" || (ev.category && ev.category.toLowerCase() === selectedFilter.toLowerCase())) &&
+        ev.date && rangeKeys.has(ev.date) && matchesSearch(ev)
+    );
+    updateExtraRail(baseForCounts, filteredEvents.length + filteredSpecial.length);
 
     if (filteredEvents.length === 0 && filteredSpecial.length === 0) {
         container.innerHTML = `<p style="text-align:center; padding: 40px; color: #666; font-size: 14px;">No events available in this category.</p>`;
+        buildWeekRail(buildEmptyRailDays(dateRange));
         return;
     }
 
@@ -305,14 +345,6 @@ function renderEvents(selectedFilter) {
         });
 
         htmlParts.push(venueBlockHtml("#D20000", "#a30000", "⭐", "Featured Events", specialBody));
-    }
-
-    const today = new Date();
-    const dateRange = [];
-    for (let i = 0; i < 7; i++) {
-        const date = new Date(today);
-        date.setDate(today.getDate() + i);
-        dateRange.push(date);
     }
 
     const seen = new Set();
@@ -347,10 +379,20 @@ function renderEvents(selectedFilter) {
         groupedEvents[groupingKey].push(ev);
     });
 
+    const railDays = [];
     let dayIndex = 0;
     for (const [dayHeaderLabel, dailyEventsList] of Object.entries(groupedEvents)) {
         const isToday = dayIndex === 0;
+        const dayId = dayIndex;
         dayIndex++;
+
+        railDays.push({
+            label: dayHeaderLabel,
+            count: dailyEventsList.length,
+            isToday,
+            hasBlock: selectedFilter.toLowerCase() === "all" || dailyEventsList.length > 0,
+            id: `agenda-day-${dayId}`
+        });
 
         if (selectedFilter.toLowerCase() !== 'all' && dailyEventsList.length === 0) {
             continue; 
@@ -370,20 +412,97 @@ function renderEvents(selectedFilter) {
             dayBody = dailyEventsList.map(ev => generateEventRowHTML(ev)).join("");
         }
 
-        htmlParts.push(venueBlockHtml("#24292f", "#3b4046", "📅", dayHeaderLabel, dayBody));
+        htmlParts.push(venueBlockHtml("#24292f", "#3b4046", "📅", dayHeaderLabel, dayBody, ` id="agenda-day-${dayId}"`, isToday ? ' <span class="today-badge">Today</span>' : ""));
     }
 
     container.innerHTML = htmlParts.join("");
+    buildWeekRail(railDays);
 }
 
 function setupFilterListeners() {
     const filterButtons = document.querySelectorAll(".filter-btn");
     filterButtons.forEach(button => {
         button.addEventListener("click", (clickEvent) => {
-            filterButtons.forEach(btn => btn.classList.remove("active"));
-            clickEvent.currentTarget.classList.add("active");
-            renderEvents(clickEvent.currentTarget.getAttribute("data-filter"));
+            const activeFilterQuery = clickEvent.currentTarget.getAttribute("data-filter");
+            filterButtons.forEach(btn => btn.classList.toggle("active", btn.getAttribute("data-filter") === activeFilterQuery));
+            renderEvents(activeFilterQuery);
         });
+    });
+}
+
+function buildWeekRail(railDays) {
+    const rail = document.getElementById("week-rail");
+    if (!rail) return;
+    rail.innerHTML = railDays.map((d, i) => {
+        const parts = d.label.split(", ");
+        const shortDay = parts[0].slice(0, 3);
+        const datePart = parts[1] || "";
+        const cls = `rail-day${d.isToday ? " today" : ""}${d.hasBlock ? "" : " empty"}`;
+        return `<button type="button" class="${cls}" data-day="${i}"${d.hasBlock ? "" : " disabled"}>
+            <span>${shortDay}</span><span class="rail-date">${datePart}</span><span class="rail-count">${d.count}</span>
+        </button>`;
+    }).join("");
+    rail.querySelectorAll(".rail-day:not(.empty)").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const target = document.getElementById(railDays[Number(btn.getAttribute("data-day"))].id);
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+}
+
+function buildEmptyRailDays(dateRange) {
+    return dateRange.map((d, i) => ({
+        label: `${weekdays[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate().toString().padStart(2, "0")}`,
+        count: 0,
+        isToday: i === 0,
+        hasBlock: false,
+        id: `agenda-day-${i}`
+    }));
+}
+
+function updateExtraRail(baseForCounts, totalShown) {
+    const freeBtn = document.getElementById("rail-free");
+    const freeCount = document.getElementById("rail-free-count");
+    if (freeBtn && freeCount) {
+        freeCount.textContent = baseForCounts.filter(ev => ev.price === null || ev.price === 0).length;
+        freeBtn.classList.toggle("active", freeOnly);
+    }
+    const townsEl = document.getElementById("rail-towns");
+    if (townsEl) {
+        const counts = {};
+        baseForCounts.forEach(ev => {
+            const town = (ev.community || "").trim();
+            if (town) counts[town] = (counts[town] || 0) + 1;
+        });
+        const entries = Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+        townsEl.innerHTML =
+            `<button type="button" class="rail-day${activeTown ? "" : " active"}" data-town=""><span>All towns</span></button>` +
+            entries.map(([town, n]) =>
+                `<button type="button" class="rail-day${activeTown === town ? " active" : ""}" data-town="${escapeHtml(town)}"><span>${escapeHtml(town)}</span><span class="rail-count">${n}</span></button>`
+            ).join("");
+        townsEl.querySelectorAll(".rail-day").forEach(btn => {
+            btn.addEventListener("click", () => {
+                activeTown = btn.getAttribute("data-town") || null;
+                renderEvents(activeCategory());
+            });
+        });
+    }
+    const searchCount = document.getElementById("rail-search-count");
+    if (searchCount) {
+        searchCount.textContent = searchQuery ? `${totalShown} result${totalShown === 1 ? "" : "s"}` : "";
+    }
+}
+
+function setupRailControls() {
+    const search = document.getElementById("rail-search");
+    if (search) search.addEventListener("input", () => {
+        searchQuery = search.value.trim();
+        renderEvents(activeCategory());
+    });
+    const freeBtn = document.getElementById("rail-free");
+    if (freeBtn) freeBtn.addEventListener("click", () => {
+        freeOnly = !freeOnly;
+        renderEvents(activeCategory());
     });
 }
 
@@ -398,4 +517,5 @@ function toggleDetail(btn) {
 }
 
 setupLangFilters();
+setupRailControls();
 loadAgenda();
