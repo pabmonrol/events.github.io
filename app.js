@@ -229,8 +229,8 @@ function generateEventRowHTML(eventItem, isSpecial = false) {
         <div class="event-row theme-${colorThemeClass} ${specialClass}">
             <div class="event-row-main">
                 <div class="event-content">
-                    <p class="event-title"><span class="event-icon">${eventItem.icon || "📍"}</span> ${titleHtml}</p>
-                    <p class="event-desc"><strong>${eventItem.displayTime}</strong> · ${escapeHtml(visibleLocation)}</p>
+                    <p class="event-title"><span class="event-icon">${eventItem.icon || '📍'}</span> ${titleHtml}</p>
+                    <p class="event-desc"><span class="event-time">🕒 ${eventItem.displayTime}</span><span class="event-loc">${escapeHtml(visibleLocation)}</span></p>
                     <span class="event-price">${priceLabel}</span>
                 </div>
                 <div class="event-actions">
@@ -287,8 +287,15 @@ function renderEvents(selectedFilter) {
 
     if (filteredSpecial.length > 0) {
         filteredSpecial.sort((a, b) => parseEventDate(a.date, a.time) - parseEventDate(b.date, b.time));
-
-        let specialBody = "";
+        
+        let specialHtml = `
+            <div class="venue-block">
+                <div class="venue-header venue-header--featured">
+                    <div class="icon-box icon-box--featured">⭐</div>
+                    <span>Featured Events</span>
+                </div>
+        `;
+        
         filteredSpecial.forEach(ev => {
             const d = parseEventDate(ev.date, ev.time);
             const cleanTime = ev.time ? ev.time.substring(0, 5) : null;
@@ -340,12 +347,23 @@ function renderEvents(selectedFilter) {
         groupedEvents[groupingKey].push(ev);
     });
 
+    let dayIndex = 0;
     for (const [dayHeaderLabel, dailyEventsList] of Object.entries(groupedEvents)) {
-        if (selectedFilter.toLowerCase() !== "all" && dailyEventsList.length === 0) {
-            continue;
+        const isToday = dayIndex === 0;
+        dayIndex++;
+
+        if (selectedFilter.toLowerCase() !== 'all' && dailyEventsList.length === 0) {
+            continue; 
         }
 
-        let dayBody;
+        let regularHtml = `
+            <div class="venue-block">
+                <div class="venue-header venue-header--day">
+                    <div class="icon-box icon-box--day">📅</div>
+                    <span>${dayHeaderLabel}</span>${isToday ? ' <span class="today-badge">Today</span>' : ''}
+                </div>
+        `;
+        
         if (dailyEventsList.length === 0) {
             dayBody = `<p style="padding: 16px; color: #666; font-size: 14px; text-align: center; margin: 0;">No events scheduled</p>`;
         } else {
