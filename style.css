@@ -26,11 +26,11 @@ body {
     border-radius: 16px;
     border: 1px solid #e1e4e8;
     box-shadow: 0 12px 32px rgba(16, 42, 67, 0.12);
-    overflow: hidden;
 }
 
 .nl-header {
     background: linear-gradient(135deg, #1e6fd9 0%, #185FA5 55%, #0b3d75 100%);
+    border-radius: 15px 15px 0 0;
     padding: 36px 24px;
     text-align: center;
     position: relative;
@@ -484,7 +484,7 @@ body {
         min-height: 100vh;
         min-height: 100dvh;
     }
-    .nl-header { padding: 28px 16px; }
+    .nl-header { padding: 28px 16px; border-radius: 0; }
     .filters-sticky .filters-container { padding: 12px 12px 0 12px; }
     .filters-sticky .lang-filters { padding: 8px 12px 10px 12px; }
     #agenda-container { padding: 12px 12px 24px 12px; }
